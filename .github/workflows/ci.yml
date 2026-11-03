@@ -1,0 +1,41 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r backend/requirements.txt
+      - name: AI engine + simulation tests
+        run: python -m pytest -q ai-engine/tests simulation/tests
+      - name: Backend API / DB / upload / inference tests
+        run: python -m pytest -q backend/tests
+      - name: Alembic migration applies cleanly
+        working-directory: backend
+        env: { DATABASE_URL: "sqlite:///./ci_migrate.db" }
+        run: alembic upgrade head
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: frontend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: [python, frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f backend/Dockerfile -t pollinex-backend .
+      - run: docker build -t pollinex-frontend frontend

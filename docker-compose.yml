@@ -1,0 +1,39 @@
+# Full local stack:  cp .env.example .env  (edit secrets)  &&  docker compose up --build
+# Frontend: http://localhost:8080   API docs: http://localhost:8000/docs
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: pollinex
+      POSTGRES_USER: pollinex
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pollinex"]
+      interval: 5s
+      retries: 10
+
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    depends_on: { db: { condition: service_healthy } }
+    environment:
+      POLLINEX_ENV: ${POLLINEX_ENV:-production}
+      DATABASE_URL: postgresql+psycopg://pollinex:${POSTGRES_PASSWORD}@db:5432/pollinex
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+      WEATHER_API_ENABLED: ${WEATHER_API_ENABLED:-true}
+      BOOTSTRAP_ADMIN_EMAIL: ${BOOTSTRAP_ADMIN_EMAIL:-}
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:-}
+      UPLOAD_DIR: /srv/pollinex/backend/storage/uploads
+      GALLERY_DIR: /srv/pollinex/backend/storage/gallery
+    volumes: [storage:/srv/pollinex/backend/storage]
+    ports: ["8000:8000"]
+
+  frontend:
+    build: { context: ./frontend }
+    depends_on: [backend]
+    ports: ["8080:80"]
+
+volumes:
+  pgdata:
+  storage:
