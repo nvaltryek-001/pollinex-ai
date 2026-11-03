@@ -24,6 +24,10 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "${{ env.PYTHON_VERSION }}", cache: pip, cache-dependency-path: backend/requirements.txt }
       - run: pip install -r backend/requirements.txt
+      - name: Export resolved Python versions (lock)
+        run: pip freeze --exclude-editable | sort > requirements.lock.txt
+      - uses: actions/upload-artifact@v4
+        with: { name: python-lock, path: requirements.lock.txt, retention-days: 30 }
       - name: Dependency check
         run: python scripts/check_dependencies.py || true   # node_modules are absent in this job by design
       - name: Lint (ruff, errors only)
@@ -64,6 +68,8 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: "${{ env.NODE_VERSION }}" }
       - run: npm install --no-audit --no-fund
+      - uses: actions/upload-artifact@v4
+        with: { name: npm-lock, path: frontend/package-lock.json, retention-days: 30 }
       - run: npm run typecheck
       - run: npm test
       - run: npm run build

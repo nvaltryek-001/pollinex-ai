@@ -38,7 +38,10 @@ describe("Markdown", () => {
     expect(screen.getByText("Title")).toBeInTheDocument();
     expect(screen.getByText("2").tagName).toBe("STRONG");
     expect(screen.getByText("ok").closest("a")).toHaveAttribute("href", "https://x.org");
-    expect(screen.getByText("bad").closest("a")).toBeNull();
+    // the javascript: link must not become an anchor - only the https link is a link
+    expect(screen.getAllByRole("link")).toHaveLength(1);
+    expect(screen.queryByRole("link", { name: /bad/ })).toBeNull();
+    expect(document.body.textContent).toContain("bad");
   });
 });
 
