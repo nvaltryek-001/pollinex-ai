@@ -11,7 +11,8 @@ Source and verification (all checked by this script, nothing assumed):
     identification and 0 disagreements. Cultivated crops are rarely Research Grade, hence the second rule.
   * Phenology: annotation "Flowers and Fruits = Flowers" (formerly "Plant Phenology = Flowering"; term ids
     verified against /v1/controlled_terms at runtime).
-  * Licence: per PHOTO licence code must be cc0 or cc-by (filtered by the API and re-checked per photo).
+  * Licence: per PHOTO licence code must be cc0, cc-by or cc-by-sa (filtered by the API and re-checked per photo).
+    Non-commercial (NC) and no-derivatives (ND) photos - iNaturalist's default licence - are excluded.
     Attribution string, photographer login, observation URL and licence are stored for every image.
   * One photo per observation (the first openly licensed one), at most --max-per-user observations per observer.
 Image checks: decode, min side, SHA-1 exact duplicates, dHash near-duplicates (dropped, across all species/splits),
@@ -55,7 +56,7 @@ SPECIES = {  # project id -> exact iNaturalist scientific name
     "peach": "Prunus persica",
     "pear": "Pyrus communis",
 }
-OPEN_LICENCES = {"cc0", "cc-by"}
+OPEN_LICENCES = {"cc0", "cc-by", "cc-by-sa"}  # redistributable; NC/ND licences excluded
 
 
 def get_json(url: str, tries: int = 4) -> dict:
@@ -216,6 +217,9 @@ def main():
     ap.add_argument("--min-side", type=int, default=240)
     args = ap.parse_args()
     term = verify_terms()
+    if OUT.exists():  # rebuild from scratch so the folder always equals the manifest
+        import shutil
+        shutil.rmtree(OUT)
     print("phenology term verified:", term)
     OUT.mkdir(parents=True, exist_ok=True)
     REPORTS.mkdir(parents=True, exist_ok=True)
@@ -287,7 +291,7 @@ def main():
         for r in rows:
             w.writerow([r["file"], r["licence"], r["attribution"], r["obs_url"]])
     (OUT / "LICENSE.txt").write_text(
-        "Photos from iNaturalist (https://www.inaturalist.org). Each photo keeps its own licence (CC0 1.0 or CC BY 4.0)\n"
+        "Photos from iNaturalist (https://www.inaturalist.org). Each photo keeps its own licence (CC0 1.0, CC BY 4.0 or CC BY-SA 4.0)\n"
         "and attribution, listed per file in ATTRIBUTION.csv. Images are unmodified 'medium' renditions (<= 500 px).\n"
         "Species labels come from iNaturalist identifications (see manifest.csv 'identification'); these are\n"
         "IMAGE-LEVEL species labels only - there are NO bounding boxes or structure annotations in this set.\n", encoding="utf-8")
