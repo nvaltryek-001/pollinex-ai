@@ -12,38 +12,55 @@ flower centre and visible health, and turns **species-specific pollination biolo
 recommendations. A **Three.js simulator** replays seeded particle simulations of pollen transfer.
 
 > **Honesty first.** Every output in the API, UI and reports is tagged with how it was produced —
-> `trained_model`, `trained_reference_gallery`, `heuristic`, `rule_engine`, `simulation`, `closeup_fallback` or `user_declared`.
+> `trained_model`, `trained_reference_gallery`, `heuristic`, `rule_engine`, `simulation`, `closeup_fallback`, `user_declared`
+> or `user_corrected`.
 > Readiness is a *visual estimate*, simulated transfer is *not* fruit set, and no metric shown anywhere is a placeholder.
+
+> **Current status (2026-11-03):** the AI engine and simulator are trained/tested (37/37 executed tests pass). The web stack
+> (FastAPI + React) is fully written, but its first build and test run has **not happened yet** because the build environment
+> could not reach PyPI/npm. Run `scripts/test_windows.ps1` (Windows) or `scripts/run_tests.sh` to do it — see
+> [`docs/NEXT_SESSION_TASKS.md`](docs/NEXT_SESSION_TASKS.md).
 
 ---
 
 ## Contents
-1. [What was built](#what-was-built) · 2. [Measured results](#measured-results) · 3. [Architecture](#architecture) ·
-4. [Tech stack](#technology-stack) · 5. [Quick start](#quick-start) · 6. [Usage](#usage) · 7. [API](#api) ·
-8. [Datasets & credits](#datasets--credits) · 9. [Research](#research) · 10. [Limitations](#limitations-read-this) ·
-11. [Project audit](#project-audit) · 12. [Repository layout](#repository-layout)
+1. [Objectives](#objectives) · 2. [What was built](#what-was-built) · 3. [Measured results](#measured-results) ·
+4. [Architecture & workflow](#architecture) · 5. [Simulator](#virtual-pollination-simulator) · 6. [Tech stack](#technology-stack) ·
+7. [Windows installation](#windows-installation-recommended) · 8. [Quick start (Linux/macOS/Docker)](#quick-start) · 9. [Testing](#testing) ·
+10. [Deployment](#deployment) · 11. [Usage](#usage) · 12. [API](#api) · 13. [Datasets & credits](#datasets--credits) ·
+14. [Research](#research) · 15. [Limitations](#limitations-read-this) · 16. [Future scope](#future-scope) ·
+17. [Project audit](#project-audit) · 18. [Repository layout](#repository-layout)
+
+## Objectives
+1. Detect and count flowers in ordinary photos and phone-camera frames, with calibrated confidence.
+2. Recognise species across an extensible set of crops and say **unknown** when unsure; let users correct it.
+3. Describe what is visible (stage, centre region, health cues, image-space pose) without over-claiming.
+4. Turn species-specific pollination biology into explainable, uncertainty-aware decision support.
+5. Let users explore pollen transfer in a virtual, clearly-labelled simulation.
+6. Keep everything reproducible, measured on held-out data, and runnable on a laptop with no hardware.
 
 ## What was built
 
 | Area | What it does | Evidence type |
 |---|---|---|
 | **Flower detection** (Module 1) | Pixel classifier (gradient-boosted trees on a 36-channel colour/texture stack) → probability map → instances → boxes, scores, count, low-confidence warnings. Trained **in this repo** on CPU. Optional YOLO11 ONNX backend is auto-used when its file exists. | trained model |
-| **Species recognition** (Module 2) | kNN reference gallery with an open-set threshold calibrated on validation; returns `unknown` instead of forcing a class; researchers can add reference images for new species without retraining. | trained reference gallery |
-| **Flower centre / structures** (Module 3) | Locates the distinct centre region and pollen-like yellow cluster. **Does not detect anthers/stigma** (no licensed annotations exist) — CVAT workflow + training recipe provided. | heuristic |
+| **Species recognition** (Module 2) | kNN reference gallery with an open-set threshold calibrated on validation; returns `unknown` instead of forcing a class; **manual correction** per flower (original prediction kept, readiness re-estimated); researchers can add reference images for new species without retraining. | trained reference gallery / user corrected |
+| **Flower centre / structures** (Module 3) | Petal region and distinct centre region + pollen-like yellow cluster. Per-structure status table: anther, stigma, stamen, pistil = **not AI-validated** (no licensed annotations exist) — CVAT workflow + training recipe provided. | heuristic |
 | **Maturity stage** (Module 4) | Bud / early bloom / partially open / fully open / senescent from shape & colour cues. | heuristic |
 | **Readiness intelligence** (Module 5 + Part 6) | Rule engine over a 9-species knowledge base (mechanism, compatibility, ready stages, env. ranges, evidence, limitations). Different strategies per crop: vibration (tomato, brinjal), compatible cross-pollen (apple, pear), brush/contact (chilli, peach, hibiscus), air-assisted (strawberry), ring progression (sunflower). | rule engine |
 | **Pose & approach guidance** (Module 6) | Image-space centre, facing ratio, axis angle and alignment vector to a virtual effector (explicitly *not* metric). | heuristic |
 | **Visual health** (Module 7) | Browning, dark spots, discolouration, outline irregularity — measurements only, never a disease name. | heuristic |
 | **Evaluation** (Module 8) | COCO-style mAP@0.5 / 0.5:0.95, P/R/F1, per-species, AP-vs-IoU, count error, pixel IoU, latency, confusion matrix, leave-one-species-out, error analysis. | measured |
 | **Live scanner** | Upload, phone/laptop camera (permission handling, camera switching), capture & analyse, **sampled** live inference over WebSocket (HTTP fallback) with back-pressure and an adjustable interval. | — |
-| **Virtual simulator** | Seeded 3-D particle model per species profile; Three.js replay with orbit, scrubbing, replay; 2-D canvas fallback; sensitivity sweeps (alignment, wind, vibration Hz). | simulation |
-| **Environment** | Manual records + Open-Meteo fetch (source + timestamp stored; explicit error if unavailable — never invented). | — |
+| **Virtual simulator** | Seeded 3-D particle model per species profile; Three.js replay with species-specific structures, particle trails, orbit, play/pause/replay, scrubbing, 0.25–4× speed; 2-D canvas fallback; sensitivity sweeps (alignment, wind, vibration Hz). | simulation |
+| **Environment** | Manual records + Open-Meteo fetch (conditions, source + timestamp stored; explicit error if unavailable — never invented); missing- and stale-data warnings feed the readiness confidence. | — |
 | **Web app** | 20 pages: landing, auth, dashboard, scanner, species, structure, maturity, readiness, simulator, environment, health, fields, inventory, pollination history, model evaluation, analytics, research centre, reports, datasets, admin. Dark/light themes, mobile-first. | — |
-| **Platform** | FastAPI + SQLAlchemy 2 + Alembic, JWT auth with admin / researcher / user roles, token revocation on logout, PBKDF2 passwords, upload validation (type, size, decompression bombs, EXIF/GPS stripping), CSV/PDF/JSON reports, audit log, Docker Compose (PostgreSQL), CI workflow. | — |
+| **Platform** | FastAPI + SQLAlchemy 2 + Alembic, JWT auth with admin / researcher / user roles, token revocation on logout, PBKDF2 passwords, upload validation (type, size, decompression bombs, EXIF/GPS stripping), CSV/PDF/JSON reports, audit log, rate limiting, toast notifications, Docker Compose (PostgreSQL), CI workflow, Windows PowerShell scripts. | — |
 
 ## Measured results
 
-All numbers come from `ai-engine/reports/*.json`, produced by the training scripts on a **held-out test split that was used once**
+These are the **historical results of the session-1 training run** (2026-11-02), stored in `ai-engine/reports/*.json`;
+re-running the scripts regenerates them. All numbers come from those reports,, produced by the training scripts on a **held-out test split that was used once**
 (parameters chosen on validation). Hardware: 2 vCPU cloud VM, no GPU.
 
 **Data:** USDA Multi-species Fruit Flower dataset (apple, peach, pear) — 90 usable images, 4,651 mask-derived instances,
@@ -124,7 +141,35 @@ flowchart LR
   REC --> OM
 ```
 
-More detail: [`docs/SYSTEM_ARCHITECTURE.md`](docs/SYSTEM_ARCHITECTURE.md) · [`docs/DATABASE_SCHEMA.md`](docs/DATABASE_SCHEMA.md).
+More detail: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) · [`docs/DATABASE_SCHEMA.md`](docs/DATABASE_SCHEMA.md).
+
+### Workflow
+
+```mermaid
+flowchart TD
+  A[Photo upload or camera capture] --> B{Mode}
+  B -- scene / auto --> C[Flower detector<br/>boxes + confidence]
+  B -- close-up / no confident box --> C2[Close-up fallback<br/>labelled, not a detection]
+  C --> D[Per flower: species gallery<br/>open-set → unknown]
+  C2 --> D
+  D --> E[Stage · centre/petals · health · pose<br/>heuristics]
+  E --> F[Readiness rule engine<br/>species KB + environment]
+  F --> G[(Saved scan · history · analytics · reports)]
+  D -. user corrects species .-> F
+  F --> H[Virtual simulator<br/>species profile → particles → replay]
+  H --> I[Simulated transfer efficiency<br/>never reported as fertilisation]
+  J[Manual / Open-Meteo environment] --> F
+```
+
+## Virtual pollination simulator
+A seeded particle model (Python) computes release, drift, wind, turbulence and capture; the browser replays it in Three.js
+(or a 2-D canvas fallback). Species profiles: **tomato/brinjal** vibration of a poricidal anther cone (release peaks near
+150–200 Hz) · **apple/pear** cross-transfer from a separate compatible donor flower · **chilli/peach** brush/contact ·
+**strawberry** air-assisted coverage of ~60 pistils on the receptacle · **sunflower** pollen-presenting and receptive floret rings ·
+**hibiscus** staminal column with five stigma pads. Controls: particles, release rate, alignment offset, wind, humidity, vibration
+Hz, seed, play/pause/replay, timeline, 0.25–4× speed, parameter sweeps. Results separate *detection*, *simulation completion*,
+*simulated transfer efficiency* and *biological outcome (not measured)*. Details and assumptions:
+[`docs/SIMULATOR_DOCUMENTATION.md`](docs/SIMULATOR_DOCUMENTATION.md).
 
 ## Technology stack
 
@@ -138,6 +183,31 @@ More detail: [`docs/SYSTEM_ARCHITECTURE.md`](docs/SYSTEM_ARCHITECTURE.md) · [`d
 | Reports | ReportLab (PDF), CSV, JSON | Offline |
 | Tests | Pytest, Vitest + Testing Library, Playwright | Unit → E2E |
 | Deploy | Docker, Docker Compose, Render blueprint, Vercel config, GitHub Actions | |
+
+## Windows installation (recommended)
+
+Requirements: Windows 10/11, **Python 3.12** (python.org installer, tick *Add python.exe to PATH*), **Node.js 20 LTS+**, Git.
+No GPU, no paid API, no hardware.
+
+```powershell
+git clone https://github.com/nvaltryek-001/pollinex-ai.git
+cd pollinex-ai
+powershell -ExecutionPolicy Bypass -File scripts\setup_windows.ps1      # venv, pip, npm, .env with random JWT secret
+powershell -ExecutionPolicy Bypass -File scripts\run_windows.ps1        # API :8000 + web :5173, opens the browser
+powershell -ExecutionPolicy Bypass -File scripts\test_windows.ps1       # all test suites + production build
+```
+
+**Database:** SQLite by default (zero setup, `backend\pollinex.db`). For PostgreSQL install it (or `docker run -p 5432:5432
+-e POSTGRES_USER=pollinex -e POSTGRES_PASSWORD=... -e POSTGRES_DB=pollinex postgres:16`) and run
+`scripts\setup_windows.ps1 -Postgres -PgPassword "..."` — it writes `DATABASE_URL` and applies the Alembic migrations.
+
+**Manual steps (if you prefer):**
+```powershell
+python -m venv .venv; .venv\Scripts\activate; pip install -r backend\requirements.txt
+cd backend; uvicorn app.main:app --reload            # backend → http://localhost:8000/docs
+cd frontend; npm install; npm run dev                # frontend (second terminal) → http://localhost:5173
+```
+Register the first account — it becomes **admin**.
 
 ## Quick start
 
@@ -173,6 +243,28 @@ and on phones the upload button can open the camera directly. Details: [`docs/US
 SRC=/path/to/clone/of/multi-species-fruit-flower scripts/reproduce_models.sh
 ```
 
+## Testing
+
+| Command | Runs |
+|---|---|
+| `scripts\test_windows.ps1` / `scripts/run_tests.sh` | pytest (AI engine, simulator, backend API), Alembic migration, TypeScript check, Vitest, production build |
+| add `-E2E` / `E2E=1` | + Playwright on desktop Chrome and a Pixel 7 profile |
+| `python -m pytest ai-engine/tests simulation/tests` | engine only (no web packages needed) |
+
+Executed status is tracked honestly in [`docs/TESTING_REPORT.md`](docs/TESTING_REPORT.md).
+
+## Deployment
+
+| Target | How | Free-tier notes |
+|---|---|---|
+| Local, full stack | `docker compose up --build` (PostgreSQL + API + nginx web on :8080) | — |
+| API | Render blueprint `deployment/render.yaml` (Docker) | free web services sleep when idle and have ~512 MB RAM; the CPU models fit (~300 MB) but first requests after sleep are slow and full analyses take seconds |
+| Database | Render PostgreSQL (in the blueprint) or Neon / Supabase free tier | free Render databases expire after a limited period; back up |
+| Web | Vercel (`frontend/`, `VITE_API_URL` = API URL) | static hosting; HTTPS gives phone-camera access |
+
+Health check: `GET /api/v1/health`. Details: [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md). The app is fully usable
+locally without any cloud deployment. **No public deployment exists yet.**
+
 ## Usage
 
 1. **Scan** — upload or use the camera. Choose *auto* (orchard scene, falls back to close-up if nothing confident is found),
@@ -198,7 +290,7 @@ Interactive OpenAPI docs at `/docs`. Main groups (all under `/api/v1`):
 | Analytics & reports | `GET /analytics/dashboard` · `/analytics/species` · `/analytics/model-performance` · `/reports/scans.csv` · `/reports/summary.pdf` · `/reports/scans/{id}.json` |
 | Admin | `/admin/users` · `/admin/activity` · `/admin/models` · `POST /admin/models/reload` · `/datasets` · `/research/references` · `/health` |
 
-Full reference: [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md).
+Full reference: [`docs/API_DOCUMENTATION.md`](docs/API_DOCUMENTATION.md).
 
 ## Datasets & credits
 
@@ -234,30 +326,41 @@ Our contributions are engineering contributions; no external paper's results are
 * **Environment rules** are general ranges; verify locally.
 * **Licensing:** Ultralytics YOLO11 is AGPL-3.0 — only relevant if you train/ship the optional deep detector.
 
+## Future scope
+* Train YOLO11 (Colab guide in `docs/AI_MODEL_DOCUMENTATION.md`) and compare with the CPU baseline on the same test split.
+* Collect and annotate (CVAT) images of the six crops without public data; add held-out tests; train stage and structure models.
+* Replace the hand-crafted species embedding with a pretrained backbone exported to ONNX.
+* Field trials following the randomised block design in `research/methodology.md` to validate readiness timing.
+* Offline-capable PWA and on-device inference for low-connectivity fields.
+
+## Screenshots
+Not yet available: screenshots will be added only from a genuinely running build (see `docs/NEXT_SESSION_TASKS.md`).
+
 ## Project audit
 
-Honest status as delivered from the build environment (2 vCPU, no GPU, PyPI/npm/Docker Hub **blocked**, only GitHub reachable):
+Honest status after session 2 (build environment: 2 vCPU, no GPU; PyPI, npm and Docker Hub **blocked**, only GitHub reachable).
+Full detail: [`docs/PROJECT_COMPLETION_AUDIT.md`](docs/PROJECT_COMPLETION_AUDIT.md).
 
 | Item | Status |
 |---|---|
 | Research review, gaps, methodology, BibTeX | ✅ done (some volume/article numbers marked unverified) |
 | Dataset manifest + licences + prep scripts | ✅ USDA set prepared & audited; other scripts written, not run (hosts blocked) |
-| Detector trained & evaluated | ✅ real metrics above |
-| Species gallery + open-set evaluation | ✅ (with confound caveat) |
-| Stage / centre / health / pose modules | ✅ implemented as labelled heuristics · ⚠️ not accuracy-evaluated |
-| Reproductive-structure detector | ❌ no training data — annotation workflow + recipe provided |
-| YOLO11 deep detector | ⚠️ recipe + ONNX runtime path written; **not trained** (no PyTorch available) |
-| Readiness engine + 9-species knowledge base | ✅ |
-| Simulator engine + Three.js / 2D UI | ✅ engine tested · ⚠️ UI not run in a browser here |
-| Backend API, DB models, migration, auth, reports | ✅ written · ✅ report generation executed · ⚠️ API test-suite (20 tests) written but **not executed** here (FastAPI/SQLAlchemy not installable) |
-| Frontend (20 pages, scanner, camera, live WS) | ✅ written · ✅ syntax-checked · ⚠️ not built/type-checked against dependencies here (npm blocked) |
-| Automated tests executed | ✅ **35/35** AI-engine + simulation tests pass |
-| Docker images, deployment | ⚠️ files written; not built (no Docker daemon); no deployment URL |
-| Screenshots | ❌ not possible without running the frontend — add after first local run |
+| Detector trained & evaluated | ✅ historical metrics above (session 1) |
+| Species gallery + open-set evaluation + manual correction | ✅ gallery/eval · ⚠️ correction endpoint/UI not executed |
+| Stage / petals-centre / health / pose modules | ✅ labelled heuristics · ⚠️ not accuracy-evaluated (no labels) |
+| Anther / stigma / stamen / pistil detection | ❌ no training data — reported as *not AI-validated*; CVAT workflow provided |
+| YOLO11 deep detector | ⚠️ recipe, ONNX backend and Colab guide; **not trained** |
+| Readiness engine + 9-species KB + environment warnings | ✅ executed tests |
+| Simulator engine | ✅ executed tests · ⚠️ Three.js UI (structures, trails, speed) not run in a browser |
+| Backend API, DB, migrations 0001–0002, auth, roles, rate limiting, reports | ⚠️ written; **24 API tests not executed** (FastAPI/SQLAlchemy not installable) |
+| Frontend (20 pages, scanner, camera, live WS, toasts) | ⚠️ written & syntax-checked; **not built / type-checked / unit-tested** (npm blocked) |
+| Executed automated tests | ✅ **37/37** (AI engine 21, simulator 16) |
+| Windows scripts | ⚠️ written; not run on Windows here |
+| Docker images, deployment | ⚠️ configs only; not built; no public URL |
+| Screenshots | ❌ need a running frontend |
 
-**Honest completion estimate: ~70 %.** The research, data, AI and simulation core is complete and measured; the web stack is
-fully written but its first build/test run must happen on a machine with package-registry access (`scripts/run_tests.sh`).
-See [`docs/FINAL_PROJECT_REPORT.md`](docs/FINAL_PROJECT_REPORT.md) and [`docs/TESTING_REPORT.md`](docs/TESTING_REPORT.md).
+**Honest completion estimate: ≈ 72 %.** The remaining work is mainly *running* the web stack for the first time and fixing what
+that reveals — [`docs/NEXT_SESSION_TASKS.md`](docs/NEXT_SESSION_TASKS.md) lists the exact steps.
 
 ## Repository layout
 
@@ -271,7 +374,7 @@ datasets/      manifest, sources, licences, prep/download scripts, annotation wo
 research/      literature review, comparison, gaps, methodology, references (.bib/.json)
 docs/          architecture, schema, API, models, datasets, methodology, install, deploy, testing, manual, final report
 deployment/    Render blueprint (Vercel config lives in frontend/)
-scripts/       setup / run / test / reproduce helpers
+scripts/       setup / run / test / reproduce helpers (bash + Windows PowerShell)
 tests/         shared fixtures (CC BY test images)
 ```
 

@@ -71,3 +71,30 @@ python ai-engine/training/evaluate_detector.py       # reports/detector_inferenc
 python ai-engine/training/train_species.py           # models/species_gallery.* + reports/species_evaluation.json
 python ai-engine/training/train_yolo11.py --data datasets/processed/usda_fruit_flower/data.yaml   # optional, needs PyTorch
 ```
+
+## Optional GPU training on Google Colab (YOLO11)
+Not executed by the authors yet; any numbers it produces are *new* results and must be reported from
+`ai-engine/reports/yolo11_evaluation.json`, never copied from here. The historical CPU baseline (test mAP@0.5 0.410) stays the
+reference until then.
+
+1. Colab → *Runtime → Change runtime type → T4 GPU*.
+2. In a cell:
+   ```bash
+   !git clone https://github.com/nvaltryek-001/pollinex-ai.git
+   %cd pollinex-ai
+   !pip -q install -r ai-engine/requirements-train.txt opencv-python-headless scikit-image scikit-learn==1.9.1 joblib
+   !GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ai-agriculture-circuits-and-systems/multi-species-fruit-flower /content/mff
+   !python datasets/scripts/prepare_usda_fruit_flower.py --src /content/mff      # same splits as the CPU model
+   !python ai-engine/training/train_yolo11.py --data datasets/processed/usda_fruit_flower/data.yaml --epochs 100 --imgsz 1280 --batch 8 --device 0
+   ```
+3. Download `ai-engine/models/flower_yolo11n.onnx` and `ai-engine/reports/yolo11_evaluation.json`
+   (`from google.colab import files; files.download(...)`), copy both into the same paths on your laptop and press
+   *Admin settings → Reload from disk*. The backend now uses the ONNX detector on CPU; the evaluation page shows its report.
+4. Compare it with the CPU baseline on the **same test split**; update the README only with the measured values.
+
+Licence reminder: Ultralytics YOLO11 is AGPL-3.0.
+
+## Model configuration files
+Every trained artefact stores its configuration next to its metrics: `models/flower_pixel_hgb.joblib → params`
+(threshold, min_area, peak_distance, work_side, stride, fast_side, version, training data), `models/species_gallery.json`
+(k, threshold, embedding version, sources) and the `params`/`seed` blocks in each `reports/*.json`.

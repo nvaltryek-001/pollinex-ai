@@ -1,5 +1,9 @@
 # POLLINEX AI — Final Project Report & Audit
 
+> **Session 2 update (2026-11-03):** see `PROJECT_COMPLETION_AUDIT.md` for the current audit (≈ 72 %), `TESTING_REPORT.md`
+> for executed results (37/37) and `NEXT_SESSION_TASKS.md` for the remaining verification steps. The text below is the
+> session-1 report and is kept for history.
+
 _Date: 2026-11-02 · Build environment: 2 vCPU Linux VM, no GPU; outbound access limited to GitHub (PyPI, npm, Docker Hub,
 Hugging Face, Zenodo, arXiv blocked)._
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.0] - 2026-11-03
+### Added
+- Manual species correction per flower (`PATCH /scans/{id}/flowers/{i}/species`), original prediction kept, readiness re-run; Alembic `0002`.
+- Rate limiting (login, register, scans, live frames); 429 with Retry-After.
+- Weather conditions (WMO codes) from Open-Meteo; missing- and stale-data warnings in readiness.
+- Environmental trends and simulation history in analytics.
+- Simulator: playback speed, species-specific 3-D structures with labels, particle trails, per-mode explanation.
+- Per-structure status (petals, centre, anther, stigma, stamen, pistil) in the structure module.
+- Toast notifications; `user_corrected` provenance badge.
+- Windows PowerShell scripts: `setup_windows.ps1`, `run_windows.ps1`, `test_windows.ps1`.
+- Docs: `PROJECT_COMPLETION_AUDIT.md`, `SIMULATOR_DOCUMENTATION.md`, `NEXT_SESSION_TASKS.md`, Colab YOLO11 guide;
+  renamed `ARCHITECTURE.md`, `API_DOCUMENTATION.md`; rewritten `TESTING_REPORT.md`.
+### Tests
+- Executed: 37/37 (AI engine 21, simulator 16). Backend (24), Vitest (11), Playwright: written, not executed (registries blocked).
+
 ## [1.0.0] - 2026-11-02
 ### Milestones
 - **M1** Research foundation: literature review, comparison, gaps, methodology, references; architecture.
