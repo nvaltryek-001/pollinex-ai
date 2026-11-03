@@ -51,6 +51,7 @@ def main():
     ap.add_argument("--extra", type=Path, required=True)
     ap.add_argument("--save", action="store_true")
     args = ap.parse_args()
+    args.extra = args.extra.resolve()
     g = SpeciesGallery.load(ENGINE / "models" / "species_gallery")
     base_counts = g.counts()
     species = sorted(p.name for p in args.extra.iterdir() if p.is_dir() and p.name != "test")
@@ -81,7 +82,7 @@ def main():
                            "returned_unknown": float(np.mean([p == UNKNOWN for p in ys])) if ys else None,
                            "predicted_as": dict(Counter(ys))}
     report = {
-        "generated_at": datetime.now(timezone.utc).isoformat(), "extra_source": str(args.extra.relative_to(ROOT)),
+        "generated_at": datetime.now(timezone.utc).isoformat(), "extra_source": str(args.extra.relative_to(ROOT)) if args.extra.is_relative_to(ROOT) else str(args.extra),
         "threshold_kept": g.threshold, "threshold_note": "not re-tuned; calibrated on USDA validation data",
         "gallery_before": base_counts, "references_added": dict(added), "gallery_after": g.counts(),
         "extra_species_test": per_species, "extra_species_report": extra_rep,

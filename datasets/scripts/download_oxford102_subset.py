@@ -39,10 +39,10 @@ def fetch(name: str, dest: Path) -> Path:
     p = dest / name
     if p.exists():
         return p
-    socket.setdefaulttimeout(180)
+    socket.setdefaulttimeout(60)
     errors = []
     for base in MIRRORS:
-        for attempt in range(3):
+        for attempt in range(2):
             try:
                 print("downloading", base + name, "attempt", attempt + 1)
                 with urllib.request.urlopen(base + name) as r, open(str(p) + ".part", "wb") as f:
