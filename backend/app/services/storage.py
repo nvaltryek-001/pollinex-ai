@@ -34,7 +34,7 @@ def decode_image(data: bytes) -> tuple[Image.Image, str]:
     if not data:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Empty upload")
     if len(data) > s.max_upload_mb * 1024 * 1024:
-        raise HTTPException(status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, f"File exceeds {s.max_upload_mb} MB limit")
+        raise HTTPException(413, f"File exceeds {s.max_upload_mb} MB limit")
     try:
         probe = Image.open(io.BytesIO(data))
         fmt = probe.format
@@ -46,7 +46,7 @@ def decode_image(data: bytes) -> tuple[Image.Image, str]:
     if fmt not in ALLOWED_FORMATS:
         raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, f"Unsupported image format {fmt}; use JPEG, PNG, WEBP or BMP")
     if min(img.size) < 32:
-        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "Image too small (minimum 32 px per side)")
+        raise HTTPException(422, "Image too small (minimum 32 px per side)")
     return ImageOps.exif_transpose(img).convert("RGB"), fmt
 
 

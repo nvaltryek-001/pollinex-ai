@@ -277,7 +277,7 @@ function LiveCamera({ onCapture, speciesHint }: { onCapture: (b: Blob) => void; 
           <dl className="grid grid-cols-2 gap-2 text-sm">
             <dt className="text-muted">Flowers in last frame</dt><dd className="font-mono">{live?.flower_count ?? "—"}</dd>
             <dt className="text-muted">Backend latency</dt><dd className="font-mono">{live ? `${live.latency_ms.toFixed(0)} ms` : "—"}</dd>
-            <dt className="text-muted">Frames analysed</dt><dd className="font-mono">{stats.frames}</dd>
+            <dt className="text-muted">Frames analysed</dt><dd className="font-mono" data-testid="frames-analysed">{stats.frames}</dd>
             <dt className="text-muted">Skipped (busy)</dt><dd className="font-mono">{stats.dropped}</dd>
             <dt className="text-muted">Transport</dt><dd className="font-mono">{stats.transport}</dd>
           </dl>

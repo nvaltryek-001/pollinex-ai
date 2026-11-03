@@ -270,7 +270,7 @@ def main() -> None:
     rep_dir.mkdir(parents=True, exist_ok=True)
     (rep_dir / f"{DATASET_ID}_report.json").write_text(json.dumps(report, indent=2))
     md = [f"# {DATASET_ID} preparation report", "", f"- Upstream: {REPO_URL} @ `{commit[:12]}`",
-          f"- Licence: CC BY 4.0 · DOI 10.15482/USDA.ADC/1423466", f"- Images kept: **{len(records)}**  · boxes: **{report['boxes_total']}**",
+          "- Licence: CC BY 4.0 · DOI 10.15482/USDA.ADC/1423466", f"- Images kept: **{len(records)}**  · boxes: **{report['boxes_total']}**",
           f"- Excluded: {dict(excluded)}", "", "| Split | Images | Boxes | Species mix |", "|---|---|---|---|"]
     for s, v in report["per_split"].items():
         md.append(f"| {s} | {v['images']} | {v['boxes']} | {v['per_species']} |")

@@ -201,10 +201,13 @@ def test_admin_user_management(client, admin, user):
     assert len(client.get(f"{API}/research/references", headers=admin[0]).json()) >= 6
 
 
-def test_manual_species_correction_reruns_readiness(client, user, closeup_jpeg):
-    h = user[0]
-    scan = client.post(f"{API}/scans", headers=h, files={"file": ("c.jpg", closeup_jpeg, "image/jpeg")},
-                       data={"mode": "closeup"}).json()
+def test_manual_species_correction_reruns_readiness(client, closeup_jpeg):
+    # own account: the shared `user` fixture's token is revoked by the role change in test_admin_user_management
+    r = client.post(f"{API}/auth/register", json={"email": "corrector@example.com", "password": "Str0ngPassword!"})
+    h = {"Authorization": f"Bearer {r.json()['access_token']}"}
+    resp = client.post(f"{API}/scans", headers=h, files={"file": ("c.jpg", closeup_jpeg, "image/jpeg")}, data={"mode": "closeup"})
+    assert resp.status_code == 201, resp.text
+    scan = resp.json()
     original = scan["flowers"][0]["species"]["species"]
     r = client.patch(f"{API}/scans/{scan['id']}/flowers/0/species", headers=h, json={"species_id": "tomato"})
     assert r.status_code == 200, r.text

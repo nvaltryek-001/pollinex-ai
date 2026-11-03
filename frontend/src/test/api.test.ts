@@ -20,7 +20,7 @@ describe("api client", () => {
 
   it("reports an unreachable backend clearly", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => { throw new TypeError("Failed to fetch"); }));
-    const err = await api.get("/x").catch((e) => e);
+    const err = (await api.get("/x").catch((e: unknown) => e)) as ApiError;
     expect(err).toBeInstanceOf(ApiError);
     expect(err.status).toBe(0);
     expect(err.message).toMatch(/unreachable/i);

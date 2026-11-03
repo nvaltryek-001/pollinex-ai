@@ -25,6 +25,7 @@ def client(tmpdir_session):
     os.environ["WEATHER_API_ENABLED"] = "false"
     os.environ["MAX_UPLOAD_MB"] = "2"
     os.environ["RATE_LIMIT_ENABLED"] = "false"  # enabled explicitly in test_rate_limit
+    os.environ["POLLINEX_SKIP_DOTENV"] = "1"    # tests must not read a developer .env
     from fastapi.testclient import TestClient
 
     from app.main import app

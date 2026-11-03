@@ -2,40 +2,131 @@ name: CI
 on:
   push: { branches: [main] }
   pull_request:
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: "3.12"
+  NODE_VERSION: "22"
 
 jobs:
   python:
+    name: AI engine, simulator, backend, migrations (SQLite + PostgreSQL), startup
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env: { POSTGRES_USER: pollinex, POSTGRES_PASSWORD: ci_only_password, POSTGRES_DB: pollinex }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U pollinex" --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
+        with: { python-version: "${{ env.PYTHON_VERSION }}", cache: pip, cache-dependency-path: backend/requirements.txt }
       - run: pip install -r backend/requirements.txt
+      - name: Dependency check
+        run: python scripts/check_dependencies.py || true   # node_modules are absent in this job by design
+      - name: Lint (ruff, errors only)
+        run: pip install ruff && ruff check --select F,E9,PLE backend ai-engine simulation scripts datasets
       - name: AI engine + simulation tests
         run: python -m pytest -q ai-engine/tests simulation/tests
-      - name: Backend API / DB / upload / inference tests
+      - name: Backend API / auth / DB / upload / inference tests (SQLite)
         run: python -m pytest -q backend/tests
-      - name: Alembic migration applies cleanly
+      - name: Alembic upgrade + downgrade on SQLite
         working-directory: backend
         env: { DATABASE_URL: "sqlite:///./ci_migrate.db" }
-        run: alembic upgrade head
+        run: alembic upgrade head && alembic downgrade base && alembic upgrade head
+      - name: Alembic upgrade on PostgreSQL 16
+        working-directory: backend
+        env: { DATABASE_URL: "postgresql+psycopg://pollinex:ci_only_password@localhost:5432/pollinex" }
+        run: alembic upgrade head && python -c "import sqlalchemy as sa; e=sa.create_engine('$DATABASE_URL'); print(sorted(sa.inspect(e).get_table_names()))"
+      - name: Backend startup against PostgreSQL (uvicorn + /health)
+        working-directory: backend
+        env:
+          DATABASE_URL: "postgresql+psycopg://pollinex:ci_only_password@localhost:5432/pollinex"
+          JWT_SECRET: ci-only-secret-0123456789abcdefghijklmnopqrstuvwxyz
+          POLLINEX_ENV: production
+          AUTO_CREATE_TABLES: "false"
+        run: |
+          uvicorn app.main:app --port 8000 > ../uvicorn.log 2>&1 &
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:8000/api/v1/health && break; sleep 1; done
+          curl -fsS http://127.0.0.1:8000/api/v1/health | python -c "import json,sys; d=json.load(sys.stdin); print(d); assert d['status']=='ok', d"
+          curl -fsS -o /dev/null http://127.0.0.1:8000/docs
+      - if: always()
+        run: cat uvicorn.log || true
 
   frontend:
+    name: Type-check, unit tests, production build
     runs-on: ubuntu-latest
     defaults: { run: { working-directory: frontend } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: "22" }
+        with: { node-version: "${{ env.NODE_VERSION }}" }
       - run: npm install --no-audit --no-fund
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with: { name: frontend-dist, path: frontend/dist, retention-days: 7 }
+
+  e2e:
+    name: Playwright end-to-end (desktop + mobile, fake camera) + screenshots
+    runs-on: ubuntu-latest
+    needs: [python, frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ env.PYTHON_VERSION }}", cache: pip, cache-dependency-path: backend/requirements.txt }
+      - uses: actions/setup-node@v4
+        with: { node-version: "${{ env.NODE_VERSION }}" }
+      - run: pip install -r backend/requirements.txt
+      - working-directory: frontend
+        run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium && npm run build
+      - name: Start backend
+        working-directory: backend
+        env: { JWT_SECRET: ci-only-secret-0123456789abcdefghijklmnopqrstuvwxyz, WEATHER_API_ENABLED: "false", RATE_LIMIT_ENABLED: "false" }
+        run: |
+          uvicorn app.main:app --port 8000 > ../uvicorn.log 2>&1 &
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:8000/api/v1/health && break; sleep 1; done
+      - name: Start frontend (vite preview, proxies /api)
+        working-directory: frontend
+        run: |
+          npx vite preview --port 5173 --strictPort > ../vite.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:5173 > /dev/null && break; sleep 1; done
+      - name: Playwright tests
+        working-directory: frontend
+        env: { SCREENSHOTS: "1" }
+        run: npx playwright test
+      - if: always()
+        run: tail -n 80 uvicorn.log vite.log || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: |
+            frontend/test-results
+            frontend/playwright-report
+          retention-days: 7
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: screenshots, path: frontend/e2e-screenshots, retention-days: 30 }
 
   docker:
+    name: Docker images
     runs-on: ubuntu-latest
     needs: [python, frontend]
     steps:
       - uses: actions/checkout@v4
       - run: docker build -f backend/Dockerfile -t pollinex-backend .
       - run: docker build -t pollinex-frontend frontend
+      - name: Compose smoke test (PostgreSQL + API + web)
+        run: |
+          printf 'POSTGRES_PASSWORD=ci_only_password\nJWT_SECRET=ci-only-secret-0123456789abcdefghijklmnopqrstuvwxyz\nCORS_ORIGINS=http://localhost:8080\n' > .env
+          docker compose up -d --build
+          for i in $(seq 1 90); do curl -fsS http://127.0.0.1:8000/api/v1/health && break; sleep 2; done
+          curl -fsS http://127.0.0.1:8000/api/v1/health | grep '"status":"ok"'
+          curl -fsS http://127.0.0.1:8080/ | grep -i "<title>POLLINEX AI</title>"
+          curl -fsS http://127.0.0.1:8080/api/v1/health | grep '"status":"ok"'
+      - if: always()
+        run: docker compose logs --tail 100 || true

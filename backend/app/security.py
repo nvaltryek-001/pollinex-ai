@@ -75,5 +75,5 @@ def require_roles(*roles: str):
 
 def password_policy(pw: str) -> None:
     if len(pw) < 10 or pw.lower() == pw or not any(c.isdigit() for c in pw):
-        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY,
+        raise HTTPException(422,
                             "Password must be at least 10 characters and include an uppercase letter and a digit")

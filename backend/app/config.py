@@ -11,6 +11,24 @@ from pydantic import BaseModel, Field
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
+def load_dotenv(path: Path = REPO_ROOT / ".env") -> None:
+    """Minimal .env loader (no extra dependency): KEY=VALUE lines, '#' comments, optional quotes.
+    Real environment variables always win, so Docker/CI/hosting settings are never overridden."""
+    if os.environ.get("POLLINEX_SKIP_DOTENV") == "1" or not path.is_file():
+        return
+    for raw in path.read_text(encoding="utf-8-sig").splitlines():  # utf-8-sig: tolerate BOM from PowerShell 5.1
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, val = line.split("=", 1)
+        key, val = key.strip(), val.strip().strip('"').strip("'")
+        if key and val and key not in os.environ:
+            os.environ[key] = val
+
+
+load_dotenv()
+
+
 def _env(name: str, default: str | None = None) -> str | None:
     return os.environ.get(name, default)
 
@@ -32,6 +50,10 @@ class Settings(BaseModel):
     inference_workers: int = Field(default_factory=lambda: int(_env("INFERENCE_WORKERS", "1")))
 
     def ensure(self) -> "Settings":
+        if self.jwt_secret.startswith("CHANGE_ME"):
+            if self.environment == "production":
+                raise RuntimeError("JWT_SECRET still has the .env.example placeholder value")
+            self.jwt_secret = ""
         if not self.jwt_secret:
             if self.environment == "production":
                 raise RuntimeError("JWT_SECRET must be set in production")

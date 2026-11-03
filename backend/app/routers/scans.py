@@ -38,7 +38,7 @@ def _check_species(species_hint: str | None) -> str | None:
         return None
     sp = engine.get_species(species_hint)
     if not sp:
-        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, f"Unknown species '{species_hint}'")
+        raise HTTPException(422, f"Unknown species '{species_hint}'")
     return sp["id"]
 
 
