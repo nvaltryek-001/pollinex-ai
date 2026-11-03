@@ -231,3 +231,16 @@ def test_deployed_gallery_only_contains_gated_species():
     g = SpeciesGallery.load(path)
     out = g.predict(np.full((64, 64, 3), (200, 40, 60), np.uint8))
     assert out["species"] == "unknown" or out["species"] in set(meta["labels"])
+
+
+@pytest.mark.skipif(not (MODELS_DIR / "flower_yolo11n.onnx").exists(), reason="YOLO11 model not deployed")
+def test_deployed_yolo11_onnx_runs_and_is_default():
+    from pollinex_ai.detector import OnnxYoloDetector, load_default_detector
+    det = load_default_detector()
+    assert isinstance(det, OnnxYoloDetector) and det.backend == "yolo11-onnx"
+    scene = np.full((480, 640, 3), (60, 110, 50), np.uint8)
+    res = det.detect(scene)
+    assert res.latency_ms > 0 and res.image_size == (640, 480)
+    for d in res.detections:
+        x1, y1, x2, y2 = d.box
+        assert 0 <= x1 <= x2 <= 640 and 0 <= y1 <= y2 <= 480 and 0 <= d.score <= 1
