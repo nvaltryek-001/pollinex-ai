@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T15:28:03.574742+00:00",
+  "generated_at": "2026-11-03T16:12:21.095597+00:00",
   "datasets": [
     {
       "dataset": "usda_fruit_flower",
@@ -84,53 +84,198 @@
           }
         }
       }
+    },
+    {
+      "dataset": "inat_flowering",
+      "annotation_type": "image-level species label only (no boxes)",
+      "per_species": {
+        "hibiscus": {
+          "images": 91,
+          "image_level_labels": 91,
+          "box_annotations": 0,
+          "split": {
+            "train": 71,
+            "test": 7,
+            "val": 13
+          },
+          "identification": {
+            "research_grade": 19,
+            "cultivated_with_agreement": 72
+          },
+          "quality_flags": {}
+        },
+        "tomato": {
+          "images": 200,
+          "image_level_labels": 200,
+          "box_annotations": 0,
+          "split": {
+            "train": 138,
+            "val": 28,
+            "test": 34
+          },
+          "identification": {
+            "research_grade": 180,
+            "cultivated_with_agreement": 20
+          },
+          "quality_flags": {}
+        },
+        "strawberry": {
+          "images": 15,
+          "image_level_labels": 15,
+          "box_annotations": 0,
+          "split": {
+            "train": 10,
+            "val": 3,
+            "test": 2
+          },
+          "identification": {
+            "research_grade": 12,
+            "cultivated_with_agreement": 3
+          },
+          "quality_flags": {}
+        },
+        "brinjal": {
+          "images": 20,
+          "image_level_labels": 20,
+          "box_annotations": 0,
+          "split": {
+            "train": 15,
+            "val": 4,
+            "test": 1
+          },
+          "identification": {
+            "research_grade": 11,
+            "cultivated_with_agreement": 9
+          },
+          "quality_flags": {}
+        },
+        "chilli": {
+          "images": 28,
+          "image_level_labels": 28,
+          "box_annotations": 0,
+          "split": {
+            "train": 25,
+            "test": 1,
+            "val": 2
+          },
+          "identification": {
+            "research_grade": 26,
+            "cultivated_with_agreement": 2
+          },
+          "quality_flags": {}
+        },
+        "sunflower": {
+          "images": 200,
+          "image_level_labels": 200,
+          "box_annotations": 0,
+          "split": {
+            "train": 142,
+            "test": 32,
+            "val": 26
+          },
+          "identification": {
+            "research_grade": 182,
+            "cultivated_with_agreement": 18
+          },
+          "quality_flags": {
+            "dark": 1
+          }
+        },
+        "apple": {
+          "images": 107,
+          "image_level_labels": 107,
+          "box_annotations": 0,
+          "split": {
+            "test": 17,
+            "train": 67,
+            "val": 23
+          },
+          "identification": {
+            "research_grade": 97,
+            "cultivated_with_agreement": 10
+          },
+          "quality_flags": {}
+        },
+        "peach": {
+          "images": 71,
+          "image_level_labels": 71,
+          "box_annotations": 0,
+          "split": {
+            "train": 52,
+            "test": 10,
+            "val": 9
+          },
+          "identification": {
+            "research_grade": 54,
+            "cultivated_with_agreement": 17
+          },
+          "quality_flags": {
+            "dark": 1
+          }
+        },
+        "pear": {
+          "images": 29,
+          "image_level_labels": 29,
+          "box_annotations": 0,
+          "split": {
+            "test": 5,
+            "train": 18,
+            "val": 6
+          },
+          "identification": {
+            "research_grade": 21,
+            "cultivated_with_agreement": 8
+          },
+          "quality_flags": {}
+        }
+      }
     }
   ],
   "species_totals": {
     "apple": {
-      "images": 48,
+      "images": 155,
       "box_annotations": 2470,
-      "image_level_labels": 48
+      "image_level_labels": 155
     },
     "peach": {
-      "images": 24,
+      "images": 95,
       "box_annotations": 924,
-      "image_level_labels": 24
+      "image_level_labels": 95
     },
     "pear": {
-      "images": 18,
+      "images": 47,
       "box_annotations": 1257,
-      "image_level_labels": 18
+      "image_level_labels": 47
     },
     "sunflower": {
-      "images": 628,
+      "images": 828,
       "box_annotations": 2432,
-      "image_level_labels": 628
+      "image_level_labels": 828
     },
     "hibiscus": {
-      "images": 0,
+      "images": 91,
       "box_annotations": 0,
-      "image_level_labels": 0
+      "image_level_labels": 91
     },
     "tomato": {
-      "images": 0,
+      "images": 200,
       "box_annotations": 0,
-      "image_level_labels": 0
+      "image_level_labels": 200
     },
     "strawberry": {
-      "images": 0,
+      "images": 15,
       "box_annotations": 0,
-      "image_level_labels": 0
+      "image_level_labels": 15
     },
     "brinjal": {
-      "images": 0,
+      "images": 20,
       "box_annotations": 0,
-      "image_level_labels": 0
+      "image_level_labels": 20
     },
     "chilli": {
-      "images": 0,
+      "images": 28,
       "box_annotations": 0,
-      "image_level_labels": 0
+      "image_level_labels": 28
     }
   },
   "cvat_schema_class_counts": {

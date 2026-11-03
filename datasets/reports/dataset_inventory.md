@@ -1,6 +1,6 @@
 # Dataset inventory (actual files)
 
-_Generated 2026-11-03T15:48:22.614775+00:00 by `datasets/scripts/audit_datasets.py`._
+_Generated 2026-11-03T16:12:20.985915+00:00 by `datasets/scripts/audit_datasets.py`._
 
 **Dataset images present: 1479** (masks and report figures excluded).
 
@@ -31,7 +31,7 @@ YOLO image/label pairing:
 
 - `processed/usda_fruit_flower/images`: {'images': 90, 'label_files': 90, 'images_without_labels': 0, 'labels_without_images': 0}
 - `processed/tf_flower_detection_sunflower/test/images`: {'images': 95, 'label_files': 95, 'images_without_labels': 0, 'labels_without_images': 0}
-- `processed/tf_flower_detection_sunflower/val/images`: {'images': 94, 'label_files': 94, 'images_without_labels': 0, 'labels_without_images': 0}
 - `processed/tf_flower_detection_sunflower/train/images`: {'images': 439, 'label_files': 439, 'images_without_labels': 0, 'labels_without_images': 0}
+- `processed/tf_flower_detection_sunflower/val/images`: {'images': 94, 'label_files': 94, 'images_without_labels': 0, 'labels_without_images': 0}
 
 Empty directories: ['raw']

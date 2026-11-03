@@ -87,6 +87,38 @@
       }
     },
     {
+      "id": "inat_flowering",
+      "name": "iNaturalist flowering photos (species-verified, openly licensed)",
+      "url": "https://www.inaturalist.org/ (API v1)",
+      "license": "per photo: CC0 1.0 / CC BY 4.0 / CC BY-SA 4.0 (NC and ND excluded); attribution per file in ATTRIBUTION.csv",
+      "status": "integrated",
+      "task_support": "image-level species labels only (NO boxes, NO structures) - species gallery references and evaluation",
+      "species": {
+        "hibiscus": 91,
+        "tomato": 200,
+        "strawberry": 15,
+        "brinjal": 20,
+        "chilli": 28,
+        "sunflower": 200,
+        "apple": 107,
+        "peach": 71,
+        "pear": 29
+      },
+      "original_images": 761,
+      "licences": {
+        "cc0": 140,
+        "cc-by": 565,
+        "cc-by-sa": 56
+      },
+      "verification": "Research Grade, or cultivated with >=1 agreeing and 0 disagreeing identifications; 'Flowers and Fruits = Flowers' annotation; decode, SHA-1 + dHash duplicates; splits by observer (0 observers in more than one split)",
+      "prepare_script": "datasets/scripts/download_inat_flowering.py (run in .github/workflows/inat.yml)",
+      "issues": [
+        "Whole-scene photos; flowers can be small (tomato, chilli).",
+        "The flowering annotation is per observation: a few chosen photos show fruit, not flowers (seen on the contact sheets).",
+        "Strawberry (15), brinjal (20) and chilli (28) have too few openly licensed, annotated observations - below the gallery gating minimum of 50."
+      ]
+    },
+    {
       "id": "tf_flower_photos",
       "name": "TensorFlow flower_photos (5 classes, Google)",
       "url": "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz",
