@@ -2,8 +2,21 @@
 
 Source of truth: `datasets/dataset_sources.json` (+ `dataset_manifest.csv`). Status values: **integrated**, **script_only**,
 **documented_only**, **unverified**, **audited_not_used**, **unreachable**. Verified 2026-11-03.
-File-level inventory (every image decoded and hashed): `datasets/reports/dataset_inventory.md` — **718 images** (apple 48, peach 24,
-pear 18, sunflower 628; tomato, brinjal, chilli, strawberry, hibiscus **0**) + 628 derived sunflower crops. Full audit:
+File-level inventory (every image decoded and hashed): `datasets/reports/dataset_inventory.md` — **1,479 images**:
+
+| Species | Images |
+|---|--:|
+| apple | 155 |
+| peach | 95 |
+| pear | 47 |
+| sunflower | 828 |
+| hibiscus | 91 |
+| tomato | 200 |
+| strawberry | 15 |
+| brinjal | 20 |
+| chilli | 28 |
+
+The count excludes the 628 derived sunflower crops. Full audit:
 `docs/FINAL_PROJECT_AND_DATASET_AUDIT.md`.
 
 ## Integrated: Multi-species Fruit Flower (USDA)
@@ -39,6 +52,32 @@ Augmentation is never materialised on disk; the pixel classifier samples pixels 
 * Use: species-gallery extension, evaluated on the 95 held-out crops (recall 0.937). Detection: data ready, **no detector trained on it**;
   the deployed USDA detector scores mAP@0.5 0.001 on it.
 * Limitation: close-up photos, not field/plantation images.
+
+## Integrated: iNaturalist flowering photos (image-level species labels)
+* Source: iNaturalist API v1, run in GitHub Actions (`.github/workflows/inat.yml`, `download_inat_flowering.py`).
+* **Licence, checked per photo:** CC0 140 · CC BY 565 · CC BY-SA 56. iNaturalist's default CC BY-NC licence and ND licences are excluded. Attribution for each file is in `ATTRIBUTION.csv`.
+* **Species verification:** taxon resolved by exact name and then re-checked on each observation. Each observation is either Research Grade, or cultivated with ≥ 1 agreeing and 0 disagreeing identifications. It also carries the annotation **Flowers and Fruits = Flowers**, whose term id was verified when the script ran.
+* **Kept per species:**
+
+  | Species | Images |
+  |---|--:|
+  | hibiscus | 91 |
+  | tomato | 200 |
+  | sunflower | 200 |
+  | apple | 107 |
+  | peach | 71 |
+  | pear | 29 |
+  | strawberry | 15 |
+  | brinjal | 20 |
+  | chilli | 28 |
+
+  One photo per observation, at most 5 per observer.
+* **Checks:** decode, minimum side 240 px, SHA-1 and dHash duplicates (all dropped), blur and exposure flags. Splits are 70/15/15 **by observer**; 0 observers appear in more than one split.
+* **Labels: species only.** There are no boxes or structures, and these images are never used as detection labels.
+* **Limits:**
+  * Whole-scene photos; small flowers for tomato and chilli.
+  * The flowering annotation is per observation, so a few photos show fruit (seen on `datasets/reports/inat_flowering_<species>.jpg`).
+  * **Strawberry, brinjal and chilli have too few openly licensed flowering observations**: most iNaturalist photos are CC BY-NC.
 
 ## Audited, not used
 * INESC Flower Detection (Zenodo 7708815, CC BY 4.0): 206 images, 990 boxes; species not stated and not identifiable (grayscale /

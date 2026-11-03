@@ -36,15 +36,68 @@ See README table. Deployed config: **mAP50 0.410, mAP50-95 0.191**, P 0.169, R 0
 * A shape filter (aspect ratio / fill) was explored on **validation only** and gave +0.003 mAP50 — not adopted.
 * Next steps: YOLO11 at 1280 px on the same splits; bark hard-negative mining; tiling (Schouten et al.).
 
-## Module 2 · Species gallery (`species.py`)
-* Embedding `hcd-v1`: 12×4×4 HSV histogram, Lab mean/std, centre-minus-ring Lab difference, HOG (9 orientations, 16-px cells),
-  10-bin uniform LBP; weighted and L2-normalised (≈ 380 dims).
-* kNN (k=7) cosine vote; open-set threshold **0.925** (validation macro-F1 0.783).
-* Gallery: 1,803 crops (apple 888 · peach 491 · pear 424). Stored as `.npz` + `.json` (no pickle).
-* Test: open-set accuracy 0.819, macro-F1 0.799 (apple 0.887, peach 0.849, pear 0.886, unknown 0.575); background rejection 0.468;
-  leave-one-species-out unknown rate apple 0.435, peach 0.919, pear 0.219.
-* **Confound**: species ↔ camera setup. **Unknown handling** works but is imperfect (pear crops of an unseen species are often
-  absorbed by apple).
+## Module 2 · Species gallery (`species.py`, `training/build_species_gallery_multi.py`)
+**Current deployed gallery (2026-11-03): embedding `mnv3l-v1`, 6 AI-supported species, open-set threshold 0.6375.**
+
+The deployed gallery is built as follows:
+
+* **Embedding.** Two embeddings are built, each with all 9 candidate species. Each threshold is tuned on validation. The one with the higher validation macro-F1 is deployed; this rule was fixed before any results existed.
+  * `hcd-v1` (hand-crafted colour, HOG and LBP features) scored validation macro-F1 0.442.
+  * `mnv3l-v1` (ImageNet MobileNetV3-Large pooled features, not fine-tuned, `models/embed_mnv3l.onnx`, 11.9 MB, BSD-3 weights) scored validation macro-F1 0.586.
+* **References** come from training data only:
+
+  | Source | Images |
+  |---|---|
+  | USDA flower crops | apple 955 · peach 543 · pear 442 (crops; includes 67/52/18 iNaturalist apple/peach/pear photos) |
+  | Sunflower | 533 close-ups + 142 iNaturalist photos |
+  | iNaturalist | hibiscus 71 · tomato 138 |
+
+* **Gating.** A species is enabled only if it has ≥ 50 references and **validation** recall and precision are both ≥ 0.50. This rule was also fixed in advance.
+
+| Species | Refs | Val recall | Val precision | Status |
+|---|--:|--:|--:|---|
+| apple | 955 | 0.94 | 0.77 | ✅ AI-supported |
+| peach | 543 | 0.83 | 0.74 | ✅ |
+| pear | 442 | 0.83 | 0.79 | ✅ |
+| sunflower | 675 | 0.92 | 1.00 | ✅ |
+| hibiscus | 71 | 0.92 | 1.00 (13 val images) | ✅ |
+| tomato | 138 | 0.61 | 0.81 | ✅ |
+| strawberry | 10 | 0.33 | 1.00 | ❌ too few images |
+| brinjal | 15 | 0.00 | — | ❌ too few images |
+| chilli | 25 | 0.00 | — | ❌ too few images |
+
+**Test results.** Evaluated once, after all choices were fixed (`reports/species_multi_evaluation.json`):
+
+* **Overall:** accuracy 0.746, macro-F1 0.727.
+* **By source:**
+
+  | Test set | Images | Accuracy |
+  |---|--:|--:|
+  | USDA flower crops | 694 | 0.927 |
+  | iNaturalist | 109 | 0.716 |
+  | Sunflower close-ups | 95 | 0.968 |
+
+* **Per species (F1):**
+
+  | Species | F1 |
+  |---|--:|
+  | apple | 0.82 |
+  | peach | 0.78 |
+  | pear | 0.80 |
+  | sunflower | 0.93 |
+  | tomato | 0.88 (34 images) |
+  | hibiscus | 0.71 (7 images; a very small sample) |
+
+* **Known regression:** USDA background crops are rejected as `unknown` only **9.5 %** of the time (0.468 with `hcd-v1`). Validation showed the same weakness (unknown recall 0.24) before test was run. Since the ImageNet embedding sees bark and leaves as "flower-like", false detections are usually given a species. This matters in **scene** mode. **Close-up** mode (one flower per photo) matches how the gallery was evaluated.
+* **Unsupported species** in the iNaturalist test set are not forced into a class:
+
+  | True species | Predicted as |
+  |---|---|
+  | brinjal | apple |
+  | chilli | unknown |
+  | strawberry | sunflower ×1, apple ×1 |
+
+* **Confound:** the USDA species are each from one camera setup, and iNaturalist photos are whole scenes with centre crops. Field performance per crop is not established.
 
 ## Modules 3, 4, 6, 7 · Heuristics
 | Module | Method | Output flag |
@@ -73,9 +126,7 @@ python ai-engine/training/train_yolo11.py --data datasets/processed/usda_fruit_f
 ```
 
 ## Optional GPU training on Google Colab (YOLO11)
-Not executed by the authors yet; any numbers it produces are *new* results and must be reported from
-`ai-engine/reports/yolo11_evaluation.json`, never copied from here. The historical CPU baseline (test mAP@0.5 0.410) stays the
-reference until then.
+Ready-made notebook: [`notebooks/train_yolo11_colab.ipynb`](../notebooks/train_yolo11_colab.ipynb). It trains on the same combined data, and evaluates with the same code and deploy rule, as the CPU workflow `.github/workflows/yolo.yml`. Its numbers are new results; report them only from `ai-engine/reports/`. The manual steps below are the older USDA-only route.
 
 1. Colab → *Runtime → Change runtime type → T4 GPU*.
 2. In a cell:

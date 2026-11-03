@@ -143,18 +143,20 @@ Model evaluation · Analytics · Research centre · Datasets · Reports · Admin
 
 | Crop | Pollination strategy in the knowledge base | Simulator mode | Dataset images in repo | Detector | Species gallery |
 |---|---|---|--:|:-:|:-:|
-| 🍅 Tomato | vibration of poricidal anthers (buzz-like) | `vibration` | 0 | — | — |
-| 🍆 Brinjal | vibration; long/medium-styled flowers set best | `vibration` | 0 | — | — |
-| 🌶️ Chilli | brushing / gentle shaking | `brush` | 0 | — | — |
-| 🍎 Apple | compatible cross-cultivar pollen | `cross_transfer` | 48 | ✅ | ✅ |
-| 🍐 Pear | compatible cross-cultivar pollen | `cross_transfer` | 18 | ✅ | ✅ |
-| 🍑 Peach | mostly self-fertile; brush supplement | `brush` | 24 | ✅ | ✅ |
-| 🍓 Strawberry | even coverage of all pistils | `air_assisted` | 0 | — | — |
-| 🌻 Sunflower | ring-by-ring floret progression | `ring_progression` | 628 | ❌ not trained | ✅ |
-| 🌺 Hibiscus | pollen onto five stigma pads | `column_transfer` | 0 | — | — |
+| 🍅 Tomato | vibration of poricidal anthers (buzz-like) | `vibration` | 200 | — | ✅ |
+| 🍆 Brinjal | vibration; long/medium-styled flowers set best | `vibration` | 20 | — | ❌ too few images |
+| 🌶️ Chilli | brushing / gentle shaking | `brush` | 28 | — | ❌ too few images |
+| 🍎 Apple | compatible cross-cultivar pollen | `cross_transfer` | 155 | ✅ | ✅ |
+| 🍐 Pear | compatible cross-cultivar pollen | `cross_transfer` | 47 | ✅ | ✅ |
+| 🍑 Peach | mostly self-fertile; brush supplement | `brush` | 95 | ✅ | ✅ |
+| 🍓 Strawberry | even coverage of all pistils | `air_assisted` | 15 | — | ❌ too few images |
+| 🌻 Sunflower | ring-by-ring floret progression | `ring_progression` | 828 | ❌ pixel model (YOLO11 run pending) | ✅ |
+| 🌺 Hibiscus | pollen onto five stigma pads | `column_transfer` | 91 | — | ✅ |
 
-> **Verified 2026-11-03** ([full audit](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md)): 718 real dataset images, all annotated with boxes;
-> **no images exist for tomato, brinjal, chilli, strawberry or hibiscus**, and no anther/stigma annotations exist for any crop.
+> **Verified 2026-11-03** ([full audit](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md)): 1,479 real images. 718 have flower boxes
+> (USDA + sunflower). 761 are iNaturalist photos with species labels only (CC0 / CC BY / CC BY-SA), and these are never used as boxes.
+> The species gallery enables a crop only if it passes a validation gate that was fixed before any results existed. **Strawberry, brinjal and chilli did not pass**:
+> they have too few openly licensed photos. No anther, stigma, stamen or pistil annotations exist for any crop.
 > Crops without references return **unknown** until reference images are added — or the user selects the species.
 > New crops are added with one JSON entry + reference photos; no code changes.
 
@@ -302,7 +304,7 @@ Data: USDA Multi-species Fruit Flower (apple, peach, pear) — 90 images, 4,651 
 <td align="center" width="25%"><h2>0.410</h2>detector mAP@0.5<br><sub>test split</sub></td>
 <td align="center" width="25%"><h2>0.191</h2>detector mAP@0.5:0.95<br><sub>test split</sub></td>
 <td align="center" width="25%"><h2>3.2×</h2>better than baseline<br><sub>vs. Otsu threshold (0.127)</sub></td>
-<td align="center" width="25%"><h2>0.819</h2>open-set species accuracy<br><sub>apple · peach · pear · unknown</sub></td>
+<td align="center" width="25%"><h2>6 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.746 · macro-F1 0.727</sub></td>
 </tr>
 </table>
 
@@ -323,24 +325,41 @@ no comparison with published deep detectors is claimed.
 </details>
 
 <details>
-<summary><b>Species gallery (open-set)</b></summary>
+<summary><b>Species gallery (open-set, 9 candidate species)</b></summary>
 
-| Metric | Value |
-|---|---|
-| Open-set accuracy / macro-F1 | 0.819 / 0.799 |
-| Accuracy on flower crops only | 0.931 |
-| Background crops rejected as `unknown` | 0.468 |
-| Leave-one-species-out → `unknown` | apple 0.435 · peach 0.919 · pear 0.219 |
+Built by `ai-engine/training/build_species_gallery_multi.py`; full report in `ai-engine/reports/species_multi_evaluation.json`.
 
-Each species in this dataset was photographed with a different camera, so species and capture conditions are confounded —
-these numbers validate the open-set *mechanism*, not field-general recognition.
+- **Embedding:** chosen on validation by the higher macro-F1. ImageNet MobileNetV3 (`mnv3l-v1`) scored 0.586 and the hand-crafted `hcd-v1` scored 0.442.
+- **Gate:** a species is enabled only with ≥ 50 references and validation recall and precision ≥ 0.50. The gate was fixed before any results existed.
+- **Test:** used once.
+
+| Test set | Images | Accuracy |
+|---|--:|--:|
+| USDA orchard flower crops (apple/peach/pear) | 694 | 0.927 |
+| iNaturalist field photos (9 species) | 109 | 0.716 |
+| Sunflower close-ups | 95 | 0.968 |
+| USDA background crops → `unknown` | 220 | **0.095** (was 0.468 with `hcd-v1`) |
+
+Per-species test F1:
+
+| Species | F1 |
+|---|--:|
+| apple | 0.82 |
+| peach | 0.78 |
+| pear | 0.80 |
+| sunflower | 0.93 |
+| tomato | 0.88 (34 images) |
+| hibiscus | 0.71 (only 7 images) |
+
+Strawberry, brinjal and chilli are **not** AI-supported (10–25 references). Background rejection got worse, so prefer
+**Close-up** mode for single flowers.
 </details>
 
-**Sunflower extension** (`species_extension_evaluation.json`, `detector_on_tf_flower_detection_sunflower.json`): gallery recall 0.937 on 95
-held-out close-up crops; apple/peach/pear accuracy after extension 0.934; deployed detector on sunflower test mAP@0.5 0.001 (not trained on it).
+**Sunflower extension** (`species_extension_evaluation.json`, `detector_on_tf_flower_detection_sunflower.json`): the deployed pixel
+detector scores mAP@0.5 0.001 on the sunflower test split (it was not trained on sunflowers).
 
 **Not measured** (and never presented as measured): stage, structure, health and pose heuristics (no labels exist), readiness
-rules (no biological ground truth), simulation outcomes (no field trial), YOLO11 (not trained yet).
+rules (no biological ground truth), simulation outcomes (no field trial).
 
 ---
 
@@ -426,6 +445,7 @@ pollinex-ai/
 |---|---|---|
 | **Multi-species Fruit Flower** — Dias, Tabb & Medeiros (2018), USDA Ag Data Commons, [doi:10.15482/USDA.ADC/1423466](https://doi.org/10.15482/USDA.ADC/1423466) | CC BY 4.0 | ✅ integrated (train / eval / gallery) |
 | TensorFlow Flower Detection (INESC TEC, [Zenodo 7768292](https://zenodo.org/records/7768292)) + species from TF `flower_photos` (CC-BY Flickr) | CC BY 4.0 | ✅ sunflower subset: 628 images, 2,432 boxes (gallery + detection data) |
+| **iNaturalist** flowering photos — 9 species, species-verified ([script](datasets/scripts/download_inat_flowering.py)) | CC0 / CC BY / CC BY-SA per photo | ✅ 761 images, image-level labels only (per-file attribution) |
 | INESC Flower Detection ([Zenodo 7708815](https://zenodo.org/records/7708815)) | CC BY 4.0 | audited, not used (species unknown, split leakage) |
 | Oxford 102 Flowers (Nilsback & Zisserman, 2008) | research use (unverified) | script ready; host unreachable from build env and CI |
 | FlowerNet ([Mendeley](https://data.mendeley.com/datasets/26nvt3t27m)) | MIT | ingest script (originals only) |
@@ -444,8 +464,9 @@ Full review, gaps and BibTeX: [`research/`](research/).
 ## ⚠️ Limitations
 
 - The detector is trained on **apple, peach and pear** orchard photos only; precision is low on cluttered scenes.
-- Five crops (tomato, brinjal, chilli, strawberry, hibiscus) have **no images at all** — they return *unknown* unless declared or references are added.
-- Sunflower is recognised by the species gallery (93.7 % recall on held-out close-ups) but the **detector does not find sunflowers** (mAP@0.5 0.001).
+- **Strawberry, brinjal and chilli** have only 15–28 openly licensed images and are not AI-supported. They return *unknown*, or the user selects the species.
+- New-species images are **species-labelled photos only** (no boxes). Hibiscus has 7 test images, so its test result is uncertain.
+- The ImageNet embedding rejects orchard background crops as *unknown* only 9.5 % of the time. Use Close-up mode for single flowers.
 - **No anther / stigma detector**: structures, stage, health and pose are labelled heuristics until annotated data exists.
 - Readiness is a **visual estimate**; simulation is **computation** — neither proves pollen viability or fertilisation.
 - Camera is verified with a simulated camera and phone emulation; test on your own phone over HTTPS.
@@ -454,9 +475,9 @@ Full review, gaps and BibTeX: [`research/`](research/).
 ## 🔭 Roadmap
 
 - [ ] Train YOLO11 on GPU ([Colab guide](docs/AI_MODEL_DOCUMENTATION.md)) and compare on the same test split
-- [x] Sunflower references + held-out evaluation (TF Flower Detection subset)
-- [ ] Train a detector on the committed sunflower YOLO data
-- [ ] Collect and annotate images (CVAT workflow included) for hibiscus, tomato, strawberry, brinjal and chilli
+- [x] Sunflower, hibiscus and tomato species references with held-out evaluation
+- [ ] More openly licensed flower photos for strawberry, brinjal and chilli (own photos + CVAT workflow)
+- [ ] Flower boxes for the five new crops (CVAT schema and converter included)
 - [ ] Trained stage and reproductive-structure models
 - [ ] Field trial: natural vs manual vs app-assisted pollination ([design](research/methodology.md))
 - [ ] Public deployment and offline-capable PWA
@@ -472,7 +493,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 | [AI models](docs/AI_MODEL_DOCUMENTATION.md) | [Datasets](docs/DATASET_DOCUMENTATION.md) |
 | [Simulator](docs/SIMULATOR_DOCUMENTATION.md) | [Research methodology](docs/RESEARCH_METHODOLOGY.md) |
 | [Installation](docs/INSTALLATION_GUIDE.md) · [Deployment](docs/DEPLOYMENT_GUIDE.md) | [User manual](docs/USER_MANUAL.md) |
-| [**Final project & dataset audit**](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md) | [Completion audit](docs/PROJECT_COMPLETION_AUDIT.md) · [Next steps](docs/NEXT_SESSION_TASKS.md) |
+| [**Final project & dataset audit**](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md) | [Completion audit](docs/PROJECT_COMPLETION_AUDIT.md) · [Next steps](docs/NEXT_SESSION_TASKS.md) |
 
 ---
 
