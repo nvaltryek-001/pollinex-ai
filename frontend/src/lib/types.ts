@@ -67,7 +67,7 @@ export interface Flower {
     structure_detection_available: boolean;
     note: string;
   };
-  health?: { indicators: { type: string; value: number; threshold: number }[]; status: string; measurements?: Record<string, number>; note?: string };
+  health?: { indicators: { type: string; value: number; threshold: number; category?: string }[]; categories?: string[]; status: string; measurements?: Record<string, number>; note?: string };
   pose?: {
     center_px: number[];
     center_norm: number[];

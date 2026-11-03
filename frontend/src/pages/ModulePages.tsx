@@ -67,14 +67,14 @@ export function HealthPage() {
   return (
     <div>
       <PageHeader kicker="Module 7 · visual health" title="Plant health analysis">
-        Measures visible browning, dark spots, discolouration and outline irregularity on a flower.
+        Measures visible discolouration, possible wilting, possible petal damage and other visible abnormalities on a flower.
       </PageHeader>
       <div className="space-y-5">
         <Notice>These are <strong>observable indicators only</strong>. The same symptom can come from frost, sunscald, pests, pathogens or age — Pollinex never names a disease.</Notice>
         <CropAnalyzer<Health> endpoint="/ai/health" title="Check visible anomalies" render={(r) => (
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2"><MethodBadge method="heuristic" /><Pill tone={r.indicators.length ? "warn" : "good"}>{label(r.status)}</Pill></div>
-            {r.indicators.map((i) => <div key={i.type}><Pill tone="warn">{label(i.type)}</Pill> <span className="font-mono text-xs">value {i.value} · threshold {i.threshold}</span></div>)}
+            {r.indicators.map((i) => <div key={i.type}>{i.category && <span className="kicker mr-1">{label(i.category)}</span>}<Pill tone="warn">{label(i.type)}</Pill> <span className="font-mono text-xs">value {i.value} · threshold {i.threshold}</span></div>)}
             {r.measurements && <table className="table-base"><tbody>{Object.entries(r.measurements).map(([k, v]) => <tr key={k}><td className="text-muted">{label(k)}</td><td className="font-mono">{v}</td></tr>)}</tbody></table>}
             <p className="text-xs text-muted">{r.note}</p>
           </div>

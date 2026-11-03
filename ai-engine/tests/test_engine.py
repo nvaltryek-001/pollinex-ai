@@ -200,3 +200,14 @@ def test_structure_lists_every_structure_with_honest_status():
     st = {x["structure"]: x["status"] for x in r["structures"]}
     assert st["petals"] == "heuristic_region"
     assert all(st[k] == "not_ai_validated" for k in ("anther", "stigma", "stamen", "pistil"))
+
+
+def test_health_indicators_have_categories():
+    from pollinex_ai.health import CATEGORY, analyze_health
+    crop = np.full((80, 80, 3), (120, 95, 70), np.uint8)  # dull brown, desaturated
+    cv2.circle(crop, (40, 40), 30, (140, 110, 80), -1)
+    out = analyze_health(crop)
+    assert out["method"] == "heuristic"
+    for ind in out.get("indicators", []):
+        assert ind["category"] == CATEGORY[ind["type"]]
+    assert set(out.get("categories", [])) <= {"discoloration", "wilting", "petal_damage", "visible_abnormality"}

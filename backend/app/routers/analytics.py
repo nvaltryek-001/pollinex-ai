@@ -30,7 +30,8 @@ def _scope(user: User, scope: str):
 def load_evaluation() -> dict:
     out = {}
     for name in ("detector_evaluation", "species_evaluation", "detector_inference_tradeoff", "yolo11_evaluation",
-                 "species_extension_evaluation", "detector_on_tf_flower_detection_sunflower"):
+                 "species_extension_evaluation", "detector_on_tf_flower_detection_sunflower",
+                 "species_multi_evaluation", "yolo11_deploy_decision"):
         p = REPORTS_DIR / f"{name}.json"
         if p.exists():
             out[name] = json.loads(p.read_text())

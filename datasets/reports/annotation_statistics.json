@@ -1,0 +1,147 @@
+{
+  "generated_at": "2026-11-03T15:28:03.574742+00:00",
+  "datasets": [
+    {
+      "dataset": "usda_fruit_flower",
+      "annotation_type": "segmentation masks + boxes derived from mask components",
+      "per_species": {
+        "apple": {
+          "images": 48,
+          "box_annotations": 2470,
+          "split": {
+            "train": 29,
+            "val": 7,
+            "test": 12
+          },
+          "boxes_per_image": 51.46,
+          "images_without_boxes": 0,
+          "relative_box_area": {
+            "min": 1e-05,
+            "p25": 0.00035,
+            "median": 0.00071,
+            "p75": 0.00161,
+            "max": 0.04679
+          }
+        },
+        "peach": {
+          "images": 24,
+          "box_annotations": 924,
+          "split": {
+            "train": 14,
+            "val": 4,
+            "test": 6
+          },
+          "boxes_per_image": 38.5,
+          "images_without_boxes": 0,
+          "relative_box_area": {
+            "min": 1e-05,
+            "p25": 0.00028,
+            "median": 0.0005,
+            "p75": 0.00112,
+            "max": 0.03672
+          }
+        },
+        "pear": {
+          "images": 18,
+          "box_annotations": 1257,
+          "split": {
+            "val": 3,
+            "test": 4,
+            "train": 11
+          },
+          "boxes_per_image": 69.83,
+          "images_without_boxes": 0,
+          "relative_box_area": {
+            "min": 1e-05,
+            "p25": 0.00033,
+            "median": 0.0007,
+            "p75": 0.00174,
+            "max": 0.04305
+          }
+        }
+      }
+    },
+    {
+      "dataset": "tf_flower_detection_sunflower",
+      "annotation_type": "bounding boxes (YOLO, class flower)",
+      "per_species": {
+        "sunflower": {
+          "images": 628,
+          "box_annotations": 2432,
+          "split": {
+            "train": 439,
+            "val": 94,
+            "test": 95
+          },
+          "boxes_per_image": 3.87,
+          "images_without_boxes": 0,
+          "relative_box_area": {
+            "min": 0.0002,
+            "p25": 0.01033,
+            "median": 0.02744,
+            "p75": 0.09783,
+            "max": 0.99956
+          }
+        }
+      }
+    }
+  ],
+  "species_totals": {
+    "apple": {
+      "images": 48,
+      "box_annotations": 2470,
+      "image_level_labels": 48
+    },
+    "peach": {
+      "images": 24,
+      "box_annotations": 924,
+      "image_level_labels": 24
+    },
+    "pear": {
+      "images": 18,
+      "box_annotations": 1257,
+      "image_level_labels": 18
+    },
+    "sunflower": {
+      "images": 628,
+      "box_annotations": 2432,
+      "image_level_labels": 628
+    },
+    "hibiscus": {
+      "images": 0,
+      "box_annotations": 0,
+      "image_level_labels": 0
+    },
+    "tomato": {
+      "images": 0,
+      "box_annotations": 0,
+      "image_level_labels": 0
+    },
+    "strawberry": {
+      "images": 0,
+      "box_annotations": 0,
+      "image_level_labels": 0
+    },
+    "brinjal": {
+      "images": 0,
+      "box_annotations": 0,
+      "image_level_labels": 0
+    },
+    "chilli": {
+      "images": 0,
+      "box_annotations": 0,
+      "image_level_labels": 0
+    }
+  },
+  "cvat_schema_class_counts": {
+    "flower_centre": 0,
+    "petal": 0,
+    "anther": 0,
+    "stigma": 0,
+    "stamen": 0,
+    "pistil": 0,
+    "health_issue": 0,
+    "flower.stage (any)": 0
+  },
+  "note": "No CVAT exports exist in the repository yet: every structure / centre / stage / health class has 0 annotations. Nothing here is generated or inferred."
+}

@@ -13,6 +13,8 @@ export default function EvaluationPage() {
   const yolo = data?.yolo11_evaluation;
   const ext = data?.species_extension_evaluation;
   const sunDet = data?.detector_on_tf_flower_detection_sunflower;
+  const multi = data?.species_multi_evaluation;
+  const yoloDec = data?.yolo11_deploy_decision;
   const dep = det ? det.variants[det.deployed_variant] : null;
 
   return (
@@ -127,9 +129,49 @@ export default function EvaluationPage() {
               </div>
             </Card>
           )}
+          {multi && (
+            <Card title="Species recognition: all candidate species" subtitle={multi.caveat}>
+              <div className="grid gap-5 lg:grid-cols-2">
+                <div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <Stat label="Test accuracy" value={pct(multi.test_overall.accuracy)} />
+                    <Stat label="Test macro-F1" value={num(multi.test_overall.macro_f1, 3)} />
+                    <Stat label="Enabled species" value={String(multi.enabled_species.length)} hint="of 9" />
+                  </div>
+                  <div className="kicker mb-1 mt-4">Pre-registered gating (validation): ≥{multi.gating_rule.min_references} refs, recall ≥{multi.gating_rule.min_val_recall}, precision ≥{multi.gating_rule.min_val_precision}</div>
+                  <table className="table-base"><thead><tr><th>Species</th><th>Refs</th><th>val R</th><th>val P</th><th>Status</th></tr></thead>
+                    <tbody>{Object.entries(multi.gating as AnyObj).map(([k, v]) => (
+                      <tr key={k}><td>{k}</td><td>{v.references}</td><td className="font-mono">{num(v.val_recall ?? 0, 2)}</td><td className="font-mono">{num(v.val_precision ?? 0, 2)}</td>
+                        <td>{v.enabled ? "AI-supported" : "not enabled"}</td></tr>))}</tbody></table>
+                  <div className="kicker mb-1 mt-4">Test by source</div>
+                  <table className="table-base"><tbody>{Object.entries(multi.test_by_source as AnyObj).map(([k, v]) => (
+                    <tr key={k}><td>{label(k)}</td><td>{v.n}</td><td className="font-mono">{pct(v.report.accuracy)}</td></tr>))}</tbody></table>
+                </div>
+                <div>
+                  <div className="kicker mb-1">Confusion matrix (all test sets, rows = truth)</div>
+                  <div className="overflow-x-auto"><table className="table-base text-center text-xs"><thead><tr><th />{multi.test_overall.labels.map((l: string) => <th key={l} className="!text-center">{l}</th>)}</tr></thead>
+                    <tbody>{multi.test_overall.confusion_matrix.map((row: number[], i: number) => {
+                      const tot = row.reduce((a, b) => a + b, 0) || 1;
+                      return <tr key={i}><th>{multi.test_overall.labels[i]}</th>{row.map((v, j) => <td key={j} className="font-mono" style={{ background: `rgb(var(--${i === j ? "leaf" : "alert"}) / ${(v / tot) * 0.6})` }}>{v}</td>)}</tr>;
+                    })}</tbody></table></div>
+                </div>
+              </div>
+            </Card>
+          )}
+          {yoloDec && (
+            <Card title="Detector comparison (same evaluation code, held-out test)" subtitle={yoloDec.rule}>
+              <table className="table-base"><thead><tr><th>Test set</th><th>Model</th><th>mAP50</th><th>mAP50-95</th><th>P</th><th>R</th><th>F1</th></tr></thead>
+                <tbody>{(["usda_test", "sunflower_test"] as const).flatMap((t) => (["pixel", "yolo11"] as const).map((mname) => {
+                  const r = yoloDec[t]?.[mname];
+                  return r ? <tr key={t + mname}><td>{label(t)}</td><td>{mname}</td><td className="font-mono">{num(r.mAP50, 3)}</td><td className="font-mono">{num(r.mAP50_95, 3)}</td>
+                    <td className="font-mono">{num(r["precision@0.5"], 3)}</td><td className="font-mono">{num(r["recall@0.5"], 3)}</td><td className="font-mono">{num(r["f1@0.5"], 3)}</td></tr> : null;
+                }))}</tbody></table>
+              <p className="mt-2 text-xs text-muted">Deployed: {yoloDec.deployed ? "YOLO11 (ONNX)" : "pixel detector (YOLO11 did not meet the rule)"} · {yoloDec.licence_note}</p>
+            </Card>
+          )}
           <Card title="YOLO11 (deep detector)">
             {yolo ? <p className="text-sm">Test mAP50 {num(yolo.test.mAP50, 3)} · mAP50-95 {num(yolo.test.mAP50_95, 3)} ({when(yolo.generated_at)})</p>
-              : <p className="text-sm text-muted">Not trained yet. The recipe <code>ai-engine/training/train_yolo11.py</code> requires PyTorch, which was not installable in the original build environment. Run it on a laptop/GPU; its report will appear here automatically.</p>}
+              : <p className="text-sm text-muted">No YOLO11 report yet. Train it with the CPU workflow <code>.github/workflows/yolo.yml</code> or the GPU notebook <code>notebooks/train_yolo11_colab.ipynb</code>; its report appears here automatically.</p>}
           </Card>
         </div>
       )}

@@ -1,15 +1,25 @@
 [
-  {"name": "flower", "color": "#e8a33d", "type": "any", "attributes": [
-    {"name": "species", "input_type": "select", "mutable": false, "values": ["tomato", "brinjal", "chilli", "apple", "pear", "peach", "strawberry", "sunflower", "hibiscus", "other"], "default_value": "other"},
-    {"name": "stage", "input_type": "select", "mutable": false, "values": ["bud", "early_bloom", "partially_open", "fully_open", "senescent"], "default_value": "fully_open"},
+  {"name": "flower", "color": "#e8a33d", "type": "rectangle", "attributes": [
+    {"name": "species", "input_type": "select", "mutable": false, "values": ["apple", "peach", "pear", "sunflower", "hibiscus", "tomato", "strawberry", "brinjal", "chilli", "other", "uncertain"], "default_value": "uncertain"},
+    {"name": "stage", "input_type": "select", "mutable": false, "values": ["bud", "early_bloom", "partially_open", "fully_open", "senescent", "uncertain"], "default_value": "uncertain"},
     {"name": "occluded", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"},
     {"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"},
     {"name": "style_class", "input_type": "select", "mutable": false, "values": ["n/a", "long", "medium", "short"], "default_value": "n/a"}
   ]},
-  {"name": "anther_region", "color": "#f2d22e", "type": "any", "attributes": [
-    {"name": "pollen_visible", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}
+  {"name": "flower_centre", "color": "#7c3aed", "type": "points", "attributes": []},
+  {"name": "petal", "color": "#ec4899", "type": "polygon", "attributes": [
+    {"name": "damage", "input_type": "select", "mutable": false, "values": ["none", "torn_or_missing", "browning", "spots", "wilted"], "default_value": "none"}
   ]},
-  {"name": "stigma", "color": "#c2410c", "type": "any", "attributes": [
-    {"name": "visible_clearly", "input_type": "checkbox", "mutable": false, "values": ["true"], "default_value": "true"}
+  {"name": "anther", "color": "#f2d22e", "type": "polygon", "attributes": [
+    {"name": "pollen_visible", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"},
+    {"name": "dehisced", "input_type": "select", "mutable": false, "values": ["yes", "no", "cannot_tell"], "default_value": "cannot_tell"}
+  ]},
+  {"name": "stigma", "color": "#c2410c", "type": "polygon", "attributes": [
+    {"name": "receptive_looking", "input_type": "select", "mutable": false, "values": ["yes", "no", "cannot_tell"], "default_value": "cannot_tell"}
+  ]},
+  {"name": "stamen", "color": "#65a30d", "type": "polygon", "attributes": []},
+  {"name": "pistil", "color": "#0891b2", "type": "polygon", "attributes": []},
+  {"name": "health_issue", "color": "#dc2626", "type": "polygon", "attributes": [
+    {"name": "kind", "input_type": "select", "mutable": false, "values": ["discoloration", "wilting", "petal_damage", "spots", "other_abnormality"], "default_value": "other_abnormality"}
   ]}
 ]
