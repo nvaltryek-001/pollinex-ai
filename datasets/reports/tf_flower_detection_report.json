@@ -1,0 +1,25 @@
+{
+  "dataset_id": "tf_flower_detection",
+  "source": "https://zenodo.org/records/7768292/files/TensorFlowFlowerDetectionDataset.zip?download=1",
+  "license": "CC BY 4.0",
+  "md5_verified": true,
+  "image_files": 3554,
+  "decoded_ok": 3554,
+  "corrupt": [],
+  "exact_duplicates_removed": 2,
+  "unique_images_with_labels": 3552,
+  "unique_images_without_labels": 0,
+  "boxes_per_class_id": {
+    "0": 14308
+  },
+  "images_per_class_id": {
+    "0": 3146
+  },
+  "metadata_files_in_archive": {},
+  "archive_top_level": [
+    "TensorFlowFlowerDetectionDataset"
+  ],
+  "class_id_contact_sheets": [
+    "datasets/reports/tf_flower_detection_class_0.jpg"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T12:12:54.623285+00:00",
+  "generated_at": "2026-11-03T12:39:31.446031+00:00",
   "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. Report figures and segmentation masks are counted separately and are not dataset images.",
   "total_dataset_images": 90,
   "species_image_counts": {
@@ -31,6 +31,19 @@
         "pear": 18
       },
       "megabytes": 51.7
+    },
+    "reports": {
+      "images": 0,
+      "masks": 0,
+      "decoded": 2,
+      "corrupt": [],
+      "bytes": 96007,
+      "report_figures": 2,
+      "by_ext": {
+        ".jpg": 2
+      },
+      "by_species": {},
+      "megabytes": 0.1
     }
   },
   "yolo_pairing": {

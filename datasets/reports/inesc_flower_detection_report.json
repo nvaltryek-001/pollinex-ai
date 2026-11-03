@@ -1,0 +1,20 @@
+{
+  "dataset_id": "inesc_flower_detection",
+  "source": "https://zenodo.org/records/7708815/files/FlowerDetection.zip?download=1",
+  "license": "CC BY 4.0",
+  "md5_verified": true,
+  "image_files": 206,
+  "corrupt": 0,
+  "images_per_split": {
+    "test": 40,
+    "train": 126,
+    "val": 40
+  },
+  "boxes_per_class_id": {
+    "0": 990
+  },
+  "exact_duplicate_groups": 0,
+  "near_duplicate_pairs_across_splits_dhash_le6": 49,
+  "decision": "audit only - species not stated by the source and augmented copies cross splits",
+  "contact_sheet": "datasets/reports/inesc_flower_detection_crops.jpg"
+}

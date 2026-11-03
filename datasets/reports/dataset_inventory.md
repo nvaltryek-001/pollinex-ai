@@ -1,6 +1,6 @@
 # Dataset inventory (actual files)
 
-_Generated 2026-11-03T12:12:54.623285+00:00 by `datasets/scripts/audit_datasets.py`._
+_Generated 2026-11-03T12:39:31.446031+00:00 by `datasets/scripts/audit_datasets.py`._
 
 **Dataset images present: 90** (masks and report figures excluded).
 
@@ -20,6 +20,7 @@ _Generated 2026-11-03T12:12:54.623285+00:00 by `datasets/scripts/audit_datasets.
 | Location | Images | Masks | Decoded OK | Corrupt | MB | Formats |
 |---|---|---|---|---|---|---|
 | `processed/usda_fruit_flower` | 90 | 90 | 180 | 0 | 51.7 | {'.jpg': 90, '.png': 90} |
+| `reports` | 0 | 0 | 2 | 0 | 0.1 | {'.jpg': 2} |
 
 Exact duplicate groups: **0**
 
