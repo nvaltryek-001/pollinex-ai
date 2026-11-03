@@ -5,10 +5,6 @@ name: Datasets
 on:
   workflow_dispatch:
     inputs:
-      tf_export_class:
-        description: "TF Flower Detection class id verified as sunflower (leave empty until verified from the contact sheets)"
-        required: false
-        default: ""
       save_gallery:
         description: "Save the extended species gallery (true/false)"
         required: false
@@ -33,30 +29,32 @@ jobs:
         run: python datasets/scripts/download_oxford102_subset.py
       - name: TensorFlow Flower Detection (Zenodo 7768292) -> audit (+ optional export)
         continue-on-error: true
-        env: { CLS: "${{ github.event.inputs.tf_export_class }}" }
-        run: |
-          if [ -n "$CLS" ]; then python datasets/scripts/download_tf_flower_detection.py --export-class "$CLS" --species sunflower
-          else python datasets/scripts/download_tf_flower_detection.py; fi
+        run: python datasets/scripts/download_tf_flower_detection.py --join-flower-photos --export-species sunflower
       - name: INESC Flower Detection (Zenodo 7708815) -> audit
         continue-on-error: true
         run: python datasets/scripts/download_inesc_flower_detection.py
-      - name: Extend + evaluate species gallery (held-out Oxford test images, USDA regression)
+      - name: Extend + evaluate species gallery (held-out test crops, USDA regression)
         env: { SAVE: "${{ github.event.inputs.save_gallery }}" }
         run: |
-          if [ ! -d datasets/processed/oxford102_gallery ]; then echo "Oxford download failed - skipping gallery extension"; exit 0; fi
-          if [ "$SAVE" = "true" ]; then python ai-engine/training/extend_gallery.py --extra datasets/processed/oxford102_gallery --save
-          else python ai-engine/training/extend_gallery.py --extra datasets/processed/oxford102_gallery; fi
+          mkdir -p datasets/processed/extra_gallery/test
+          for g in datasets/processed/sunflower_gallery datasets/processed/oxford102_gallery; do
+            [ -d "$g" ] && cp -r "$g"/. datasets/processed/extra_gallery/ || true
+          done
+          if [ -z "$(ls -A datasets/processed/extra_gallery/test)" ]; then echo "no extra species downloaded - skipping"; exit 0; fi
+          if [ "$SAVE" = "true" ]; then python ai-engine/training/extend_gallery.py --extra datasets/processed/extra_gallery --save
+          else python ai-engine/training/extend_gallery.py --extra datasets/processed/extra_gallery; fi
       - name: Inventory of images physically present in this run
         run: python datasets/scripts/audit_datasets.py && cp datasets/reports/dataset_inventory.json datasets/reports/dataset_inventory_ci_run.json
       - name: Restore repo-only inventory (what a fresh clone contains)
         run: |
-          rm -rf datasets/raw/oxford102 datasets/raw/tf_flower_detection datasets/raw/inesc_flower_detection datasets/processed/oxford102_gallery
+          rm -rf datasets/raw/oxford102 datasets/raw/tf_flower_detection datasets/raw/inesc_flower_detection datasets/processed/oxford102_gallery datasets/processed/extra_gallery
           python datasets/scripts/audit_datasets.py
       - name: Commit reports back
         run: |
           git config user.name "pollinex-ci"; git config user.email "pollinex-ci@users.noreply.github.com"
           git add datasets/reports; [ -f ai-engine/reports/species_extension_evaluation.json ] && git add ai-engine/reports/species_extension_evaluation.json || true
-          [ -d datasets/processed/tf_flower_detection_sunflower ] && git add datasets/processed/tf_flower_detection_sunflower || true
+          [ -d datasets/processed/tf_flower_detection_sunflower ] && git add -f datasets/processed/tf_flower_detection_sunflower || true
+          [ -d datasets/processed/sunflower_gallery ] && git add -f datasets/processed/sunflower_gallery || true
           [ "${{ github.event.inputs.save_gallery }}" = "true" ] && git add ai-engine/models/species_gallery.json ai-engine/models/species_gallery.npz || true
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "Datasets: download + verification reports from run ${{ github.run_id }} [skip ci]"

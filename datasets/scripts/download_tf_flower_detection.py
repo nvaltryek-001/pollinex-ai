@@ -26,6 +26,9 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[2]
 URL = "https://zenodo.org/records/7768292/files/TensorFlowFlowerDetectionDataset.zip?download=1"
+# The detection set has ONE class ("flower"). Species come from the source dataset's class folders:
+FLOWER_PHOTOS = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+TF_CLASS_FOLDERS = {"sunflowers": "sunflower", "daisy": "daisy", "dandelion": "dandelion", "roses": "rose", "tulips": "tulip"}
 MD5 = "bafa11ef76ca62b08b257bd3dc92e0c6"
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 
@@ -51,8 +54,11 @@ def read_labels(p: Path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", type=Path, default=ROOT / "datasets" / "raw" / "tf_flower_detection")
-    ap.add_argument("--export-class", type=int, default=None)
+    ap.add_argument("--export-class", type=int, default=None, help="(legacy) export one detection class id")
     ap.add_argument("--species", default=None)
+    ap.add_argument("--join-flower-photos", action="store_true",
+                    help="label each image with its species from the original tf flower_photos class folders")
+    ap.add_argument("--export-species", default=None, help="with --join-flower-photos: e.g. sunflower")
     ap.add_argument("--seed", type=int, default=13)
     args = ap.parse_args()
     args.raw.mkdir(parents=True, exist_ok=True)
@@ -124,6 +130,62 @@ def main():
               "images_per_class_id": dict(sorted(cls_imgs.items())), "metadata_files_in_archive": meta_files,
               "archive_top_level": sorted({Path(m).parts[0] for m in names})[:20],
               "class_id_contact_sheets": [f"datasets/reports/tf_flower_detection_class_{c}.jpg" for c in sorted(crops)]}
+
+    if args.join_flower_photos:
+        import tarfile
+        tgz = args.raw / "flower_photos.tgz"
+        if not tgz.exists():
+            print("downloading", FLOWER_PHOTOS)
+            urllib.request.urlretrieve(FLOWER_PHOTOS, tgz)
+        species_of, licence_lines = {}, {}
+        with tarfile.open(tgz) as t:
+            for m in t.getmembers():
+                p = Path(m.name)
+                if m.isfile() and p.suffix.lower() == ".jpg" and len(p.parts) >= 3 and p.parts[-2] in TF_CLASS_FOLDERS:
+                    species_of[p.stem] = TF_CLASS_FOLDERS[p.parts[-2]]
+                if p.name == "LICENSE.txt":
+                    for line in t.extractfile(m).read().decode("utf-8", "replace").splitlines():
+                        if line.strip() and " CC-BY" in line:
+                            licence_lines[Path(line.split(":")[0].strip()).stem] = line.strip()
+        joined = Counter(species_of.get(im.stem, "unmatched") for im, _ in pairs)
+        report["flower_photos_join"] = {"source": FLOWER_PHOTOS, "matched_per_species": dict(joined),
+                                        "rule": "detection image file stem == flower_photos file stem; species = its class folder"}
+        print("join:", dict(joined))
+        if args.export_species:
+            sp = args.export_species
+            sel = [(im, rows) for im, rows in pairs if species_of.get(im.stem) == sp and rows]
+            random.Random(args.seed).shuffle(sel)
+            n = len(sel)
+            cut = {"train": sel[: int(0.7 * n)], "val": sel[int(0.7 * n): int(0.85 * n)], "test": sel[int(0.85 * n):]}
+            out = ROOT / "datasets" / "processed" / f"tf_flower_detection_{sp}"
+            gal = ROOT / "datasets" / "processed" / f"{sp}_gallery"
+            for split, items in cut.items():
+                for sub in ("images", "labels"):
+                    (out / split / sub).mkdir(parents=True, exist_ok=True)
+                for im, rows in items:
+                    with Image.open(im) as I:
+                        I = ImageOps.exif_transpose(I).convert("RGB")
+                        I.thumbnail((1280, 1280))
+                        I.save(out / split / "images" / f"{im.stem}.jpg", quality=90)
+                        # largest box -> one species-gallery crop (train/val -> references, test -> held-out)
+                        W, H = I.size
+                        _, x, y, w, h = max(rows, key=lambda r: r[3] * r[4])
+                        crop = I.crop((int((x - w / 2) * W), int((y - h / 2) * H), int((x + w / 2) * W), int((y + h / 2) * H)))
+                        gd = gal / ("test/" + sp if split == "test" else sp)
+                        gd.mkdir(parents=True, exist_ok=True)
+                        crop.save(gd / f"{im.stem}.jpg", quality=90)
+                    (out / split / "labels" / f"{im.stem}.txt").write_text(
+                        "".join(f"0 {x:.6f} {y:.6f} {w:.6f} {h:.6f}\n" for _, x, y, w, h in rows))
+            (out / "data.yaml").write_text(f"# {sp} subset of TF Flower Detection (INESC TEC, Zenodo 7768292, CC BY 4.0); species from tf "
+                                           f"flower_photos class folders\ntrain: train/images\nval: val/images\ntest: test/images\nnames:\n  0: flower\n")
+            attrib = [licence_lines[im.stem] for im, _ in sel if im.stem in licence_lines]
+            (out / "LICENSE.txt").write_text(
+                "Boxes: TensorFlow Flower Detection Dataset, Pinheiro, Aguiar, Figueiredo, Pinho, Valente & Santos (INESC TEC), "
+                "Zenodo 7768292, CC BY 4.0.\nImages: TensorFlow flower_photos (Google), per-image Flickr licences below "
+                "(all CC-BY as listed in flower_photos/LICENSE.txt). Images resized to max 1280 px.\n\n" + "\n".join(attrib) + "\n")
+            report["export_species"] = {"species": sp, "images": n, "boxes": sum(len(r) for _, r in sel),
+                                        "split": {k: len(v) for k, v in cut.items()}, "path": str(out.relative_to(ROOT)),
+                                        "gallery_path": str(gal.relative_to(ROOT)), "per_image_licence_lines": len(attrib)}
 
     if args.export_class is not None:
         if not args.species:
