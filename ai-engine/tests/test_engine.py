@@ -211,3 +211,23 @@ def test_health_indicators_have_categories():
     for ind in out.get("indicators", []):
         assert ind["category"] == CATEGORY[ind["type"]]
     assert set(out.get("categories", [])) <= {"discoloration", "wilting", "petal_damage", "visible_abnormality"}
+
+
+def test_deployed_gallery_only_contains_gated_species():
+    import json as _json
+    from pollinex_ai.species import EMBEDDERS, SpeciesGallery
+    path = MODELS_DIR / "species_gallery"
+    meta = _json.loads(path.with_suffix(".json").read_text())
+    ver = meta["meta"]["embed_version"]
+    assert ver in EMBEDDERS
+    supported = meta["meta"].get("supported_species")
+    if supported is not None:
+        assert set(meta["labels"]) == set(supported)
+        rep = MODELS_DIR.parent / "reports" / "species_multi_evaluation.json"
+        if rep.exists():
+            r = _json.loads(rep.read_text())
+            assert sorted(supported) == r["enabled_species"]
+            assert all(r["gating"][s]["enabled"] for s in supported)
+    g = SpeciesGallery.load(path)
+    out = g.predict(np.full((64, 64, 3), (200, 40, 60), np.uint8))
+    assert out["species"] == "unknown" or out["species"] in set(meta["labels"])
