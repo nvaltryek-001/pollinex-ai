@@ -38,12 +38,31 @@ jobs:
           python ai-engine/training/evaluate_detector_on.py --data datasets/processed/tf_flower_detection_sunflower --split test --detector onnx:ai-engine/runs/export/flower_yolo11n.onnx --tag yolo11
       - name: Deploy rule
         run: python ai-engine/training/yolo_deploy_rule.py
+      - name: Preserve checkpoints + candidate model (workflow artifact, 30 days)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yolo11-run-${{ github.run_id }}
+          path: |
+            ai-engine/runs/flower_yolo11/weights/*.pt
+            ai-engine/runs/flower_yolo11/results.csv
+            ai-engine/runs/flower_yolo11/args.yaml
+            ai-engine/runs/export/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Keep the candidate ONNX in the repo even if not deployed
+        if: always()
+        run: |
+          if [ -f ai-engine/runs/export/flower_yolo11n.onnx ] && [ ! -f ai-engine/models/flower_yolo11n.onnx ]; then
+            mkdir -p ai-engine/models/candidates && cp ai-engine/runs/export/flower_yolo11n.* ai-engine/models/candidates/
+          fi
       - name: Commit back
         if: always()
         run: |
           git config user.name "pollinex-ci"; git config user.email "pollinex-ci@users.noreply.github.com"
           git add ai-engine/reports
           [ -f ai-engine/models/flower_yolo11n.onnx ] && git add -f ai-engine/models/flower_yolo11n.onnx ai-engine/models/flower_yolo11n.json || true
+          [ -d ai-engine/models/candidates ] && git add -f ai-engine/models/candidates || true
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "YOLO11: CPU training + evaluation from run ${{ github.run_id }} [skip ci]"
           git pull --rebase origin main && git push origin HEAD:main
