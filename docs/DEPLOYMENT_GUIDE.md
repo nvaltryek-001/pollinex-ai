@@ -1,7 +1,7 @@
 # Deployment Guide
 
-> No public deployment was performed from the build environment (no Docker daemon and no hosting credentials). These are the
-> verified-by-construction configurations; follow them and record the resulting URLs in the README.
+> No public deployment has been performed (no hosting credentials). The Docker images and the Compose stack **are built and
+> smoke-tested in CI** (API health ok, web served, `/api` proxied). Record public URLs in the README once deployed.
 
 ## Docker Compose (single host)
 ```bash

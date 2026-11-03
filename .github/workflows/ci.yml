@@ -146,7 +146,7 @@ jobs:
         run: powershell -ExecutionPolicy Bypass -File scripts\setup_windows.ps1 -PythonExe "${{ steps.py.outputs.python-path }}"
       - name: scripts\test_windows.ps1
         shell: powershell
-        run: powershell -ExecutionPolicy Bypass -File scripts\test_windows.ps1
+        run: powershell -ExecutionPolicy Bypass -File scripts\test_windows.ps1 -E2E
       - name: Backend starts on Windows (uvicorn + /health)
         shell: powershell
         run: |

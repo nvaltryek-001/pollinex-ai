@@ -1,5 +1,24 @@
 # Next Session Tasks
 
+_Updated 2026-11-03 (session 3). The build/test blocker is resolved: CI builds and tests everything on Ubuntu and Windows.
+Remaining work needs external resources._
+
+1. **Physical phone check** — run `scripts\run_windows.ps1`, expose it with `cloudflared tunnel --url http://localhost:5173`,
+   open the HTTPS URL on Android Chrome / iOS Safari, test rear/front camera, live scan and capture.
+2. **Public deployment** — Render blueprint (`deployment/render.yaml`) + Vercel (`frontend/`, `VITE_API_URL`); record URLs in README.
+3. **YOLO11** — Colab guide in `docs/AI_MODEL_DOCUMENTATION.md`; report only measured test-split numbers.
+4. **Data for the six crops without public data** (hibiscus, tomato, sunflower, strawberry, brinjal, chilli): collect, annotate with
+   CVAT (`datasets/annotation/`), keep a held-out test set, add gallery references, evaluate.
+5. **Structure / stage models** — once annotated, train and install as ONNX; flip the structure status from *not AI-validated*.
+6. Optional: automated test for database-unavailable behaviour; HttpOnly-cookie sessions; proxy-level rate limiting.
+
+Refresh screenshots/lock files: push a commit whose message contains `[publish]` (CI commits them back).
+
+---
+_Session-2 version (historical):_
+
+# Next Session Tasks
+
 _Written 2026-11-03 because package registries (PyPI, npm) and Docker Hub were blocked in the build environment.
 Everything below is ordered; each step lists the exact command and what "done" means._
 

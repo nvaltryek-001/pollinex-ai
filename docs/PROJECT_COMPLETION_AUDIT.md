@@ -1,5 +1,10 @@
 # Project Completion Audit
 
+> **Update — session 3 (2026-11-03):** every item marked 🟢 "not executed here" below has since been **executed and passed in
+> GitHub Actions** on Ubuntu and Windows (backend 24 tests, Vitest 11, Playwright 14, type-check, production build, PostgreSQL
+> migrations, backend startup, Docker build + Compose). Bugs found by that first real run and their fixes are listed in
+> `TESTING_REPORT.md`. Current status: `PROJECT_COMPLETION_REPORT.md`. The original session-2 audit follows for history.
+
 _Audit date: 2026-11-03 (session 2). Baseline: commit `006e3c7`. Scope: every folder in the repository, the 8 milestone
 commits, README and docs. Build environment: PyPI, npm, Docker Hub and Open-Meteo were **unreachable**, so anything that
 needs third-party web packages could be inspected but not executed._

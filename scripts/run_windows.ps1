@@ -42,5 +42,5 @@ try {
   npm run dev
 } finally {
   Pop-Location
-  if ($api -and -not $api.HasExited) { Stop-Process -Id $api.Id -Force }
+  if ($api -and -not $api.HasExited) { taskkill /T /F /PID $api.Id | Out-Null }
 }

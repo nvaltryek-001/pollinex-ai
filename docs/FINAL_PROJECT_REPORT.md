@@ -1,5 +1,7 @@
 # POLLINEX AI — Final Project Report & Audit
 
+> **Superseded:** the current report is `PROJECT_COMPLETION_REPORT.md` (session 3, CI-verified).
+>
 > **Session 2 update (2026-11-03):** see `PROJECT_COMPLETION_AUDIT.md` for the current audit (≈ 72 %), `TESTING_REPORT.md`
 > for executed results (37/37) and `NEXT_SESSION_TASKS.md` for the remaining verification steps. The text below is the
 > session-1 report and is kept for history.

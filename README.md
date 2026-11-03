@@ -16,10 +16,12 @@ recommendations. A **Three.js simulator** replays seeded particle simulations of
 > or `user_corrected`.
 > Readiness is a *visual estimate*, simulated transfer is *not* fruit set, and no metric shown anywhere is a placeholder.
 
-> **Current status (2026-11-03):** the AI engine and simulator are trained/tested (37/37 executed tests pass). The web stack
-> (FastAPI + React) is fully written, but its first build and test run has **not happened yet** because the build environment
-> could not reach PyPI/npm. Run `scripts/test_windows.ps1` (Windows) or `scripts/run_tests.sh` to do it — see
-> [`docs/NEXT_SESSION_TASKS.md`](docs/NEXT_SESSION_TASKS.md).
+> **Status (2026-11-03):** built, started and tested. On every push, GitHub Actions installs the real packages on clean
+> Ubuntu **and Windows** runners and runs 86 automated tests (37 AI/simulator, 24 backend, 11 frontend unit, 14 Playwright E2E
+> incl. camera), type-check, production build, migrations on PostgreSQL 16 + SQLite, backend startup, Docker builds and a
+> Docker Compose smoke test — all green ([CI run #41626877962](https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41626877962)).
+> Not done: public cloud deployment, YOLO11 training, labelled data for anther/stigma and for 6 of the 9 crops.
+> Full report: [`docs/PROJECT_COMPLETION_REPORT.md`](docs/PROJECT_COMPLETION_REPORT.md).
 
 ---
 
@@ -248,10 +250,13 @@ SRC=/path/to/clone/of/multi-species-fruit-flower scripts/reproduce_models.sh
 | Command | Runs |
 |---|---|
 | `scripts\test_windows.ps1` / `scripts/run_tests.sh` | pytest (AI engine, simulator, backend API), Alembic migration, TypeScript check, Vitest, production build |
-| add `-E2E` / `E2E=1` | + Playwright on desktop Chrome and a Pixel 7 profile |
-| `python -m pytest ai-engine/tests simulation/tests` | engine only (no web packages needed) |
+| add `-E2E` / `E2E=1` | + Playwright (desktop Chrome + Pixel 7, Chromium fake camera) |
+| `python scripts/check_dependencies.py` | verifies Python/Node packages, model files, sklearn compatibility, DB connection |
+| GitHub Actions (`.github/workflows/ci.yml`) | everything above on Ubuntu + Windows, PostgreSQL migrations, backend startup, Docker build + Compose smoke test |
 
-Executed status is tracked honestly in [`docs/TESTING_REPORT.md`](docs/TESTING_REPORT.md).
+**Reproducible installs:** `backend/requirements.lock.txt` and `frontend/package-lock.json` are the exact versions resolved and
+tested in CI; `setup_windows.ps1` uses them automatically (`-NoLock` to use version ranges instead).
+Results: [`docs/TESTING_REPORT.md`](docs/TESTING_REPORT.md).
 
 ## Deployment
 
@@ -263,7 +268,7 @@ Executed status is tracked honestly in [`docs/TESTING_REPORT.md`](docs/TESTING_R
 | Web | Vercel (`frontend/`, `VITE_API_URL` = API URL) | static hosting; HTTPS gives phone-camera access |
 
 Health check: `GET /api/v1/health`. Details: [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md). The app is fully usable
-locally without any cloud deployment. **No public deployment exists yet.**
+locally without any cloud deployment. **No public deployment exists yet**; Docker Compose is verified in CI.
 
 ## Usage
 
@@ -334,33 +339,40 @@ Our contributions are engineering contributions; no external paper's results are
 * Offline-capable PWA and on-device inference for low-connectivity fields.
 
 ## Screenshots
-Not yet available: screenshots will be added only from a genuinely running build (see `docs/NEXT_SESSION_TASKS.md`).
+Captured automatically by Playwright from the running application in CI (desktop Chrome and Pixel 7 emulation) — not mock-ups.
+
+| Scanner results (real detections, provenance badges) | 3-D virtual pollination simulator |
+|---|---|
+| ![Scanner](docs/screenshots/desktop-02-scanner-results.png) | ![Simulator](docs/screenshots/desktop-03-simulator.png) |
+| **Model evaluation (saved test-split metrics)** | **Dashboard** |
+| ![Evaluation](docs/screenshots/desktop-05-model-evaluation.png) | ![Dashboard](docs/screenshots/desktop-04-dashboard.png) |
+| **Species knowledge base & recognition** | **Mobile scanner (Pixel 7 profile)** |
+| ![Species](docs/screenshots/desktop-06-species.png) | <img src="docs/screenshots/mobile-02-scanner-results.png" width="300" alt="Mobile scanner"> |
+
+All 20 captures: [`docs/screenshots/`](docs/screenshots/).
 
 ## Project audit
 
-Honest status after session 2 (build environment: 2 vCPU, no GPU; PyPI, npm and Docker Hub **blocked**, only GitHub reachable).
-Full detail: [`docs/PROJECT_COMPLETION_AUDIT.md`](docs/PROJECT_COMPLETION_AUDIT.md).
-
 | Item | Status |
 |---|---|
-| Research review, gaps, methodology, BibTeX | ✅ done (some volume/article numbers marked unverified) |
-| Dataset manifest + licences + prep scripts | ✅ USDA set prepared & audited; other scripts written, not run (hosts blocked) |
-| Detector trained & evaluated | ✅ historical metrics above (session 1) |
-| Species gallery + open-set evaluation + manual correction | ✅ gallery/eval · ⚠️ correction endpoint/UI not executed |
-| Stage / petals-centre / health / pose modules | ✅ labelled heuristics · ⚠️ not accuracy-evaluated (no labels) |
-| Anther / stigma / stamen / pistil detection | ❌ no training data — reported as *not AI-validated*; CVAT workflow provided |
-| YOLO11 deep detector | ⚠️ recipe, ONNX backend and Colab guide; **not trained** |
-| Readiness engine + 9-species KB + environment warnings | ✅ executed tests |
-| Simulator engine | ✅ executed tests · ⚠️ Three.js UI (structures, trails, speed) not run in a browser |
-| Backend API, DB, migrations 0001–0002, auth, roles, rate limiting, reports | ⚠️ written; **24 API tests not executed** (FastAPI/SQLAlchemy not installable) |
-| Frontend (20 pages, scanner, camera, live WS, toasts) | ⚠️ written & syntax-checked; **not built / type-checked / unit-tested** (npm blocked) |
-| Executed automated tests | ✅ **37/37** (AI engine 21, simulator 16) |
-| Windows scripts | ⚠️ written; not run on Windows here |
-| Docker images, deployment | ⚠️ configs only; not built; no public URL |
-| Screenshots | ❌ need a running frontend |
+| Research review, gaps, methodology, references | ✅ (some volume/article numbers marked unverified) |
+| Dataset manifest, licences, prep scripts, leakage audit | ✅ USDA set integrated; other sources script-only (documented) |
+| Flower detector trained & evaluated | ✅ test mAP@0.5 0.410 (historical session-1 run) |
+| Species gallery, open-set `unknown`, manual correction | ✅ tested (backend + E2E) |
+| Stage / structures / health / pose | ✅ labelled heuristics · ⚠️ not accuracy-evaluated (no labels) |
+| Anther / stigma / stamen / pistil detection | ❌ no labelled data — reported as *not AI-validated*; CVAT workflow provided |
+| YOLO11 | ⚠️ recipe, ONNX backend, Colab guide; not trained |
+| Readiness engine + environment intelligence | ✅ tested |
+| Simulator engine + 3-D/2-D UI | ✅ tested (engine + E2E) |
+| Backend, PostgreSQL, migrations, auth, roles, reports | ✅ tested in CI |
+| Frontend 20 pages, camera, live scan | ✅ type-checked, built, unit + E2E tested (fake camera) |
+| Windows scripts | ✅ verified on windows-latest |
+| Docker / Compose | ✅ built + smoke-tested in CI |
+| Public deployment | ❌ not deployed (configs ready) |
+| Physical phone test | ⚠️ manual step (emulation + fake camera automated) |
 
-**Honest completion estimate: ≈ 72 %.** The remaining work is mainly *running* the web stack for the first time and fixing what
-that reveals — [`docs/NEXT_SESSION_TASKS.md`](docs/NEXT_SESSION_TASKS.md) lists the exact steps.
+Details: [`docs/PROJECT_COMPLETION_REPORT.md`](docs/PROJECT_COMPLETION_REPORT.md) · [`docs/TESTING_REPORT.md`](docs/TESTING_REPORT.md) ·
+[`docs/PROJECT_COMPLETION_AUDIT.md`](docs/PROJECT_COMPLETION_AUDIT.md).
 
 ## Repository layout
 

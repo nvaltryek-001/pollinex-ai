@@ -36,13 +36,17 @@ Step "Frontend production build" { npm run build }
 Pop-Location
 
 if ($E2E) {
+  Push-Location frontend; npx playwright install chromium; Pop-Location
+  $env:RATE_LIMIT_ENABLED = "false"   # E2E logs in many times from one IP
   $api = Start-Process -FilePath $venvPy -ArgumentList "-m", "uvicorn", "app.main:app", "--port", "8000" -WorkingDirectory (Join-Path $Root "backend") -PassThru -NoNewWindow
   Push-Location frontend
   $web = Start-Process -FilePath "npm.cmd" -ArgumentList "run", "preview", "--", "--port", "5173" -PassThru -NoNewWindow
   Start-Sleep -Seconds 12
   Step "End-to-end (Playwright)" { npx playwright test }
   Pop-Location
-  foreach ($p in @($web, $api)) { if ($p -and -not $p.HasExited) { Stop-Process -Id $p.Id -Force } }
+  # kill whole process trees (npm.cmd -> node/vite, python -> uvicorn)
+  foreach ($p in @($web, $api)) { if ($p -and -not $p.HasExited) { taskkill /T /F /PID $p.Id | Out-Null } }
+  Remove-Item Env:RATE_LIMIT_ENABLED -ErrorAction SilentlyContinue
 }
 
 Write-Host "`n== Summary" -ForegroundColor Cyan

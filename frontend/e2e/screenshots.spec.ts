@@ -7,7 +7,13 @@ test.skip(!process.env.SCREENSHOTS, "set SCREENSHOTS=1 to capture screenshots");
 
 test("capture application screenshots", async ({ page }, info) => {
   const dir = "e2e-screenshots";
-  const shot = (name: string) => page.screenshot({ path: `${dir}/${info.project.name}-${name}.png`, fullPage: info.project.name === "desktop" });
+  const shot = async (name: string) => {
+    // dismiss notifications and reset scroll so sticky header/sidebar render in place
+    for (const b of await page.getByRole("button", { name: "Dismiss notification" }).all()) await b.click().catch(() => {});
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: `${dir}/${info.project.name}-${name}.png`, fullPage: info.project.name === "desktop" && !name.includes("simulator") });
+  };
   await page.goto("/");
   await shot("01-landing");
   await register(page, emailFor(info, "shots"));

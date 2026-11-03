@@ -1,85 +1,71 @@
 # Testing Report
 
-_Last updated 2026-11-03 (session 2). Environment: Linux, Python 3.13.18, 2 vCPU, no GPU. **PyPI, npm and Docker Hub were
-blocked**, so only suites whose dependencies were pre-installed could run. "Executed" = run here with the result shown.
-"Not executed" = written and wired into CI / `scripts/test_windows.ps1`, but **no result is claimed**._
+_Last updated 2026-11-03 (session 3)._
 
-## Summary
-| Suite | Tests | Status | Result |
+## Where the tests ran
+The development workspace could not reach PyPI, npm or Docker Hub, so the full stack is verified by **GitHub Actions**
+(`.github/workflows/ci.yml`) on every push to `main`: clean Ubuntu and Windows runners that install the real packages from
+`backend/requirements.txt` and `frontend/package.json`. Reference run: **#41626877962** on commit `b8be26d`
+(<https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41626877962>), all 5 jobs green.
+Re-run anytime: GitHub → Actions → CI → *Run workflow*, or locally with `scripts\test_windows.ps1 -E2E`.
+
+## Summary (run #41626877962)
+| Suite | Where | Tests | Result |
 |---|---|---|---|
-| AI engine unit tests (`ai-engine/tests`) | 21 | executed | **21 passed** |
-| Simulator tests (`simulation/tests`) | 16 | executed | **16 passed** |
-| Backend API / auth / DB / upload / inference / roles / rate-limit / startup (`backend/tests`) | 24 | **not executed** (FastAPI, SQLAlchemy not installable) | — |
-| Alembic migrations 0001 → 0002 | 1 | **not executed** | — |
-| Frontend type-check | — | **not executed** (npm blocked) | — |
-| Frontend unit + component tests (Vitest) | 11 | **not executed** | — |
-| Playwright E2E (desktop + Pixel 7) | 3 × 2 | **not executed** | — |
-| Production frontend build | — | **not executed** | — |
-| Backend startup | — | **not executed** (startup code path covered by backend tests) | — |
-| Docker image builds | 2 | **not executed** (no Docker daemon/registry) | — |
+| Ruff lint (errors: F, E9, PLE) | Ubuntu | all Python | ✅ pass |
+| AI engine unit tests | Ubuntu + Windows (+ workspace) | 21 | ✅ 21 passed |
+| Simulator tests | Ubuntu + Windows (+ workspace) | 16 | ✅ 16 passed |
+| Backend API / auth / roles / DB / uploads / inference / rate limit / startup seeding | Ubuntu (SQLite) + Windows | 24 | ✅ 24 passed |
+| Alembic `0001 → 0002` upgrade, downgrade to base, upgrade again | Ubuntu, SQLite | 1 | ✅ pass |
+| Alembic upgrade on **PostgreSQL 16** (+ table listing, 20 tables) | Ubuntu service container | 1 | ✅ pass |
+| **Backend startup** (uvicorn, `POLLINEX_ENV=production`, PostgreSQL) → `/api/v1/health` = ok, `/docs` served | Ubuntu | 1 | ✅ pass |
+| Frontend type-check (`tsc --noEmit`, strict) | Ubuntu + Windows | — | ✅ pass |
+| Frontend unit/component tests (Vitest) | Ubuntu + Windows | 11 | ✅ 11 passed |
+| **Production build** (`vite build`, 2,210 modules) | Ubuntu + Windows | — | ✅ pass |
+| **Playwright E2E**, desktop Chrome + Pixel 7, Chromium fake camera | Ubuntu | 14 | ✅ 14 passed |
+| Docker images (backend, frontend) | Ubuntu | 2 | ✅ built |
+| **Docker Compose smoke test** (PostgreSQL + API + nginx): API health ok, web page served, `/api` proxied | Ubuntu | 1 | ✅ pass |
+| **Windows**: `setup_windows.ps1` on a fresh clone (Python 3.12, Node 22) → dependency check "all required checks passed" | windows-latest | — | ✅ pass |
+| **Windows**: `test_windows.ps1` (6 steps, all PASS) | windows-latest | — | ✅ pass |
+| **Windows**: backend starts with uvicorn → `/api/v1/health` ok | windows-latest | — | ✅ pass |
 
-Ad-hoc executed checks: end-to-end Python pipeline on both fixture images (session 1: 86 / 66 flowers, 2.2 s / 2.8 s full,
-0.8 s / 1.0 s live); CSV/PDF report generation with stub records (session 1); TypeScript syntax check of all sources (session 1).
+## Playwright E2E tests (each on desktop **and** mobile)
+1. Register → upload `tests/fixtures/sample_orchard.jpg` → real detections with provenance badges → **manual species correction** → history.
+2. **Camera starts** (Chromium fake device) → **live scan analyses sampled frames** (WebSocket/HTTP) → *Capture & analyse* saves a scan.
+3. **Camera permission denied** → clear error message.
+4. Simulator runs, replays and shows the computational disclaimer / "not measured" biological outcome.
+5. **Every sidebar page (17)** loads without an error banner.
+6. No horizontal overflow at 390 px (responsive layout).
+7. Screenshot capture (`SCREENSHOTS=1`) → `docs/screenshots/`.
 
-## Executed tests (individual results)
-| Test | Package | Status | Result |
-|---|---|---|---|
-| `test_iou_and_perfect_ap` | ai-engine | executed | PASS |
-| `test_ap_penalises_false_positives_and_misses` | ai-engine | executed | PASS |
-| `test_classification_report_confusion` | ai-engine | executed | PASS |
-| `test_pixel_features_shape_and_validation` | ai-engine | executed | PASS |
-| `test_instances_split_two_blobs` | ai-engine | executed | PASS |
-| `test_instances_empty_map` | ai-engine | executed | PASS |
-| `test_trained_detector_runs_on_synthetic_scene` | ai-engine | executed | PASS |
-| `test_gallery_open_set_unknown_and_known` | ai-engine | executed | PASS |
-| `test_empty_gallery_returns_unknown` | ai-engine | executed | PASS |
-| `test_gallery_save_load_roundtrip` | ai-engine | executed | PASS |
-| `test_stage_heuristic_outputs_valid_distribution` | ai-engine | executed | PASS |
-| `test_open_flower_vs_brown_flower_stage` | ai-engine | executed | PASS |
-| `test_structure_flags_yellow_centre_and_never_claims_detection` | ai-engine | executed | PASS |
-| `test_health_flags_browning_not_disease` | ai-engine | executed | PASS |
-| `test_pose_is_image_space` | ai-engine | executed | PASS |
-| `test_kb_has_nine_target_species_with_distinct_mechanisms` | ai-engine | executed | PASS |
-| `test_readiness_species_specific_and_labelled` | ai-engine | executed | PASS |
-| `test_readiness_unknown_species_is_indeterminate` | ai-engine | executed | PASS |
-| `test_readiness_environment_penalty` | ai-engine | executed | PASS |
-| `test_readiness_flags_missing_and_stale_environment` | ai-engine | executed | PASS |
-| `test_structure_lists_every_structure_with_honest_status` | ai-engine | executed | PASS |
-| `test_every_species_profile_runs[tomato]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[brinjal]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[chilli]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[apple]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[pear]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[peach]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[strawberry]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[sunflower]` | simulation | executed | PASS |
-| `test_every_species_profile_runs[hibiscus]` | simulation | executed | PASS |
-| `test_deterministic_with_seed` | simulation | executed | PASS |
-| `test_misalignment_reduces_transfer` | simulation | executed | PASS |
-| `test_vibration_band_matters` | simulation | executed | PASS |
-| `test_validation[bad0]` | simulation | executed | PASS |
-| `test_validation[bad1]` | simulation | executed | PASS |
-| `test_validation[bad2]` | simulation | executed | PASS |
-| `test_validation[bad3]` | simulation | executed | PASS |
+## Backend tests (24)
+Health/OpenAPI · register/login/logout + token revocation · weak/duplicate passwords · 401 without token · role enforcement ·
+**standard user gets 403 on 7 admin/researcher endpoints** · upload → inference → DB → history → image · close-up + species hint ·
+cross-user isolation (404) · empty (400), non-image (415), oversized (413), too small (422), GIF (415) · unknown species (422) ·
+live HTTP frame · live WebSocket incl. bad base64 · all AI module endpoints · researcher-only reference upload ·
+**manual species correction** (keeps original, re-runs readiness, 404/422) · simulation create/execute/replay/409/422/sweep ·
+fields/plants/environment validation · weather disabled → 503 (never invented) · pollination logs · dashboard from DB ·
+CSV + PDF downloads · admin role change + self-demotion guard · **rate limit → 429** · startup seeding/health.
 
 ## Failures found and fixes applied
-| Session | Failure | Fix |
-|---|---|---|
-| 1 | `test_health_flags_browning_not_disease`: close-up flower mask came out empty (GrabCut on a uniform background), so browning was not measured | added a border-colour background model before GrabCut in `regions.crop_flower_mask` |
-| 1 | Detector ground truth mismatched the images (upstream boxes vertically flipped) → near-zero mAP | instances re-derived from masks; audit recorded in the dataset report |
-| 2 | Readiness crashed on naive (SQLite) timestamps when computing data age | treat naive timestamps as UTC; covered by `test_readiness_flags_missing_and_stale_environment` |
+| Session | Where | Failure | Fix |
+|---|---|---|---|
+| 1 | engine | close-up flower mask empty → browning not measured | border-colour background model before GrabCut |
+| 1 | data | upstream boxes vertically flipped → near-zero mAP | ground truth re-derived from masks (documented audit) |
+| 2 | engine | naive SQLite timestamps crashed data-age check | naive treated as UTC + test |
+| 3 | CI typecheck | `api.test.ts`: `err` is `unknown` (TS18046) | typed the caught error (also found by the workspace audit type-check) |
+| 3 | CI backend | `test_manual_species_correction…` got 401: earlier admin test changes that user's role, which revokes their token by design | test uses its own account; asserts 201 |
+| 3 | CI vitest | markdown test looked for an element whose whole text is "bad" | assert no anchor is created for the `javascript:` link (behaviour was already correct) |
+| 3 | backend | Starlette deprecations for 413/422 constants | numeric status codes |
+| 3 | Windows | PowerShell 5.1 can abort on harmless native stderr with `Stop` | scripts use `Continue` + explicit exit-code checks |
+| 3 | ruff | unused f-string | fixed |
 
-## Not-executed suites: what they cover
-* **Backend (24)**: health/OpenAPI; register/login/logout + token revocation; weak & duplicate passwords; 401/403; **standard user
-  blocked from 7 admin/researcher endpoints**; upload → inference → DB → history → image; close-up + species hint; cross-user isolation;
-  empty (400), non-image (415), oversized (413), too small (422), GIF (415); unknown species (422); live HTTP frame; live WebSocket
-  incl. bad base64; all AI module endpoints; researcher-only reference upload; **manual species correction** (re-runs readiness,
-  keeps original, 404/422); simulation create/execute/replay/409/422/sweep; fields/plants/environment validation; weather disabled
-  → 503; pollination logs; dashboard from DB; CSV/PDF; admin role change + self-demotion guard; **rate limit → 429**; startup seeding.
-* **Vitest (11)**: provenance badges, overlay boxes & dashed low-confidence, safe markdown, camera errors (denied / not found /
-  busy / insecure / unsupported), error banner, auth form, API client (token, error detail, backend unreachable).
-* **Playwright (3 per device)**: register → upload → results → history; camera permission denied; no horizontal overflow at 390 px.
+## Known warnings (non-failing)
+Starlette recommends `httpx2` for its TestClient; React Router v7 future-flag notices; Node `punycode` deprecation from a transitive
+npm dependency; GitHub's Node-20 action runtime notice.
 
 ## Remaining limitations
-Nothing in the web stack has been executed. Run `scripts/test_windows.ps1 -E2E` (or `E2E=1 scripts/run_tests.sh`) and replace the
-"not executed" rows with real results. Database-unavailable behaviour is implemented (`/health` → `degraded`) but has no automated test.
+* Real phone hardware is not automated: camera code is verified with Chromium's fake device and a Pixel 7 emulation profile;
+  run the manual phone check in `docs/NEXT_SESSION_TASKS.md` (HTTPS needed on a phone).
+* Database-unavailable behaviour (`/health` → `degraded`) is implemented but has no automated test.
+* Open-Meteo is never called in CI (disabled → 503 path is tested); the live provider path is manual.

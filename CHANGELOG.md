@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0] - 2026-11-03
+### Verified
+- First full build/run/test of the web stack, in GitHub Actions on Ubuntu + Windows: 86 automated tests, type-check, production
+  build, PostgreSQL + SQLite migrations, backend startup, Docker build + Compose smoke test — all passing.
+### Fixed
+- Frontend test typing error; backend test token-revocation ordering; markdown safety test assertion; Starlette status-code
+  deprecations; PowerShell 5.1 stderr handling; Windows process-tree cleanup.
+### Added
+- `.env` auto-loading (env vars win), placeholder JWT secret rejected in production.
+- `scripts/check_dependencies.py`; CI-resolved `backend/requirements.lock.txt` and `frontend/package-lock.json`.
+- Playwright: fake-camera live-scan test, every-page smoke test, species-correction flow, simulator flow, screenshot capture.
+- Genuine screenshots in `docs/screenshots/`; `docs/PROJECT_COMPLETION_REPORT.md`.
+
 ## [1.1.0] - 2026-11-03
 ### Added
 - Manual species correction per flower (`PATCH /scans/{id}/flowers/{i}/species`), original prediction kept, readiness re-run; Alembic `0002`.

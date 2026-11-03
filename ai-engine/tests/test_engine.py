@@ -191,7 +191,7 @@ def test_readiness_flags_missing_and_stale_environment():
     assert any("incomplete or out of date" in w for w in r["uncertainty_warnings"])
     naive = estimate_readiness("apple", {"stage": "fully_open", "score": 0.9},
                                env={"temperature_c": 20, "relative_humidity_pct": 60, "rain_mm_h": 0, "wind_kmh": 5,
-                                    "observed_at": datetime.utcnow().isoformat(), "source": "manual"})
+                                    "observed_at": datetime.now(timezone.utc).replace(tzinfo=None).isoformat(), "source": "manual"})
     assert not any(f["factor"] in ("missing_data", "stale_data") for f in naive["factors"])
 
 
