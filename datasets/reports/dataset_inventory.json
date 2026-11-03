@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-11-03T15:35:06.594590+00:00",
+  "generated_at": "2026-11-03T15:48:22.614775+00:00",
   "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. Report figures, segmentation masks and gallery crops (derived from already-counted images) are counted separately.",
-  "total_dataset_images": 1442,
+  "total_dataset_images": 1479,
   "species_image_counts": {
-    "hibiscus": 79,
-    "tomato": 192,
+    "hibiscus": 91,
+    "tomato": 200,
     "sunflower": 828,
-    "apple": 149,
-    "peach": 89,
-    "pear": 46,
-    "strawberry": 14,
-    "brinjal": 18,
-    "chilli": 27,
+    "apple": 155,
+    "peach": 95,
+    "pear": 47,
+    "strawberry": 15,
+    "brinjal": 20,
+    "chilli": 28,
     "unspecified": 0
   },
   "datasets": {
     "processed/inat_flowering": {
-      "images": 724,
+      "images": 761,
       "masks": 0,
-      "decoded": 724,
+      "decoded": 761,
       "corrupt": [],
-      "bytes": 99468550,
+      "bytes": 104019105,
       "by_ext": {
-        ".jpg": 724
+        ".jpg": 761
       },
       "by_species": {
-        "apple": 101,
-        "brinjal": 18,
-        "chilli": 27,
-        "hibiscus": 79,
-        "peach": 65,
-        "pear": 28,
-        "strawberry": 14,
+        "apple": 107,
+        "brinjal": 20,
+        "chilli": 28,
+        "hibiscus": 91,
+        "peach": 71,
+        "pear": 29,
+        "strawberry": 15,
         "sunflower": 200,
-        "tomato": 192
+        "tomato": 200
       },
-      "megabytes": 99.5
+      "megabytes": 104.0
     },
     "processed/sunflower_gallery": {
       "images": 0,
@@ -86,13 +86,13 @@
       "masks": 0,
       "decoded": 11,
       "corrupt": [],
-      "bytes": 1538100,
+      "bytes": 1562352,
       "report_figures": 11,
       "by_ext": {
         ".jpg": 11
       },
       "by_species": {},
-      "megabytes": 1.5
+      "megabytes": 1.6
     }
   },
   "yolo_pairing": {

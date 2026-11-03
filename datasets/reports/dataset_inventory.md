@@ -1,29 +1,29 @@
 # Dataset inventory (actual files)
 
-_Generated 2026-11-03T15:35:06.594590+00:00 by `datasets/scripts/audit_datasets.py`._
+_Generated 2026-11-03T15:48:22.614775+00:00 by `datasets/scripts/audit_datasets.py`._
 
-**Dataset images present: 1442** (masks and report figures excluded).
+**Dataset images present: 1479** (masks and report figures excluded).
 
 | Species | Images present |
 |---|---|
-| hibiscus | 79 |
-| tomato | 192 |
+| hibiscus | 91 |
+| tomato | 200 |
 | sunflower | 828 |
-| apple | 149 |
-| peach | 89 |
-| pear | 46 |
-| strawberry | 14 |
-| brinjal | 18 |
-| chilli | 27 |
+| apple | 155 |
+| peach | 95 |
+| pear | 47 |
+| strawberry | 15 |
+| brinjal | 20 |
+| chilli | 28 |
 | unspecified | 0 |
 
 | Location | Images | Masks | Derived crops | Decoded OK | Corrupt | MB | Formats |
 |---|---|---|---|---|---|---|---|
-| `processed/inat_flowering` | 724 | 0 | 0 | 724 | 0 | 99.5 | {'.jpg': 724} |
+| `processed/inat_flowering` | 761 | 0 | 0 | 761 | 0 | 104.0 | {'.jpg': 761} |
 | `processed/sunflower_gallery` | 0 | 0 | 628 | 628 | 0 | 9.4 | {'.jpg': 628} |
 | `processed/tf_flower_detection_sunflower` | 628 | 0 | 0 | 628 | 0 | 26.7 | {'.jpg': 628} |
 | `processed/usda_fruit_flower` | 90 | 90 | 0 | 180 | 0 | 51.7 | {'.jpg': 90, '.png': 90} |
-| `reports` | 0 | 0 | 0 | 11 | 0 | 1.5 | {'.jpg': 11} |
+| `reports` | 0 | 0 | 0 | 11 | 0 | 1.6 | {'.jpg': 11} |
 
 Exact duplicate groups: **0**
 
