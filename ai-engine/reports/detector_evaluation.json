@@ -1,0 +1,2023 @@
+{
+  "generated_at": "2026-11-02T13:57:14.482372+00:00",
+  "seed": 20261102,
+  "work_side": 1280,
+  "quick": false,
+  "machine": {
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+    "python": "3.13.18",
+    "cpu_count": 2
+  },
+  "data": {
+    "train_images": 54,
+    "val_images": 14,
+    "test_images": 22,
+    "train_pixel_samples": 486000
+  },
+  "fit_seconds": {
+    "B_hgb_colour": 6.147919416427612,
+    "C_hgb_full": 16.41861081123352
+  },
+  "protocol": "params tuned on val by mAP@0.5; test evaluated once; COCO-style 101-pt AP; IoU 0.50:0.95",
+  "deployed_variant": "C_hgb_full",
+  "variants": {
+    "A_whiteness_otsu": {
+      "params": {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 0
+      },
+      "val": {
+        "mAP50": 0.11047086535466355,
+        "mAP50_95": 0.05701525086952932
+      },
+      "test": {
+        "mAP50": 0.1270723993918725,
+        "mAP50_95": 0.06177127909821813,
+        "precision@0.5": 0.04566259808195292,
+        "recall@0.5": 0.4510226049515608,
+        "f1@0.5": 0.08292924294903514,
+        "n_pred": 9176,
+        "n_gt": 929,
+        "tp@0.5": 419,
+        "ap_per_iou": {
+          "0.50": 0.1270723993918725,
+          "0.55": 0.11660249901289492,
+          "0.60": 0.10244886194332833,
+          "0.65": 0.08852981624497214,
+          "0.70": 0.07126677200166281,
+          "0.75": 0.04914766724967945,
+          "0.80": 0.03325084410177996,
+          "0.85": 0.01914013626272697,
+          "0.90": 0.008974338193367981,
+          "0.95": 0.0012794565798962478
+        }
+      },
+      "test_per_species": {
+        "apple": {
+          "mAP50": 0.1742923863378618,
+          "mAP50_95": 0.08570506815320322,
+          "precision@0.5": 0.033288770053475934,
+          "recall@0.5": 0.49502982107355864,
+          "f1@0.5": 0.062382562946260794,
+          "n_pred": 7480,
+          "n_gt": 503,
+          "tp@0.5": 249
+        },
+        "peach": {
+          "mAP50": 0.0002605523710265763,
+          "mAP50_95": 3.530849887743324e-05,
+          "precision@0.5": 0.008097165991902834,
+          "recall@0.5": 0.011764705882352941,
+          "f1@0.5": 0.00959232613908873,
+          "n_pred": 247,
+          "n_gt": 170,
+          "tp@0.5": 2
+        },
+        "pear": {
+          "mAP50": 0.22308919662166946,
+          "mAP50_95": 0.11379613979913235,
+          "precision@0.5": 0.11594202898550725,
+          "recall@0.5": 0.65625,
+          "f1@0.5": 0.19706744868035192,
+          "n_pred": 1449,
+          "n_gt": 256,
+          "tp@0.5": 168
+        }
+      },
+      "test_counting": {
+        "count_MAE": 375.6818181818182,
+        "count_MAPE": 18.971542818999538,
+        "count_bias": 374.8636363636364
+      },
+      "test_segmentation": {
+        "pixel_IoU": 0.07163086865173429,
+        "pixel_precision": 0.07302005808268425,
+        "pixel_recall": 0.7901424977326412,
+        "pixel_F1": 0.13368571351785755
+      },
+      "latency_ms_per_image_mean": 10.705201499986702,
+      "latency_ms_per_image_p95": 12.370813099926181
+    },
+    "B_hgb_colour": {
+      "params": {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 0
+      },
+      "val": {
+        "mAP50": 0.27611745606441895,
+        "mAP50_95": 0.13160339127680867
+      },
+      "test": {
+        "mAP50": 0.23966958203014835,
+        "mAP50_95": 0.10887981093077585,
+        "precision@0.5": 0.05947112790070157,
+        "recall@0.5": 0.5931108719052745,
+        "f1@0.5": 0.10810280557190505,
+        "n_pred": 9265,
+        "n_gt": 929,
+        "tp@0.5": 551,
+        "ap_per_iou": {
+          "0.50": 0.23966958203014835,
+          "0.55": 0.21325034118903224,
+          "0.60": 0.19175918838139194,
+          "0.65": 0.16183802555781002,
+          "0.70": 0.1146579600759364,
+          "0.75": 0.08256228049929022,
+          "0.80": 0.050369235559955455,
+          "0.85": 0.02725216659216463,
+          "0.90": 0.007074900022648032,
+          "0.95": 0.00036442939938108733
+        }
+      },
+      "test_per_species": {
+        "apple": {
+          "mAP50": 0.3092903362813706,
+          "mAP50_95": 0.14465829990510704,
+          "precision@0.5": 0.061167747914735865,
+          "recall@0.5": 0.6560636182902585,
+          "f1@0.5": 0.1119023397761953,
+          "n_pred": 5395,
+          "n_gt": 503,
+          "tp@0.5": 330
+        },
+        "peach": {
+          "mAP50": 0.23381301081141204,
+          "mAP50_95": 0.09893006600503754,
+          "precision@0.5": 0.052259887005649715,
+          "recall@0.5": 0.43529411764705883,
+          "f1@0.5": 0.09331651954602775,
+          "n_pred": 1416,
+          "n_gt": 170,
+          "tp@0.5": 74
+        },
+        "pear": {
+          "mAP50": 0.14669006674640786,
+          "mAP50_95": 0.06355452602400749,
+          "precision@0.5": 0.05990220048899755,
+          "recall@0.5": 0.57421875,
+          "f1@0.5": 0.10848708487084871,
+          "n_pred": 2454,
+          "n_gt": 256,
+          "tp@0.5": 147
+        }
+      },
+      "test_counting": {
+        "count_MAE": 378.90909090909093,
+        "count_MAPE": 14.218544074222098,
+        "count_bias": 378.90909090909093
+      },
+      "test_segmentation": {
+        "pixel_IoU": 0.1485978225200381,
+        "pixel_precision": 0.15192208595586612,
+        "pixel_recall": 0.871647853140057,
+        "pixel_F1": 0.25874648132975314
+      },
+      "latency_ms_per_image_mean": 4663.927908318175,
+      "latency_ms_per_image_p95": 5446.245615949999
+    },
+    "C_hgb_full": {
+      "params": {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 0
+      },
+      "val": {
+        "mAP50": 0.4912655306741969,
+        "mAP50_95": 0.24144501212001734
+      },
+      "test": {
+        "mAP50": 0.40462856448653,
+        "mAP50_95": 0.18567388718816089,
+        "precision@0.5": 0.16700143472022955,
+        "recall@0.5": 0.6264800861141012,
+        "f1@0.5": 0.2637063887630267,
+        "n_pred": 3485,
+        "n_gt": 929,
+        "tp@0.5": 582,
+        "ap_per_iou": {
+          "0.50": 0.40462856448653,
+          "0.55": 0.3555953087325599,
+          "0.60": 0.3073106838274898,
+          "0.65": 0.253242273500257,
+          "0.70": 0.19436605000044602,
+          "0.75": 0.14714421656541793,
+          "0.80": 0.10402801563127492,
+          "0.85": 0.06215136754808066,
+          "0.90": 0.026732557373572954,
+          "0.95": 0.0015398342159797375
+        }
+      },
+      "test_per_species": {
+        "apple": {
+          "mAP50": 0.395082590299145,
+          "mAP50_95": 0.1747340028382857,
+          "precision@0.5": 0.15504241281809614,
+          "recall@0.5": 0.6540755467196819,
+          "f1@0.5": 0.25066666666666665,
+          "n_pred": 2122,
+          "n_gt": 503,
+          "tp@0.5": 329
+        },
+        "peach": {
+          "mAP50": 0.4905895407350466,
+          "mAP50_95": 0.2126364536173193,
+          "precision@0.5": 0.20594059405940593,
+          "recall@0.5": 0.611764705882353,
+          "f1@0.5": 0.30814814814814817,
+          "n_pred": 505,
+          "n_gt": 170,
+          "tp@0.5": 104
+        },
+        "pear": {
+          "mAP50": 0.4196032799441777,
+          "mAP50_95": 0.23220276697703474,
+          "precision@0.5": 0.17365967365967366,
+          "recall@0.5": 0.58203125,
+          "f1@0.5": 0.26750448833034113,
+          "n_pred": 858,
+          "n_gt": 256,
+          "tp@0.5": 149
+        }
+      },
+      "test_counting": {
+        "count_MAE": 116.18181818181819,
+        "count_MAPE": 3.7229389995460664,
+        "count_bias": 116.18181818181819
+      },
+      "test_segmentation": {
+        "pixel_IoU": 0.37133485596682,
+        "pixel_precision": 0.40710883643020707,
+        "pixel_recall": 0.8086417539023336,
+        "pixel_F1": 0.5415670058280857
+      },
+      "latency_ms_per_image_mean": 9569.254255863701,
+      "latency_ms_per_image_p95": 10859.42189540001,
+      "error_analysis": {
+        "worst_images": [
+          {
+            "uid": "peach_54",
+            "species": "peach",
+            "gt": 13,
+            "pred": 27,
+            "AP50": 0.10759075907590765
+          },
+          {
+            "uid": "apple_IMG_0361",
+            "species": "apple",
+            "gt": 33,
+            "pred": 237,
+            "AP50": 0.2974373324097157
+          },
+          {
+            "uid": "apple_IMG_0392",
+            "species": "apple",
+            "gt": 21,
+            "pred": 360,
+            "AP50": 0.31974671326814763
+          },
+          {
+            "uid": "apple_IMG_0354",
+            "species": "apple",
+            "gt": 46,
+            "pred": 120,
+            "AP50": 0.3295653626217236
+          },
+          {
+            "uid": "apple_IMG_0380",
+            "species": "apple",
+            "gt": 32,
+            "pred": 181,
+            "AP50": 0.3405114622982957
+          }
+        ],
+        "best_images": [
+          {
+            "uid": "pear_1_103",
+            "species": "pear",
+            "gt": 52,
+            "pred": 171,
+            "AP50": 0.5764372567157849
+          },
+          {
+            "uid": "peach_64",
+            "species": "peach",
+            "gt": 30,
+            "pred": 101,
+            "AP50": 0.5824533818146085
+          },
+          {
+            "uid": "peach_70",
+            "species": "peach",
+            "gt": 27,
+            "pred": 83,
+            "AP50": 0.6817134772120027
+          }
+        ],
+        "recall_by_gt_size_at_work_res": {
+          "small(<16px)": {
+            "n_gt": 174,
+            "recall@0.5": 0.46551724137931033
+          },
+          "medium(16-40px)": {
+            "n_gt": 569,
+            "recall@0.5": 0.6362038664323374
+          },
+          "large(>40px)": {
+            "n_gt": 186,
+            "recall@0.5": 0.7473118279569892
+          }
+        }
+      }
+    }
+  },
+  "tuning_grid_rows": {
+    "A_whiteness_otsu": [
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.05185103650729641,
+        "val_mAP50_95": 0.025217632267891466
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.007207993067107616,
+        "val_mAP50_95": 0.001969832037707256
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.023750317169253115,
+        "val_mAP50_95": 0.007507920367351352
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.04699240084161729,
+        "val_mAP50_95": 0.016498818799729083
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.05185103650729641,
+        "val_mAP50_95": 0.025217632267891466
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.008925752434679057,
+        "val_mAP50_95": 0.0024425815410937155
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.024482192246353528,
+        "val_mAP50_95": 0.00774585120181734
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.047997346362246944,
+        "val_mAP50_95": 0.016894676499192466
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.06395959243415662,
+        "val_mAP50_95": 0.03124064190496794
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.011656041674984909,
+        "val_mAP50_95": 0.0031925279544744757
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.026644743665726525,
+        "val_mAP50_95": 0.008442966560593975
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.052691745598676586,
+        "val_mAP50_95": 0.018388852961907183
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.07912429410906607,
+        "val_mAP50_95": 0.03850722023202012
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.016627461756502593,
+        "val_mAP50_95": 0.004652852076112402
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.03334836557329579,
+        "val_mAP50_95": 0.010558393485213964
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.059052969802414174,
+        "val_mAP50_95": 0.020529764244789913
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.060768083108562396,
+        "val_mAP50_95": 0.030694618067302153
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.007765535117135198,
+        "val_mAP50_95": 0.0021279766511635013
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.025073691416372244,
+        "val_mAP50_95": 0.007764066960850638
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.05247483198346483,
+        "val_mAP50_95": 0.01990153734186453
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.060768083108562396,
+        "val_mAP50_95": 0.030694618067302153
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.009584558170972386,
+        "val_mAP50_95": 0.002611762174166464
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.027373684887133366,
+        "val_mAP50_95": 0.008476931347504156
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.06057773177321055,
+        "val_mAP50_95": 0.022488091222066006
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.07500427155296155,
+        "val_mAP50_95": 0.03840152748085533
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.012846430245604572,
+        "val_mAP50_95": 0.003523626853201103
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.028073658918044916,
+        "val_mAP50_95": 0.00867636191495267
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.0575216808058997,
+        "val_mAP50_95": 0.021974210148895272
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.09460080401668637,
+        "val_mAP50_95": 0.04849020619765154
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.019467776657964914,
+        "val_mAP50_95": 0.005378205168475208
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.0381103088024599,
+        "val_mAP50_95": 0.011881151004481576
+      },
+      {
+        "threshold": 0.55,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.06631634368501241,
+        "val_mAP50_95": 0.02518040192807804
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.0686406053783,
+        "val_mAP50_95": 0.034888985128982274
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.00554931964397448,
+        "val_mAP50_95": 0.0014541624270392273
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.023017915097843487,
+        "val_mAP50_95": 0.006841493038434748
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.05042163069929619,
+        "val_mAP50_95": 0.017364362088989102
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.0686406053783,
+        "val_mAP50_95": 0.034888985128982274
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.006853656698643103,
+        "val_mAP50_95": 0.0018022190187441003
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.023724238372925758,
+        "val_mAP50_95": 0.007056890759554756
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.0518353989600577,
+        "val_mAP50_95": 0.01788078027659753
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.08687644326806439,
+        "val_mAP50_95": 0.044892642504545874
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.009217310395427974,
+        "val_mAP50_95": 0.002428294628062021
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.0263733367878136,
+        "val_mAP50_95": 0.007841637664363046
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.05763971361646787,
+        "val_mAP50_95": 0.019845755660136334
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.11047086535466355,
+        "val_mAP50_95": 0.05701525086952932
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.01402316150734379,
+        "val_mAP50_95": 0.0037245539448723373
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.03357839449857638,
+        "val_mAP50_95": 0.010025482969608266
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.06404575682150582,
+        "val_mAP50_95": 0.021988847202705594
+      }
+    ],
+    "B_hgb_colour": [
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.1825729896160698,
+        "val_mAP50_95": 0.08875374435179431
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.019289630879836206,
+        "val_mAP50_95": 0.0052409645064728115
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.0625427689381365,
+        "val_mAP50_95": 0.018606745465699612
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.1380455691009039,
+        "val_mAP50_95": 0.04676301923054493
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.1825729896160698,
+        "val_mAP50_95": 0.08875374435179431
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.02378714766654339,
+        "val_mAP50_95": 0.006481160967745545
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.06509126324994198,
+        "val_mAP50_95": 0.01936542652272014
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.14396733449092738,
+        "val_mAP50_95": 0.04884373649089275
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.23110000605564665,
+        "val_mAP50_95": 0.11171112824857458
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.031131242650763214,
+        "val_mAP50_95": 0.008525443939007237
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.07041044990008802,
+        "val_mAP50_95": 0.02092446492506373
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.15814277712218822,
+        "val_mAP50_95": 0.05352827826628277
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.27611745606441895,
+        "val_mAP50_95": 0.13160339127680867
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.04758995074399437,
+        "val_mAP50_95": 0.012967482342344858
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.0897328092798127,
+        "val_mAP50_95": 0.02668450207955104
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.17361585234569935,
+        "val_mAP50_95": 0.05885149866770049
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.17815832249028987,
+        "val_mAP50_95": 0.08055792938734016
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.015432639109639362,
+        "val_mAP50_95": 0.004303344334782741
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.054770575887465034,
+        "val_mAP50_95": 0.015051120081044922
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.13952418428558916,
+        "val_mAP50_95": 0.043601913110349416
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.17815832249028987,
+        "val_mAP50_95": 0.08055792938734016
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.019266059240804427,
+        "val_mAP50_95": 0.0053739224972525895
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.05643111081690929,
+        "val_mAP50_95": 0.015518605601375626
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.14289581520006858,
+        "val_mAP50_95": 0.044630981273946456
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.2204010536877982,
+        "val_mAP50_95": 0.0989527707871416
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.026335588606132675,
+        "val_mAP50_95": 0.0073533187353892445
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.06262875486941114,
+        "val_mAP50_95": 0.01720387678904683
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.15874544911722127,
+        "val_mAP50_95": 0.04946922235671661
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.274949020788496,
+        "val_mAP50_95": 0.12504255130335665
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.04001003363846218,
+        "val_mAP50_95": 0.011339931959836402
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.07997366145693663,
+        "val_mAP50_95": 0.02224386290430734
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.1787322525558814,
+        "val_mAP50_95": 0.05582736701961046
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.1635680285419816,
+        "val_mAP50_95": 0.07242926919538821
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.011024571379253391,
+        "val_mAP50_95": 0.0029432886043507115
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.04243797281126358,
+        "val_mAP50_95": 0.011739769716969545
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.11841188493874504,
+        "val_mAP50_95": 0.03527762243499279
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.1635680285419816,
+        "val_mAP50_95": 0.07242926919538821
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.013803384357011962,
+        "val_mAP50_95": 0.0036853732916207415
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.04363407968873994,
+        "val_mAP50_95": 0.012078870125363362
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.12112177826193786,
+        "val_mAP50_95": 0.03612772612671912
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.2009296547772637,
+        "val_mAP50_95": 0.08833832214281666
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.01859585437702083,
+        "val_mAP50_95": 0.004962702118374903
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.04834446850557274,
+        "val_mAP50_95": 0.01336979903505588
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.13596101078862413,
+        "val_mAP50_95": 0.04049063856731298
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.2580969262517849,
+        "val_mAP50_95": 0.11354221981320693
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.02767484829782024,
+        "val_mAP50_95": 0.007411882773655998
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.06281722736498167,
+        "val_mAP50_95": 0.01766626433171799
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.15717426657584377,
+        "val_mAP50_95": 0.04680478252569249
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.15392226471654694,
+        "val_mAP50_95": 0.0669387107059907
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.008631253442532646,
+        "val_mAP50_95": 0.002310256396364919
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.035634846278252384,
+        "val_mAP50_95": 0.009559296598840146
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.09178246943144477,
+        "val_mAP50_95": 0.025555103877413256
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.15392226471654694,
+        "val_mAP50_95": 0.0669387107059907
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.010763888128481603,
+        "val_mAP50_95": 0.0028832834895187952
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.03717936394034153,
+        "val_mAP50_95": 0.009995901810481687
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.09517513906477675,
+        "val_mAP50_95": 0.02650799134582993
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.18596052568450966,
+        "val_mAP50_95": 0.07962279685060666
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.014657515504198106,
+        "val_mAP50_95": 0.003927249981668602
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.04061383552622444,
+        "val_mAP50_95": 0.010951781690234395
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.10490433805801729,
+        "val_mAP50_95": 0.02926380813286895
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.23361499094703933,
+        "val_mAP50_95": 0.09827283274982786
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.021296554222470603,
+        "val_mAP50_95": 0.005720226851060289
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.054067753813386986,
+        "val_mAP50_95": 0.014568793077533676
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.12059031932536268,
+        "val_mAP50_95": 0.033708744329246906
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.10484903540086081,
+        "val_mAP50_95": 0.03992109739635442
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.007115152865402426,
+        "val_mAP50_95": 0.0018133389035684365
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.024230207437823524,
+        "val_mAP50_95": 0.00663429841301547
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.06211698249214553,
+        "val_mAP50_95": 0.016407663360144067
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.10484903540086081,
+        "val_mAP50_95": 0.03992109739635442
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.00881783627579603,
+        "val_mAP50_95": 0.0022435928514751074
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.024992719203859773,
+        "val_mAP50_95": 0.006859032636523323
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.06283762876810146,
+        "val_mAP50_95": 0.016573098691355634
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.1303966244319278,
+        "val_mAP50_95": 0.04997124182016798
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.01191927274071396,
+        "val_mAP50_95": 0.0030232121431216234
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.027702837260275403,
+        "val_mAP50_95": 0.007625835724905707
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.0712970891357418,
+        "val_mAP50_95": 0.018843010773616768
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.17151367965875092,
+        "val_mAP50_95": 0.06708939806831836
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.017873760600182496,
+        "val_mAP50_95": 0.004592298684418793
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.03663738270818259,
+        "val_mAP50_95": 0.010097055345138101
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.08525465024358936,
+        "val_mAP50_95": 0.02267762781399099
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.05892129479535128,
+        "val_mAP50_95": 0.02009996677317076
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.0037418487934471217,
+        "val_mAP50_95": 0.000986746066087659
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.014210242743154496,
+        "val_mAP50_95": 0.00385090997788544
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.03786593686153291,
+        "val_mAP50_95": 0.009048767240608924
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.05892129479535128,
+        "val_mAP50_95": 0.02009996677317076
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.004997039615530141,
+        "val_mAP50_95": 0.0013205610535439462
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.014808094389718501,
+        "val_mAP50_95": 0.004025186607787579
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.038603415903867816,
+        "val_mAP50_95": 0.009235521364404465
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.07228461219612939,
+        "val_mAP50_95": 0.02436991854745887
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.007392926625849116,
+        "val_mAP50_95": 0.0019727389429258077
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.01689258426186057,
+        "val_mAP50_95": 0.004608505746858467
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.04349406738348845,
+        "val_mAP50_95": 0.010300258437179782
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.10473162129244909,
+        "val_mAP50_95": 0.03672445925609168
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.0108203454459561,
+        "val_mAP50_95": 0.002868331770877472
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.022836815972912407,
+        "val_mAP50_95": 0.00619999460500288
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.051845915636224066,
+        "val_mAP50_95": 0.012088763258361921
+      }
+    ],
+    "C_hgb_full": [
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.3985325733990279,
+        "val_mAP50_95": 0.20366458191961048
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.06747236742139169,
+        "val_mAP50_95": 0.02222600526449405
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.12123155495204216,
+        "val_mAP50_95": 0.043462305779602715
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.19217786368284387,
+        "val_mAP50_95": 0.07261414721512446
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.3985325733990279,
+        "val_mAP50_95": 0.20366458191961048
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.07266054657181333,
+        "val_mAP50_95": 0.023990323772732223
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.12728678518409547,
+        "val_mAP50_95": 0.0456531220218998
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.20039404792070575,
+        "val_mAP50_95": 0.07582716399118099
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.3989921743526137,
+        "val_mAP50_95": 0.20382363505625167
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.08063128120307961,
+        "val_mAP50_95": 0.026662944034464748
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.13534961938341147,
+        "val_mAP50_95": 0.04857141484512569
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.21011540348947824,
+        "val_mAP50_95": 0.079590240713418
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.40056383189618067,
+        "val_mAP50_95": 0.20441653355325987
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.09641376361048636,
+        "val_mAP50_95": 0.03205094953708563
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.15338649428667336,
+        "val_mAP50_95": 0.05540869145936822
+      },
+      {
+        "threshold": 0.3,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.22697538066469955,
+        "val_mAP50_95": 0.08622185950913769
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.4532703033136976,
+        "val_mAP50_95": 0.22871256439779838
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.06975255976152803,
+        "val_mAP50_95": 0.022636076795430025
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.1378379502705929,
+        "val_mAP50_95": 0.04881261110679297
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.19959531729328317,
+        "val_mAP50_95": 0.07600402562421033
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.4532703033136976,
+        "val_mAP50_95": 0.22871256439779838
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.07495925081462929,
+        "val_mAP50_95": 0.024340982201774993
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.14499735976498462,
+        "val_mAP50_95": 0.05146794792498828
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.2063893207583463,
+        "val_mAP50_95": 0.07874033731227416
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.45469651153381496,
+        "val_mAP50_95": 0.2292744870737955
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.08296885206936519,
+        "val_mAP50_95": 0.02697791073800545
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.1555360782745267,
+        "val_mAP50_95": 0.055539760636169076
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.21767160668135727,
+        "val_mAP50_95": 0.08333504838287684
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.45714087262651293,
+        "val_mAP50_95": 0.2302062851100596
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.10051971979678914,
+        "val_mAP50_95": 0.03284178595818546
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.1771618900165893,
+        "val_mAP50_95": 0.06387854124670683
+      },
+      {
+        "threshold": 0.4,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.23287658717887932,
+        "val_mAP50_95": 0.08980515041590578
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.4669657519917932,
+        "val_mAP50_95": 0.23968161534804433
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.0655509419149133,
+        "val_mAP50_95": 0.017748112344029312
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.1246260105075069,
+        "val_mAP50_95": 0.03759064233187549
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.2103704339359792,
+        "val_mAP50_95": 0.07260140266734466
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.4669657519917932,
+        "val_mAP50_95": 0.23968161534804433
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.07114496596985637,
+        "val_mAP50_95": 0.01927241640777925
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.13141385287590301,
+        "val_mAP50_95": 0.039758990059955035
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.21812207947135678,
+        "val_mAP50_95": 0.0753990480561585
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.4682348320776918,
+        "val_mAP50_95": 0.24016732356830314
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.08094396897027578,
+        "val_mAP50_95": 0.021934388624840172
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.139706731752906,
+        "val_mAP50_95": 0.04243477128775268
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.22744859852722527,
+        "val_mAP50_95": 0.07886864563583576
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.47275776033698974,
+        "val_mAP50_95": 0.24205617192975035
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.09872892721270704,
+        "val_mAP50_95": 0.026842460919085577
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.15709106860966063,
+        "val_mAP50_95": 0.04785138484437964
+      },
+      {
+        "threshold": 0.5,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.24310034034240216,
+        "val_mAP50_95": 0.08473211252902393
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.48167443165545865,
+        "val_mAP50_95": 0.2377448285832607
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.04451447485542333,
+        "val_mAP50_95": 0.012458050533113258
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.10136226498811653,
+        "val_mAP50_95": 0.02981136373485972
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.19129774764735563,
+        "val_mAP50_95": 0.06297536567622879
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.48167443165545865,
+        "val_mAP50_95": 0.2377448285832607
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.047989135317234595,
+        "val_mAP50_95": 0.01342991229223162
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.10515909891553755,
+        "val_mAP50_95": 0.030990340249625086
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.19540650880927204,
+        "val_mAP50_95": 0.0645162088513386
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.4846389628307993,
+        "val_mAP50_95": 0.2388723331175155
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.05427651062238589,
+        "val_mAP50_95": 0.015214243939816833
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.11120895604147524,
+        "val_mAP50_95": 0.0328849123447833
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.20412461275408528,
+        "val_mAP50_95": 0.06781069891210582
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.4912655306741969,
+        "val_mAP50_95": 0.24144501212001734
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.06730754533730608,
+        "val_mAP50_95": 0.019132216999983923
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.12877510657372054,
+        "val_mAP50_95": 0.03835467355078358
+      },
+      {
+        "threshold": 0.6,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.21708941082865044,
+        "val_mAP50_95": 0.07271604702249848
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.4197443451222312,
+        "val_mAP50_95": 0.18857682424859118
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.0261769067063294,
+        "val_mAP50_95": 0.006602059279056052
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.07205775596526715,
+        "val_mAP50_95": 0.01863135645629945
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.1513677764239761,
+        "val_mAP50_95": 0.04091311069263571
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.4197443451222312,
+        "val_mAP50_95": 0.18857682424859118
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.028383139326777128,
+        "val_mAP50_95": 0.007169353000951331
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.0743134510729861,
+        "val_mAP50_95": 0.019235987128081403
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.15461829384416706,
+        "val_mAP50_95": 0.04184167439469223
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.4235998846566689,
+        "val_mAP50_95": 0.18996530319328545
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.03229184474815665,
+        "val_mAP50_95": 0.008173216878651189
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.07892194729003332,
+        "val_mAP50_95": 0.020472590842861266
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.15905521906984213,
+        "val_mAP50_95": 0.04310271867089048
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.4291420022888611,
+        "val_mAP50_95": 0.19187436764828966
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.03935932676187067,
+        "val_mAP50_95": 0.009952351877666219
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.08833048345096997,
+        "val_mAP50_95": 0.022902784790210413
+      },
+      {
+        "threshold": 0.7,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.1653834090882573,
+        "val_mAP50_95": 0.04496233202253245
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 0,
+        "val_mAP50": 0.3065673213966823,
+        "val_mAP50_95": 0.11823504178362514
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 3,
+        "val_mAP50": 0.010882047979384976,
+        "val_mAP50_95": 0.0024403867697878295
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 6,
+        "val_mAP50": 0.029809450747743427,
+        "val_mAP50_95": 0.007441899648592569
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 4,
+        "peak_distance": 10,
+        "val_mAP50": 0.08162516468767887,
+        "val_mAP50_95": 0.020236404745981002
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 0,
+        "val_mAP50": 0.3065673213966823,
+        "val_mAP50_95": 0.11823504178362514
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 3,
+        "val_mAP50": 0.011706162771401579,
+        "val_mAP50_95": 0.002638675328437122
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 6,
+        "val_mAP50": 0.031159872759586225,
+        "val_mAP50_95": 0.007812270674403507
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 8,
+        "peak_distance": 10,
+        "val_mAP50": 0.08407139910832666,
+        "val_mAP50_95": 0.02090272688204923
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 0,
+        "val_mAP50": 0.3103784005690114,
+        "val_mAP50_95": 0.11943586029496855
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 3,
+        "val_mAP50": 0.013531885672509607,
+        "val_mAP50_95": 0.003075144661439082
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 6,
+        "val_mAP50": 0.033651898882721965,
+        "val_mAP50_95": 0.008467799825681256
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 15,
+        "peak_distance": 10,
+        "val_mAP50": 0.08894494151044816,
+        "val_mAP50_95": 0.022282013005387936
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 0,
+        "val_mAP50": 0.3155593437241738,
+        "val_mAP50_95": 0.12084849177976649
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 3,
+        "val_mAP50": 0.01766104477650944,
+        "val_mAP50_95": 0.004049022960844833
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 6,
+        "val_mAP50": 0.039313039337658465,
+        "val_mAP50_95": 0.009952891818114394
+      },
+      {
+        "threshold": 0.8,
+        "min_area": 30,
+        "peak_distance": 10,
+        "val_mAP50": 0.09734722324226877,
+        "val_mAP50_95": 0.024444517879754792
+      }
+    ]
+  }
+}

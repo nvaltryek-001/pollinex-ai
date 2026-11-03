@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-11-02T13:41:40.763230+00:00",
+  "embedding": "hand-crafted hcd-v1 (HSV hist + Lab moments + HOG + LBP)",
+  "k": 7,
+  "threshold": 0.925,
+  "gallery_counts": {
+    "apple": 888,
+    "peach": 491,
+    "pear": 424
+  },
+  "data": {
+    "gallery_crops": 1803,
+    "val_queries": 626,
+    "test_flower_crops": 694,
+    "test_background_crops": 220
+  },
+  "test_open_set": {
+    "accuracy": 0.8194748358862144,
+    "macro_f1": 0.7994484661667636,
+    "per_class": {
+      "apple": {
+        "precision": 0.8337129840546698,
+        "recall": 0.9481865284974094,
+        "f1": 0.8872727272727273,
+        "support": 386
+      },
+      "peach": {
+        "precision": 0.8098159509202454,
+        "recall": 0.8918918918918919,
+        "f1": 0.8488745980707395,
+        "support": 148
+      },
+      "pear": {
+        "precision": 0.8505747126436781,
+        "recall": 0.925,
+        "f1": 0.8862275449101797,
+        "support": 160
+      },
+      "unknown": {
+        "precision": 0.7463768115942029,
+        "recall": 0.4681818181818182,
+        "f1": 0.5754189944134078,
+        "support": 220
+      }
+    },
+    "labels": [
+      "apple",
+      "peach",
+      "pear",
+      "unknown"
+    ],
+    "confusion_matrix": [
+      [
+        366,
+        0,
+        2,
+        18
+      ],
+      [
+        0,
+        132,
+        1,
+        15
+      ],
+      [
+        9,
+        1,
+        148,
+        2
+      ],
+      [
+        64,
+        30,
+        23,
+        103
+      ]
+    ]
+  },
+  "test_flowers_only": {
+    "accuracy": 0.930835734870317,
+    "macro_f1": 0.9510541717162585,
+    "per_class": {
+      "apple": {
+        "precision": 0.976,
+        "recall": 0.9481865284974094,
+        "f1": 0.961892247043364,
+        "support": 386
+      },
+      "peach": {
+        "precision": 0.9924812030075187,
+        "recall": 0.8918918918918919,
+        "f1": 0.9395017793594306,
+        "support": 148
+      },
+      "pear": {
+        "precision": 0.9801324503311258,
+        "recall": 0.925,
+        "f1": 0.9517684887459807,
+        "support": 160
+      },
+      "unknown": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "labels": [
+      "apple",
+      "peach",
+      "pear",
+      "unknown"
+    ],
+    "confusion_matrix": [
+      [
+        366,
+        0,
+        2,
+        18
+      ],
+      [
+        0,
+        132,
+        1,
+        15
+      ],
+      [
+        9,
+        1,
+        148,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "test_background_rejection_rate": 0.4681818181818182,
+  "leave_one_species_out": {
+    "apple": {
+      "queries": 386,
+      "returned_unknown_fraction": 0.43523316062176165,
+      "wrongly_assigned_to": {
+        "pear": 218
+      }
+    },
+    "peach": {
+      "queries": 148,
+      "returned_unknown_fraction": 0.918918918918919,
+      "wrongly_assigned_to": {
+        "pear": 9,
+        "apple": 3
+      }
+    },
+    "pear": {
+      "queries": 160,
+      "returned_unknown_fraction": 0.21875,
+      "wrongly_assigned_to": {
+        "peach": 4,
+        "apple": 121
+      }
+    }
+  },
+  "threshold_tuning": [
+    {
+      "threshold": 0.55,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.575,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.6,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.625,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.65,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.675,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.7,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.725,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.75,
+      "val_macro_f1": 0.6301813829681358,
+      "val_accuracy": 0.755591054313099
+    },
+    {
+      "threshold": 0.775,
+      "val_macro_f1": 0.6417291042291042,
+      "val_accuracy": 0.7603833865814696
+    },
+    {
+      "threshold": 0.8,
+      "val_macro_f1": 0.656476203535027,
+      "val_accuracy": 0.7667731629392971
+    },
+    {
+      "threshold": 0.825,
+      "val_macro_f1": 0.6600533978193552,
+      "val_accuracy": 0.768370607028754
+    },
+    {
+      "threshold": 0.85,
+      "val_macro_f1": 0.667644194266696,
+      "val_accuracy": 0.7715654952076677
+    },
+    {
+      "threshold": 0.875,
+      "val_macro_f1": 0.7140171953480113,
+      "val_accuracy": 0.7939297124600639
+    },
+    {
+      "threshold": 0.9,
+      "val_macro_f1": 0.7468752097107133,
+      "val_accuracy": 0.8067092651757188
+    },
+    {
+      "threshold": 0.925,
+      "val_macro_f1": 0.7828254578253773,
+      "val_accuracy": 0.8130990415335463
+    },
+    {
+      "threshold": 0.95,
+      "val_macro_f1": 0.6378468912624708,
+      "val_accuracy": 0.6741214057507987
+    }
+  ],
+  "caveat": "Species and camera setup are confounded in this dataset (one setup per species). High accuracy here does not demonstrate field-general species recognition; it demonstrates the gallery + open-set mechanism."
+}
