@@ -160,7 +160,7 @@ is not a claim that the existing detector improved.
 |---|---:|---|---|
 | AI engine (pytest) | 21 | this workspace (audit), CI Ubuntu + Windows | ✅ 21 passed |
 | Simulator (pytest) | 16 | this workspace (audit), CI | ✅ 16 passed |
-| Backend API (pytest) | 24 | CI Ubuntu + Windows | ✅ in CI |
+| Backend API (pytest) | 24 | CI Ubuntu + Windows | ✅ 24 passed (run 41644713098) |
 | Frontend unit (Vitest) | 11 | CI | ✅ in CI |
 | Playwright E2E | 14 | CI (Ubuntu) | ✅ in CI |
 | Lint (`ruff --select F,E9,PLE`, the CI rule set) | — | this workspace | ✅ all checks passed |
@@ -205,4 +205,14 @@ is not a claim that the existing detector improved.
 - API and Evaluation page now show the extension reports; the Datasets page shows the new statuses.
 - README and dataset documentation updated with the verified counts.
 
-**Final CI status:** see the commit history. The CI run for the audit commit is linked in `docs/TESTING_REPORT.md` after it completes.
+**Final CI status** for audit commit `d434111`, [run 41644713098](https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41644713098): all 5 jobs **succeeded**.
+
+| Job | Result |
+|---|---|
+| Engine + simulator | 37 passed |
+| Backend | 24 passed (SQLite and PostgreSQL migrations, startup) |
+| Vitest | 11 passed |
+| Type-check and production build | ✅ |
+| Playwright E2E | 14 passed |
+| Docker images | ✅ |
+| Windows fresh-clone setup and tests | engine 37, backend 24, Vitest 11, Playwright 12 passed (2 screenshot tests skipped by design) |
