@@ -9,7 +9,8 @@ Source and verification (all checked by this script, nothing assumed):
   * Species identification: kept only if the observation is Research Grade (community agreement) OR is a
     cultivated/captive observation (Casual only because cultivated) with >= 1 independent agreeing
     identification and 0 disagreements. Cultivated crops are rarely Research Grade, hence the second rule.
-  * Phenology: annotation "Plant Phenology = Flowering" (term ids verified against /v1/controlled_terms at runtime).
+  * Phenology: annotation "Flowers and Fruits = Flowers" (formerly "Plant Phenology = Flowering"; term ids
+    verified against /v1/controlled_terms at runtime).
   * Licence: per PHOTO licence code must be cc0 or cc-by (filtered by the API and re-checked per photo).
     Attribution string, photographer login, observation URL and licence are stored for every image.
   * One photo per observation (the first openly licensed one), at most --max-per-user observations per observer.
@@ -92,11 +93,11 @@ def verify_terms() -> tuple[int, int]:
             tl = t.get("label") or (t.get("labels") or [{}])[0].get("label", "")
             vals = [(v.get("id"), v.get("label") or (v.get("labels") or [{}])[0].get("label", "")) for v in t.get("values", [])]
             seen.append((t.get("id"), tl, vals))
-            if "phenology" in str(tl).lower():
+            if str(tl).lower() in ("plant phenology", "flowers and fruits"):  # renamed by iNaturalist
                 for vid, vl in vals:
-                    if str(vl).lower() == "flowering":
+                    if str(vl).lower() in ("flowering", "flowers"):
                         return t["id"], vid
-    raise SystemExit(f"could not find 'Plant Phenology = Flowering' in controlled terms; got {json.dumps(seen)[:3000]}")
+    raise SystemExit(f"could not find the flowering annotation in controlled terms; got {json.dumps(seen)[:3000]}")
 
 
 def resolve_taxon(name: str) -> dict:
@@ -220,7 +221,7 @@ def main():
     REPORTS.mkdir(parents=True, exist_ok=True)
     seen_sha, seen_dh, rows = {}, [], []
     report = {"generated_at": datetime.now(timezone.utc).isoformat(), "source": "iNaturalist API v1 (api.inaturalist.org)",
-              "phenology_term": {"term_id": term[0], "value_id": term[1], "meaning": "Plant Phenology = Flowering"},
+              "phenology_term": {"term_id": term[0], "value_id": term[1], "meaning": "Flowers and Fruits = Flowers (formerly Plant Phenology = Flowering)"},
               "licences_accepted": sorted(OPEN_LICENCES), "per_species": {}}
     for sp in args.species:
         cands, rejected = fetch_species(sp, SPECIES[sp], term, args.per_species, args.max_per_user)
