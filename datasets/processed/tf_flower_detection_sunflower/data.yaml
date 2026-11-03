@@ -1,0 +1,6 @@
+# sunflower subset of TF Flower Detection (INESC TEC, Zenodo 7768292, CC BY 4.0); species from tf flower_photos class folders
+train: train/images
+val: val/images
+test: test/images
+names:
+  0: flower

@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-11-03T13:15:39.640387+00:00",
+  "extra_source": "datasets/processed/extra_gallery",
+  "threshold_kept": 0.925,
+  "threshold_note": "not re-tuned; calibrated on USDA validation data",
+  "gallery_before": {
+    "apple": 888,
+    "peach": 491,
+    "pear": 424
+  },
+  "references_added": {
+    "sunflower": 533
+  },
+  "gallery_after": {
+    "apple": 888,
+    "peach": 491,
+    "pear": 424,
+    "sunflower": 533
+  },
+  "extra_species_test": {
+    "sunflower": {
+      "test_images": 95,
+      "recall": 0.9368421052631579,
+      "returned_unknown": 0.06315789473684211,
+      "predicted_as": {
+        "sunflower": 89,
+        "unknown": 6
+      }
+    }
+  },
+  "extra_species_report": {
+    "accuracy": 0.9368421052631579,
+    "macro_f1": 0.967391304347826,
+    "per_class": {
+      "apple": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "peach": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "pear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "sunflower": {
+        "precision": 1.0,
+        "recall": 0.9368421052631579,
+        "f1": 0.967391304347826,
+        "support": 95
+      },
+      "unknown": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "labels": [
+      "apple",
+      "peach",
+      "pear",
+      "sunflower",
+      "unknown"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        89,
+        6
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "usda_test_flowers_after_extension": {
+    "accuracy": 0.9337175792507204,
+    "per_class": {
+      "apple": {
+        "precision": 0.9813829787234043,
+        "recall": 0.9559585492227979,
+        "f1": 0.968503937007874,
+        "support": 386
+      },
+      "peach": {
+        "precision": 0.9924812030075187,
+        "recall": 0.8918918918918919,
+        "f1": 0.9395017793594306,
+        "support": 148
+      },
+      "pear": {
+        "precision": 0.9865771812080537,
+        "recall": 0.91875,
+        "f1": 0.9514563106796117,
+        "support": 160
+      },
+      "sunflower": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "unknown": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    }
+  },
+  "usda_background_rejection_after_extension": 0.4818181818181818,
+  "saved": false,
+  "caveat": "Extra references are close-up photos from a different source than the orchard images; accuracy on field photos of these species is not measured by this test."
+}

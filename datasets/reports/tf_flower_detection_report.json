@@ -21,5 +21,29 @@
   ],
   "class_id_contact_sheets": [
     "datasets/reports/tf_flower_detection_class_0.jpg"
-  ]
+  ],
+  "flower_photos_join": {
+    "source": "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz",
+    "matched_per_species": {
+      "daisy": 622,
+      "sunflower": 679,
+      "rose": 606,
+      "tulip": 752,
+      "dandelion": 893
+    },
+    "rule": "detection image file stem == flower_photos file stem; species = its class folder"
+  },
+  "export_species": {
+    "species": "sunflower",
+    "images": 628,
+    "boxes": 2432,
+    "split": {
+      "train": 439,
+      "val": 94,
+      "test": 95
+    },
+    "path": "datasets/processed/tf_flower_detection_sunflower",
+    "gallery_path": "datasets/processed/sunflower_gallery",
+    "per_image_licence_lines": 608
+  }
 }
