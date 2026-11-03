@@ -85,13 +85,18 @@ def get_bytes(url: str, tries: int = 3) -> bytes:
 
 
 def verify_terms() -> tuple[int, int]:
-    data = get_json(f"{API}/controlled_terms")
-    for t in data["results"]:
-        if t["label"] == "Plant Phenology":
-            for v in t["values"]:
-                if v["label"] == "Flowering":
-                    return t["id"], v["id"]
-    raise SystemExit("could not find 'Plant Phenology = Flowering' in /v1/controlled_terms")
+    seen = []
+    for url in (f"{API}/controlled_terms", f"{API}/controlled_terms/for_taxon?taxon_id=47126"):  # 47126 = Plantae
+        data = get_json(url)
+        for t in data.get("results", []):
+            tl = t.get("label") or (t.get("labels") or [{}])[0].get("label", "")
+            vals = [(v.get("id"), v.get("label") or (v.get("labels") or [{}])[0].get("label", "")) for v in t.get("values", [])]
+            seen.append((t.get("id"), tl, vals))
+            if "phenology" in str(tl).lower():
+                for vid, vl in vals:
+                    if str(vl).lower() == "flowering":
+                        return t["id"], vid
+    raise SystemExit(f"could not find 'Plant Phenology = Flowering' in controlled terms; got {json.dumps(seen)[:3000]}")
 
 
 def resolve_taxon(name: str) -> dict:
