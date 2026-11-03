@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T15:25:42.249392+00:00",
+  "generated_at": "2026-11-03T18:56:48.206751+00:00",
   "detector": "pixel-hgb-20261102",
   "backend": "pixel-hgb-watershed",
   "data": "datasets/processed/usda_fruit_flower",
@@ -33,6 +33,6 @@
     "count_bias": 110.0
   },
   "images_with_zero_predictions": 0,
-  "latency_ms_mean": 2808.7159804090916,
+  "latency_ms_mean": 910.1645633181761,
   "note": "detector=pixel"
 }

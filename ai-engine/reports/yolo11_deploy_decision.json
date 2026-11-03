@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-11-03T18:56:53.214573+00:00",
+  "rule": "deploy YOLO11 iff USDA-test mAP@0.5 (same evaluation code) >= pixel detector's",
+  "usda_test": {
+    "pixel": {
+      "mAP50": 0.4103329385652515,
+      "mAP50_95": 0.19020202999753272,
+      "precision@0.5": 0.16930426993132278,
+      "recall@0.5": 0.6103336921420882,
+      "f1@0.5": 0.26507713884992984
+    },
+    "yolo11": {
+      "mAP50": 0.54144203381076,
+      "mAP50_95": 0.27691767976181464,
+      "precision@0.5": 0.2645038167938931,
+      "recall@0.5": 0.7459634015069968,
+      "f1@0.5": 0.39053254437869817
+    }
+  },
+  "sunflower_test": {
+    "pixel": {
+      "mAP50": 0.0006721385783102547,
+      "mAP50_95": 0.0005214732857021324,
+      "precision@0.5": 0.0010666666666666667,
+      "recall@0.5": 0.014778325123152709,
+      "f1@0.5": 0.001989719781130824
+    },
+    "yolo11": {
+      "mAP50": 0.8667331487235582,
+      "mAP50_95": 0.6821295469275259,
+      "precision@0.5": 0.5428156748911466,
+      "recall@0.5": 0.9211822660098522,
+      "f1@0.5": 0.6831050228310502
+    }
+  },
+  "deployed": true,
+  "licence_note": "Ultralytics YOLO11 is AGPL-3.0; the exported model is distributed under AGPL-3.0 terms (see ai-engine/models/YOLO11_LICENSE_NOTE.md). Delete the .onnx to fall back to the MIT pixel model."
+}

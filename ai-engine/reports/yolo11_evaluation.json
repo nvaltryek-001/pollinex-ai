@@ -1,0 +1,23 @@
+{
+  "data": "combined: usda_fruit_flower + tf_flower_detection_sunflower",
+  "epochs_completed": 97,
+  "generated_at": "2026-11-03T18:56:24.876233+00:00",
+  "weights": "/home/runner/work/pollinex-ai/pollinex-ai/ai-engine/runs/flower_yolo11/weights/best.pt",
+  "imgsz": 800,
+  "val": {
+    "mAP50": 0.7282043960352605,
+    "mAP50_95": 0.47916026681759194
+  },
+  "test": {
+    "mAP50": 0.6712920968670907,
+    "mAP50_95": 0.4321165347016861,
+    "precision": 0.6687470390499947,
+    "recall": 0.6215309213331761
+  },
+  "speed_ms": {
+    "preprocess": 0.4781030597963468,
+    "inference": 30.948834367546414,
+    "loss": 9.7829074664519e-05,
+    "postprocess": 0.8732082991410319
+  }
+}
