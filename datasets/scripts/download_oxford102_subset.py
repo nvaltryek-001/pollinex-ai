@@ -27,15 +27,32 @@ from scipy.io import loadmat
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/"
+MIRRORS = [BASE, "https://thor.robots.ox.ac.uk/datasets/flowers-102/", "https://thor.robots.ox.ac.uk/flowers/102/"]
 DEFAULT_MAP = ["sunflower=54", "hibiscus=83"]
 
 
 def fetch(name: str, dest: Path) -> Path:
+    """Official VGG host first, then the current Oxford mirrors; 3 attempts each, 180 s socket timeout."""
+    import shutil
+    import socket
+    import time
     p = dest / name
-    if not p.exists():
-        print("downloading", BASE + name)
-        urllib.request.urlretrieve(BASE + name, p)
-    return p
+    if p.exists():
+        return p
+    socket.setdefaulttimeout(180)
+    errors = []
+    for base in MIRRORS:
+        for attempt in range(3):
+            try:
+                print("downloading", base + name, "attempt", attempt + 1)
+                with urllib.request.urlopen(base + name) as r, open(str(p) + ".part", "wb") as f:
+                    shutil.copyfileobj(r, f)
+                Path(str(p) + ".part").rename(p)
+                return p
+            except OSError as e:
+                errors.append(f"{base}{name}: {e}")
+                time.sleep(5)
+    raise SystemExit("all mirrors failed:\n" + "\n".join(errors))
 
 
 def main():
