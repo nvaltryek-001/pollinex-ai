@@ -132,7 +132,7 @@ def fetch_env(body: WeatherFetchIn, user: User = Depends(get_current_user), db: 
     rec = EnvironmentRecord(owner_id=user.id, field_id=body.field_id, observed_at=w["observed_at"],
                             temperature_c=w["temperature_c"], relative_humidity_pct=w["relative_humidity_pct"],
                             rain_mm_h=w["rain_mm_h"], wind_kmh=w["wind_kmh"], source="open-meteo",
-                            source_detail=w["source_detail"], observation="")
+                            source_detail=w["source_detail"], observation=w["observation"])
     db.add(rec)
     db.flush()
     log(db, user, "environment.fetch", "environment", rec.id)

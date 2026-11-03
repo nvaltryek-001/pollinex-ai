@@ -7,6 +7,7 @@ import { Card, ErrorBanner, Loading, MethodBadge, Notice, PageHeader } from "../
 import { api, tokenStore, wsUrl } from "../lib/api";
 import { blobToBase64, captureFrame, CameraError, listCameras, openCamera, stopStream } from "../lib/camera";
 import { useApi } from "../lib/hooks";
+import { toast } from "../lib/toast";
 import type { EnvRecord, LiveResult, Page, Plant, Scan, SpeciesKB } from "../lib/types";
 
 type Tab = "upload" | "camera";
@@ -40,7 +41,9 @@ export default function Scanner() {
     if (envId) fd.append("environment_id", envId);
     if (plantId) fd.append("plant_id", plantId);
     try {
-      setResult(await api.upload<Scan>("/scans", fd));
+      const s = await api.upload<Scan>("/scans", fd);
+      setResult(s);
+      toast.success(`Scan #${s.id} saved · ${s.flower_count} flower${s.flower_count === 1 ? "" : "s"} found`);
     } catch (e) {
       setError((e as Error).message);
     } finally {

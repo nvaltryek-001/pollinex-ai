@@ -23,6 +23,8 @@ export interface SpeciesResult {
   similarity?: number;
   reason?: string;
   candidates?: { species: string; vote_share: number }[];
+  original_prediction?: string;
+  original_confidence?: number | null;
 }
 
 export interface StageResult {
@@ -58,6 +60,7 @@ export interface Flower {
   stage?: StageResult;
   structure?: {
     centre_region: { box: number[]; center: number[]; area_fraction_of_flower: number } | null;
+    structures?: { structure: string; status: string; visible: boolean | null; detail: string }[];
     yellow_cluster_visible: boolean;
     yellow_fraction_in_centre?: number;
     method: string;
@@ -195,6 +198,8 @@ export interface Dashboard {
   scans_per_day_30d: Record<string, number>;
   detection_methods_30d: Record<string, number>;
   recent_scans: Scan[];
+  environment_trend_30d?: { day: string; temperature_c?: number; relative_humidity_pct?: number; rain_mm_h?: number; wind_kmh?: number; records: number }[];
+  simulation_history?: { id: number; species_id: string; created_at: string; status: string; mode: string; efficiency: number | null }[];
   provenance: string;
   model_performance?: { source: string; mAP50: number; mAP50_95: number; generated_at: string };
 }

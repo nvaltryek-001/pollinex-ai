@@ -62,6 +62,19 @@ def dashboard_metrics(db: Session, owner: int | None) -> dict:
     per_day = Counter(s.created_at.strftime("%Y-%m-%d") for s in recent)
     methods = Counter(s.detection_method for s in recent)
     latest = db.scalars(own(select(Scan), Scan.owner_id).order_by(Scan.created_at.desc()).limit(8)).unique().all()
+    envs = db.scalars(own(select(EnvironmentRecord), EnvironmentRecord.owner_id)
+                      .where(EnvironmentRecord.observed_at >= since).order_by(EnvironmentRecord.observed_at)).all()
+    env_by_day: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
+    for e in envs:
+        day = e.observed_at.strftime("%Y-%m-%d")
+        for k in ("temperature_c", "relative_humidity_pct", "rain_mm_h", "wind_kmh"):
+            if getattr(e, k) is not None:
+                env_by_day[day][k].append(getattr(e, k))
+    env_trend = [{"day": d, **{k: round(sum(v) / len(v), 2) for k, v in vals.items()}, "records": max(map(len, vals.values()), default=0)}
+                 for d, vals in sorted(env_by_day.items())]
+    sim_hist = [{"id": s.id, "species_id": s.species_id, "created_at": s.created_at, "status": s.status,
+                 "mode": s.params.get("mode"), "efficiency": (s.result_summary or {}).get("simulated_transfer_efficiency")}
+                for s in sorted(sims, key=lambda s: s.created_at, reverse=True)[:15]]
     return {
         "totals": {
             "scanned_images": db.scalar(scans_q) or 0, "detected_flowers": int(db.scalar(flowers_q) or 0),
@@ -75,6 +88,7 @@ def dashboard_metrics(db: Session, owner: int | None) -> dict:
                                    for k, v in sim_by_species.items()},
         "scans_per_day_30d": dict(sorted(per_day.items())), "detection_methods_30d": dict(methods),
         "recent_scans": [scan_dict(s) for s in latest],
+        "environment_trend_30d": env_trend, "simulation_history": sim_hist,
         "provenance": "database records for this account" if owner is not None else "database records, all accounts",
     }
 

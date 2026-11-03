@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Empty, ErrorBanner, Loading, Notice, PageHeader, Pill } from "../components/ui";
 import { api } from "../lib/api";
 import { label, num, useApi, when } from "../lib/hooks";
+import { toast } from "../lib/toast";
 import type { Page, Plant, PollinationRecord, Scan, SpeciesKB } from "../lib/types";
 
 const METHODS = ["natural", "manual_brush", "vibration", "air_assisted", "cross_pollen_transfer", "other"];
@@ -22,6 +23,7 @@ export default function HistoryPage() {
       await api.post("/pollination-records", { ...f, performed_at: new Date(f.performed_at).toISOString(), species_id: f.species_id || null,
         plant_id: f.plant_id ? +f.plant_id : null, flowers_treated: +f.flowers_treated });
       recs.reload();
+      toast.success("Pollination record saved");
     } catch (x) { setErr((x as Error).message); }
   };
   const updateOutcome = async (r: PollinationRecord, outcome: string) => {

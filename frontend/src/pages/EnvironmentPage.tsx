@@ -4,6 +4,7 @@ import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, X
 import { Card, ErrorBanner, Loading, Notice, PageHeader, Pill } from "../components/ui";
 import { api } from "../lib/api";
 import { useApi, when } from "../lib/hooks";
+import { toast } from "../lib/toast";
 import type { EnvRecord, FieldLoc, Page, SpeciesKB } from "../lib/types";
 
 export default function EnvironmentPage() {
@@ -22,6 +23,7 @@ export default function EnvironmentPage() {
       await api.post("/environment", { observed_at: new Date(f.observed_at).toISOString(), temperature_c: n(f.temperature_c), relative_humidity_pct: n(f.relative_humidity_pct),
         rain_mm_h: n(f.rain_mm_h), wind_kmh: n(f.wind_kmh), observation: f.observation, field_id: f.field_id ? +f.field_id : null });
       list.reload();
+      toast.success("Observation saved");
     } catch (x) { setErr((x as Error).message); }
   };
   const fetchWeather = async () => {
@@ -29,7 +31,7 @@ export default function EnvironmentPage() {
     const fld = fields.data?.find((x) => String(x.id) === f.field_id);
     const lat = geo.latitude || fld?.latitude, lon = geo.longitude || fld?.longitude;
     if (lat == null || lon == null || lat === "" || lon === "") { setErr("Enter coordinates or pick a field that has coordinates."); return; }
-    try { await api.post("/environment/fetch", { latitude: Number(lat), longitude: Number(lon), field_id: f.field_id ? +f.field_id : null }); list.reload(); }
+    try { await api.post("/environment/fetch", { latitude: Number(lat), longitude: Number(lon), field_id: f.field_id ? +f.field_id : null }); list.reload(); toast.success("Weather fetched from Open-Meteo"); }
     catch (x) { setErr((x as Error).message); }
   };
   const useMyLocation = () => navigator.geolocation?.getCurrentPosition(
@@ -87,9 +89,10 @@ export default function EnvironmentPage() {
           <Card title="Records">
             {list.loading ? <Loading /> : list.data?.items.length ? (
               <div className="overflow-x-auto"><table className="table-base">
-                <thead><tr><th>Observed</th><th>°C</th><th>RH</th><th>Rain</th><th>Wind</th><th>Source</th><th>Assess</th><th /></tr></thead>
+                <thead><tr><th>Observed</th><th>°C</th><th>RH</th><th>Rain</th><th>Wind</th><th>Conditions</th><th>Source</th><th>Assess</th><th /></tr></thead>
                 <tbody>{list.data.items.map((r) => (
                   <tr key={r.id}><td>{when(r.observed_at)}</td><td>{r.temperature_c ?? "—"}</td><td>{r.relative_humidity_pct ?? "—"}</td><td>{r.rain_mm_h ?? "—"}</td><td>{r.wind_kmh ?? "—"}</td>
+                    <td className="text-xs">{r.observation || "—"}{[r.temperature_c, r.relative_humidity_pct, r.rain_mm_h, r.wind_kmh].some((v) => v == null) && <div className="text-[10px] text-pollen">some readings missing</div>}</td>
                     <td><Pill tone={r.source === "manual" ? "neutral" : "info"}>{r.source}</Pill>{r.source !== "manual" && <div className="text-[10px] text-muted">retrieved {String(r.source_detail.retrieved_at ?? "").slice(0, 16)}</div>}</td>
                     <td><select aria-label="Assess for species" className="input !py-1 text-xs" defaultValue="" onChange={async (e) => { if (!e.target.value) return; const a = await api.get<{ factors: never[] }>(`/environment/${r.id}/assessment?species_id=${e.target.value}`); setAssess({ id: r.id, species: e.target.value, factors: a.factors }); }}>
                       <option value="">species…</option>{kb.data?.species.map((s) => <option key={s.id} value={s.id}>{s.common_name}</option>)}</select></td>

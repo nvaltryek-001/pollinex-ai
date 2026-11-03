@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AlertTriangle } from "lucide-react";
-import { authedImage } from "../lib/api";
-import { label, num, pct } from "../lib/hooks";
-import type { Flower, Readiness, Scan } from "../lib/types";
+import { api, authedImage } from "../lib/api";
+import { label, num, pct, useApi } from "../lib/hooks";
+import { toast } from "../lib/toast";
+import type { Flower, Readiness, Scan, SpeciesKB } from "../lib/types";
 import { DetectionOverlay } from "./DetectionOverlay";
 import { Bar, Card, MethodBadge, Notice, Pill, readinessTone } from "./ui";
 
-export function ScanResults({ scan, localPreview }: { scan: Scan; localPreview?: string | null }) {
+export function ScanResults({ scan: initial, localPreview }: { scan: Scan; localPreview?: string | null }) {
+  const [scan, setScan] = useState<Scan>(initial);
+  useEffect(() => setScan(initial), [initial]);
   const [src, setSrc] = useState<string | null>(localPreview ?? null);
   const [sel, setSel] = useState<number | null>(scan.flowers?.length ? 0 : null);
   useEffect(() => {
@@ -61,12 +64,12 @@ export function ScanResults({ scan, localPreview }: { scan: Scan; localPreview?:
           </Card>
         )}
       </div>
-      <div>{f ? <FlowerDetail f={f} /> : <Notice>No flowers to analyse. Try close-up mode, a closer photo, or better lighting.</Notice>}</div>
+      <div>{f ? <FlowerDetail f={f} scanId={scan.id} onUpdated={setScan} /> : <Notice>No flowers to analyse. Try close-up mode, a closer photo, or better lighting.</Notice>}</div>
     </div>
   );
 }
 
-export function FlowerDetail({ f }: { f: Flower }) {
+export function FlowerDetail({ f, scanId, onUpdated }: { f: Flower; scanId?: number; onUpdated?: (s: Scan) => void }) {
   const r = f.readiness;
   return (
     <div className="space-y-4">
@@ -89,6 +92,10 @@ export function FlowerDetail({ f }: { f: Flower }) {
             <div key={c.species} className="grid grid-cols-[90px_1fr_48px] items-center gap-2 text-xs"><span>{c.species}</span><Bar value={c.vote_share} /><span className="text-right font-mono">{pct(c.vote_share, 0)}</span></div>
           ))}</div>
         )}
+        {f.species.original_prediction !== undefined && (
+          <p className="mt-2 text-xs text-muted">Corrected by user · model predicted <strong>{f.species.original_prediction}</strong> ({pct(f.species.original_confidence ?? 0)})</p>
+        )}
+        {scanId != null && onUpdated && <SpeciesCorrection scanId={scanId} index={f.id} current={f.species.species} onUpdated={onUpdated} />}
       </Card>
 
       {f.stage && (
@@ -116,6 +123,33 @@ export function FlowerDetail({ f }: { f: Flower }) {
       )}
 
       {r && <ReadinessCard r={r} />}
+    </div>
+  );
+}
+
+function SpeciesCorrection({ scanId, index, current, onUpdated }: { scanId: number; index: number; current: string; onUpdated: (s: Scan) => void }) {
+  const kb = useApi<{ species: SpeciesKB[] }>("/ai/species");
+  const [busy, setBusy] = useState(false);
+  const change = async (species_id: string) => {
+    if (!species_id || species_id === current) return;
+    setBusy(true);
+    try {
+      onUpdated(await api.patch<Scan>(`/scans/${scanId}/flowers/${index}/species`, { species_id }));
+      toast.success(`Flower #${index} set to ${species_id}; readiness re-estimated.`);
+    } catch (e) {
+      toast.error((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <div className="mt-3 flex items-center gap-2">
+      <label htmlFor={`fix-${index}`} className="text-xs text-muted">Wrong species?</label>
+      <select id={`fix-${index}`} className="input !w-auto !py-1 text-xs" disabled={busy} value="" onChange={(e) => change(e.target.value)}>
+        <option value="">Correct to…</option>
+        {kb.data?.species.map((s) => <option key={s.id} value={s.id}>{s.common_name}</option>)}
+        <option value="unknown">Unknown / other</option>
+      </select>
     </div>
   );
 }

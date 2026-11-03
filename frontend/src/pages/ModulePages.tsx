@@ -24,6 +24,14 @@ export function StructurePage() {
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2"><MethodBadge method={r.method} /><Pill tone={r.yellow_cluster_visible ? "good" : "neutral"}>yellow cluster {r.yellow_cluster_visible ? "visible" : "not visible"}</Pill></div>
             {r.centre_region ? <p>Centre region at {r.centre_region.center.map((v) => v.toFixed(0)).join(", ")} px covering {pct(r.centre_region.area_fraction_of_flower)} of the flower.</p> : <p>No distinct centre region found.</p>}
+            {r.structures && (
+              <table className="table-base mt-2"><thead><tr><th>Structure</th><th>Status</th><th>Visible</th><th>Detail</th></tr></thead>
+                <tbody>{r.structures.map((x) => (
+                  <tr key={x.structure}><td className="capitalize">{label(x.structure)}</td>
+                    <td><Pill tone={x.status === "not_ai_validated" ? "warn" : "info"}>{label(x.status)}</Pill></td>
+                    <td>{x.visible == null ? "—" : x.visible ? "yes" : "no"}</td><td className="text-xs text-muted">{x.detail}</td></tr>
+                ))}</tbody></table>
+            )}
             <p className="text-xs text-muted">{r.note}</p>
           </div>
         )} />

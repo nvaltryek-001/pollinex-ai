@@ -6,6 +6,7 @@ import { SimScene2D, SimScene3D, webglAvailable } from "../components/SimScene";
 import { Card, ErrorBanner, Loading, MethodBadge, Notice, PageHeader, Pill } from "../components/ui";
 import { api } from "../lib/api";
 import { label, num, pct, useApi, when } from "../lib/hooks";
+import { toast } from "../lib/toast";
 import type { Page, Replay, Simulation, SpeciesKB } from "../lib/types";
 
 interface Params { vibration_hz: number; wind_kmh: number; wind_dir_deg: number; offx: number; offy: number; particle_count: number; pollen_release_rate: number; humidity_pct: number; seed: number }
@@ -23,6 +24,7 @@ export default function Simulator() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [use3d, setUse3d] = useState(() => webglAvailable());
+  const [speed, setSpeed] = useState(1);
   const [sweep, setSweep] = useState<{ x: string; efficiency: number }[] | null>(null);
   const raf = useRef<number>(0);
 
@@ -36,7 +38,7 @@ export default function Simulator() {
     if (!playing || !replay) return;
     let last = performance.now();
     const step = (t: number) => {
-      if (t - last > 50) {
+      if (t - last > 50 / speed) {
         last = t;
         setFrame((f) => { if (f + 1 >= replay.frames.length) { setPlaying(false); return f; } return f + 1; });
       }
@@ -44,7 +46,7 @@ export default function Simulator() {
     };
     raf.current = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf.current);
-  }, [playing, replay]);
+  }, [playing, replay, speed]);
 
   const overrides = () => ({ vibration_hz: p.vibration_hz, wind_kmh: p.wind_kmh, wind_dir_deg: p.wind_dir_deg, effector_offset_mm: [p.offx, p.offy],
     particle_count: p.particle_count, pollen_release_rate: p.pollen_release_rate, humidity_pct: p.humidity_pct, seed: p.seed });
@@ -62,6 +64,7 @@ export default function Simulator() {
       if (done.status !== "completed") throw new Error(done.result_summary.error ?? `simulation ${done.status}`);
       await loadReplay(sim.id);
       sims.reload();
+      toast.success(`Simulation #${sim.id} completed (computational result)`);
     } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   };
 
@@ -125,9 +128,13 @@ export default function Simulator() {
                 <button className="btn-ghost !px-2 !py-1" aria-label="Replay from start" onClick={() => { setFrame(0); setPlaying(true); }}><RotateCcw size={16} /></button>
                 <input aria-label="Timeline" type="range" min={0} max={replay.frames.length - 1} value={frame} onChange={(e) => { setPlaying(false); setFrame(+e.target.value); }} className="flex-1" />
                 <span className="w-16 text-right font-mono text-xs">{replay.frames[frame]?.t.toFixed(2)} s</span>
+                <select aria-label="Playback speed" className="input !w-20 !py-1 text-xs" value={speed} onChange={(e) => setSpeed(+e.target.value)}>
+                  {[0.25, 0.5, 1, 2, 4].map((v) => <option key={v} value={v}>{v}×</option>)}
+                </select>
               </div>
             )}
-            <p className="mt-2 text-xs text-muted">Yellow: pollen in flight · green: captured by a target · red ring: virtual effector aim point. Drag to orbit (3D).</p>
+            <p className="mt-2 text-xs text-muted">Yellow: pollen in flight (with short trails) · green: captured · translucent green: receptive targets (stigma / pistils / florets) · red ring: virtual effector aim point{replay?.params.mode === "cross_transfer" ? " · upper flower: compatible donor cultivar" : ""}. Drag to orbit (3D).</p>
+            {replay && <p className="mt-1 text-xs text-muted"><strong>Model:</strong> {MODE_TEXT[String(replay.params.mode)] ?? String(replay.params.mode)}</p>}
           </Card>
           {s && (
             <div className="grid gap-3 md:grid-cols-4">
@@ -162,6 +169,15 @@ export default function Simulator() {
     </div>
   );
 }
+
+const MODE_TEXT: Record<string, string> = {
+  vibration: "pendant flower; pollen leaves the poricidal anther cone when vibrated (release peaks near 150–200 Hz) and falls onto the stigma at the cone tip.",
+  cross_transfer: "pollen from a separate, compatible donor flower is carried by the effector/insect to the target stigma (self-pollen is not modelled as effective).",
+  brush: "brush/contact transfer from the anther ring to the central stigma within the same flower.",
+  air_assisted: "air movement spreads pollen over many pistils on the receptacle; coverage matters (misshapen fruit if pistils are missed).",
+  ring_progression: "capitulum with many florets: pollen-presenting outer ring, receptive ring just inside (protandry, centripetal opening).",
+  column_transfer: "anthers along the staminal column; pollen is moved up onto the five stigma pads at its tip.",
+};
 
 function Metric({ t, v, d }: { t: string; v: string; d: string }) {
   return <div className="card p-3"><div className="kicker">{t}</div><div className="mt-1 font-display text-xl">{v}</div><div className="mt-1 text-[11px] text-muted">{d}</div></div>;

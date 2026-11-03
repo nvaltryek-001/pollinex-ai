@@ -49,6 +49,7 @@ const METHOD_STYLE: Record<string, string> = {
   simulation: "bg-petal/15 text-petal border-petal/30",
   closeup_fallback: "bg-alert/10 text-alert border-alert/30",
   user_declared: "bg-raised text-muted border-line",
+  user_corrected: "bg-raised text-ink border-ink/40",
 };
 const METHOD_TEXT: Record<string, string> = {
   trained_model: "trained model",
@@ -58,6 +59,7 @@ const METHOD_TEXT: Record<string, string> = {
   simulation: "simulation",
   closeup_fallback: "close-up fallback",
   user_declared: "user declared",
+  user_corrected: "user corrected",
 };
 
 /** Every AI output in the UI carries one of these so evidence type is never ambiguous. */
