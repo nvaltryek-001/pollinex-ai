@@ -3,7 +3,7 @@ import { label, useApi } from "../lib/hooks";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface DS { id: string; name: string; url: string; license: string; task_support: string; status: string; details: Record<string, any> }
-const tone = (s: string) => (({ integrated: "good", script_only: "info", documented_only: "neutral", unverified: "warn" } as const)[s as "integrated"] ?? "neutral");
+const tone = (s: string) => (({ integrated: "good", script_only: "info", documented_only: "neutral", unverified: "warn", audited_not_used: "neutral", unreachable: "warn" } as const)[s as "integrated"] ?? "neutral");
 
 export default function DatasetsPage() {
   const { data, error, loading, reload } = useApi<{ datasets: DS[]; prepared_report: Record<string, any> | null }>("/datasets");

@@ -141,19 +141,21 @@ Model evaluation · Analytics · Research centre · Datasets · Reports · Admin
 
 ### 🌱 Supported crops
 
-| Crop | Pollination strategy in the knowledge base | Simulator mode | Evaluated species references |
-|---|---|---|:-:|
-| 🍅 Tomato | vibration of poricidal anthers (buzz-like) | `vibration` | — |
-| 🍆 Brinjal | vibration; long/medium-styled flowers set best | `vibration` | — |
-| 🌶️ Chilli | brushing / gentle shaking | `brush` | — |
-| 🍎 Apple | compatible cross-cultivar pollen | `cross_transfer` | ✅ |
-| 🍐 Pear | compatible cross-cultivar pollen | `cross_transfer` | ✅ |
-| 🍑 Peach | mostly self-fertile; brush supplement | `brush` | ✅ |
-| 🍓 Strawberry | even coverage of all pistils | `air_assisted` | — |
-| 🌻 Sunflower | ring-by-ring floret progression | `ring_progression` | — |
-| 🌺 Hibiscus | pollen onto five stigma pads | `column_transfer` | — |
+| Crop | Pollination strategy in the knowledge base | Simulator mode | Dataset images in repo | Detector | Species gallery |
+|---|---|---|--:|:-:|:-:|
+| 🍅 Tomato | vibration of poricidal anthers (buzz-like) | `vibration` | 0 | — | — |
+| 🍆 Brinjal | vibration; long/medium-styled flowers set best | `vibration` | 0 | — | — |
+| 🌶️ Chilli | brushing / gentle shaking | `brush` | 0 | — | — |
+| 🍎 Apple | compatible cross-cultivar pollen | `cross_transfer` | 48 | ✅ | ✅ |
+| 🍐 Pear | compatible cross-cultivar pollen | `cross_transfer` | 18 | ✅ | ✅ |
+| 🍑 Peach | mostly self-fertile; brush supplement | `brush` | 24 | ✅ | ✅ |
+| 🍓 Strawberry | even coverage of all pistils | `air_assisted` | 0 | — | — |
+| 🌻 Sunflower | ring-by-ring floret progression | `ring_progression` | 628 | ❌ not trained | ✅ |
+| 🌺 Hibiscus | pollen onto five stigma pads | `column_transfer` | 0 | — | — |
 
-> Crops without evaluated references return **unknown** until reference images are added — or the user selects the species.
+> **Verified 2026-11-03** ([full audit](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md)): 718 real dataset images, all annotated with boxes;
+> **no images exist for tomato, brinjal, chilli, strawberry or hibiscus**, and no anther/stigma annotations exist for any crop.
+> Crops without references return **unknown** until reference images are added — or the user selects the species.
 > New crops are added with one JSON entry + reference photos; no code changes.
 
 ---
@@ -334,6 +336,9 @@ Each species in this dataset was photographed with a different camera, so specie
 these numbers validate the open-set *mechanism*, not field-general recognition.
 </details>
 
+**Sunflower extension** (`species_extension_evaluation.json`, `detector_on_tf_flower_detection_sunflower.json`): gallery recall 0.937 on 95
+held-out close-up crops; apple/peach/pear accuracy after extension 0.934; deployed detector on sunflower test mAP@0.5 0.001 (not trained on it).
+
 **Not measured** (and never presented as measured): stage, structure, health and pose heuristics (no labels exist), readiness
 rules (no biological ground truth), simulation outcomes (no field trial), YOLO11 (not trained yet).
 
@@ -420,8 +425,9 @@ pollinex-ai/
 | Dataset | Licence | Status |
 |---|---|---|
 | **Multi-species Fruit Flower** — Dias, Tabb & Medeiros (2018), USDA Ag Data Commons, [doi:10.15482/USDA.ADC/1423466](https://doi.org/10.15482/USDA.ADC/1423466) | CC BY 4.0 | ✅ integrated (train / eval / gallery) |
-| TensorFlow Flower Detection (INESC TEC, [Zenodo 7768292](https://zenodo.org/records/7768292)) | CC BY 4.0 | download script |
-| Oxford 102 Flowers (Nilsback & Zisserman, 2008) | research use (unverified) | download script (gallery only) |
+| TensorFlow Flower Detection (INESC TEC, [Zenodo 7768292](https://zenodo.org/records/7768292)) + species from TF `flower_photos` (CC-BY Flickr) | CC BY 4.0 | ✅ sunflower subset: 628 images, 2,432 boxes (gallery + detection data) |
+| INESC Flower Detection ([Zenodo 7708815](https://zenodo.org/records/7708815)) | CC BY 4.0 | audited, not used (species unknown, split leakage) |
+| Oxford 102 Flowers (Nilsback & Zisserman, 2008) | research use (unverified) | script ready; host unreachable from build env and CI |
 | FlowerNet ([Mendeley](https://data.mendeley.com/datasets/26nvt3t27m)) | MIT | ingest script (originals only) |
 | EWD wildflowers · DoPI · FloPE · PlantCLEF | various | documented, not ingested — reasons in the manifest |
 
@@ -438,7 +444,8 @@ Full review, gaps and BibTeX: [`research/`](research/).
 ## ⚠️ Limitations
 
 - The detector is trained on **apple, peach and pear** orchard photos only; precision is low on cluttered scenes.
-- Six crops have **no evaluated species references** yet — they return *unknown* unless declared or references are added.
+- Five crops (tomato, brinjal, chilli, strawberry, hibiscus) have **no images at all** — they return *unknown* unless declared or references are added.
+- Sunflower is recognised by the species gallery (93.7 % recall on held-out close-ups) but the **detector does not find sunflowers** (mAP@0.5 0.001).
 - **No anther / stigma detector**: structures, stage, health and pose are labelled heuristics until annotated data exists.
 - Readiness is a **visual estimate**; simulation is **computation** — neither proves pollen viability or fertilisation.
 - Camera is verified with a simulated camera and phone emulation; test on your own phone over HTTPS.
@@ -447,7 +454,9 @@ Full review, gaps and BibTeX: [`research/`](research/).
 ## 🔭 Roadmap
 
 - [ ] Train YOLO11 on GPU ([Colab guide](docs/AI_MODEL_DOCUMENTATION.md)) and compare on the same test split
-- [ ] Collect and annotate images (CVAT workflow included) for hibiscus, tomato, sunflower, strawberry, brinjal and chilli
+- [x] Sunflower references + held-out evaluation (TF Flower Detection subset)
+- [ ] Train a detector on the committed sunflower YOLO data
+- [ ] Collect and annotate images (CVAT workflow included) for hibiscus, tomato, strawberry, brinjal and chilli
 - [ ] Trained stage and reproductive-structure models
 - [ ] Field trial: natural vs manual vs app-assisted pollination ([design](research/methodology.md))
 - [ ] Public deployment and offline-capable PWA
@@ -463,7 +472,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 | [AI models](docs/AI_MODEL_DOCUMENTATION.md) | [Datasets](docs/DATASET_DOCUMENTATION.md) |
 | [Simulator](docs/SIMULATOR_DOCUMENTATION.md) | [Research methodology](docs/RESEARCH_METHODOLOGY.md) |
 | [Installation](docs/INSTALLATION_GUIDE.md) · [Deployment](docs/DEPLOYMENT_GUIDE.md) | [User manual](docs/USER_MANUAL.md) |
-| [Completion audit](docs/PROJECT_COMPLETION_AUDIT.md) | [Next steps](docs/NEXT_SESSION_TASKS.md) |
+| [**Final project & dataset audit**](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md) | [Completion audit](docs/PROJECT_COMPLETION_AUDIT.md) · [Next steps](docs/NEXT_SESSION_TASKS.md) |
 
 ---
 

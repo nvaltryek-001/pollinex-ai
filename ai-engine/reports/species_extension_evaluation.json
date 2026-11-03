@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-03T13:15:39.640387+00:00",
-  "extra_source": "datasets/processed/extra_gallery",
+  "generated_at": "2026-11-03T13:17:19.462282+00:00",
+  "extra_source": "datasets/processed/sunflower_gallery",
   "threshold_kept": 0.925,
   "threshold_note": "not re-tuned; calibrated on USDA validation data",
   "gallery_before": {
@@ -144,6 +144,6 @@
     }
   },
   "usda_background_rejection_after_extension": 0.4818181818181818,
-  "saved": false,
+  "saved": true,
   "caveat": "Extra references are close-up photos from a different source than the orchard images; accuracy on field photos of these species is not measured by this test."
 }

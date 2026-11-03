@@ -240,7 +240,7 @@ class DatasetMetadata(Base):
     url: Mapped[str] = mapped_column(String(400))
     license: Mapped[str] = mapped_column(String(300))
     task_support: Mapped[str] = mapped_column(String(300))
-    status: Mapped[str] = mapped_column(String(40))  # integrated | script_only | documented_only | rejected
+    status: Mapped[str] = mapped_column(String(40))  # integrated | script_only | documented_only | unverified | audited_not_used | unreachable
     details: Mapped[dict] = mapped_column(JSON, default=dict)
 
 

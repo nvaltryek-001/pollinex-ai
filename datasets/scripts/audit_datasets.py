@@ -44,7 +44,9 @@ def main() -> None:
         # dataset = first two path components below raw/ or processed/, else first component
         parts = rel.parts
         ds = "/".join(parts[:2]) if parts[0] in ("raw", "processed") and len(parts) > 2 else parts[0]
-        kind = "masks" if "masks" in parts or "segmentations" in parts else ("reports" if parts[0] == "reports" else "images")
+        kind = ("masks" if "masks" in parts or "segmentations" in parts else
+                "reports" if parts[0] == "reports" else
+                "derived" if any(p.endswith("_gallery") for p in parts) else "images")
         rec = by_ds[ds]
         rec["bytes"] += p.stat().st_size
         rec["by_ext"][p.suffix.lower()] += 1
@@ -56,6 +58,9 @@ def main() -> None:
             rec["corrupt"].append(f"{rel}: {type(e).__name__}")
         if kind == "masks":
             rec["masks"] += 1
+            continue
+        if kind == "derived":  # crops cut from images already counted (species-gallery references) - not new images
+            rec["derived_crops"] = rec.get("derived_crops", 0) + 1
             continue
         if kind == "reports":
             rec.setdefault("report_figures", 0)
@@ -87,8 +92,8 @@ def main() -> None:
             species_total.update({k: v for k, v in r["by_species"].items()})
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. "
-                "Report figures and segmentation masks are counted separately and are not dataset images.",
+        "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. Report figures, "
+                "segmentation masks and gallery crops (derived from already-counted images) are counted separately.",
         "total_dataset_images": sum(r["images"] for ds, r in by_ds.items()),
         "species_image_counts": {sp: species_total.get(sp, 0) for sp in TARGET} | {"unspecified": species_total.get("unspecified", 0)},
         "datasets": {ds: {**{k: v for k, v in r.items() if k not in ("by_ext", "by_species")},
@@ -105,9 +110,10 @@ def main() -> None:
           f"**Dataset images present: {out['total_dataset_images']}** (masks and report figures excluded).", "",
           "| Species | Images present |", "|---|---|"]
     md += [f"| {sp} | {n} |" for sp, n in out["species_image_counts"].items()]
-    md += ["", "| Location | Images | Masks | Decoded OK | Corrupt | MB | Formats |", "|---|---|---|---|---|---|---|"]
+    md += ["", "| Location | Images | Masks | Derived crops | Decoded OK | Corrupt | MB | Formats |", "|---|---|---|---|---|---|---|---|"]
     for ds, r in out["datasets"].items():
-        md.append(f"| `{ds}` | {r['images']} | {r['masks']} | {r['decoded']} | {len(r['corrupt'])} | {r['megabytes']} | {r['by_ext']} |")
+        md.append(f"| `{ds}` | {r['images']} | {r['masks']} | {r.get('derived_crops', 0)} | {r['decoded']} | {len(r['corrupt'])} | "
+                  f"{r['megabytes']} | {r['by_ext']} |")
     md += ["", f"Exact duplicate groups: **{out['exact_duplicate_groups']}**", "", "YOLO image/label pairing:", ""]
     md += [f"- `{k}`: {v}" for k, v in pairing.items()] or ["- none"]
     md += ["", f"Empty directories: {empty_dirs or 'none'}"]

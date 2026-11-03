@@ -11,6 +11,8 @@ export default function EvaluationPage() {
   const sp = data?.species_evaluation;
   const trade = data?.detector_inference_tradeoff;
   const yolo = data?.yolo11_evaluation;
+  const ext = data?.species_extension_evaluation;
+  const sunDet = data?.detector_on_tf_flower_detection_sunflower;
   const dep = det ? det.variants[det.deployed_variant] : null;
 
   return (
@@ -92,6 +94,36 @@ export default function EvaluationPage() {
                       return <tr key={i}><th>{sp.test_open_set.labels[i]}</th>{row.map((v, j) => <td key={j} className="font-mono" style={{ background: `rgb(var(--${i === j ? "leaf" : "alert"}) / ${(v / tot) * 0.6})` }}>{v}</td>)}</tr>;
                     })}</tbody></table>
                 </div>
+              </div>
+            </Card>
+          )}
+          {(ext || sunDet) && (
+            <Card title="Dataset extension: sunflower" subtitle="TF Flower Detection (CC BY 4.0) sunflower subset; species from tf flower_photos class folders">
+              <div className="grid gap-5 lg:grid-cols-2">
+                {ext && (
+                  <div>
+                    <div className="kicker mb-1">Species gallery (open-set, held-out crops)</div>
+                    <table className="table-base"><tbody>
+                      {Object.entries(ext.extra_species_test as AnyObj).map(([k, v]) => (
+                        <tr key={k}><td>{k} recall</td><td className="font-mono">{pct(v.recall)}</td><td className="text-xs text-muted">{v.test_images} test crops · {pct(v.returned_unknown)} unknown</td></tr>
+                      ))}
+                      <tr><td>apple/peach/pear accuracy after extension</td><td className="font-mono">{pct(ext.usda_test_flowers_after_extension.accuracy)}</td><td /></tr>
+                      <tr><td>background rejected after extension</td><td className="font-mono">{pct(ext.usda_background_rejection_after_extension)}</td><td /></tr>
+                    </tbody></table>
+                    <p className="mt-2 text-xs text-muted">{ext.caveat}</p>
+                  </div>
+                )}
+                {sunDet && (
+                  <div>
+                    <div className="kicker mb-1">Deployed detector on sunflower test split (no retraining)</div>
+                    <table className="table-base"><tbody>
+                      <tr><td>mAP@0.50</td><td className="font-mono">{num(sunDet.metrics.mAP50, 3)}</td></tr>
+                      <tr><td>recall@0.5</td><td className="font-mono">{num(sunDet.metrics["recall@0.5"], 3)}</td></tr>
+                      <tr><td>images</td><td className="font-mono">{sunDet.images}</td></tr>
+                    </tbody></table>
+                    <p className="mt-2 text-xs text-muted">{sunDet.note} Sunflower detection needs a model trained on this data (e.g. YOLO11).</p>
+                  </div>
+                )}
               </div>
             </Card>
           )}
