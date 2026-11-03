@@ -26,6 +26,10 @@ datasets/raw/*
 !datasets/raw/.gitkeep
 datasets/processed/*
 !datasets/processed/.gitkeep
+# committed on purpose: small, redistributable (CC BY 4.0) processed sets so a fresh clone can train/evaluate offline
+!datasets/processed/usda_fruit_flower/
+!datasets/processed/usda_fruit_flower_index.csv
+!datasets/processed/tf_flower_detection_sunflower/
 
 # training artefacts (small deployed models in ai-engine/models are committed deliberately)
 ai-engine/runs/

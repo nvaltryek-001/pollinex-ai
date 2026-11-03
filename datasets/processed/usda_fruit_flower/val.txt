@@ -1,0 +1,14 @@
+./images/apple_38.jpg
+./images/apple_41.jpg
+./images/apple_42.jpg
+./images/apple_IMG_0328.jpg
+./images/apple_IMG_0336.jpg
+./images/apple_IMG_0342.jpg
+./images/apple_IMG_0349.jpg
+./images/peach_36.jpg
+./images/peach_40.jpg
+./images/peach_41.jpg
+./images/peach_44.jpg
+./images/pear_1_100.jpg
+./images/pear_1_101.jpg
+./images/pear_2_37.jpg

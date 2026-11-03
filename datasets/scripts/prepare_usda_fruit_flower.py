@@ -235,7 +235,9 @@ def main() -> None:
     yolo_yaml = out / "data.yaml"
     for s in ("train", "val", "test"):
         (out / f"{s}.txt").write_text("\n".join(f"./images/{u}.jpg" for u in split_map[s]) + "\n")
-    yolo_yaml.write_text(f"path: {out.resolve()}\ntrain: train.txt\nval: val.txt\ntest: test.txt\nnames:\n  0: flower\n")
+    # no absolute 'path:' key -> Ultralytics resolves train/val/test relative to this yaml (portable across machines)
+    yolo_yaml.write_text("# USDA Multi-species Fruit Flower (CC BY 4.0) - mask-derived instances\n"
+                         "train: train.txt\nval: val.txt\ntest: test.txt\nnames:\n  0: flower\n")
 
     box_areas = [ (b[2]-b[0])*(b[3]-b[1]) / (r["w"]*r["h"]) for r in records for b in r["boxes"]]
     report = {

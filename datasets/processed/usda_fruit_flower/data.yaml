@@ -1,0 +1,6 @@
+# USDA Multi-species Fruit Flower (CC BY 4.0) - mask-derived instances
+train: train.txt
+val: val.txt
+test: test.txt
+names:
+  0: flower
