@@ -24,6 +24,7 @@ def client(tmpdir_session):
     os.environ["JWT_SECRET"] = "test-secret-not-for-production-0123456789abcdef"
     os.environ["WEATHER_API_ENABLED"] = "false"
     os.environ["MAX_UPLOAD_MB"] = "2"
+    os.environ["RATE_LIMIT_ENABLED"] = "false"  # enabled explicitly in test_rate_limit
     from fastapi.testclient import TestClient
 
     from app.main import app

@@ -150,6 +150,8 @@ class FlowerDetection(Base):
     species_id: Mapped[str] = mapped_column(String(40), index=True)
     species_confidence: Mapped[float] = mapped_column(Float, default=0)
     species_method: Mapped[str] = mapped_column(String(40))
+    species_original: Mapped[str | None] = mapped_column(String(40), nullable=True)  # model prediction before manual correction
+    species_original_confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
     pose: Mapped[dict] = mapped_column(JSON, default=dict)
     health: Mapped[dict] = mapped_column(JSON, default=dict)
     scan: Mapped[Scan] = relationship(back_populates="detections")

@@ -90,7 +90,9 @@ def persist_scan(db: Session, user: User, stored: StoredImage, result: dict, *, 
 def flower_dict(fd: FlowerDetection) -> dict:
     out = {"id": fd.index, "detection": {"box": [fd.x1, fd.y1, fd.x2, fd.y2], "score": fd.score,
                                          "low_confidence": fd.low_confidence, "method": fd.method},
-           "species": {"species": fd.species_id, "confidence": fd.species_confidence, "method": fd.species_method},
+           "species": {"species": fd.species_id, "confidence": fd.species_confidence, "method": fd.species_method,
+                       **({"original_prediction": fd.species_original, "original_confidence": fd.species_original_confidence}
+                          if fd.species_original is not None else {})},
            "pose": fd.pose, "health": fd.health}
     if fd.maturity:
         out["stage"] = fd.maturity.data

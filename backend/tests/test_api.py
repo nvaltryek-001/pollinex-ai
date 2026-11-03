@@ -199,3 +199,45 @@ def test_admin_user_management(client, admin, user):
     assert client.get(f"{API}/admin/activity", headers=admin[0]).json()["total"] > 0
     assert client.get(f"{API}/datasets", headers=admin[0]).status_code == 200
     assert len(client.get(f"{API}/research/references", headers=admin[0]).json()) >= 6
+
+
+def test_manual_species_correction_reruns_readiness(client, user, closeup_jpeg):
+    h = user[0]
+    scan = client.post(f"{API}/scans", headers=h, files={"file": ("c.jpg", closeup_jpeg, "image/jpeg")},
+                       data={"mode": "closeup"}).json()
+    original = scan["flowers"][0]["species"]["species"]
+    r = client.patch(f"{API}/scans/{scan['id']}/flowers/0/species", headers=h, json={"species_id": "tomato"})
+    assert r.status_code == 200, r.text
+    f = r.json()["flowers"][0]
+    assert f["species"]["species"] == "tomato" and f["species"]["method"] == "user_corrected"
+    assert f["species"]["original_prediction"] == original
+    assert f["readiness"]["species"] == "tomato" and f["readiness"]["strategy"]["mechanism"] == "vibration"
+    assert r.json()["summary"]["species_counts"] == {"tomato": 1}
+    assert client.patch(f"{API}/scans/{scan['id']}/flowers/0/species", headers=h, json={"species_id": "cactus"}).status_code == 422
+    assert client.patch(f"{API}/scans/{scan['id']}/flowers/99/species", headers=h, json={"species_id": "apple"}).status_code == 404
+
+
+def test_standard_user_blocked_from_all_admin_endpoints(client):
+    r = client.post(f"{API}/auth/register", json={"email": "plain@example.com", "password": "Str0ngPassword!"})
+    h = {"Authorization": f"Bearer {r.json()['access_token']}"}
+    assert r.json()["user"]["role"] == "user"
+    for method, path in [("get", "/admin/users"), ("patch", "/admin/users/1"), ("get", "/admin/activity"),
+                         ("get", "/admin/models"), ("post", "/admin/models/reload"),
+                         ("get", "/analytics/dashboard?scope=all"), ("get", "/analytics/species?scope=all")]:
+        kw = {"json": {"role": "user"}} if method == "patch" else {}
+        assert getattr(client, method)(f"{API}{path}", headers=h, **kw).status_code == 403, path
+
+
+def test_rate_limit(client, monkeypatch):
+    from app.services import ratelimit
+    monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
+    ratelimit.reset()
+    codes = [client.post(f"{API}/auth/login", json={"email": "nobody@example.com", "password": "x"}).status_code
+             for _ in range(22)]
+    assert codes[:20] == [401] * 20 and codes[-1] == 429
+    ratelimit.reset()
+
+
+def test_backend_startup_seeds_reference_data(client):
+    h = client.get(f"{API}/health").json()
+    assert h["status"] == "ok" and h["model"]["detector_backend"]
