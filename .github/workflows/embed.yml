@@ -1,0 +1,33 @@
+name: Export embedding model
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions: { contents: write }
+jobs:
+  export:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[embed]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu && pip install onnx onnxruntime
+      - run: python ai-engine/training/export_embedding_onnx.py
+      - name: Verify ONNX matches torch
+        run: |
+          python - <<'PY'
+          import numpy as np, onnxruntime as ort, torch, torchvision, sys
+          sys.path.insert(0, "ai-engine/training"); from export_embedding_onnx import Features
+          m = Features(torchvision.models.mobilenet_v3_large(weights="IMAGENET1K_V2")).eval()
+          x = np.random.default_rng(0).standard_normal((2, 3, 224, 224)).astype("float32")
+          a = m(torch.from_numpy(x)).detach().numpy(); b = ort.InferenceSession("ai-engine/models/embed_mnv3l.onnx").run(None, {"image": x})[0]
+          print("max abs diff", float(np.abs(a - b).max())); assert np.allclose(a, b, atol=1e-3)
+          PY
+      - name: Commit back
+        run: |
+          git config user.name "pollinex-ci"; git config user.email "pollinex-ci@users.noreply.github.com"
+          git add -f ai-engine/models/embed_mnv3l.onnx ai-engine/models/embed_mnv3l.json
+          git commit -m "Models: ImageNet MobileNetV3-Large embedding (ONNX) from run ${{ github.run_id }} [skip ci]"
+          git pull --rebase origin main && git push origin HEAD:main

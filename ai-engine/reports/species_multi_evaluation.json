@@ -1,0 +1,856 @@
+{
+  "generated_at": "2026-11-03T15:50:54.915921+00:00",
+  "embedding": "hcd-v1",
+  "k": 7,
+  "threshold": 0.925,
+  "gating_rule": {
+    "min_references": 50,
+    "min_val_recall": 0.5,
+    "min_val_precision": 0.5,
+    "decided_on": "validation"
+  },
+  "gating": {
+    "apple": {
+      "references": 955,
+      "val_recall": 0.9491525423728814,
+      "val_precision": 0.7954545454545454,
+      "val_support": 295,
+      "enabled": true
+    },
+    "brinjal": {
+      "references": 15,
+      "val_recall": 0.0,
+      "val_precision": 0.0,
+      "val_support": 4,
+      "enabled": false
+    },
+    "chilli": {
+      "references": 25,
+      "val_recall": 0.0,
+      "val_precision": 0.0,
+      "val_support": 2,
+      "enabled": false
+    },
+    "hibiscus": {
+      "references": 71,
+      "val_recall": 0.38461538461538464,
+      "val_precision": 0.7142857142857143,
+      "val_support": 13,
+      "enabled": false
+    },
+    "peach": {
+      "references": 543,
+      "val_recall": 0.8870967741935484,
+      "val_precision": 0.738255033557047,
+      "val_support": 124,
+      "enabled": true
+    },
+    "pear": {
+      "references": 442,
+      "val_recall": 0.8476190476190476,
+      "val_precision": 0.8018018018018018,
+      "val_support": 105,
+      "enabled": true
+    },
+    "strawberry": {
+      "references": 10,
+      "val_recall": 0.0,
+      "val_precision": 0.0,
+      "val_support": 3,
+      "enabled": false
+    },
+    "sunflower": {
+      "references": 675,
+      "val_recall": 0.5,
+      "val_precision": 0.4482758620689655,
+      "val_support": 26,
+      "enabled": false
+    },
+    "tomato": {
+      "references": 138,
+      "val_recall": 0.5357142857142857,
+      "val_precision": 0.5,
+      "val_support": 28,
+      "enabled": true
+    }
+  },
+  "enabled_species": [
+    "apple",
+    "peach",
+    "pear",
+    "tomato"
+  ],
+  "gallery_counts": {
+    "apple": 955,
+    "peach": 543,
+    "pear": 442,
+    "tomato": 138
+  },
+  "val_report_all_candidates": {
+    "accuracy": 0.75,
+    "macro_f1": 0.4417597566286261,
+    "per_class": {
+      "apple": {
+        "precision": 0.7954545454545454,
+        "recall": 0.9491525423728814,
+        "f1": 0.865533230293663,
+        "support": 295
+      },
+      "brinjal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4
+      },
+      "chilli": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "hibiscus": {
+        "precision": 0.7142857142857143,
+        "recall": 0.38461538461538464,
+        "f1": 0.5,
+        "support": 13
+      },
+      "peach": {
+        "precision": 0.738255033557047,
+        "recall": 0.8870967741935484,
+        "f1": 0.8058608058608058,
+        "support": 124
+      },
+      "pear": {
+        "precision": 0.8018018018018018,
+        "recall": 0.8476190476190476,
+        "f1": 0.8240740740740742,
+        "support": 105
+      },
+      "strawberry": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3
+      },
+      "sunflower": {
+        "precision": 0.4482758620689655,
+        "recall": 0.5,
+        "f1": 0.4727272727272727,
+        "support": 26
+      },
+      "tomato": {
+        "precision": 0.5,
+        "recall": 0.5357142857142857,
+        "f1": 0.5172413793103449,
+        "support": 28
+      },
+      "unknown": {
+        "precision": 0.7288135593220338,
+        "recall": 0.30714285714285716,
+        "f1": 0.43216080402010043,
+        "support": 140
+      }
+    },
+    "labels": [
+      "apple",
+      "brinjal",
+      "chilli",
+      "hibiscus",
+      "peach",
+      "pear",
+      "strawberry",
+      "sunflower",
+      "tomato",
+      "unknown"
+    ],
+    "confusion_matrix": [
+      [
+        280,
+        0,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        4
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        5,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        110,
+        2,
+        0,
+        2,
+        0,
+        6
+      ],
+      [
+        14,
+        0,
+        0,
+        1,
+        0,
+        89,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        13,
+        7,
+        3
+      ],
+      [
+        9,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        15,
+        0
+      ],
+      [
+        34,
+        0,
+        0,
+        0,
+        36,
+        16,
+        0,
+        8,
+        3,
+        43
+      ]
+    ]
+  },
+  "threshold_tuning": [
+    {
+      "threshold": 0.7,
+      "val_macro_f1": 0.5743404776484996,
+      "val_accuracy": 0.6878378378378378
+    },
+    {
+      "threshold": 0.7125,
+      "val_macro_f1": 0.5743404776484996,
+      "val_accuracy": 0.6878378378378378
+    },
+    {
+      "threshold": 0.725,
+      "val_macro_f1": 0.5743404776484996,
+      "val_accuracy": 0.6878378378378378
+    },
+    {
+      "threshold": 0.7375,
+      "val_macro_f1": 0.5743404776484996,
+      "val_accuracy": 0.6878378378378378
+    },
+    {
+      "threshold": 0.75,
+      "val_macro_f1": 0.5743404776484996,
+      "val_accuracy": 0.6878378378378378
+    },
+    {
+      "threshold": 0.7625,
+      "val_macro_f1": 0.5743404776484996,
+      "val_accuracy": 0.6878378378378378
+    },
+    {
+      "threshold": 0.775,
+      "val_macro_f1": 0.5813116875213911,
+      "val_accuracy": 0.6918918918918919
+    },
+    {
+      "threshold": 0.7875,
+      "val_macro_f1": 0.5858539061414063,
+      "val_accuracy": 0.6945945945945946
+    },
+    {
+      "threshold": 0.8,
+      "val_macro_f1": 0.5903150631708984,
+      "val_accuracy": 0.6972972972972973
+    },
+    {
+      "threshold": 0.8125,
+      "val_macro_f1": 0.5903150631708984,
+      "val_accuracy": 0.6972972972972973
+    },
+    {
+      "threshold": 0.825,
+      "val_macro_f1": 0.5946977301084209,
+      "val_accuracy": 0.7
+    },
+    {
+      "threshold": 0.8375,
+      "val_macro_f1": 0.5979896625057319,
+      "val_accuracy": 0.7013513513513514
+    },
+    {
+      "threshold": 0.85,
+      "val_macro_f1": 0.6022578473449466,
+      "val_accuracy": 0.7040540540540541
+    },
+    {
+      "threshold": 0.8625,
+      "val_macro_f1": 0.6169610852278185,
+      "val_accuracy": 0.7135135135135136
+    },
+    {
+      "threshold": 0.875,
+      "val_macro_f1": 0.6391407474535862,
+      "val_accuracy": 0.727027027027027
+    },
+    {
+      "threshold": 0.8875,
+      "val_macro_f1": 0.6515609323004556,
+      "val_accuracy": 0.7337837837837838
+    },
+    {
+      "threshold": 0.9,
+      "val_macro_f1": 0.6660228766169253,
+      "val_accuracy": 0.7418918918918919
+    },
+    {
+      "threshold": 0.9125,
+      "val_macro_f1": 0.6867393152047435,
+      "val_accuracy": 0.7527027027027027
+    },
+    {
+      "threshold": 0.925,
+      "val_macro_f1": 0.6966834263748067,
+      "val_accuracy": 0.7527027027027027
+    },
+    {
+      "threshold": 0.9375,
+      "val_macro_f1": 0.6841907699031448,
+      "val_accuracy": 0.731081081081081
+    },
+    {
+      "threshold": 0.95,
+      "val_macro_f1": 0.5710798778783805,
+      "val_accuracy": 0.6432432432432432
+    },
+    {
+      "threshold": 0.9625,
+      "val_macro_f1": 0.38332282201920553,
+      "val_accuracy": 0.4810810810810811
+    },
+    {
+      "threshold": 0.975,
+      "val_macro_f1": 0.10556988608021536,
+      "val_accuracy": 0.2581081081081081
+    }
+  ],
+  "test_overall": {
+    "accuracy": 0.7871198568872988,
+    "macro_f1": 0.728828766405527,
+    "per_class": {
+      "apple": {
+        "precision": 0.7650602409638554,
+        "recall": 0.9454094292803971,
+        "f1": 0.8457269700332964,
+        "support": 403
+      },
+      "peach": {
+        "precision": 0.7894736842105263,
+        "recall": 0.8544303797468354,
+        "f1": 0.8206686930091186,
+        "support": 158
+      },
+      "pear": {
+        "precision": 0.8409090909090909,
+        "recall": 0.896969696969697,
+        "f1": 0.8680351906158358,
+        "support": 165
+      },
+      "tomato": {
+        "precision": 0.4666666666666667,
+        "recall": 0.4117647058823529,
+        "f1": 0.43749999999999994,
+        "support": 34
+      },
+      "unknown": {
+        "precision": 0.831275720164609,
+        "recall": 0.5642458100558659,
+        "f1": 0.6722129783693843,
+        "support": 358
+      }
+    },
+    "labels": [
+      "apple",
+      "peach",
+      "pear",
+      "tomato",
+      "unknown"
+    ],
+    "confusion_matrix": [
+      [
+        381,
+        1,
+        2,
+        1,
+        18
+      ],
+      [
+        5,
+        135,
+        1,
+        1,
+        16
+      ],
+      [
+        14,
+        1,
+        148,
+        0,
+        2
+      ],
+      [
+        14,
+        0,
+        1,
+        14,
+        5
+      ],
+      [
+        84,
+        34,
+        24,
+        14,
+        202
+      ]
+    ]
+  },
+  "test_by_source": {
+    "usda_test_flowers": {
+      "n": 694,
+      "report": {
+        "accuracy": 0.9322766570605188,
+        "macro_f1": 0.9514211718730766,
+        "per_class": {
+          "apple": {
+            "precision": 0.976063829787234,
+            "recall": 0.9507772020725389,
+            "f1": 0.9632545931758529,
+            "support": 386
+          },
+          "peach": {
+            "precision": 0.9850746268656716,
+            "recall": 0.8918918918918919,
+            "f1": 0.9361702127659575,
+            "support": 148
+          },
+          "pear": {
+            "precision": 0.9866666666666667,
+            "recall": 0.925,
+            "f1": 0.9548387096774195,
+            "support": 160
+          },
+          "tomato": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "unknown": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "labels": [
+          "apple",
+          "peach",
+          "pear",
+          "tomato",
+          "unknown"
+        ],
+        "confusion_matrix": [
+          [
+            367,
+            1,
+            1,
+            0,
+            17
+          ],
+          [
+            0,
+            132,
+            1,
+            0,
+            15
+          ],
+          [
+            9,
+            1,
+            148,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "usda_test_background": {
+      "n": 220,
+      "report": {
+        "accuracy": 0.4318181818181818,
+        "macro_f1": 0.6031746031746031,
+        "per_class": {
+          "apple": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "peach": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "pear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "tomato": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 0.4318181818181818,
+            "f1": 0.6031746031746031,
+            "support": 220
+          }
+        },
+        "labels": [
+          "apple",
+          "peach",
+          "pear",
+          "tomato",
+          "unknown"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            69,
+            32,
+            21,
+            3,
+            95
+          ]
+        ]
+      }
+    },
+    "sunflower_closeup_test": {
+      "n": 95,
+      "report": {
+        "accuracy": 0.9894736842105263,
+        "macro_f1": 0.9947089947089947,
+        "per_class": {
+          "apple": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "peach": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "pear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "tomato": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 0.9894736842105263,
+            "f1": 0.9947089947089947,
+            "support": 95
+          }
+        },
+        "labels": [
+          "apple",
+          "peach",
+          "pear",
+          "tomato",
+          "unknown"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            94
+          ]
+        ]
+      }
+    },
+    "inat_test": {
+      "n": 109,
+      "report": {
+        "accuracy": 0.4036697247706422,
+        "macro_f1": 0.34005724694249284,
+        "per_class": {
+          "apple": {
+            "precision": 0.2641509433962264,
+            "recall": 0.8235294117647058,
+            "f1": 0.4,
+            "support": 17
+          },
+          "peach": {
+            "precision": 0.75,
+            "recall": 0.3,
+            "f1": 0.4285714285714285,
+            "support": 10
+          },
+          "pear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "tomato": {
+            "precision": 0.5185185185185185,
+            "recall": 0.4117647058823529,
+            "f1": 0.45901639344262296,
+            "support": 34
+          },
+          "unknown": {
+            "precision": 0.65,
+            "recall": 0.3023255813953488,
+            "f1": 0.4126984126984127,
+            "support": 43
+          }
+        },
+        "labels": [
+          "apple",
+          "peach",
+          "pear",
+          "tomato",
+          "unknown"
+        ],
+        "confusion_matrix": [
+          [
+            14,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            0,
+            1,
+            1
+          ],
+          [
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            14,
+            0,
+            1,
+            14,
+            5
+          ],
+          [
+            15,
+            1,
+            3,
+            11,
+            13
+          ]
+        ]
+      },
+      "unsupported_species_predicted_as": {
+        "brinjal": {
+          "tomato": 1
+        },
+        "chilli": {
+          "unknown": 1
+        },
+        "hibiscus": {
+          "tomato": 3,
+          "apple": 2,
+          "unknown": 2
+        },
+        "strawberry": {
+          "apple": 2
+        },
+        "sunflower": {
+          "tomato": 7,
+          "pear": 3,
+          "apple": 11,
+          "unknown": 10,
+          "peach": 1
+        }
+      },
+      "true_species_counts": {
+        "apple": 17,
+        "brinjal": 1,
+        "chilli": 1,
+        "hibiscus": 7,
+        "peach": 10,
+        "pear": 5,
+        "strawberry": 2,
+        "sunflower": 32,
+        "tomato": 34
+      }
+    }
+  },
+  "saved": false,
+  "caveat": "iNaturalist photos are whole-scene, user-taken flowering photos (centre crop used); labels are image-level species identifications. Test sets were not used for any choice."
+}

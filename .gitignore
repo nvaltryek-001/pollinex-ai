@@ -37,6 +37,8 @@ datasets/processed/*
 ai-engine/runs/
 *.pt
 *.onnx
+!ai-engine/models/embed_mnv3l.onnx
+!ai-engine/models/flower_yolo11n.onnx
 !ai-engine/models/.gitkeep
 
 .DS_Store
