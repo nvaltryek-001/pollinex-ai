@@ -1,0 +1,38 @@
+# secrets
+.env
+*.pem
+*.key
+
+# python
+__pycache__/
+*.py[cod]
+.venv*/
+.pytest_cache/
+*.egg-info/
+
+# node
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+
+# runtime data
+backend/pollinex.db
+backend/storage/
+*.sqlite3
+
+# datasets: never commit raw/processed image archives (use the scripts)
+datasets/raw/*
+!datasets/raw/.gitkeep
+datasets/processed/*
+!datasets/processed/.gitkeep
+
+# training artefacts (small deployed models in ai-engine/models are committed deliberately)
+ai-engine/runs/
+*.pt
+*.onnx
+!ai-engine/models/.gitkeep
+
+.DS_Store
+.idea/
+.vscode/
