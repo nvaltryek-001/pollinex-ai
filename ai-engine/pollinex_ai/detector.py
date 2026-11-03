@@ -9,6 +9,8 @@ Both return the same ``Detection`` objects so the rest of the platform does not 
 """
 from __future__ import annotations
 
+import json
+
 import time
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -188,7 +190,7 @@ class PixelFlowerDetector:
 
 
 class OnnxYoloDetector:
-    """YOLO11 detector exported to ONNX (output: 1 x (4+nc) x N). Not trained in this sandbox."""
+    """YOLO11 detector exported to ONNX (output: 1 x (4+nc) x N); see training/train_yolo11.py + yolo_deploy_rule.py."""
 
     backend = "yolo11-onnx"
 
@@ -234,5 +236,7 @@ class OnnxYoloDetector:
 def load_default_detector():
     onnx = MODELS_DIR / "flower_yolo11n.onnx"
     if onnx.exists():
-        return OnnxYoloDetector(onnx)
+        side = onnx.with_suffix(".json")
+        cfg = json.loads(side.read_text()) if side.exists() else {}
+        return OnnxYoloDetector(onnx, imgsz=cfg.get("imgsz", 640), names=cfg.get("names"))
     return PixelFlowerDetector()

@@ -1,0 +1,49 @@
+name: YOLO11 detector (CPU training)
+# Trains YOLO11n on every committed box-annotated set (USDA apple/peach/pear + TF sunflower subset; one class "flower";
+# each source keeps its own train/val/test split), evaluates with the SAME metric code as the pixel detector, and applies
+# the pre-registered deploy rule in ai-engine/training/yolo_deploy_rule.py. Commits back reports (+ model only if deployed).
+on:
+  workflow_dispatch:
+    inputs:
+      hours: { description: "max training hours", required: false, default: "4.0" }
+      imgsz: { description: "image size", required: false, default: "800" }
+  push:
+    branches: [main]
+
+permissions: { contents: write }
+
+jobs:
+  yolo:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[yolo]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      HOURS: ${{ github.event.inputs.hours || '4.0' }}
+      IMGSZ: ${{ github.event.inputs.imgsz || '800' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install (CPU torch)
+        run: |
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -r backend/requirements.txt -c backend/requirements.lock.txt
+          pip install "ultralytics>=8.3" onnx onnxslim
+      - name: Train + export
+        run: python ai-engine/training/train_yolo11.py --combined --imgsz $IMGSZ --time $HOURS --epochs 80 --batch 16 --device cpu
+      - name: Evaluate (same metric code as the pixel detector)
+        run: |
+          python ai-engine/training/evaluate_detector_on.py --data datasets/processed/usda_fruit_flower --split test --detector pixel --tag pixel
+          python ai-engine/training/evaluate_detector_on.py --data datasets/processed/usda_fruit_flower --split test --detector onnx:ai-engine/runs/export/flower_yolo11n.onnx --tag yolo11
+          python ai-engine/training/evaluate_detector_on.py --data datasets/processed/tf_flower_detection_sunflower --split test --detector onnx:ai-engine/runs/export/flower_yolo11n.onnx --tag yolo11
+      - name: Deploy rule
+        run: python ai-engine/training/yolo_deploy_rule.py
+      - name: Commit back
+        if: always()
+        run: |
+          git config user.name "pollinex-ci"; git config user.email "pollinex-ci@users.noreply.github.com"
+          git add ai-engine/reports
+          [ -f ai-engine/models/flower_yolo11n.onnx ] && git add -f ai-engine/models/flower_yolo11n.onnx ai-engine/models/flower_yolo11n.json || true
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "YOLO11: CPU training + evaluation from run ${{ github.run_id }} [skip ci]"
+          git pull --rebase origin main && git push origin HEAD:main
