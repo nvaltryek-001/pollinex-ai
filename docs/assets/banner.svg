@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-label="POLLINEX AI — flower intelligence and virtual pollination">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1f17"/>
+      <stop offset="1" stop-color="#1d3a2a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.5" r="0.45">
+      <stop offset="0" stop-color="#e8a33d" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#e8a33d" stop-opacity="0"/>
+    </radialGradient>
+    <g id="petal"><ellipse cx="0" cy="-62" rx="34" ry="58"/></g>
+  </defs>
+  <rect width="1280" height="360" fill="url(#bg)"/>
+  <rect width="1280" height="360" fill="url(#glow)"/>
+  <!-- faint field grid -->
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 300 H1280 M0 240 H1280 M0 180 H1280 M0 120 H1280 M0 60 H1280"/>
+    <path d="M160 0 V360 M320 0 V360 M480 0 V360 M640 0 V360 M800 0 V360 M960 0 V360 M1120 0 V360"/>
+  </g>
+  <!-- flower with detection box -->
+  <g transform="translate(1000 180)">
+    <g fill="#f6f1e4" fill-opacity="0.95">
+      <use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/>
+      <use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/>
+    </g>
+    <g fill="#e8a33d">
+      <circle r="6" cx="22" cy="0"/><circle r="6" cx="6.8" cy="20.9"/><circle r="6" cx="-17.8" cy="12.9"/>
+      <circle r="6" cx="-17.8" cy="-12.9"/><circle r="6" cx="6.8" cy="-20.9"/>
+    </g>
+    <circle r="9" fill="#3f9b63"/>
+    <rect x="-128" y="-128" width="256" height="256" fill="none" stroke="#6fd197" stroke-width="2.5" stroke-dasharray="10 7"/>
+    <rect x="-128" y="-156" width="282" height="26" fill="#6fd197"/>
+    <text x="-120" y="-137" font-family="Consolas, 'DejaVu Sans Mono', monospace" font-size="15" fill="#0f1f17">flower · 0.94 · trained model</text>
+  </g>
+  <!-- simulated pollen trajectory -->
+  <g fill="#e8a33d">
+    <circle cx="800" cy="70" r="3" opacity="0.35"/><circle cx="835" cy="88" r="3.5" opacity="0.5"/>
+    <circle cx="868" cy="108" r="4" opacity="0.65"/><circle cx="898" cy="130" r="4.5" opacity="0.8"/>
+    <circle cx="925" cy="152" r="5" opacity="0.95"/>
+  </g>
+  <path d="M790 64 Q 880 100 930 158" fill="none" stroke="#e8a33d" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <!-- wordmark -->
+  <text x="80" y="150" font-family="Georgia, 'Times New Roman', serif" font-size="92" fill="#f6f1e4" letter-spacing="2">POLLINEX <tspan fill="#e8a33d">AI</tspan></text>
+  <text x="84" y="200" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" fill="#cfe3d5">Multi-species flower intelligence &amp; virtual pollination</text>
+  <g font-family="Consolas, 'DejaVu Sans Mono', monospace" font-size="16" fill="#9ab8a4">
+    <text x="84" y="262">detect · recognise · assess readiness · simulate pollen transfer</text>
+    <text x="84" y="292">software-only · laptop &amp; phone browser · honest about every result</text>
+  </g>
+</svg>
