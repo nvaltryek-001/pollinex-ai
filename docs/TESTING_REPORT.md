@@ -5,8 +5,8 @@ _Last updated 2026-11-03 (session 3)._
 ## Where the tests ran
 The development workspace could not reach PyPI, npm or Docker Hub, so the full stack is verified by **GitHub Actions**
 (`.github/workflows/ci.yml`) on every push to `main`: clean Ubuntu and Windows runners that install the real packages from
-`backend/requirements.txt` and `frontend/package.json`. Reference run: **#41626877962** on commit `b8be26d`
-(<https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41626877962>), all 5 jobs green.
+`backend/requirements.txt` and `frontend/package.json`. Reference runs: **#41626877962** (`b8be26d`) and the latest **#41628075012** (`baa8ae6`,
+<https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41628075012>), all 5 jobs green in both.
 Re-run anytime: GitHub → Actions → CI → *Run workflow*, or locally with `scripts\test_windows.ps1 -E2E`.
 
 ## Summary (run #41626877962)
@@ -26,7 +26,7 @@ Re-run anytime: GitHub → Actions → CI → *Run workflow*, or locally with `s
 | Docker images (backend, frontend) | Ubuntu | 2 | ✅ built |
 | **Docker Compose smoke test** (PostgreSQL + API + nginx): API health ok, web page served, `/api` proxied | Ubuntu | 1 | ✅ pass |
 | **Windows**: `setup_windows.ps1` on a fresh clone (Python 3.12, Node 22) → dependency check "all required checks passed" | windows-latest | — | ✅ pass |
-| **Windows**: `test_windows.ps1` (6 steps, all PASS) | windows-latest | — | ✅ pass |
+| **Windows**: `test_windows.ps1 -E2E` (7 steps, all PASS; Playwright 12 passed + 2 screenshot tests skipped by design) | windows-latest | — | ✅ pass |
 | **Windows**: backend starts with uvicorn → `/api/v1/health` ok | windows-latest | — | ✅ pass |
 
 ## Playwright E2E tests (each on desktop **and** mobile)

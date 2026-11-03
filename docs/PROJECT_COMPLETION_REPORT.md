@@ -1,7 +1,7 @@
 # POLLINEX AI — Project Completion Report
 
 _Date: 2026-11-03 · Repository: <https://github.com/nvaltryek-001/pollinex-ai> (branch `main`)._
-_Verification: GitHub Actions run #41626877962 (all jobs green) plus the workspace's own engine tests._
+_Verification: GitHub Actions runs #41626877962 and #41628075012 (all jobs green) plus the workspace's own engine tests._
 
 ## 1. Status in one paragraph
 POLLINEX AI is **built, started and tested**: the FastAPI backend starts against PostgreSQL 16 and SQLite, migrations apply,
@@ -38,7 +38,7 @@ migrations (SQLite up/down/up, PostgreSQL), backend startup (Linux + Windows), D
 | Backend startup | ✅ production mode on PostgreSQL (Ubuntu); development mode on SQLite (Windows) |
 | Database | ✅ Alembic 0001→0002 on PostgreSQL 16 and SQLite; 20 tables |
 | Docker | ✅ images build; Compose stack healthy |
-| Windows scripts | ✅ setup + 6/6 test steps + startup on windows-latest |
+| Windows scripts | ✅ setup + `test_windows.ps1 -E2E` (7/7 steps) + startup on windows-latest |
 
 ## 4. AI model status (actual, unchanged results)
 | Model | Test-split result (held out, used once) | Source |

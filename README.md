@@ -19,7 +19,7 @@ recommendations. A **Three.js simulator** replays seeded particle simulations of
 > **Status (2026-11-03):** built, started and tested. On every push, GitHub Actions installs the real packages on clean
 > Ubuntu **and Windows** runners and runs 86 automated tests (37 AI/simulator, 24 backend, 11 frontend unit, 14 Playwright E2E
 > incl. camera), type-check, production build, migrations on PostgreSQL 16 + SQLite, backend startup, Docker builds and a
-> Docker Compose smoke test — all green ([CI run #41626877962](https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41626877962)).
+> Docker Compose smoke test — all green ([CI run #41628075012](https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41628075012)).
 > Not done: public cloud deployment, YOLO11 training, labelled data for anther/stigma and for 6 of the 9 crops.
 > Full report: [`docs/PROJECT_COMPLETION_REPORT.md`](docs/PROJECT_COMPLETION_REPORT.md).
 
