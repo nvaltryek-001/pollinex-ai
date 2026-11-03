@@ -31,6 +31,7 @@ datasets/processed/*
 !datasets/processed/usda_fruit_flower_index.csv
 !datasets/processed/tf_flower_detection_sunflower/
 !datasets/processed/sunflower_gallery/
+!datasets/processed/inat_flowering/
 
 # training artefacts (small deployed models in ai-engine/models are committed deliberately)
 ai-engine/runs/
