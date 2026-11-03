@@ -39,18 +39,18 @@ MIN_SIDE = 14
 MAX_PER_IMAGE = 40
 
 
-def flower_crops(records, rng):
+def flower_crops(records, rng, embed=embed_crop):
     out = []
     for r in records:
         img = np.array(Image.open(DATA / "images" / f"{r['uid']}.jpg").convert("RGB"))
         boxes = [b for b in r["boxes"] if min(b[2] - b[0], b[3] - b[1]) >= MIN_SIDE]
         if len(boxes) > MAX_PER_IMAGE:
             boxes = [boxes[i] for i in rng.choice(len(boxes), MAX_PER_IMAGE, replace=False)]
-        out += [(r["species"], embed_crop(crop_box(img, b))) for b in boxes]
+        out += [(r["species"], embed(crop_box(img, b))) for b in boxes]
     return out
 
 
-def background_crops(records, rng, per_image=10):
+def background_crops(records, rng, per_image=10, embed=embed_crop):
     out = []
     for r in records:
         img = np.array(Image.open(DATA / "images" / f"{r['uid']}.jpg").convert("RGB"))
@@ -62,7 +62,7 @@ def background_crops(records, rng, per_image=10):
             s = int(rng.integers(24, 64))
             x, y = int(rng.integers(0, W - s)), int(rng.integers(0, H - s))
             if mask[y:y + s, x:x + s].mean() < 0.01:
-                out.append((UNKNOWN, embed_crop(img[y:y + s, x:x + s])))
+                out.append((UNKNOWN, embed(img[y:y + s, x:x + s])))
                 got += 1
     return out
 

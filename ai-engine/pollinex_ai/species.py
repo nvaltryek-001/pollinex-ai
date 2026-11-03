@@ -24,7 +24,9 @@ import cv2
 import numpy as np
 from skimage.feature import hog, local_binary_pattern
 
-EMBED_VERSION = "hcd-v1"
+EMBED_VERSION = "hcd-v1"          # default / fallback (no model file needed)
+CNN_EMBED_VERSION = "mnv3l-v1"    # ImageNet MobileNetV3-Large features via ONNX (ai-engine/models/embed_mnv3l.onnx)
+MODELS_DIR = Path(__file__).resolve().parents[1] / "models"
 CROP_SIZE = 64
 UNKNOWN = "unknown"
 
@@ -52,15 +54,45 @@ def embed_crop(rgb: np.ndarray) -> np.ndarray:
     return v / max(np.linalg.norm(v), 1e-9)
 
 
+_CNN = {}
+
+
+def embed_cnn(rgb: np.ndarray) -> np.ndarray:
+    """960-d pooled ImageNet features (no fine-tuning), L2-normalised. Needs onnxruntime + embed_mnv3l.onnx."""
+    if rgb.size == 0:
+        raise ValueError("empty crop")
+    if "sess" not in _CNN:
+        import onnxruntime as ort
+
+        so = ort.SessionOptions()
+        so.intra_op_num_threads = 2
+        _CNN["sess"] = ort.InferenceSession(str(MODELS_DIR / "embed_mnv3l.onnx"), so, providers=["CPUExecutionProvider"])
+    x = cv2.resize(rgb, (224, 224), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
+    x = (x - np.array([0.485, 0.456, 0.406], np.float32)) / np.array([0.229, 0.224, 0.225], np.float32)
+    v = _CNN["sess"].run(None, {"image": x.transpose(2, 0, 1)[None]})[0][0].astype(np.float32)
+    return v / max(np.linalg.norm(v), 1e-9)
+
+
+EMBEDDERS: dict[str, Callable[[np.ndarray], np.ndarray]] = {EMBED_VERSION: embed_crop, CNN_EMBED_VERSION: embed_cnn}
+
+
+def cnn_available() -> bool:
+    try:
+        import onnxruntime  # noqa: F401
+    except ImportError:
+        return False
+    return (MODELS_DIR / "embed_mnv3l.onnx").exists()
+
+
 class SpeciesGallery:
-    def __init__(self, embed_fn: Callable[[np.ndarray], np.ndarray] = embed_crop):
+    def __init__(self, embed_fn: Callable[[np.ndarray], np.ndarray] = embed_crop, embed_version: str = EMBED_VERSION):
         self.embed_fn = embed_fn
         self.vectors: list[np.ndarray] = []
         self.labels: list[str] = []
         self.sources: list[str] = []
         self.threshold: float = 0.80
         self.k: int = 7
-        self.meta: dict = {"embed_version": EMBED_VERSION}
+        self.meta: dict = {"embed_version": embed_version}
 
     # ---- building ----
     def add(self, species: str, rgb_crop: np.ndarray, source: str = "") -> None:
@@ -124,10 +156,13 @@ class SpeciesGallery:
     @classmethod
     def load(cls, path: str | Path) -> "SpeciesGallery":
         path = Path(path)
-        g = cls()
         meta = json.loads(path.with_suffix(".json").read_text())
-        if meta.get("meta", {}).get("embed_version") != EMBED_VERSION:
-            raise RuntimeError("gallery built with a different embedding version")
+        ver = meta.get("meta", {}).get("embed_version")
+        if ver not in EMBEDDERS:
+            raise RuntimeError(f"gallery built with an unknown embedding version {ver!r}")
+        if ver == CNN_EMBED_VERSION and not cnn_available():
+            raise RuntimeError("gallery needs onnxruntime and ai-engine/models/embed_mnv3l.onnx")
+        g = cls(EMBEDDERS[ver], ver)
         vec = np.load(path.with_suffix(".npz"))["vectors"]
         g.vectors = [v.astype(np.float32) for v in vec] if len(meta["labels"]) else []
         g.labels, g.sources = meta["labels"], meta["sources"]
