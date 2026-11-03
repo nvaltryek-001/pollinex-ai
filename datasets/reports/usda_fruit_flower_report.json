@@ -1,0 +1,87 @@
+{
+  "dataset_id": "usda_fruit_flower",
+  "source": "https://github.com/ai-agriculture-circuits-and-systems/multi-species-fruit-flower",
+  "upstream_commit": "17db8b119a39fd3648fbcad3c52be088077c28dd",
+  "license": "CC BY 4.0",
+  "doi": "10.15482/USDA.ADC/1423466",
+  "images_kept": 90,
+  "excluded": {
+    "degenerate_upstream_box": 246,
+    "no_box_annotations": 117
+  },
+  "boxes_total": 4651,
+  "per_species": {
+    "apple": {
+      "images": 48,
+      "boxes": 2470
+    },
+    "peach": {
+      "images": 24,
+      "boxes": 924
+    },
+    "pear": {
+      "images": 18,
+      "boxes": 1257
+    }
+  },
+  "per_split": {
+    "train": {
+      "images": 54,
+      "boxes": 3070,
+      "per_species": {
+        "apple": 29,
+        "peach": 14,
+        "pear": 11
+      }
+    },
+    "val": {
+      "images": 14,
+      "boxes": 652,
+      "per_species": {
+        "apple": 7,
+        "peach": 4,
+        "pear": 3
+      }
+    },
+    "test": {
+      "images": 22,
+      "boxes": 929,
+      "per_species": {
+        "apple": 12,
+        "peach": 6,
+        "pear": 4
+      }
+    }
+  },
+  "per_group": {
+    "apple_B": 18,
+    "apple_A": 30,
+    "peach": 24,
+    "pear_seq1": 11,
+    "pear_seq2": 7
+  },
+  "relative_box_area": {
+    "p5": 9.17686318131257e-05,
+    "median": 0.0006507230255839822,
+    "p95": 0.005541605246066388
+  },
+  "exact_duplicates": [],
+  "near_duplicates_across_splits_dhash_le6": [],
+  "low_quality_flags": [
+    "apple_IMG_0266",
+    "apple_IMG_0270",
+    "apple_IMG_0361",
+    "apple_IMG_0392",
+    "peach_36"
+  ],
+  "blur_threshold_p5": 292.60530079952025,
+  "split_policy": "contiguous frame blocks per capture group (60/15/25) - prevents adjacent-frame leakage",
+  "ground_truth_policy": "instances = 8-connected components of upstream masks with area >= 9px; touching flowers form one instance (cluster)",
+  "upstream_box_audit": {
+    "upstream_boxes_total": 4631,
+    "mean_match_as_is": 0.4861888888888889,
+    "mean_match_vflip": 0.5380888888888888,
+    "images_where_vflip_matches_better": 50,
+    "conclusion": "upstream JSON/CSV boxes are inconsistently oriented (often vertically flipped) relative to images and masks; they are excluded from training and evaluation"
+  }
+}

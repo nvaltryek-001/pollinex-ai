@@ -1,0 +1,15 @@
+[
+  {"name": "flower", "color": "#e8a33d", "type": "any", "attributes": [
+    {"name": "species", "input_type": "select", "mutable": false, "values": ["tomato", "brinjal", "chilli", "apple", "pear", "peach", "strawberry", "sunflower", "hibiscus", "other"], "default_value": "other"},
+    {"name": "stage", "input_type": "select", "mutable": false, "values": ["bud", "early_bloom", "partially_open", "fully_open", "senescent"], "default_value": "fully_open"},
+    {"name": "occluded", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"},
+    {"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"},
+    {"name": "style_class", "input_type": "select", "mutable": false, "values": ["n/a", "long", "medium", "short"], "default_value": "n/a"}
+  ]},
+  {"name": "anther_region", "color": "#f2d22e", "type": "any", "attributes": [
+    {"name": "pollen_visible", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}
+  ]},
+  {"name": "stigma", "color": "#c2410c", "type": "any", "attributes": [
+    {"name": "visible_clearly", "input_type": "checkbox", "mutable": false, "values": ["true"], "default_value": "true"}
+  ]}
+]

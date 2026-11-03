@@ -1,0 +1,101 @@
+{
+  "verified_on": "2026-11-02",
+  "status_legend": {
+    "integrated": "downloaded, inspected, prepared and used for training/evaluation in this repository",
+    "script_only": "metadata verified at the source; download/ingest script provided; not downloaded in the build environment (host blocked)",
+    "documented_only": "investigated; not ingested (licence, access or task mismatch) - reason given",
+    "unverified": "source could not be reached to verify licence/content; listed for completeness only"
+  },
+  "datasets": [
+    {
+      "id": "usda_fruit_flower", "name": "Multi-species Fruit Flower Detection (apple, peach, pear)",
+      "url": "https://doi.org/10.15482/USDA.ADC/1423466",
+      "mirror": "https://github.com/ai-agriculture-circuits-and-systems/multi-species-fruit-flower",
+      "citation": "Dias, Tabb & Medeiros (2018) IEEE RA-L 3(4):3003-3010; data DOI 10.15482/USDA.ADC/1423466",
+      "license": "CC BY 4.0", "status": "integrated",
+      "task_support": "semantic segmentation (binary masks); instance boxes derived from mask components",
+      "species": ["apple", "peach", "pear"], "original_images": 207, "images_with_masks": 90,
+      "annotation_format": "PNG binary masks; per-image JSON/CSV boxes (see audit)",
+      "issues": ["Upstream per-image boxes are inconsistently oriented (often vertically flipped) relative to images/masks - excluded; GT boxes re-derived from masks.",
+                 "117 images (mostly upstream apple 'train') have no annotations and are excluded rather than treated as negatives.",
+                 "Only the foreground tree is labelled; background blossoms are unlabelled.",
+                 "Species is confounded with camera setup."],
+      "prepare_script": "datasets/scripts/prepare_usda_fruit_flower.py"
+    },
+    {
+      "id": "tf_flower_detection", "name": "TensorFlow Flower Detection Dataset (INESC TEC)",
+      "url": "https://zenodo.org/records/7768292",
+      "citation": "Pinheiro, Aguiar, Figueiredo, Pinho, Valente & Santos (2023), Zenodo v1",
+      "license": "CC BY 4.0", "status": "script_only",
+      "task_support": "object detection (YOLO txt boxes, CVAT-annotated)",
+      "species": "images from the TensorFlow 'flowers' collection; class list not stated on the record - script reports it",
+      "original_images": ">3,500 (per record)", "annotations": ">14,000 boxes (per record)",
+      "file": {"name": "TensorFlowFlowerDetectionDataset.zip", "bytes": "220.6 MB", "md5": "bafa11ef76ca62b08b257bd3dc92e0c6"},
+      "notes": "Close-up flower photos; complements the orchard-scene USDA data for a future YOLO11 run.",
+      "prepare_script": "datasets/scripts/download_tf_flower_detection.py"
+    },
+    {
+      "id": "oxford102", "name": "Oxford 102 Category Flower Dataset",
+      "url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/",
+      "citation": "Nilsback & Zisserman (2008) ICVGIP, doi:10.1109/ICVGIP.2008.47",
+      "license": "terms not verified (site disallows automated access); treat as research-use only", "status": "script_only",
+      "task_support": "image classification only (no boxes) - usable as species reference gallery, NOT as detector training data",
+      "species": "102 classes incl. sunflower and hibiscus (class indices must be verified with the script's contact sheet)",
+      "prepare_script": "datasets/scripts/download_oxford102_subset.py"
+    },
+    {
+      "id": "flowernet", "name": "FlowerNet: A Multi-Class Flower Image Dataset",
+      "url": "https://data.mendeley.com/datasets/26nvt3t27m",
+      "citation": "Wahid, Islam, Tabib & Liza (2025), Mendeley Data v2, doi:10.17632/26nvt3t27m.2",
+      "license": "MIT", "status": "script_only",
+      "task_support": "image classification only",
+      "species": ["rose", "chrysanthemum", "hibiscus", "marigold", "petunia"],
+      "original_images": 1400, "augmented_images": 5600,
+      "leakage_warning": "5,600 of 7,000 images are augmented copies - ingest ORIGINALS only, otherwise augmented twins leak across splits.",
+      "prepare_script": "datasets/scripts/ingest_flowernet_originals.py (manual download required)"
+    },
+    {
+      "id": "ewd", "name": "Eindhoven Wildflower Dataset (EWD)",
+      "url": "https://doi.org/10.34894/U4VQJ6",
+      "citation": "Schouten, Michielsen & Gravendeel (2024) PLOS ONE 19(9), doi:10.1371/journal.pone.0302958",
+      "license": "CC BY-NC 4.0", "status": "documented_only",
+      "task_support": "object detection (65,571 boxes, 160 wildflower species)",
+      "reason": "Non-commercial licence and none of the nine target crops; useful for methodology (tiling, annotation rules), not ingested."
+    },
+    {
+      "id": "dopi", "name": "DoPI - Database of Pollinator Interactions",
+      "url": "https://www.dopi.org.uk/",
+      "citation": "Balfour et al. (2022) Ecology (Data Paper)",
+      "license": "no formal licence; 'copyright restrictions: none', citation requested", "status": "documented_only",
+      "task_support": "tabular plant-pollinator interactions (no images)",
+      "reason": "Great Britain only; not representative of Indian field conditions for the target crops. Importer planned for knowledge-base enrichment with explicit geographic caveat."
+    },
+    {
+      "id": "flope", "name": "FloPE synthetic pose data",
+      "url": "https://arxiv.org/abs/2503.11692",
+      "license": "not stated on the abstract page", "status": "documented_only",
+      "task_support": "6-DoF flower pose (synthetic, 3D Gaussian Splatting)",
+      "reason": "No public dataset download located for this project; method informs our image-space pose module only."
+    },
+    {
+      "id": "plantclef", "name": "PlantCLEF (LifeCLEF)",
+      "url": "https://www.imageclef.org/PlantCLEF",
+      "license": "unverified (site unreachable from the build environment); historically registration + challenge terms", "status": "unverified",
+      "task_support": "large-scale plant species identification",
+      "reason": "Could not verify current terms; very large; not needed for nine crops."
+    },
+    {
+      "id": "reproductive_structures", "name": "Anther / stigma / pollen annotated images for the 9 target crops",
+      "url": "", "license": "n/a", "status": "documented_only",
+      "task_support": "none found",
+      "reason": "No openly licensed, reachable dataset with anther/stigma annotations for these crops was found. A CVAT annotation workflow is provided (datasets/annotation/)."
+    },
+    {
+      "id": "tomato_flower_candidates", "name": "Tomato / strawberry flower detection sets on Roboflow Universe, 4TU (Rob2Pheno) and Hugging Face",
+      "url": "https://universe.roboflow.com/ ; https://data.4tu.nl/datasets/c1f527d9-bd40-46d3-9afd-13e401f9479f",
+      "license": "varies per project - must be checked individually", "status": "unverified",
+      "task_support": "detection (per listing)",
+      "reason": "Hosts unreachable from the build environment; licences not verified. Candidates for future ingestion via the generic YOLO ingest script."
+    }
+  ]
+}
