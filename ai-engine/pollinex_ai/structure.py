@@ -43,7 +43,20 @@ def analyze_centre(crop: np.ndarray, prob_crop: np.ndarray | None = None) -> dic
                   "colour_contrast_dE": round(float(diff[lab_im == j].mean()), 2)}
     yellow = colour_classes(crop)["yellow"] & near_centre & mask
     yellow_frac = float(yellow.sum() / max(near_centre[mask].sum(), 1))
+    petal_px = int(mask.sum() - (cand.sum() if centre else 0))
+    structures = [
+        {"structure": "petals", "status": "heuristic_region", "visible": petal_px > 0,
+         "detail": f"flower mask minus centre region ({petal_px} px)"},
+        {"structure": "centre_region", "status": "heuristic_region", "visible": centre is not None,
+         "detail": "colour-distinct central area where anthers/stigma usually sit"},
+        {"structure": "anther", "status": "not_ai_validated", "visible": None,
+         "detail": "no trained model; yellow pollen-like cluster reported only as a visual cue"},
+        {"structure": "stigma", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
+        {"structure": "stamen", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
+        {"structure": "pistil", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
+    ]
     return {
+        "structures": structures,
         "centre_region": centre, "flower_centroid": [round(float(cx), 1), round(float(cy), 1)],
         "yellow_cluster_visible": yellow_frac > 0.08, "yellow_fraction_in_centre": round(yellow_frac, 4),
         "method": "heuristic", "structure_detection_available": False,

@@ -179,3 +179,24 @@ def test_readiness_environment_penalty():
     hot = estimate_readiness("tomato", st, env={"temperature_c": 38, "relative_humidity_pct": 65, "source": "manual"})
     assert hot["confidence"] < good["confidence"]
     assert any(f["effect"] == "unfavourable" for f in hot["factors"])
+
+
+def test_readiness_flags_missing_and_stale_environment():
+    from datetime import datetime, timedelta, timezone
+    old = (datetime.now(timezone.utc) - timedelta(hours=30)).isoformat()
+    r = estimate_readiness("apple", {"stage": "fully_open", "score": 0.9},
+                           env={"temperature_c": 20, "observed_at": old, "source": "manual"})
+    kinds = {f["factor"] for f in r["factors"]}
+    assert {"missing_data", "stale_data"} <= kinds
+    assert any("incomplete or out of date" in w for w in r["uncertainty_warnings"])
+    naive = estimate_readiness("apple", {"stage": "fully_open", "score": 0.9},
+                               env={"temperature_c": 20, "relative_humidity_pct": 60, "rain_mm_h": 0, "wind_kmh": 5,
+                                    "observed_at": datetime.utcnow().isoformat(), "source": "manual"})
+    assert not any(f["factor"] in ("missing_data", "stale_data") for f in naive["factors"])
+
+
+def test_structure_lists_every_structure_with_honest_status():
+    r = analyze_centre(synthetic_flower())
+    st = {x["structure"]: x["status"] for x in r["structures"]}
+    assert st["petals"] == "heuristic_region"
+    assert all(st[k] == "not_ai_validated" for k in ("anther", "stigma", "stamen", "pistil"))

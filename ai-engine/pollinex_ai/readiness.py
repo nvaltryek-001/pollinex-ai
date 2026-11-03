@@ -6,10 +6,12 @@ ground-truth labels, so the output is always called a **visual readiness estimat
 """
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from typing import Any
 
 from .knowledge import get_species, load_kb
 
+STALE_HOURS = 6
 CATEGORIES = ["likely_ready", "approaching", "past_window", "not_ready", "indeterminate"]
 
 
@@ -38,8 +40,24 @@ def _env_assessment(env: dict | None, species: dict | None) -> tuple[list[dict],
             mult *= 0.8
         else:
             factors.append({"factor": name, "effect": "within_general_range", "value": val})
+    missing = [name for key, name in checks if env.get(key) is None]
+    if missing:
+        factors.append({"factor": "missing_data", "effect": "unknown",
+                        "detail": "No reading for: " + ", ".join(missing) + " - these factors were not assessed."})
+    obs = env.get("observed_at")
+    if obs:
+        try:
+            ts = datetime.fromisoformat(str(obs).replace("Z", "+00:00"))
+            if ts.tzinfo is None:  # SQLite returns naive datetimes; values are stored in UTC
+                ts = ts.replace(tzinfo=timezone.utc)
+            age_h = (datetime.now(timezone.utc) - ts).total_seconds() / 3600
+            if age_h > STALE_HOURS:
+                factors.append({"factor": "stale_data", "effect": "unknown",
+                                "detail": f"Record is {age_h:.0f} h old; current conditions may differ."})
+        except ValueError:
+            pass
     src = env.get("source", "unspecified")
-    factors.append({"factor": "environment_source", "effect": "info", "detail": f"source={src}, observed_at={env.get('observed_at')}"})
+    factors.append({"factor": "environment_source", "effect": "info", "detail": f"source={src}, observed_at={obs}"})
     return factors, mult
 
 
@@ -80,6 +98,8 @@ def estimate_readiness(species_id: str | None, stage: dict, centre: dict | None 
             warnings.append("Browning suggests the flower may be past its window despite the open-stage estimate.")
 
     env_factors, env_mult = _env_assessment(env, sp)
+    if any(f["factor"] in ("missing_data", "stale_data") for f in env_factors):
+        warnings.append("Environmental data is incomplete or out of date; environmental factors are only partly assessed.")
     if any(f["effect"] == "unfavourable" for f in env_factors):
         warnings.append("Environmental conditions outside general favourable ranges - consider waiting.")
     conf = float(stage.get("score", 0.5)) * float(detection_score) * float(species_confidence) * env_mult
