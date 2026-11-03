@@ -20,9 +20,11 @@ param(
   [string]$PgHost = "localhost",
   [int]$PgPort = 5432,
   [string]$PgDb = "pollinex",
-  [switch]$WithPlaywright
+  [switch]$WithPlaywright,
+  [switch]$NoLock,
+  [string]$PythonExe = ""
 )
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"   # native-tool stderr must not abort (PS 5.1); exit codes are checked explicitly
 $Root = Split-Path -Parent $PSScriptRoot
 Set-Location $Root
 
@@ -31,7 +33,7 @@ function Need($cmd, $hint) {
 }
 
 Write-Host "== Checking prerequisites" -ForegroundColor Cyan
-$py = if (Get-Command py -ErrorAction SilentlyContinue) { "py" } else { "python" }
+$py = if ($PythonExe) { $PythonExe } elseif (Get-Command py -ErrorAction SilentlyContinue) { "py" } else { "python" }
 Need $py "Install Python 3.12 from https://www.python.org/downloads/ (tick 'Add python.exe to PATH')."
 Need node "Install Node.js 20 LTS or newer from https://nodejs.org/"
 Need npm  "npm ships with Node.js."
@@ -43,12 +45,18 @@ Write-Host "== Python virtual environment (.venv)" -ForegroundColor Cyan
 if (-not (Test-Path ".venv")) { & $py -m venv .venv }
 $venvPy = Join-Path $Root ".venv\Scripts\python.exe"
 & $venvPy -m pip install --upgrade pip
-& $venvPy -m pip install -r backend\requirements.txt
+if ((Test-Path "backend\requirements.lock.txt") -and -not $NoLock) {
+  Write-Host "Installing the exact versions verified in CI (backend\requirements.lock.txt)"
+  & $venvPy -m pip install -r backend\requirements.txt -c backend\requirements.lock.txt
+  if ($LASTEXITCODE -ne 0) { Write-Warning "Locked install failed on this platform - retrying with version ranges"; & $venvPy -m pip install -r backend\requirements.txt }
+} else {
+  & $venvPy -m pip install -r backend\requirements.txt
+}
 if ($LASTEXITCODE -ne 0) { Write-Error "pip install failed"; exit 1 }
 
 Write-Host "== Frontend packages" -ForegroundColor Cyan
 Push-Location frontend
-npm install --no-audit --no-fund
+if ((Test-Path "package-lock.json") -and -not $NoLock) { npm ci --no-audit --no-fund } else { npm install --no-audit --no-fund }
 if ($LASTEXITCODE -ne 0) { Pop-Location; Write-Error "npm install failed"; exit 1 }
 if ($WithPlaywright) { npx playwright install chromium }
 Pop-Location
@@ -76,6 +84,10 @@ if ($Postgres) {
 } else {
   Write-Host "Using SQLite (backend\pollinex.db) - tables are created automatically on first start."
 }
+
+Write-Host "== Dependency check" -ForegroundColor Cyan
+& $venvPy scripts\check_dependencies.py
+if ($LASTEXITCODE -ne 0) { Write-Warning "Some checks failed - see above." }
 
 Write-Host ""
 Write-Host "Setup complete." -ForegroundColor Green

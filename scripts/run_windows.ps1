@@ -8,7 +8,7 @@
   powershell -ExecutionPolicy Bypass -File scripts\run_windows.ps1 -NoBrowser
 #>
 param([switch]$NoBrowser, [int]$ApiPort = 8000)
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"   # native-tool stderr must not abort (PS 5.1); exit codes are checked explicitly
 $Root = Split-Path -Parent $PSScriptRoot
 Set-Location $Root
 $venvPy = Join-Path $Root ".venv\Scripts\python.exe"
