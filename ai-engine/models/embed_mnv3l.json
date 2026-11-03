@@ -1,0 +1,25 @@
+{
+  "weights": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+  "source": "torchvision",
+  "licence": "BSD-3-Clause (torchvision)",
+  "input": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "dim": 960,
+  "torch": "2.15.0+cpu",
+  "torchvision": "0.29.2+cpu",
+  "sha256": "a1bd3fd70fd2450937a433606597ed94f784aa382cc266beebafcbea86beed58"
+}
