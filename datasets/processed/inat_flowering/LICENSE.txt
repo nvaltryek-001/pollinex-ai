@@ -1,0 +1,4 @@
+Photos from iNaturalist (https://www.inaturalist.org). Each photo keeps its own licence (CC0 1.0 or CC BY 4.0)
+and attribution, listed per file in ATTRIBUTION.csv. Images are unmodified 'medium' renditions (<= 500 px).
+Species labels come from iNaturalist identifications (see manifest.csv 'identification'); these are
+IMAGE-LEVEL species labels only - there are NO bounding boxes or structure annotations in this set.

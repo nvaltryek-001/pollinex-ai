@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-11-03T15:27:14.724364+00:00",
+  "source": "iNaturalist API v1 (api.inaturalist.org)",
+  "phenology_term": {
+    "term_id": 12,
+    "value_id": 13,
+    "meaning": "Flowers and Fruits = Flowers (formerly Plant Phenology = Flowering)"
+  },
+  "licences_accepted": [
+    "cc-by",
+    "cc0"
+  ],
+  "per_species": {
+    "hibiscus": {
+      "scientific_name": "Hibiscus rosa-sinensis",
+      "candidates": 80,
+      "kept": 79,
+      "split": {
+        "train": 63,
+        "test": 7,
+        "val": 9
+      },
+      "observers": 62,
+      "identification": {
+        "research_grade": 18,
+        "cultivated_with_agreement": 61
+      },
+      "licences": {
+        "cc0": 14,
+        "cc-by": 65
+      },
+      "rejected_observations": {
+        "identification_not_verified": 120,
+        "per_user_cap": 1
+      },
+      "dropped_images": {
+        "too_small": 1
+      },
+      "quality_flags": {}
+    },
+    "tomato": {
+      "scientific_name": "Solanum lycopersicum",
+      "candidates": 193,
+      "kept": 192,
+      "split": {
+        "train": 128,
+        "val": 28,
+        "test": 36
+      },
+      "observers": 124,
+      "identification": {
+        "research_grade": 175,
+        "cultivated_with_agreement": 17
+      },
+      "licences": {
+        "cc-by": 160,
+        "cc0": 32
+      },
+      "rejected_observations": {
+        "identification_not_verified": 22,
+        "per_user_cap": 41
+      },
+      "dropped_images": {
+        "too_small": 1
+      },
+      "quality_flags": {}
+    },
+    "strawberry": {
+      "scientific_name": "Fragaria \u00d7 ananassa",
+      "candidates": 14,
+      "kept": 14,
+      "split": {
+        "train": 9,
+        "val": 3,
+        "test": 2
+      },
+      "observers": 14,
+      "identification": {
+        "research_grade": 12,
+        "cultivated_with_agreement": 2
+      },
+      "licences": {
+        "cc0": 5,
+        "cc-by": 9
+      },
+      "rejected_observations": {
+        "identification_not_verified": 11
+      },
+      "dropped_images": {},
+      "quality_flags": {}
+    },
+    "brinjal": {
+      "scientific_name": "Solanum melongena",
+      "candidates": 18,
+      "kept": 18,
+      "split": {
+        "train": 14,
+        "val": 3,
+        "test": 1
+      },
+      "observers": 16,
+      "identification": {
+        "research_grade": 10,
+        "cultivated_with_agreement": 8
+      },
+      "licences": {
+        "cc-by": 17,
+        "cc0": 1
+      },
+      "rejected_observations": {
+        "identification_not_verified": 8
+      },
+      "dropped_images": {},
+      "quality_flags": {}
+    },
+    "chilli": {
+      "scientific_name": "Capsicum annuum",
+      "candidates": 27,
+      "kept": 27,
+      "split": {
+        "train": 24,
+        "test": 1,
+        "val": 2
+      },
+      "observers": 20,
+      "identification": {
+        "research_grade": 25,
+        "cultivated_with_agreement": 2
+      },
+      "licences": {
+        "cc-by": 17,
+        "cc0": 10
+      },
+      "rejected_observations": {
+        "identification_not_verified": 16,
+        "per_user_cap": 8
+      },
+      "dropped_images": {},
+      "quality_flags": {}
+    },
+    "sunflower": {
+      "scientific_name": "Helianthus annuus",
+      "candidates": 250,
+      "kept": 200,
+      "split": {
+        "train": 140,
+        "test": 34,
+        "val": 26
+      },
+      "observers": 119,
+      "identification": {
+        "research_grade": 182,
+        "cultivated_with_agreement": 18
+      },
+      "licences": {
+        "cc-by": 164,
+        "cc0": 36
+      },
+      "rejected_observations": {
+        "per_user_cap": 166,
+        "identification_not_verified": 23
+      },
+      "dropped_images": {
+        "too_small": 2
+      },
+      "quality_flags": {
+        "dark": 1
+      }
+    },
+    "apple": {
+      "scientific_name": "Malus domestica",
+      "candidates": 102,
+      "kept": 101,
+      "split": {
+        "test": 16,
+        "train": 64,
+        "val": 21
+      },
+      "observers": 81,
+      "identification": {
+        "research_grade": 91,
+        "cultivated_with_agreement": 10
+      },
+      "licences": {
+        "cc-by": 67,
+        "cc0": 34
+      },
+      "rejected_observations": {
+        "identification_not_verified": 44
+      },
+      "dropped_images": {
+        "too_small": 1
+      },
+      "quality_flags": {}
+    },
+    "peach": {
+      "scientific_name": "Prunus persica",
+      "candidates": 68,
+      "kept": 65,
+      "split": {
+        "train": 46,
+        "test": 10,
+        "val": 9
+      },
+      "observers": 53,
+      "identification": {
+        "research_grade": 49,
+        "cultivated_with_agreement": 16
+      },
+      "licences": {
+        "cc-by": 55,
+        "cc0": 10
+      },
+      "rejected_observations": {
+        "identification_not_verified": 33,
+        "per_user_cap": 5
+      },
+      "dropped_images": {
+        "exact_duplicate": 1,
+        "too_small": 2
+      },
+      "quality_flags": {
+        "dark": 1
+      }
+    },
+    "pear": {
+      "scientific_name": "Pyrus communis",
+      "candidates": 30,
+      "kept": 28,
+      "split": {
+        "test": 5,
+        "train": 18,
+        "val": 5
+      },
+      "observers": 26,
+      "identification": {
+        "research_grade": 21,
+        "cultivated_with_agreement": 7
+      },
+      "licences": {
+        "cc0": 5,
+        "cc-by": 23
+      },
+      "rejected_observations": {
+        "identification_not_verified": 9
+      },
+      "dropped_images": {
+        "too_small": 2
+      },
+      "quality_flags": {}
+    }
+  },
+  "observers_in_multiple_splits": 0,
+  "total_images": 724
+}

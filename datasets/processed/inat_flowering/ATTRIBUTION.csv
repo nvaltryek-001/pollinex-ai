@@ -1,0 +1,725 @@
+file,licence,attribution,observation_url
+train/hibiscus/inat_410815360_755628440.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/410815360
+train/hibiscus/inat_405461608_744757997.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/405461608
+train/hibiscus/inat_405234762_744301095.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/405234762
+train/hibiscus/inat_397645958_729356816.jpg,cc-by,"(c) Luis G Restrepo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/397645958
+train/hibiscus/inat_397645957_729356820.jpg,cc-by,"(c) Luis G Restrepo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/397645957
+train/hibiscus/inat_396477126_727064570.jpg,cc-by,"(c) Luis G Restrepo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/396477126
+train/hibiscus/inat_396271523_726708556.jpg,cc-by,"(c) Luis G Restrepo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/396271523
+train/hibiscus/inat_388453877_711449720.jpg,cc-by,"(c) Paulo Nogueira, some rights reserved (CC BY)",https://www.inaturalist.org/observations/388453877
+train/hibiscus/inat_379882468_694930325.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/379882468
+train/hibiscus/inat_352415892_643224596.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/352415892
+test/hibiscus/inat_337383905_613307237.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/337383905
+train/hibiscus/inat_334109013_606668031.jpg,cc-by,"(c) pips_plants, some rights reserved (CC BY)",https://www.inaturalist.org/observations/334109013
+train/hibiscus/inat_326035238_590410062.jpg,cc-by,"(c) Utain Pummarin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/326035238
+train/hibiscus/inat_326031748_590403911.jpg,cc-by,"(c) Utain Pummarin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/326031748
+train/hibiscus/inat_323629073_585619206.jpg,cc-by,"(c) capacoscar, some rights reserved (CC BY)",https://www.inaturalist.org/observations/323629073
+train/hibiscus/inat_283387452_509201341.jpg,cc-by,"(c) MIMI, some rights reserved (CC BY)",https://www.inaturalist.org/observations/283387452
+val/hibiscus/inat_277475159_498110170.jpg,cc-by,"(c) Diogo Luiz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/277475159
+val/hibiscus/inat_277474575_498062985.jpg,cc-by,"(c) Diogo Luiz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/277474575
+train/hibiscus/inat_261208013_469231016.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/261208013
+train/hibiscus/inat_254011650_454897295.jpg,cc-by,"(c) Luis G Restrepo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/254011650
+train/hibiscus/inat_253846396_454601158.jpg,cc-by,"(c) Алёна Осипова, some rights reserved (CC BY)",https://www.inaturalist.org/observations/253846396
+train/hibiscus/inat_252678791_452361259.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/252678791
+train/hibiscus/inat_247823786_442693194.jpg,cc-by,"(c) Ingvild Riska, some rights reserved (CC BY)",https://www.inaturalist.org/observations/247823786
+train/hibiscus/inat_247171794_441389326.jpg,cc-by,"(c) Claude Kolwelter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/247171794
+train/hibiscus/inat_246013223_439083067.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/246013223
+test/hibiscus/inat_243273868_433778909.jpg,cc-by,"(c) Geoff, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243273868
+test/hibiscus/inat_243266564_433763433.jpg,cc-by,"(c) Geoff, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243266564
+train/hibiscus/inat_225591559_400001583.jpg,cc-by,"(c) Jhonatan Matheus, some rights reserved (CC BY)",https://www.inaturalist.org/observations/225591559
+train/hibiscus/inat_210505807_372323539.jpg,cc-by,"(c) Vitor dos Santos, some rights reserved (CC BY)",https://www.inaturalist.org/observations/210505807
+train/hibiscus/inat_194666215_342242089.jpg,cc-by,"(c) Naelin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/194666215
+train/hibiscus/inat_194315774_341534076.jpg,cc-by,"(c) Elián R. Espinal, some rights reserved (CC BY)",https://www.inaturalist.org/observations/194315774
+test/hibiscus/inat_190263689_333486012.jpg,cc-by,"(c) tlaloc27, some rights reserved (CC BY)",https://www.inaturalist.org/observations/190263689
+train/hibiscus/inat_188020937_328953760.jpg,cc-by,"(c) helen_golubeva, some rights reserved (CC BY)",https://www.inaturalist.org/observations/188020937
+train/hibiscus/inat_180158425_313770703.jpg,cc-by,"(c) Karim Haddad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/180158425
+val/hibiscus/inat_175165505_304393486.jpg,cc-by,"(c) Belinda Forbes, some rights reserved (CC BY)",https://www.inaturalist.org/observations/175165505
+val/hibiscus/inat_159766410_276052833.jpg,cc-by,"(c) Eduardo A. Bolaños Vargas, some rights reserved (CC BY)",https://www.inaturalist.org/observations/159766410
+train/hibiscus/inat_156579685_270772663.jpg,cc-by,"(c) Sue Carnahan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/156579685
+val/hibiscus/inat_150830887_260153676.jpg,cc-by,"(c) florawhite, some rights reserved (CC BY)",https://www.inaturalist.org/observations/150830887
+train/hibiscus/inat_149440221_257510547.jpg,cc-by,"(c) Chris Parminter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/149440221
+train/hibiscus/inat_147381901_253596584.jpg,cc-by,"(c) Doug Miller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/147381901
+train/hibiscus/inat_147348807_253534120.jpg,cc-by,"(c) Ruth Nielsen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/147348807
+train/hibiscus/inat_146256558_251411472.jpg,cc-by,"(c) Maria Janeiro, some rights reserved (CC BY)",https://www.inaturalist.org/observations/146256558
+train/hibiscus/inat_143128693_245441071.jpg,cc-by,"(c) Alexander Soto, some rights reserved (CC BY)",https://www.inaturalist.org/observations/143128693
+train/hibiscus/inat_142963017_245169371.jpg,cc-by,"(c) María Celeste Smith, some rights reserved (CC BY)",https://www.inaturalist.org/observations/142963017
+train/hibiscus/inat_104085364_174361300.jpg,cc-by,"(c) Rodolfo Salinas Villarreal, some rights reserved (CC BY)",https://www.inaturalist.org/observations/104085364
+train/hibiscus/inat_89269303_147398347.jpg,cc-by,"(c) Chris Parminter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/89269303
+train/hibiscus/inat_71844542_117046970.jpg,cc-by,"(c) Lisa Bennett, some rights reserved (CC BY)",https://www.inaturalist.org/observations/71844542
+train/hibiscus/inat_71361471_116175258.jpg,cc-by,"(c) Aitor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/71361471
+train/hibiscus/inat_71361373_116175079.jpg,cc-by,"(c) Aitor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/71361373
+test/hibiscus/inat_69258923_112348078.jpg,cc-by,"(c) Erasmo Macaya Horta, some rights reserved (CC BY)",https://www.inaturalist.org/observations/69258923
+test/hibiscus/inat_66693850_107573710.jpg,cc-by,"(c) João D'Andretta, some rights reserved (CC BY)",https://www.inaturalist.org/observations/66693850
+train/hibiscus/inat_66608589_107416174.jpg,cc-by,"(c) Lalys, some rights reserved (CC BY)",https://www.inaturalist.org/observations/66608589
+train/hibiscus/inat_65438074_105324518.jpg,cc-by,"(c) Guilherme Batista, some rights reserved (CC BY)",https://www.inaturalist.org/observations/65438074
+train/hibiscus/inat_61306494_98087486.jpg,cc-by,"(c) Nora Jácome, some rights reserved (CC BY)",https://www.inaturalist.org/observations/61306494
+train/hibiscus/inat_56776631_90501067.jpg,cc-by,"(c) Maria Eduarda Ottes, some rights reserved (CC BY)",https://www.inaturalist.org/observations/56776631
+train/hibiscus/inat_56330383_89760607.jpg,cc-by,"(c) Brayan Ramos, some rights reserved (CC BY)",https://www.inaturalist.org/observations/56330383
+train/hibiscus/inat_55761270_88812242.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/55761270
+train/hibiscus/inat_55761173_88812075.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/55761173
+train/hibiscus/inat_53605102_85265092.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/53605102
+train/hibiscus/inat_50944929_80919212.jpg,cc-by,"(c) Aitor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/50944929
+val/hibiscus/inat_45664436_72419892.jpg,cc-by,"(c) Jacqui Geux, some rights reserved (CC BY)",https://www.inaturalist.org/observations/45664436
+val/hibiscus/inat_41517696_65869746.jpg,cc-by,"(c) Jacqui Geux, some rights reserved (CC BY)",https://www.inaturalist.org/observations/41517696
+train/hibiscus/inat_36857091_58331674.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/36857091
+test/hibiscus/inat_35744018_56398349.jpg,cc-by,"(c) B. Phalan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/35744018
+val/hibiscus/inat_34847412_54895205.jpg,cc-by,"(c) Alan Estumano, some rights reserved (CC BY)",https://www.inaturalist.org/observations/34847412
+train/hibiscus/inat_32042938_50217342.jpg,cc-by,"(c) John Barkla, some rights reserved (CC BY)",https://www.inaturalist.org/observations/32042938
+train/hibiscus/inat_22133931_34266826.jpg,cc-by,"(c) laneser kuo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/22133931
+train/hibiscus/inat_21561233_33371466.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/21561233
+train/hibiscus/inat_17883944_27306373.jpg,cc-by,"(c) José Belem Hernández Díaz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/17883944
+train/hibiscus/inat_17849883_27248390.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/17849883
+train/hibiscus/inat_17487881_26600312.jpg,cc-by,"(c) Michael Pirrello, some rights reserved (CC BY)",https://www.inaturalist.org/observations/17487881
+train/hibiscus/inat_16161233_24228903.jpg,cc-by,"(c) Lauren Gore, some rights reserved (CC BY)",https://www.inaturalist.org/observations/16161233
+train/hibiscus/inat_12899253_18731092.jpg,cc-by,"(c) Lauren McLaurin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/12899253
+train/hibiscus/inat_12899247_18730979.jpg,cc-by,"(c) Lauren McLaurin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/12899247
+train/hibiscus/inat_10397308_14434889.jpg,cc-by,"(c) GERMAN LEONEL SARMIENTO CRUZ, some rights reserved (CC BY)",https://www.inaturalist.org/observations/10397308
+val/hibiscus/inat_8367633_11125133.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/8367633
+train/hibiscus/inat_7356093_9536804.jpg,cc-by,"(c) Hartwig Adam, some rights reserved (CC BY)",https://www.inaturalist.org/observations/7356093
+train/hibiscus/inat_7072506_9082680.jpg,cc-by,"(c) José Belem Hernández Díaz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/7072506
+train/hibiscus/inat_3321106_3837073.jpg,cc-by,"(c) John Barkla, some rights reserved (CC BY)",https://www.inaturalist.org/observations/3321106
+train/tomato/inat_403553405_740962337.jpg,cc-by,"(c) Engers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/403553405
+train/tomato/inat_403413858_740691842.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/403413858
+val/tomato/inat_401971520_737859684.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/401971520
+train/tomato/inat_401782864_737488146.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/401782864
+train/tomato/inat_401594255_737111019.jpg,cc-by,"(c) Sigitas Juzėnas, some rights reserved (CC BY)",https://www.inaturalist.org/observations/401594255
+train/tomato/inat_400325583_734600250.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/400325583
+train/tomato/inat_398483109_730989998.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/398483109
+train/tomato/inat_398089937_730226409.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/398089937
+train/tomato/inat_397879246_729802792.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/397879246
+val/tomato/inat_397815752_729677582.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/397815752
+train/tomato/inat_397012291_728114234.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/397012291
+train/tomato/inat_395780555_725736447.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/395780555
+train/tomato/inat_395711892_725600832.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/395711892
+train/tomato/inat_395307719_724819791.jpg,cc-by,"(c) Karim Haddad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/395307719
+train/tomato/inat_395147315_724509955.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/395147315
+train/tomato/inat_393159232_720604539.jpg,cc-by,"(c) darmozrac, some rights reserved (CC BY)",https://www.inaturalist.org/observations/393159232
+train/tomato/inat_393003691_720292927.jpg,cc-by,"(c) Brenda Black, some rights reserved (CC BY)",https://www.inaturalist.org/observations/393003691
+train/tomato/inat_392874026_720046206.jpg,cc-by,"(c) Ben Thomas, some rights reserved (CC BY)",https://www.inaturalist.org/observations/392874026
+train/tomato/inat_390913563_716222442.jpg,cc-by,"(c) darmozrac, some rights reserved (CC BY)",https://www.inaturalist.org/observations/390913563
+val/tomato/inat_388224110_711000380.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/388224110
+train/tomato/inat_387657677_709885501.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/387657677
+train/tomato/inat_387613318_709792343.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/387613318
+train/tomato/inat_386218946_707131664.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/386218946
+train/tomato/inat_383459321_701837828.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/383459321
+train/tomato/inat_382781411_700530664.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/382781411
+train/tomato/inat_359999425_656450679.jpg,cc-by,"(c) Jon Sullivan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/359999425
+test/tomato/inat_348529344_635649423.jpg,cc-by,"(c) Roberto Daniel Avila, some rights reserved (CC BY)",https://www.inaturalist.org/observations/348529344
+train/tomato/inat_342871920_627977296.jpg,cc-by,"(c) Yung-Lun Lin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/342871920
+test/tomato/inat_334882255_608241819.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/334882255
+test/tomato/inat_331408549_601198484.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/331408549
+train/tomato/inat_326087902_590592189.jpg,cc-by,"(c) considerthelilies, some rights reserved (CC BY)",https://www.inaturalist.org/observations/326087902
+train/tomato/inat_326087871_590515270.jpg,cc-by,"(c) considerthelilies, some rights reserved (CC BY)",https://www.inaturalist.org/observations/326087871
+test/tomato/inat_324292284_586927092.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/324292284
+train/tomato/inat_323443566_585249503.jpg,cc-by,"(c) nasua, some rights reserved (CC BY)",https://www.inaturalist.org/observations/323443566
+train/tomato/inat_322828476_584052680.jpg,cc-by,"(c) olmagon, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322828476
+train/tomato/inat_320249965_578985147.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/320249965
+test/tomato/inat_318527177_575681911.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/318527177
+train/tomato/inat_317962754_574603445.jpg,cc-by,"(c) Joss Carr, some rights reserved (CC BY)",https://www.inaturalist.org/observations/317962754
+train/tomato/inat_317636453_573986675.jpg,cc-by,"(c) naturalist charlie, some rights reserved (CC BY)",https://www.inaturalist.org/observations/317636453
+train/tomato/inat_315036738_569067587.jpg,cc-by,"(c) Adam Leigh, some rights reserved (CC BY)",https://www.inaturalist.org/observations/315036738
+train/tomato/inat_314221313_567524342.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/314221313
+test/tomato/inat_314176429_567436009.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/314176429
+train/tomato/inat_313968389_567032392.jpg,cc-by,"(c) Lars Willighagen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/313968389
+train/tomato/inat_313880947_566860461.jpg,cc-by,"(c) Louis Aureglia, some rights reserved (CC BY)",https://www.inaturalist.org/observations/313880947
+val/tomato/inat_312973605_565134911.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/312973605
+train/tomato/inat_311078952_561515928.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/311078952
+train/tomato/inat_310481584_560366457.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/310481584
+train/tomato/inat_309839344_559152898.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/309839344
+train/tomato/inat_309276379_558048309.jpg,cc-by,"(c) Diego Rodríguez Hernández, some rights reserved (CC BY)",https://www.inaturalist.org/observations/309276379
+train/tomato/inat_308636113_556841055.jpg,cc-by,"(c) 振远 王, some rights reserved (CC BY)",https://www.inaturalist.org/observations/308636113
+test/tomato/inat_308274980_556150050.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/308274980
+train/tomato/inat_306066919_551908118.jpg,cc-by,"(c) Lukas Large, some rights reserved (CC BY)",https://www.inaturalist.org/observations/306066919
+train/tomato/inat_305582993_550987155.jpg,cc-by,"(c) Michel Frisch, some rights reserved (CC BY)",https://www.inaturalist.org/observations/305582993
+val/tomato/inat_305258026_550371345.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/305258026
+test/tomato/inat_304309645_548560327.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/304309645
+test/tomato/inat_304309632_548559876.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/304309632
+test/tomato/inat_303796865_547593786.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/303796865
+val/tomato/inat_302065915_544366678.jpg,cc-by,"(c) Aadi Kulkarni, some rights reserved (CC BY)",https://www.inaturalist.org/observations/302065915
+train/tomato/inat_301552736_543400279.jpg,cc-by,"(c) Jono, some rights reserved (CC BY)",https://www.inaturalist.org/observations/301552736
+train/tomato/inat_301322858_542968972.jpg,cc-by,"(c) chrischalfant, some rights reserved (CC BY)",https://www.inaturalist.org/observations/301322858
+test/tomato/inat_301184065_542715762.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/301184065
+train/tomato/inat_299698073_539943556.jpg,cc-by,"(c) Alan Rockefeller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/299698073
+train/tomato/inat_298053951_536836458.jpg,cc-by,"(c) M. Whitson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/298053951
+train/tomato/inat_297122790_535075783.jpg,cc-by,"(c) Lars Willighagen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/297122790
+train/tomato/inat_294547499_530180539.jpg,cc-by,"(c) Chase Mathey, some rights reserved (CC BY)",https://www.inaturalist.org/observations/294547499
+train/tomato/inat_293334488_527962158.jpg,cc-by,"(c) Piotr Panek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/293334488
+train/tomato/inat_293093280_527504486.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/293093280
+train/tomato/inat_290230124_522082608.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/290230124
+test/tomato/inat_283341134_509116626.jpg,cc-by,"(c) Kai Löhr, some rights reserved (CC BY)",https://www.inaturalist.org/observations/283341134
+train/tomato/inat_277139723_497636794.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/277139723
+val/tomato/inat_276315419_496243401.jpg,cc-by,"(c) Nathan Odgers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/276315419
+train/tomato/inat_268350878_482354002.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/268350878
+val/tomato/inat_265647434_477193193.jpg,cc-by,"(c) mel letterman, some rights reserved (CC BY)",https://www.inaturalist.org/observations/265647434
+train/tomato/inat_265311683_476534572.jpg,cc-by,"(c) zebedeugalinha, some rights reserved (CC BY)",https://www.inaturalist.org/observations/265311683
+test/tomato/inat_264028742_474422196.jpg,cc-by,"(c) Roberto Daniel Avila, some rights reserved (CC BY)",https://www.inaturalist.org/observations/264028742
+train/tomato/inat_261858252_470528312.jpg,cc-by,"(c) Malcolm Gould, some rights reserved (CC BY)",https://www.inaturalist.org/observations/261858252
+train/tomato/inat_261094288_469003690.jpg,cc-by,"(c) Naelin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/261094288
+train/tomato/inat_259281297_465400649.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/259281297
+train/tomato/inat_257348636_461630521.jpg,cc-by,"(c) Fethullah ÖZTÜRK, some rights reserved (CC BY)",https://www.inaturalist.org/observations/257348636
+train/tomato/inat_256652181_460213028.jpg,cc-by,"(c) jaumecanals, some rights reserved (CC BY)",https://www.inaturalist.org/observations/256652181
+train/tomato/inat_250953096_448921881.jpg,cc-by,"(c) Dominic McLean, some rights reserved (CC BY)",https://www.inaturalist.org/observations/250953096
+train/tomato/inat_249357358_445732962.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/249357358
+train/tomato/inat_248596691_444224656.jpg,cc-by,"(c) Bobo-X, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248596691
+train/tomato/inat_248075537_443176482.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248075537
+train/tomato/inat_247888380_442822167.jpg,cc-by,"(c) Letizia Weichgrebe, some rights reserved (CC BY)",https://www.inaturalist.org/observations/247888380
+train/tomato/inat_245567573_438222827.jpg,cc-by,"(c) Tom Scavo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/245567573
+train/tomato/inat_243789184_434755083.jpg,cc-by,"(c) Andrea, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243789184
+train/tomato/inat_243196367_433623906.jpg,cc-by,"(c) Natasha Taylor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243196367
+train/tomato/inat_238126251_423886290.jpg,cc-by,"(c) Fethullah ÖZTÜRK, some rights reserved (CC BY)",https://www.inaturalist.org/observations/238126251
+train/tomato/inat_238126247_423886174.jpg,cc-by,"(c) Fethullah ÖZTÜRK, some rights reserved (CC BY)",https://www.inaturalist.org/observations/238126247
+val/tomato/inat_236509643_420773143.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/236509643
+test/tomato/inat_235795258_419401292.jpg,cc-by,"(c) L.J. Lamera, some rights reserved (CC BY)",https://www.inaturalist.org/observations/235795258
+train/tomato/inat_235719538_419250609.jpg,cc-by,"(c) Henry Miller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/235719538
+train/tomato/inat_234864978_417605788.jpg,cc-by,"(c) Timur Kalininsky, some rights reserved (CC BY)",https://www.inaturalist.org/observations/234864978
+val/tomato/inat_233063659_414151183.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/233063659
+val/tomato/inat_232758492_413559576.jpg,cc-by,"(c) nefariouscreature, some rights reserved (CC BY)",https://www.inaturalist.org/observations/232758492
+val/tomato/inat_232310528_412706053.jpg,cc-by,"(c) Anastasia_Surkova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/232310528
+train/tomato/inat_231737072_411624047.jpg,cc-by,"(c) cigazze, some rights reserved (CC BY)",https://www.inaturalist.org/observations/231737072
+train/tomato/inat_231536098_411243533.jpg,cc-by,"(c) Senna Bryce Robeson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/231536098
+train/tomato/inat_230782157_409806643.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/230782157
+test/tomato/inat_228462911_405416139.jpg,cc-by,"(c) Fyodor Pudovikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/228462911
+train/tomato/inat_224642769_398175326.jpg,cc-by,"(c) Kaden Slone, some rights reserved (CC BY)",https://www.inaturalist.org/observations/224642769
+train/tomato/inat_217049489_383928918.jpg,cc-by,"(c) Thomas Mesaglio, some rights reserved (CC BY)",https://www.inaturalist.org/observations/217049489
+train/tomato/inat_213637005_377575119.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/213637005
+train/tomato/inat_212470713_380370188.jpg,cc-by,"(c) Yung-Lun Lin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/212470713
+train/tomato/inat_202373037_357404549.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/202373037
+train/tomato/inat_200772353_354285941.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/200772353
+test/tomato/inat_196205454_345369123.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/196205454
+test/tomato/inat_195420819_343790613.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/195420819
+test/tomato/inat_195420817_343790512.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/195420817
+train/tomato/inat_193632366_340168455.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/193632366
+train/tomato/inat_192176543_337307984.jpg,cc-by,"(c) Thomas Mesaglio, some rights reserved (CC BY)",https://www.inaturalist.org/observations/192176543
+train/tomato/inat_191811030_336586886.jpg,cc-by,"(c) Carl Ramirez, some rights reserved (CC BY)",https://www.inaturalist.org/observations/191811030
+test/tomato/inat_190233685_333423086.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/190233685
+train/tomato/inat_189231095_331431557.jpg,cc-by,"(c) David Weisenbeck, some rights reserved (CC BY)",https://www.inaturalist.org/observations/189231095
+train/tomato/inat_187509800_327932545.jpg,cc-by,"(c) Alexandr Stanislavschi, some rights reserved (CC BY)",https://www.inaturalist.org/observations/187509800
+train/tomato/inat_187114507_358230356.jpg,cc-by,"(c) Joss Carr, some rights reserved (CC BY)",https://www.inaturalist.org/observations/187114507
+train/tomato/inat_186722481_326372524.jpg,cc-by,"(c) Brenda Black, some rights reserved (CC BY)",https://www.inaturalist.org/observations/186722481
+train/tomato/inat_183422143_319996406.jpg,cc-by,"(c) Jamie O'Neill, some rights reserved (CC BY)",https://www.inaturalist.org/observations/183422143
+test/tomato/inat_183106062_319387934.jpg,cc-by,"(c) jamie-aa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/183106062
+train/tomato/inat_182949092_319118627.jpg,cc-by,"(c) carnifex, some rights reserved (CC BY)",https://www.inaturalist.org/observations/182949092
+val/tomato/inat_181370012_316050648.jpg,cc-by,"(c) Julia, some rights reserved (CC BY)",https://www.inaturalist.org/observations/181370012
+test/tomato/inat_180820489_315030871.jpg,cc-by,"(c) jamie-aa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/180820489
+train/tomato/inat_177614737_308940644.jpg,cc-by,"(c) Alexander Wentworth, some rights reserved (CC BY)",https://www.inaturalist.org/observations/177614737
+train/tomato/inat_177614656_308940531.jpg,cc-by,"(c) Alexander Wentworth, some rights reserved (CC BY)",https://www.inaturalist.org/observations/177614656
+train/tomato/inat_174568605_303285817.jpg,cc-by,"(c) Luan Mazzeo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/174568605
+test/tomato/inat_171061097_296788397.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/171061097
+train/tomato/inat_170405440_295553522.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/170405440
+val/tomato/inat_164227647_284127232.jpg,cc-by,"(c) Tom Poleski, some rights reserved (CC BY)",https://www.inaturalist.org/observations/164227647
+train/tomato/inat_156422910_270485360.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/156422910
+train/tomato/inat_153890864_265848837.jpg,cc-by,"(c) Josiah Londerée, some rights reserved (CC BY)",https://www.inaturalist.org/observations/153890864
+train/tomato/inat_150313179_259162915.jpg,cc-by,"(c) Bob, some rights reserved (CC BY)",https://www.inaturalist.org/observations/150313179
+test/tomato/inat_148386621_255521846.jpg,cc-by,"(c) William Stephens, some rights reserved (CC BY)",https://www.inaturalist.org/observations/148386621
+val/tomato/inat_146069638_251035367.jpg,cc-by,"(c) Татьяна Максимова, some rights reserved (CC BY)",https://www.inaturalist.org/observations/146069638
+train/tomato/inat_145237962_249452112.jpg,cc-by,"(c) Thomas Mesaglio, some rights reserved (CC BY)",https://www.inaturalist.org/observations/145237962
+train/tomato/inat_144350632_247731093.jpg,cc-by,"(c) Tim Johnson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/144350632
+test/tomato/inat_139542147_238682066.jpg,cc-by,"(c) jamie-aa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/139542147
+train/tomato/inat_139298689_238229343.jpg,cc-by,"(c) Liam Gerry, some rights reserved (CC BY)",https://www.inaturalist.org/observations/139298689
+train/tomato/inat_139239561_238115989.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/139239561
+train/tomato/inat_138192996_236151338.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/138192996
+train/tomato/inat_138183719_236132953.jpg,cc-by,"(c) Natasha Taylor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/138183719
+train/tomato/inat_136184544_232384659.jpg,cc-by,"(c) bernhard_hiller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/136184544
+train/tomato/inat_136015636_232078238.jpg,cc-by,"(c) Piotr Panek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/136015636
+val/tomato/inat_135767283_231615562.jpg,cc-by,"(c) Adrien Nouailhane, some rights reserved (CC BY)",https://www.inaturalist.org/observations/135767283
+test/tomato/inat_135426427_230965620.jpg,cc-by,"(c) jamie-aa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/135426427
+test/tomato/inat_133961661_228260204.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/133961661
+train/tomato/inat_131592459_223961154.jpg,cc-by,"(c) bernhard_hiller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/131592459
+train/tomato/inat_130471658_221891841.jpg,cc-by,"(c) bernhard_hiller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/130471658
+train/tomato/inat_125145995_212203725.jpg,cc-by,"(c) Jacobus Retief, some rights reserved (CC BY)",https://www.inaturalist.org/observations/125145995
+val/tomato/inat_123442509_209117748.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/123442509
+train/tomato/inat_115878882_195570064.jpg,cc-by,"(c) Jon Sullivan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/115878882
+train/tomato/inat_107236375_180317786.jpg,cc-by,"(c) José Belem Hernández Díaz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/107236375
+train/tomato/inat_101765705_169988692.jpg,cc-by,"(c) David Sandler, some rights reserved (CC BY)",https://www.inaturalist.org/observations/101765705
+val/tomato/inat_96877750_161008805.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/96877750
+val/tomato/inat_95168723_157961497.jpg,cc-by,"(c) Abraham Sánchez Romero, some rights reserved (CC BY)",https://www.inaturalist.org/observations/95168723
+test/tomato/inat_93291756_154598127.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/93291756
+train/tomato/inat_92769689_153655591.jpg,cc-by,"(c) sh_rodes, some rights reserved (CC BY)",https://www.inaturalist.org/observations/92769689
+train/tomato/inat_91873666_152035055.jpg,cc-by,"(c) Alejandro Alfredo Aguirre, some rights reserved (CC BY)",https://www.inaturalist.org/observations/91873666
+test/tomato/inat_82845113_136006719.jpg,cc-by,"(c) Dave Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/82845113
+train/tomato/inat_80608627_132127050.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/80608627
+train/tomato/inat_77481821_126716941.jpg,cc-by,"(c) linkie, some rights reserved (CC BY)",https://www.inaturalist.org/observations/77481821
+test/tomato/inat_68489288_110911691.jpg,cc-by,"(c) Dave Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/68489288
+test/tomato/inat_67707444_109462919.jpg,cc-by,"(c) Dave Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/67707444
+train/tomato/inat_66048091_106393883.jpg,cc-by,"(c) CorentinD, some rights reserved (CC BY)",https://www.inaturalist.org/observations/66048091
+train/tomato/inat_61078644_97703484.jpg,cc-by,"(c) Alexis Tinker-Tsavalas, some rights reserved (CC BY)",https://www.inaturalist.org/observations/61078644
+val/tomato/inat_59776648_95537189.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/59776648
+val/tomato/inat_59064730_94345879.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/59064730
+val/tomato/inat_58964184_94173292.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/58964184
+test/tomato/inat_58497508_93399608.jpg,cc-by,"(c) Dave Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/58497508
+train/tomato/inat_53328025_84809743.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/53328025
+train/tomato/inat_52351002_83216262.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/52351002
+test/tomato/inat_47617717_75529057.jpg,cc-by,"(c) Takaaki Hattori, some rights reserved (CC BY)",https://www.inaturalist.org/observations/47617717
+train/tomato/inat_41385072_65647894.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/41385072
+train/tomato/inat_37456284_59382509.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/37456284
+test/tomato/inat_34761496_54748103.jpg,cc-by,"(c) tandria, some rights reserved (CC BY)",https://www.inaturalist.org/observations/34761496
+train/tomato/inat_32595215_51136959.jpg,cc-by,"(c) agujaceratops, some rights reserved (CC BY)",https://www.inaturalist.org/observations/32595215
+val/tomato/inat_31480158_49272335.jpg,cc-by,"(c) Natalya Ivanova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/31480158
+val/tomato/inat_27311975_42481834.jpg,cc-by,"(c) Jacqui Geux, some rights reserved (CC BY)",https://www.inaturalist.org/observations/27311975
+val/tomato/inat_21926367_33977534.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/21926367
+train/tomato/inat_20543771_31713641.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/20543771
+test/tomato/inat_19495697_29995422.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/19495697
+train/tomato/inat_16659079_25119446.jpg,cc-by,"(c) carnifex, some rights reserved (CC BY)",https://www.inaturalist.org/observations/16659079
+train/tomato/inat_16057644_24042282.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/16057644
+train/tomato/inat_10848191_15213630.jpg,cc-by,"(c) Jon Sullivan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/10848191
+val/tomato/inat_9437285_12829979.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/9437285
+train/tomato/inat_7746411_10169469.jpg,cc-by,"(c) Adam J. Searcy, some rights reserved (CC BY)",https://www.inaturalist.org/observations/7746411
+train/tomato/inat_7719379_10124576.jpg,cc-by,"(c) José Belem Hernández Díaz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/7719379
+val/tomato/inat_6137171_7688724.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/6137171
+val/tomato/inat_5999898_7503805.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/5999898
+test/tomato/inat_4490242_5423774.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/4490242
+test/tomato/inat_2575920_2876141.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/2575920
+train/tomato/inat_1530151_1895843.jpg,cc-by,"(c) Lisa Bennett, some rights reserved (CC BY)",https://www.inaturalist.org/observations/1530151
+train/strawberry/inat_207786520_367796246.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/207786520
+train/strawberry/inat_187591765_328094699.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/187591765
+train/strawberry/inat_164231423_284133724.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/164231423
+train/strawberry/inat_162531167_281038606.jpg,cc-by,"(c) Екатерина Гущина, some rights reserved (CC BY)",https://www.inaturalist.org/observations/162531167
+train/strawberry/inat_81535526_133750907.jpg,cc-by,"(c) Olga Zakharova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/81535526
+val/strawberry/inat_80100142_131254686.jpg,cc-by,"(c) Елена Радостева, some rights reserved (CC BY)",https://www.inaturalist.org/observations/80100142
+train/strawberry/inat_79181570_129667187.jpg,cc-by,"(c) Владимир Дворкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/79181570
+train/strawberry/inat_78199147_127947022.jpg,cc-by,"(c) Дмитрий Дунин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/78199147
+train/strawberry/inat_50615906_80378346.jpg,cc-by,"(c) Guilherme Batista, some rights reserved (CC BY)",https://www.inaturalist.org/observations/50615906
+val/strawberry/inat_49458160_78505256.jpg,cc-by,"(c) Pavel Komkov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/49458160
+test/strawberry/inat_45873971_72757143.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/45873971
+val/strawberry/inat_36035747_56910465.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/36035747
+test/strawberry/inat_6122153_7664616.jpg,cc-by,"(c) B. Phalan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/6122153
+train/strawberry/inat_5538107_6835499.jpg,cc-by,"(c) Alex Abair, some rights reserved (CC BY)",https://www.inaturalist.org/observations/5538107
+train/brinjal/inat_332032128_602474889.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/332032128
+train/brinjal/inat_329839174_597975830.jpg,cc-by,"(c) Cheryl Stinchcomb, some rights reserved (CC BY)",https://www.inaturalist.org/observations/329839174
+train/brinjal/inat_292621757_526610769.jpg,cc-by,"(c) Ian Cowie, some rights reserved (CC BY)",https://www.inaturalist.org/observations/292621757
+train/brinjal/inat_265298178_476508546.jpg,cc-by,"(c) zebedeugalinha, some rights reserved (CC BY)",https://www.inaturalist.org/observations/265298178
+train/brinjal/inat_226638283_401975425.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/226638283
+val/brinjal/inat_226501297_401711037.jpg,cc-by,"(c) Noland Aull, some rights reserved (CC BY)",https://www.inaturalist.org/observations/226501297
+train/brinjal/inat_222079563_393390652.jpg,cc-by,"(c) Codrin Bucur, some rights reserved (CC BY)",https://www.inaturalist.org/observations/222079563
+train/brinjal/inat_213386641_377114539.jpg,cc-by,"(c) portioid, some rights reserved (CC BY)",https://www.inaturalist.org/observations/213386641
+test/brinjal/inat_203981936_360480353.jpg,cc-by,"(c) Stephen Thorpe, some rights reserved (CC BY)",https://www.inaturalist.org/observations/203981936
+train/brinjal/inat_194706936_342326953.jpg,cc-by,"(c) Doug Miller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/194706936
+train/brinjal/inat_189615897_332218339.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/189615897
+train/brinjal/inat_187045063_327016664.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/187045063
+train/brinjal/inat_181196661_315761518.jpg,cc-by,"(c) sdash, some rights reserved (CC BY)",https://www.inaturalist.org/observations/181196661
+val/brinjal/inat_138334714_236416568.jpg,cc-by,"(c) Diogo Luiz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/138334714
+val/brinjal/inat_135527431_231165864.jpg,cc-by,"(c) 胡正恆(Jackson Hu), some rights reserved (CC BY)",https://www.inaturalist.org/observations/135527431
+train/brinjal/inat_57315291_91412213.jpg,cc-by,"(c) Aravinth, some rights reserved (CC BY)",https://www.inaturalist.org/observations/57315291
+train/brinjal/inat_38382740_60994844.jpg,cc-by,"(c) Aravinth, some rights reserved (CC BY)",https://www.inaturalist.org/observations/38382740
+train/brinjal/inat_25747318_39909091.jpg,cc-by,"(c) Cheng-Tao Lin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/25747318
+train/chilli/inat_411148425_756307950.jpg,cc-by,"(c) Jason K., some rights reserved (CC BY)",https://www.inaturalist.org/observations/411148425
+train/chilli/inat_409103896_752137917.jpg,cc-by,"(c) IDClaire, some rights reserved (CC BY)",https://www.inaturalist.org/observations/409103896
+train/chilli/inat_329757396_597807489.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/329757396
+train/chilli/inat_318426079_575494696.jpg,cc-by,"(c) Karla M. Benítez, some rights reserved (CC BY)",https://www.inaturalist.org/observations/318426079
+train/chilli/inat_317325447_573389652.jpg,cc-by,"(c) Chet Burrier, some rights reserved (CC BY)",https://www.inaturalist.org/observations/317325447
+test/chilli/inat_253573176_454060627.jpg,cc-by,"(c) Cesar Garcia Olmos, some rights reserved (CC BY)",https://www.inaturalist.org/observations/253573176
+val/chilli/inat_248312653_443652363.jpg,cc-by,"(c) Ashe Orsak, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248312653
+train/chilli/inat_239425081_426417797.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/239425081
+train/chilli/inat_193822494_340538897.jpg,cc-by,"(c) Jo Roberts, some rights reserved (CC BY)",https://www.inaturalist.org/observations/193822494
+train/chilli/inat_155244379_268322872.jpg,cc-by,"(c) Ben Machado, some rights reserved (CC BY)",https://www.inaturalist.org/observations/155244379
+train/chilli/inat_143432158_245979460.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/143432158
+train/chilli/inat_142683293_244659236.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/142683293
+train/chilli/inat_139677832_238946952.jpg,cc-by,"(c) Daniel Mesa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/139677832
+train/chilli/inat_133256464_226942585.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/133256464
+train/chilli/inat_132304163_225278844.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/132304163
+train/chilli/inat_130414190_221727623.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/130414190
+train/chilli/inat_77324594_126448789.jpg,cc-by,"(c) johnyochum, some rights reserved (CC BY)",https://www.inaturalist.org/observations/77324594
+train/chilli/inat_74974984_122603172.jpg,cc-by,"(c) Rodolfo Salinas Villarreal, some rights reserved (CC BY)",https://www.inaturalist.org/observations/74974984
+val/chilli/inat_71040024_115595099.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/71040024
+train/chilli/inat_59190583_94560860.jpg,cc-by,"(c) muddytortoise, some rights reserved (CC BY)",https://www.inaturalist.org/observations/59190583
+train/chilli/inat_51670729_82109679.jpg,cc-by,"(c) Rodolfo Salinas Villarreal, some rights reserved (CC BY)",https://www.inaturalist.org/observations/51670729
+train/chilli/inat_43461922_68955853.jpg,cc-by,"(c) johnyochum, some rights reserved (CC BY)",https://www.inaturalist.org/observations/43461922
+train/chilli/inat_32691051_51292719.jpg,cc-by,"(c) Cleveland Powell, some rights reserved (CC BY)",https://www.inaturalist.org/observations/32691051
+train/chilli/inat_26136492_40554897.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/26136492
+train/chilli/inat_11632435_16618363.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/11632435
+train/chilli/inat_7431520_9659352.jpg,cc-by,"(c) Enrique Martínez Núñez, some rights reserved (CC BY)",https://www.inaturalist.org/observations/7431520
+train/chilli/inat_7431506_9659313.jpg,cc-by,"(c) Enrique Martínez Núñez, some rights reserved (CC BY)",https://www.inaturalist.org/observations/7431506
+train/sunflower/inat_412484496_758998626.jpg,cc-by,"(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",https://www.inaturalist.org/observations/412484496
+train/sunflower/inat_411926295_757838754.jpg,cc-by,"(c) Daughter Dad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/411926295
+train/sunflower/inat_411926268_757834453.jpg,cc-by,"(c) Daughter Dad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/411926268
+train/sunflower/inat_411926265_757834448.jpg,cc-by,"(c) Daughter Dad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/411926265
+train/sunflower/inat_411926255_757834429.jpg,cc-by,"(c) Daughter Dad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/411926255
+train/sunflower/inat_411886709_757779861.jpg,cc-by,"(c) Daughter Dad, some rights reserved (CC BY)",https://www.inaturalist.org/observations/411886709
+train/sunflower/inat_411865188_757749143.jpg,cc-by,"(c) Linda Jo Conn, some rights reserved (CC BY)",https://www.inaturalist.org/observations/411865188
+test/sunflower/inat_410806784_755611644.jpg,cc-by,"(c) Nathan May, some rights reserved (CC BY)",https://www.inaturalist.org/observations/410806784
+test/sunflower/inat_409711033_753381904.jpg,cc-by,"(c) Coryn Fox Corvus, some rights reserved (CC BY)",https://www.inaturalist.org/observations/409711033
+train/sunflower/inat_407115626_748083244.jpg,cc-by,"(c) Sam Kieschnick, some rights reserved (CC BY)",https://www.inaturalist.org/observations/407115626
+val/sunflower/inat_406875817_747607038.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/406875817
+train/sunflower/inat_406662614_747177665.jpg,cc-by,"(c) Tom Scavo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/406662614
+train/sunflower/inat_406397643_746645187.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/406397643
+train/sunflower/inat_405820062_745475608.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/405820062
+val/sunflower/inat_405315351_744458075.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/405315351
+train/sunflower/inat_404607461_743057204.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/404607461
+train/sunflower/inat_404607359_743057019.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/404607359
+train/sunflower/inat_404013703_741863897.jpg,cc-by,"(c) Tom Scavo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/404013703
+test/sunflower/inat_403937006_741720931.jpg,cc-by,"(c) Katrina Smith, some rights reserved (CC BY)",https://www.inaturalist.org/observations/403937006
+train/sunflower/inat_403820687_741497881.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/403820687
+train/sunflower/inat_403035075_739944318.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/403035075
+train/sunflower/inat_402584762_739069405.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/402584762
+train/sunflower/inat_402311464_739302852.jpg,cc-by,"(c) Kate Kruesi, some rights reserved (CC BY)",https://www.inaturalist.org/observations/402311464
+train/sunflower/inat_402215471_738345635.jpg,cc-by,"(c) The Great Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/402215471
+val/sunflower/inat_401966145_737849638.jpg,cc-by,"(c) scallions, some rights reserved (CC BY)",https://www.inaturalist.org/observations/401966145
+test/sunflower/inat_401927442_737771328.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/401927442
+val/sunflower/inat_400895888_735751797.jpg,cc-by,"(c) F. LaBry, some rights reserved (CC BY)",https://www.inaturalist.org/observations/400895888
+train/sunflower/inat_400834437_735592500.jpg,cc-by,"(c) Jo Roberts, some rights reserved (CC BY)",https://www.inaturalist.org/observations/400834437
+train/sunflower/inat_400519549_734997471.jpg,cc-by,"(c) Sam Kieschnick, some rights reserved (CC BY)",https://www.inaturalist.org/observations/400519549
+val/sunflower/inat_398975550_731954008.jpg,cc-by,"(c) John Brew, some rights reserved (CC BY)",https://www.inaturalist.org/observations/398975550
+train/sunflower/inat_398233122_730500887.jpg,cc-by,"(c) Chris Stahl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/398233122
+train/sunflower/inat_396166621_726495284.jpg,cc-by,"(c) Emily Nyenyedzi Davies, some rights reserved (CC BY)",https://www.inaturalist.org/observations/396166621
+train/sunflower/inat_395635841_725445368.jpg,cc-by,"(c) Linda Jo Conn, some rights reserved (CC BY)",https://www.inaturalist.org/observations/395635841
+train/sunflower/inat_392379498_719081728.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/392379498
+train/sunflower/inat_392379440_719081576.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/392379440
+train/sunflower/inat_391102025_716598275.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/391102025
+val/sunflower/inat_390666472_715745807.jpg,cc-by,"(c) Gary Rogers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/390666472
+train/sunflower/inat_389220246_712925370.jpg,cc-by,"(c) Evan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/389220246
+train/sunflower/inat_389193738_712868208.jpg,cc-by,"(c) M. Whitson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/389193738
+test/sunflower/inat_388081142_710716209.jpg,cc-by,"(c) Texas Bird Family, some rights reserved (CC BY)",https://www.inaturalist.org/observations/388081142
+train/sunflower/inat_386913255_708455231.jpg,cc-by,"(c) Sam Kieschnick, some rights reserved (CC BY)",https://www.inaturalist.org/observations/386913255
+train/sunflower/inat_386115467_706927983.jpg,cc-by,"(c) Linda Jo Conn, some rights reserved (CC BY)",https://www.inaturalist.org/observations/386115467
+train/sunflower/inat_385907307_706529047.jpg,cc-by,"(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",https://www.inaturalist.org/observations/385907307
+test/sunflower/inat_384440929_703731785.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/384440929
+train/sunflower/inat_384419733_703687873.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/384419733
+train/sunflower/inat_383695797_702287191.jpg,cc-by,"(c) Maxim Shashkov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/383695797
+train/sunflower/inat_382322565_699648836.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/382322565
+train/sunflower/inat_382146191_699300604.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/382146191
+val/sunflower/inat_378983804_693192843.jpg,cc-by,"(c) Nathan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/378983804
+train/sunflower/inat_374550829_684623977.jpg,cc-by,"(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",https://www.inaturalist.org/observations/374550829
+train/sunflower/inat_373777046_683112046.jpg,cc-by,"(c) Linda Jo Conn, some rights reserved (CC BY)",https://www.inaturalist.org/observations/373777046
+train/sunflower/inat_372746167_681139531.jpg,cc-by,"(c) Alexandria Szakacs, some rights reserved (CC BY)",https://www.inaturalist.org/observations/372746167
+val/sunflower/inat_371355542_678485946.jpg,cc-by,"(c) Jake Rehage, some rights reserved (CC BY)",https://www.inaturalist.org/observations/371355542
+train/sunflower/inat_370985524_677777997.jpg,cc-by,"(c) Linda Jo Conn, some rights reserved (CC BY)",https://www.inaturalist.org/observations/370985524
+train/sunflower/inat_367930407_671962206.jpg,cc-by,"(c) Bob Miller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/367930407
+val/sunflower/inat_364506390_665430856.jpg,cc-by,"(c) F. LaBry, some rights reserved (CC BY)",https://www.inaturalist.org/observations/364506390
+train/sunflower/inat_354743401_647096345.jpg,cc-by,"(c) Bob Miller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/354743401
+test/sunflower/inat_354151677_646118574.jpg,cc-by,"(c) Roberto Daniel Avila, some rights reserved (CC BY)",https://www.inaturalist.org/observations/354151677
+train/sunflower/inat_352861636_643916448.jpg,cc-by,"(c) Victor Perez Jr, some rights reserved (CC BY)",https://www.inaturalist.org/observations/352861636
+test/sunflower/inat_351919245_642276035.jpg,cc-by,"(c) Roberto Daniel Avila, some rights reserved (CC BY)",https://www.inaturalist.org/observations/351919245
+train/sunflower/inat_345409067_629474122.jpg,cc-by,"(c) Daniel Levitis, some rights reserved (CC BY)",https://www.inaturalist.org/observations/345409067
+train/sunflower/inat_342193772_623101247.jpg,cc-by,"(c) Rodolfo Salinas Villarreal, some rights reserved (CC BY)",https://www.inaturalist.org/observations/342193772
+val/sunflower/inat_337357282_613251886.jpg,cc-by,"(c) Jay Pruett, some rights reserved (CC BY)",https://www.inaturalist.org/observations/337357282
+train/sunflower/inat_335075559_608645532.jpg,cc-by,"(c) JHummel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/335075559
+test/sunflower/inat_335028275_608537809.jpg,cc-by,"(c) Will Pearce, some rights reserved (CC BY)",https://www.inaturalist.org/observations/335028275
+val/sunflower/inat_334669198_607806255.jpg,cc-by,"(c) Jay Pruett, some rights reserved (CC BY)",https://www.inaturalist.org/observations/334669198
+test/sunflower/inat_334464107_607398290.jpg,cc-by,"(c) Will Pearce, some rights reserved (CC BY)",https://www.inaturalist.org/observations/334464107
+train/sunflower/inat_334359843_607184475.jpg,cc-by,"(c) considerthelilies, some rights reserved (CC BY)",https://www.inaturalist.org/observations/334359843
+test/sunflower/inat_333819501_606079629.jpg,cc-by,"(c) Henrik Kibak, some rights reserved (CC BY)",https://www.inaturalist.org/observations/333819501
+train/sunflower/inat_333673279_605778174.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/333673279
+train/sunflower/inat_332806489_604064259.jpg,cc-by,"(c) Marie Domokos, some rights reserved (CC BY)",https://www.inaturalist.org/observations/332806489
+test/sunflower/inat_331982082_602374823.jpg,cc-by,"(c) Matthieu Trotignon, some rights reserved (CC BY)",https://www.inaturalist.org/observations/331982082
+train/sunflower/inat_330422237_599164169.jpg,cc-by,"(c) Timon T. K., some rights reserved (CC BY)",https://www.inaturalist.org/observations/330422237
+train/sunflower/inat_330002123_598303705.jpg,cc-by,"(c) Jo Roberts, some rights reserved (CC BY)",https://www.inaturalist.org/observations/330002123
+train/sunflower/inat_329362938_597014324.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/329362938
+test/sunflower/inat_328638249_595560083.jpg,cc-by,"(c) Rui Ribeiro, some rights reserved (CC BY)",https://www.inaturalist.org/observations/328638249
+train/sunflower/inat_325714539_589775392.jpg,cc-by,"(c) Jason Parrish, some rights reserved (CC BY)",https://www.inaturalist.org/observations/325714539
+train/sunflower/inat_323824912_586003861.jpg,cc-by,"(c) Corey Stafford, some rights reserved (CC BY)",https://www.inaturalist.org/observations/323824912
+train/sunflower/inat_322703509_583824735.jpg,cc-by,"(c) Eric Schmidt, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322703509
+train/sunflower/inat_322233003_582889200.jpg,cc-by,"(c) Sue Carnahan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322233003
+train/sunflower/inat_322231411_582879884.jpg,cc-by,"(c) Sue Carnahan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322231411
+train/sunflower/inat_322231410_582878865.jpg,cc-by,"(c) Sue Carnahan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322231410
+train/sunflower/inat_322231408_582878833.jpg,cc-by,"(c) Sue Carnahan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322231408
+train/sunflower/inat_321596263_581631862.jpg,cc-by,"(c) Alexandria Szakacs, some rights reserved (CC BY)",https://www.inaturalist.org/observations/321596263
+train/sunflower/inat_320114846_578735944.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/320114846
+train/sunflower/inat_319990496_578492130.jpg,cc-by,"(c) Jacob Saucier, some rights reserved (CC BY)",https://www.inaturalist.org/observations/319990496
+train/sunflower/inat_319973444_578462035.jpg,cc-by,"(c) Holly Hodges, some rights reserved (CC BY)",https://www.inaturalist.org/observations/319973444
+train/sunflower/inat_319881661_578284417.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/319881661
+train/sunflower/inat_318594252_575824784.jpg,cc-by,"(c) Natasha Taylor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/318594252
+train/sunflower/inat_317568450_573853944.jpg,cc-by,"(c) Michael Andresek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/317568450
+test/sunflower/inat_316407846_571662409.jpg,cc-by,"(c) Roz Hunter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/316407846
+train/sunflower/inat_315954219_570816094.jpg,cc-by,"(c) P Holroyd, some rights reserved (CC BY)",https://www.inaturalist.org/observations/315954219
+train/sunflower/inat_315434093_569823777.jpg,cc-by,"(c) Bao Pham, some rights reserved (CC BY)",https://www.inaturalist.org/observations/315434093
+train/sunflower/inat_314530226_568095885.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/314530226
+train/sunflower/inat_314359180_567787831.jpg,cc-by,"(c) Jaime González, some rights reserved (CC BY)",https://www.inaturalist.org/observations/314359180
+train/sunflower/inat_313452983_566054564.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/313452983
+train/sunflower/inat_313299322_565767500.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/313299322
+train/sunflower/inat_312597449_564415491.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/312597449
+val/sunflower/inat_312149265_563548695.jpg,cc-by,"(c) ajott, some rights reserved (CC BY)",https://www.inaturalist.org/observations/312149265
+train/sunflower/inat_311837110_562961289.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/311837110
+val/sunflower/inat_311500646_562326361.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/311500646
+test/sunflower/inat_311334461_562008525.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/311334461
+test/sunflower/inat_310864535_561068316.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/310864535
+train/sunflower/inat_310858629_561082163.jpg,cc-by,"(c) Salem De La Luna, some rights reserved (CC BY)",https://www.inaturalist.org/observations/310858629
+train/sunflower/inat_308720448_556996982.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/308720448
+train/sunflower/inat_307607236_554858194.jpg,cc-by,"(c) Michael Grundner, some rights reserved (CC BY)",https://www.inaturalist.org/observations/307607236
+train/sunflower/inat_306836917_553377184.jpg,cc-by,"(c) Jo Roberts, some rights reserved (CC BY)",https://www.inaturalist.org/observations/306836917
+val/sunflower/inat_306652070_553030675.jpg,cc-by,"(c) Evgenij Samarin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/306652070
+train/sunflower/inat_306105663_551984823.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/306105663
+test/sunflower/inat_304969565_549825340.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/304969565
+train/sunflower/inat_304013462_548011272.jpg,cc-by,"(c) Jono, some rights reserved (CC BY)",https://www.inaturalist.org/observations/304013462
+train/sunflower/inat_303891583_547778337.jpg,cc-by,"(c) Emily Geest, some rights reserved (CC BY)",https://www.inaturalist.org/observations/303891583
+test/sunflower/inat_303528081_547082335.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/303528081
+test/sunflower/inat_303307143_546668782.jpg,cc-by,"(c) Robert M Hallock, some rights reserved (CC BY)",https://www.inaturalist.org/observations/303307143
+test/sunflower/inat_301992188_544223874.jpg,cc-by,"(c) Hannah K. Maielua, some rights reserved (CC BY)",https://www.inaturalist.org/observations/301992188
+train/sunflower/inat_301606287_543499127.jpg,cc-by,"(c) carnifex, some rights reserved (CC BY)",https://www.inaturalist.org/observations/301606287
+train/sunflower/inat_300259056_540988811.jpg,cc-by,"(c) Holly Hodges, some rights reserved (CC BY)",https://www.inaturalist.org/observations/300259056
+train/sunflower/inat_299006100_538648276.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/299006100
+train/sunflower/inat_298592633_537862835.jpg,cc-by,"(c) Sergey Basalaev, some rights reserved (CC BY)",https://www.inaturalist.org/observations/298592633
+train/sunflower/inat_298033620_536807057.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/298033620
+train/sunflower/inat_297908235_536557702.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/297908235
+train/sunflower/inat_295919585_532780181.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/295919585
+train/sunflower/inat_295187764_531383989.jpg,cc-by,"(c) mattmsa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/295187764
+train/sunflower/inat_295117126_531253082.jpg,cc-by,"(c) jamie bee, some rights reserved (CC BY)",https://www.inaturalist.org/observations/295117126
+train/sunflower/inat_294978324_530988088.jpg,cc-by,"(c) Chris Stahl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/294978324
+train/sunflower/inat_294608084_530289055.jpg,cc-by,"(c) Jo Roberts, some rights reserved (CC BY)",https://www.inaturalist.org/observations/294608084
+val/sunflower/inat_293610365_528420381.jpg,cc-by,"(c) Elliott Gordon, some rights reserved (CC BY)",https://www.inaturalist.org/observations/293610365
+train/sunflower/inat_292683928_526724358.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/292683928
+train/sunflower/inat_287725210_517364194.jpg,cc-by,"(c) David Garza, some rights reserved (CC BY)",https://www.inaturalist.org/observations/287725210
+train/sunflower/inat_284920518_512094838.jpg,cc-by,"(c) Chet Burrier, some rights reserved (CC BY)",https://www.inaturalist.org/observations/284920518
+train/sunflower/inat_284499188_511312706.jpg,cc-by,"(c) chiuluan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/284499188
+val/sunflower/inat_283799660_509970719.jpg,cc-by,"(c) Cody Stricker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/283799660
+train/sunflower/inat_281601282_505872380.jpg,cc-by,"(c) Aspen Frisch, some rights reserved (CC BY)",https://www.inaturalist.org/observations/281601282
+test/sunflower/inat_279128981_501224887.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/279128981
+test/sunflower/inat_266029942_477939337.jpg,cc-by,"(c) Darío Calvente Viera, some rights reserved (CC BY)",https://www.inaturalist.org/observations/266029942
+train/sunflower/inat_262544789_471579419.jpg,cc-by,"(c) Barry Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/262544789
+train/sunflower/inat_261863178_470538665.jpg,cc-by,"(c) Bob Miller, some rights reserved (CC BY)",https://www.inaturalist.org/observations/261863178
+train/sunflower/inat_259086645_465003106.jpg,cc-by,"(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",https://www.inaturalist.org/observations/259086645
+train/sunflower/inat_259034161_464896976.jpg,cc-by,"(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",https://www.inaturalist.org/observations/259034161
+train/sunflower/inat_256209809_459312358.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/256209809
+train/sunflower/inat_251504477_450029250.jpg,cc-by,"(c) Greghig Jirheg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/251504477
+train/sunflower/inat_251472894_449965578.jpg,cc-by,"(c) Jo Roberts, some rights reserved (CC BY)",https://www.inaturalist.org/observations/251472894
+train/sunflower/inat_250587264_448198879.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/250587264
+test/sunflower/inat_250582746_448189183.jpg,cc-by,"(c) Katrina Smith, some rights reserved (CC BY)",https://www.inaturalist.org/observations/250582746
+train/sunflower/inat_250378231_447777254.jpg,cc-by,"(c) Zach Earl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/250378231
+train/sunflower/inat_250305382_447624656.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/250305382
+train/sunflower/inat_248671878_444374187.jpg,cc-by,"(c) Greghig Jirheg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248671878
+train/sunflower/inat_248652093_444332478.jpg,cc-by,"(c) Arnim Littek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248652093
+train/sunflower/inat_248368056_443760740.jpg,cc-by,"(c) Jared Lincenberg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248368056
+train/sunflower/inat_247322392_441699705.jpg,cc-by,"(c) Zach Earl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/247322392
+train/sunflower/inat_246722168_440510766.jpg,cc-by,"(c) Zach Earl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/246722168
+train/sunflower/inat_245350305_437797173.jpg,cc-by,"(c) Catherine C. Galley, some rights reserved (CC BY)",https://www.inaturalist.org/observations/245350305
+train/sunflower/inat_245288921_437676873.jpg,cc-by,"(c) Greghig Jirheg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/245288921
+train/sunflower/inat_245287528_437674054.jpg,cc-by,"(c) Greghig Jirheg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/245287528
+train/sunflower/inat_245239892_437583749.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/245239892
+val/sunflower/inat_244256880_435685628.jpg,cc-by,"(c) Jay Pruett, some rights reserved (CC BY)",https://www.inaturalist.org/observations/244256880
+test/sunflower/inat_243815604_434809967.jpg,cc-by,"(c) Will Pearce, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243815604
+val/sunflower/inat_243772469_434735124.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243772469
+train/sunflower/inat_243626790_434447796.jpg,cc-by,"(c) Greghig Jirheg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243626790
+train/sunflower/inat_243303122_433834834.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243303122
+train/sunflower/inat_241733273_430862505.jpg,cc-by,"(c) Chet Burrier, some rights reserved (CC BY)",https://www.inaturalist.org/observations/241733273
+train/sunflower/inat_241666209_430734674.jpg,cc-by,"(c) Michael O'Loughlin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/241666209
+train/sunflower/inat_241662874_430727974.jpg,cc-by,"(c) Lesley Marrion-Cole, some rights reserved (CC BY)",https://www.inaturalist.org/observations/241662874
+train/sunflower/inat_241393695_430213508.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/241393695
+train/sunflower/inat_241146294_429734529.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/241146294
+train/sunflower/inat_241090113_429632362.jpg,cc-by,"(c) Sergey Basalaev, some rights reserved (CC BY)",https://www.inaturalist.org/observations/241090113
+train/sunflower/inat_240996272_429443941.jpg,cc-by,"(c) Zach Earl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/240996272
+val/sunflower/inat_240433356_428355323.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/240433356
+train/sunflower/inat_239903466_427339049.jpg,cc-by,"(c) Zach Earl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/239903466
+train/sunflower/inat_239719756_426987666.jpg,cc-by,"(c) Rose Zappa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/239719756
+val/sunflower/inat_239411744_426393349.jpg,cc-by,"(c) F. LaBry, some rights reserved (CC BY)",https://www.inaturalist.org/observations/239411744
+val/sunflower/inat_239411479_426392718.jpg,cc-by,"(c) F. LaBry, some rights reserved (CC BY)",https://www.inaturalist.org/observations/239411479
+val/sunflower/inat_239410522_426390486.jpg,cc-by,"(c) F. LaBry, some rights reserved (CC BY)",https://www.inaturalist.org/observations/239410522
+val/sunflower/inat_239203985_425982624.jpg,cc-by,"(c) Paul Asman and Jill Lenoble, some rights reserved (CC BY)",https://www.inaturalist.org/observations/239203985
+train/sunflower/inat_238506975_424628724.jpg,cc-by,"(c) Eric Lamb, some rights reserved (CC BY)",https://www.inaturalist.org/observations/238506975
+train/sunflower/inat_238139359_423914888.jpg,cc-by,"(c) Daniel Cahen, some rights reserved (CC BY)",https://www.inaturalist.org/observations/238139359
+test/sunflower/inat_237861546_423385345.jpg,cc-by,"(c) Roz Hunter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/237861546
+test/sunflower/inat_237856674_423376011.jpg,cc-by,"(c) Roz Hunter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/237856674
+train/sunflower/inat_237459783_422610314.jpg,cc-by,"(c) Sergey Basalaev, some rights reserved (CC BY)",https://www.inaturalist.org/observations/237459783
+val/sunflower/inat_236440854_420645355.jpg,cc-by,"(c) Анастасия Воронова, some rights reserved (CC BY)",https://www.inaturalist.org/observations/236440854
+train/sunflower/inat_236305559_420384047.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/236305559
+train/sunflower/inat_235670573_419159104.jpg,cc-by,"(c) Andreas Schneider, some rights reserved (CC BY)",https://www.inaturalist.org/observations/235670573
+test/sunflower/inat_235041866_417947175.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/235041866
+test/sunflower/inat_235036102_417935692.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/235036102
+test/sunflower/inat_234808409_417495354.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/234808409
+test/sunflower/inat_234509350_416910019.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/234509350
+test/sunflower/inat_234463899_416824211.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/234463899
+train/sunflower/inat_233307735_414614624.jpg,cc-by,"(c) diana schwartz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/233307735
+val/sunflower/inat_233062567_414149287.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/233062567
+train/sunflower/inat_232269406_412630990.jpg,cc-by,"(c) Евгений Маринкин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/232269406
+train/sunflower/inat_232201504_412498047.jpg,cc-by,"(c) Joseph Aubert, some rights reserved (CC BY)",https://www.inaturalist.org/observations/232201504
+train/sunflower/inat_231109248_410430109.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/231109248
+test/sunflower/inat_230524902_409329094.jpg,cc-by,"(c) Roz Hunter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/230524902
+test/sunflower/inat_230524362_409328223.jpg,cc-by,"(c) Roz Hunter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/230524362
+train/sunflower/inat_229353199_407104684.jpg,cc-by,"(c) Chet Burrier, some rights reserved (CC BY)",https://www.inaturalist.org/observations/229353199
+train/sunflower/inat_229239964_406894394.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/229239964
+val/sunflower/inat_228908295_406268169.jpg,cc-by,"(c) Jay Pruett, some rights reserved (CC BY)",https://www.inaturalist.org/observations/228908295
+train/sunflower/inat_228782951_406032580.jpg,cc-by,"(c) gerardbertrand, some rights reserved (CC BY)",https://www.inaturalist.org/observations/228782951
+test/sunflower/inat_228123074_404777560.jpg,cc-by,"(c) Karen Guin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/228123074
+train/sunflower/inat_227832782_404220667.jpg,cc-by,"(c) Andrew Tree, some rights reserved (CC BY)",https://www.inaturalist.org/observations/227832782
+test/apple/inat_384853643_704525092.jpg,cc-by,"(c) Fyodor Pudovikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/384853643
+test/apple/inat_376152865_687730840.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/376152865
+train/apple/inat_360646719_658093790.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/360646719
+train/apple/inat_360645516_658092600.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/360645516
+train/apple/inat_359404830_655687964.jpg,cc-by,"(c) Dominic McLean, some rights reserved (CC BY)",https://www.inaturalist.org/observations/359404830
+train/apple/inat_352823111_643854852.jpg,cc-by,"(c) Piotr Panek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/352823111
+train/apple/inat_347227057_633071031.jpg,cc-by,"(c) Aquilinus, some rights reserved (CC BY)",https://www.inaturalist.org/observations/347227057
+train/apple/inat_334403849_607262790.jpg,cc-by,"(c) Jamie O'Neill, some rights reserved (CC BY)",https://www.inaturalist.org/observations/334403849
+train/apple/inat_333367226_605202351.jpg,cc-by,"(c) Jose Gutierrez Higa, some rights reserved (CC BY)",https://www.inaturalist.org/observations/333367226
+test/apple/inat_322003652_582432155.jpg,cc-by,"(c) Alice Shanks, some rights reserved (CC BY)",https://www.inaturalist.org/observations/322003652
+train/apple/inat_281213143_505143659.jpg,cc-by,"(c) Bartosz Czołczyński, some rights reserved (CC BY)",https://www.inaturalist.org/observations/281213143
+train/apple/inat_277451196_498187864.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/277451196
+val/apple/inat_276715602_496899274.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/276715602
+val/apple/inat_276693368_496863568.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/276693368
+val/apple/inat_274224834_493028911.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/274224834
+val/apple/inat_273953122_492590685.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/273953122
+train/apple/inat_273384702_491702348.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/273384702
+train/apple/inat_271965677_489258564.jpg,cc-by,"(c) Maksymilian Bobko, some rights reserved (CC BY)",https://www.inaturalist.org/observations/271965677
+train/apple/inat_271260914_487919289.jpg,cc-by,"(c) Andrew Tree, some rights reserved (CC BY)",https://www.inaturalist.org/observations/271260914
+test/apple/inat_269864982_485267221.jpg,cc-by,"(c) Kieran Hanrahan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/269864982
+train/apple/inat_268247435_482151351.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/268247435
+train/apple/inat_267420314_480571530.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/267420314
+val/apple/inat_248649930_444327825.jpg,cc-by,"(c) Nathan Odgers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248649930
+val/apple/inat_248649175_444326227.jpg,cc-by,"(c) Nathan Odgers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/248649175
+val/apple/inat_247427743_441912237.jpg,cc-by,"(c) Nathan Odgers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/247427743
+train/apple/inat_247022624_441098145.jpg,cc-by,"(c) Max Campbell, some rights reserved (CC BY)",https://www.inaturalist.org/observations/247022624
+train/apple/inat_218077347_385869323.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/218077347
+train/apple/inat_215808654_381591812.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/215808654
+train/apple/inat_213527117_377361223.jpg,cc-by,"(c) Andrew Murray, some rights reserved (CC BY)",https://www.inaturalist.org/observations/213527117
+train/apple/inat_213030177_376468526.jpg,cc-by,"(c) Marcel_Pepin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/213030177
+train/apple/inat_208180884_368309319.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/208180884
+train/apple/inat_208180574_368308699.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/208180574
+train/apple/inat_207870974_367734948.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/207870974
+train/apple/inat_207786386_367575973.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/207786386
+test/apple/inat_207009124_366962924.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/207009124
+train/apple/inat_206833368_365783634.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/206833368
+train/apple/inat_205226786_362848159.jpg,cc-by,"(c) Alicia Ballard, some rights reserved (CC BY)",https://www.inaturalist.org/observations/205226786
+train/apple/inat_195613549_344182030.jpg,cc-by,"(c) Nicole, some rights reserved (CC BY)",https://www.inaturalist.org/observations/195613549
+train/apple/inat_195280404_343504108.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/195280404
+val/apple/inat_187305056_327526744.jpg,cc-by,"(c) Георгий Виноградов (Georgy Vinogradov), some rights reserved (CC BY)",https://www.inaturalist.org/observations/187305056
+train/apple/inat_163092067_282051996.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/163092067
+test/apple/inat_161562103_279270807.jpg,cc-by,"(c) Fyodor Pudovikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/161562103
+train/apple/inat_161468475_279095091.jpg,cc-by,"(c) Екатерина Гущина, some rights reserved (CC BY)",https://www.inaturalist.org/observations/161468475
+train/apple/inat_160772073_277840040.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/160772073
+train/apple/inat_160750833_277803068.jpg,cc-by,"(c) Andrey Polstianoi, some rights reserved (CC BY)",https://www.inaturalist.org/observations/160750833
+test/apple/inat_160694419_277703680.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/160694419
+train/apple/inat_159252831_275138710.jpg,cc-by,"(c) Jacqueline Worthington, some rights reserved (CC BY)",https://www.inaturalist.org/observations/159252831
+train/apple/inat_158355051_273646948.jpg,cc-by,"(c) Vasily Moryashkin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/158355051
+train/apple/inat_157727406_272668287.jpg,cc-by,"(c) Lythronax246, some rights reserved (CC BY)",https://www.inaturalist.org/observations/157727406
+train/apple/inat_143263577_245678960.jpg,cc-by,"(c) Barry Walter, some rights reserved (CC BY)",https://www.inaturalist.org/observations/143263577
+train/apple/inat_141521820_242471724.jpg,cc-by,"(c) Genevieve Early, some rights reserved (CC BY)",https://www.inaturalist.org/observations/141521820
+train/apple/inat_141246239_241928347.jpg,cc-by,"(c) Jon Sullivan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/141246239
+val/apple/inat_138408850_236562751.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/138408850
+test/apple/inat_123816254_209794063.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/123816254
+val/apple/inat_119315966_201676075.jpg,cc-by,"(c) Anastasia_Surkova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/119315966
+val/apple/inat_119248446_201564381.jpg,cc-by,"(c) Anastasia_Surkova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/119248446
+train/apple/inat_118169274_199626704.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/118169274
+val/apple/inat_117234752_197962732.jpg,cc-by,"(c) Jared Shorma, some rights reserved (CC BY)",https://www.inaturalist.org/observations/117234752
+test/apple/inat_116354214_196388210.jpg,cc-by,"(c) Kevin Kenny, some rights reserved (CC BY)",https://www.inaturalist.org/observations/116354214
+train/apple/inat_116089634_195932099.jpg,cc-by,"(c) Guillaume Delaitre, some rights reserved (CC BY)",https://www.inaturalist.org/observations/116089634
+train/apple/inat_115288421_194605221.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/115288421
+train/apple/inat_115175811_194414599.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/115175811
+test/apple/inat_113188828_191250913.jpg,cc-by,"(c) glomik, some rights reserved (CC BY)",https://www.inaturalist.org/observations/113188828
+train/apple/inat_113063913_191030272.jpg,cc-by,"(c) Petr Harant, some rights reserved (CC BY)",https://www.inaturalist.org/observations/113063913
+train/apple/inat_112077102_189280154.jpg,cc-by,"(c) Andrew Tree, some rights reserved (CC BY)",https://www.inaturalist.org/observations/112077102
+val/apple/inat_110856971_187074760.jpg,cc-by,"(c) Elliott Gordon, some rights reserved (CC BY)",https://www.inaturalist.org/observations/110856971
+train/apple/inat_109550893_184659403.jpg,cc-by,"(c) nevwright, some rights reserved (CC BY)",https://www.inaturalist.org/observations/109550893
+val/apple/inat_86269990_142092881.jpg,cc-by,"(c) Anastasia_Surkova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/86269990
+test/apple/inat_81454722_133606962.jpg,cc-by,"(c) naturalist_ua_97, some rights reserved (CC BY)",https://www.inaturalist.org/observations/81454722
+val/apple/inat_78437499_128369492.jpg,cc-by,"(c) E. A., some rights reserved (CC BY)",https://www.inaturalist.org/observations/78437499
+test/apple/inat_78208228_127962032.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/78208228
+test/apple/inat_77739213_127161667.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/77739213
+val/apple/inat_76449771_125059412.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/76449771
+train/apple/inat_75867249_124138630.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/75867249
+train/apple/inat_75496572_123522690.jpg,cc-by,"(c) botany08, some rights reserved (CC BY)",https://www.inaturalist.org/observations/75496572
+train/apple/inat_62465326_100087856.jpg,cc-by,"(c) Konstantin Grebennikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/62465326
+train/apple/inat_62465324_100087851.jpg,cc-by,"(c) Konstantin Grebennikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/62465324
+train/apple/inat_47993535_76130449.jpg,cc-by,"(c) Eugene Popov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/47993535
+train/apple/inat_44803652_71026568.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/44803652
+train/apple/inat_44619411_70739381.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/44619411
+test/apple/inat_44249868_70148074.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/44249868
+val/apple/inat_44090190_69907822.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/44090190
+train/apple/inat_43389645_68848980.jpg,cc-by,"(c) Gail A Baker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/43389645
+train/apple/inat_37740544_59891210.jpg,cc-by,"(c) Christoph Moning, some rights reserved (CC BY)",https://www.inaturalist.org/observations/37740544
+test/apple/inat_32097182_50309508.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/32097182
+train/apple/inat_28924614_45115199.jpg,cc-by,"(c) Кирилл Зенин, some rights reserved (CC BY)",https://www.inaturalist.org/observations/28924614
+train/apple/inat_26352338_40912841.jpg,cc-by,"(c) aarongunnar, some rights reserved (CC BY)",https://www.inaturalist.org/observations/26352338
+train/apple/inat_26283489_40798807.jpg,cc-by,"(c) Micki Colbeck, some rights reserved (CC BY)",https://www.inaturalist.org/observations/26283489
+val/apple/inat_25220008_39040855.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/25220008
+train/apple/inat_23646059_36601715.jpg,cc-by,"(c) Gail A Baker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/23646059
+train/apple/inat_17370554_26381985.jpg,cc-by,"(c) Jenny Saito, some rights reserved (CC BY)",https://www.inaturalist.org/observations/17370554
+train/apple/inat_13916755_20559763.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/13916755
+val/apple/inat_12785285_18533397.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/12785285
+train/apple/inat_12453252_17965297.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/12453252
+val/apple/inat_12388061_17851974.jpg,cc-by,"(c) Natalya Ivanova, some rights reserved (CC BY)",https://www.inaturalist.org/observations/12388061
+train/apple/inat_12377501_17834366.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/12377501
+train/apple/inat_8950720_12062222.jpg,cc-by,"(c) Tim Park, some rights reserved (CC BY)",https://www.inaturalist.org/observations/8950720
+val/apple/inat_4525387_5480377.jpg,cc-by,"(c) Jacqui Geux, some rights reserved (CC BY)",https://www.inaturalist.org/observations/4525387
+train/apple/inat_2923111_3347439.jpg,cc-by,"(c) Lindsey K. Wise, some rights reserved (CC BY)",https://www.inaturalist.org/observations/2923111
+test/apple/inat_1364297_1687673.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/1364297
+train/apple/inat_1036486_1299581.jpg,cc-by,"(c) John Barkla, some rights reserved (CC BY)",https://www.inaturalist.org/observations/1036486
+train/peach/inat_400339984_734637872.jpg,cc-by,"(c) Graham Surrey, some rights reserved (CC BY)",https://www.inaturalist.org/observations/400339984
+train/peach/inat_392266327_718854832.jpg,cc-by,"(c) 振远 王, some rights reserved (CC BY)",https://www.inaturalist.org/observations/392266327
+train/peach/inat_392266316_718853730.jpg,cc-by,"(c) 振远 王, some rights reserved (CC BY)",https://www.inaturalist.org/observations/392266316
+train/peach/inat_390810529_716026969.jpg,cc-by,"(c) 振远 王, some rights reserved (CC BY)",https://www.inaturalist.org/observations/390810529
+train/peach/inat_390810527_716026709.jpg,cc-by,"(c) 振远 王, some rights reserved (CC BY)",https://www.inaturalist.org/observations/390810527
+test/peach/inat_388701550_711935581.jpg,cc-by,"(c) Hildegard Klein, some rights reserved (CC BY)",https://www.inaturalist.org/observations/388701550
+train/peach/inat_351413513_641289924.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/351413513
+train/peach/inat_349394716_637354469.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/349394716
+train/peach/inat_345535943_629724015.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/345535943
+train/peach/inat_344407916_627531021.jpg,cc-by,"(c) Marcello Manara, some rights reserved (CC BY)",https://www.inaturalist.org/observations/344407916
+train/peach/inat_341772611_622249299.jpg,cc-by,"(c) shinylatias, some rights reserved (CC BY)",https://www.inaturalist.org/observations/341772611
+test/peach/inat_320879278_580228084.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/320879278
+train/peach/inat_314537323_568108480.jpg,cc-by,"(c) Thomas Mesaglio, some rights reserved (CC BY)",https://www.inaturalist.org/observations/314537323
+train/peach/inat_290002663_521652729.jpg,cc-by,"(c) Jhonatan Matheus, some rights reserved (CC BY)",https://www.inaturalist.org/observations/290002663
+test/peach/inat_269048273_483694340.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/269048273
+val/peach/inat_268697375_483018640.jpg,cc-by,"(c) Julia Henning, some rights reserved (CC BY)",https://www.inaturalist.org/observations/268697375
+train/peach/inat_268561134_482754360.jpg,cc-by,"(c) Evan M. Raskin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/268561134
+train/peach/inat_267552122_480826097.jpg,cc-by,"(c) Chris Stahl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/267552122
+train/peach/inat_267413265_480569190.jpg,cc-by,"(c) Mary Lata, some rights reserved (CC BY)",https://www.inaturalist.org/observations/267413265
+val/peach/inat_267279806_480306318.jpg,cc-by,"(c) Dan Vickers, some rights reserved (CC BY)",https://www.inaturalist.org/observations/267279806
+train/peach/inat_267269258_480285609.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/267269258
+train/peach/inat_266949592_479670902.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/266949592
+train/peach/inat_266765651_479318736.jpg,cc-by,"(c) Annika Lindqvist, some rights reserved (CC BY)",https://www.inaturalist.org/observations/266765651
+train/peach/inat_261364353_469539513.jpg,cc-by,"(c) Gergely Nigg, some rights reserved (CC BY)",https://www.inaturalist.org/observations/261364353
+test/peach/inat_246288551_439641911.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/246288551
+train/peach/inat_235804067_419412304.jpg,cc-by,"(c) Jhonatan Matheus, some rights reserved (CC BY)",https://www.inaturalist.org/observations/235804067
+val/peach/inat_203803617_360310347.jpg,cc-by,"(c) Elliott Gordon, some rights reserved (CC BY)",https://www.inaturalist.org/observations/203803617
+test/peach/inat_203279975_359132234.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/203279975
+train/peach/inat_203165431_358912493.jpg,cc-by,"(c) Kathy Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/203165431
+test/peach/inat_203031961_358659183.jpg,cc-by,"(c) Patrick Hacker, some rights reserved (CC BY)",https://www.inaturalist.org/observations/203031961
+val/peach/inat_201142396_355013346.jpg,cc-by,"(c) Luc Wyn, some rights reserved (CC BY)",https://www.inaturalist.org/observations/201142396
+train/peach/inat_200432039_353623565.jpg,cc-by,"(c) Cynthia_K, some rights reserved (CC BY)",https://www.inaturalist.org/observations/200432039
+test/peach/inat_182602315_318411484.jpg,cc-by,"(c) Martin Hannan-Jones, some rights reserved (CC BY)",https://www.inaturalist.org/observations/182602315
+train/peach/inat_174805452_303728665.jpg,cc-by,"(c) Mud_Skipper, some rights reserved (CC BY)",https://www.inaturalist.org/observations/174805452
+train/peach/inat_164376457_284405061.jpg,cc-by,"(c) Gustavo ZaRo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/164376457
+train/peach/inat_153032045_264257747.jpg,cc-by,"(c) Michael Andresek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/153032045
+train/peach/inat_152629491_263505945.jpg,cc-by,"(c) Kathy Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/152629491
+train/peach/inat_152403477_263087858.jpg,cc-by,"(c) Oriol Sastre, some rights reserved (CC BY)",https://www.inaturalist.org/observations/152403477
+val/peach/inat_152149031_262617967.jpg,cc-by,"(c) Saskia, some rights reserved (CC BY)",https://www.inaturalist.org/observations/152149031
+train/peach/inat_149920100_258414880.jpg,cc-by,"(c) Katherine Parys, some rights reserved (CC BY)",https://www.inaturalist.org/observations/149920100
+train/peach/inat_109697745_184929541.jpg,cc-by,"(c) Kathy Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/109697745
+train/peach/inat_97342846_161875978.jpg,cc-by,"(c) RAP, some rights reserved (CC BY)",https://www.inaturalist.org/observations/97342846
+test/peach/inat_75445541_123430785.jpg,cc-by,"(c) Bonnie Semmling, some rights reserved (CC BY)",https://www.inaturalist.org/observations/75445541
+val/peach/inat_74537750_121832263.jpg,cc-by,"(c) Paul Mero, some rights reserved (CC BY)",https://www.inaturalist.org/observations/74537750
+train/peach/inat_72628091_118447203.jpg,cc-by,"(c) Kathy Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/72628091
+train/peach/inat_71632505_116653833.jpg,cc-by,"(c) Noland Martin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/71632505
+train/peach/inat_71295112_116054468.jpg,cc-by,"(c) Thomas and Guillaume, some rights reserved (CC BY)",https://www.inaturalist.org/observations/71295112
+train/peach/inat_67517057_109101963.jpg,cc-by,"(c) Codrin Bucur, some rights reserved (CC BY)",https://www.inaturalist.org/observations/67517057
+train/peach/inat_60894427_97391231.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/60894427
+val/peach/inat_59939855_95810703.jpg,cc-by,"(c) Jacqui Geux, some rights reserved (CC BY)",https://www.inaturalist.org/observations/59939855
+train/peach/inat_42235915_67047082.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/42235915
+train/peach/inat_40830152_64725440.jpg,cc-by,"(c) Kathy Richardson, some rights reserved (CC BY)",https://www.inaturalist.org/observations/40830152
+test/peach/inat_40605834_64359026.jpg,cc-by,"(c) Sam Taylor, some rights reserved (CC BY)",https://www.inaturalist.org/observations/40605834
+train/peach/inat_40016509_63548962.jpg,cc-by,"(c) Michelle W. （鍾偉瑋）, some rights reserved (CC BY)",https://www.inaturalist.org/observations/40016509
+train/peach/inat_39124947_62064742.jpg,cc-by,"(c) Neptalí Ramírez Marcial, some rights reserved (CC BY)",https://www.inaturalist.org/observations/39124947
+train/peach/inat_33580376_52752776.jpg,cc-by,"(c) Anna Burrows, some rights reserved (CC BY)",https://www.inaturalist.org/observations/33580376
+val/peach/inat_22247408_34450340.jpg,cc-by,"(c) Markus Krieger, some rights reserved (CC BY)",https://www.inaturalist.org/observations/22247408
+train/peach/inat_20086002_31018082.jpg,cc-by,"(c) Blake Bringhurst, some rights reserved (CC BY)",https://www.inaturalist.org/observations/20086002
+val/peach/inat_18229326_27856265.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/18229326
+train/peach/inat_17708143_26993155.jpg,cc-by,"(c) Andrés Ramírez-Barrera, some rights reserved (CC BY)",https://www.inaturalist.org/observations/17708143
+test/peach/inat_11112722_15707342.jpg,cc-by,"(c) Shaun Swanepoel, some rights reserved (CC BY)",https://www.inaturalist.org/observations/11112722
+train/peach/inat_10909922_15337830.jpg,cc-by,"(c) carnifex, some rights reserved (CC BY)",https://www.inaturalist.org/observations/10909922
+train/peach/inat_10252066_14182207.jpg,cc-by,"(c) Sam Kieschnick, some rights reserved (CC BY)",https://www.inaturalist.org/observations/10252066
+train/peach/inat_5573507_6882160.jpg,cc-by,"(c) Evan M. Raskin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/5573507
+train/peach/inat_4193532_4995729.jpg,cc-by,"(c) johnyochum, some rights reserved (CC BY)",https://www.inaturalist.org/observations/4193532
+test/pear/inat_376153215_687731801.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/376153215
+train/pear/inat_358968505_654889250.jpg,cc-by,"(c) Bartosz Czołczyński, some rights reserved (CC BY)",https://www.inaturalist.org/observations/358968505
+train/pear/inat_352796357_643813917.jpg,cc-by,"(c) Piotr Panek, some rights reserved (CC BY)",https://www.inaturalist.org/observations/352796357
+train/pear/inat_313553706_566228257.jpg,cc-by,"(c) fmunoz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/313553706
+train/pear/inat_244090140_435357601.jpg,cc-by,"(c) Jon Sullivan, some rights reserved (CC BY)",https://www.inaturalist.org/observations/244090140
+train/pear/inat_243314353_433855692.jpg,cc-by,"(c) Maksymilian Bobko, some rights reserved (CC BY)",https://www.inaturalist.org/observations/243314353
+train/pear/inat_211982834_374645007.jpg,cc-by,"(c) Andrew Murray, some rights reserved (CC BY)",https://www.inaturalist.org/observations/211982834
+val/pear/inat_205245768_362883335.jpg,cc-by,"(c) Albert Surmacz, some rights reserved (CC BY)",https://www.inaturalist.org/observations/205245768
+train/pear/inat_204282217_361058436.jpg,cc-by,"(c) gerardbertrand, some rights reserved (CC BY)",https://www.inaturalist.org/observations/204282217
+train/pear/inat_163603353_282985718.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/163603353
+train/pear/inat_161464626_279087820.jpg,cc-by,"(c) Екатерина Гущина, some rights reserved (CC BY)",https://www.inaturalist.org/observations/161464626
+train/pear/inat_159273401_275130368.jpg,cc-by,"(c) Vasily Moryashkin, some rights reserved (CC BY)",https://www.inaturalist.org/observations/159273401
+train/pear/inat_157172509_271788730.jpg,cc-by,"(c) Andrey Sdobnikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/157172509
+train/pear/inat_154277650_266558160.jpg,cc-by,"(c) ahabo, some rights reserved (CC BY)",https://www.inaturalist.org/observations/154277650
+train/pear/inat_141230216_241899068.jpg,cc-by,"(c) Genevieve Early, some rights reserved (CC BY)",https://www.inaturalist.org/observations/141230216
+train/pear/inat_119408854_201843445.jpg,cc-by,"(c) Eugene Popov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/119408854
+test/pear/inat_118551461_200312287.jpg,cc-by,"(c) Fyodor Pudovikov, some rights reserved (CC BY)",https://www.inaturalist.org/observations/118551461
+train/pear/inat_117432739_198328139.jpg,cc-by,"(c) Andrey Polstianoi, some rights reserved (CC BY)",https://www.inaturalist.org/observations/117432739
+val/pear/inat_116739298_197081112.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/116739298
+test/pear/inat_113188530_191250232.jpg,cc-by,"(c) glomik, some rights reserved (CC BY)",https://www.inaturalist.org/observations/113188530
+val/pear/inat_76980825_125893154.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/76980825
+train/pear/inat_71090477_115685279.jpg,cc-by,"(c) Sara Navarro, some rights reserved (CC BY)",https://www.inaturalist.org/observations/71090477
+val/pear/inat_42790707_67942595.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/42790707
+val/pear/inat_42501044_67485264.jpg,cc-by,"(c) Pavel Kacl, some rights reserved (CC BY)",https://www.inaturalist.org/observations/42501044
+train/pear/inat_41782062_66293458.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/41782062
+test/pear/inat_41170626_65288889.jpg,cc-by,"(c) Kai Löhr, some rights reserved (CC BY)",https://www.inaturalist.org/observations/41170626
+train/pear/inat_22752500_35260437.jpg,cc0,no rights reserved,https://www.inaturalist.org/observations/22752500
+test/pear/inat_1364302_1687682.jpg,cc-by,"(c) Duarte Frade, some rights reserved (CC BY)",https://www.inaturalist.org/observations/1364302
