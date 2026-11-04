@@ -1,1 +1,9 @@
-{"imgsz": 800, "names": ["flower"], "trained_at": "2026-11-03T18:56:24.876233+00:00"}
+{
+  "imgsz": 800,
+  "names": [
+    "flower"
+  ],
+  "trained_at": "2026-11-03T18:56:24.876233+00:00",
+  "conf_threshold": 0.3,
+  "conf_threshold_source": "argmax F1 on the validation split (ai-engine/reports/detector_analysis_yolo11_val.json)"
+}

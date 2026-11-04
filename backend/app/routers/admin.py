@@ -3,6 +3,7 @@ import platform
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException, Query
+from pydantic import BaseModel, Field
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
 
@@ -63,7 +64,8 @@ def activity(page: int = Query(1, ge=1), page_size: int = Query(50, ge=1, le=200
 @router.get("/admin/models")
 def models(_: User = Depends(research_roles), db: Session = Depends(get_db)):
     an = engine.get_analyzer()
-    return {"active": an.model_info(),
+    return {"active": an.model_info(), "detector_choice": engine.detector_choice(),
+            "available_detectors": engine.available_detectors(),
             "registered": [{"id": m.id, "name": m.name, "version": m.version, "task": m.task, "backend": m.backend,
                             "is_active": m.is_active, "registered_at": m.registered_at, "details": m.details}
                            for m in db.scalars(select(ModelVersion).order_by(ModelVersion.registered_at.desc()))],
@@ -79,6 +81,21 @@ def reload_models(admin: User = Depends(admin_only), db: Session = Depends(get_d
     log(db, admin, "admin.models_reload", details=info)
     db.commit()
     return info
+
+
+class DetectorSwitch(BaseModel):
+    detector: str = Field(pattern="^(auto|yolo11|pixel)$")
+
+
+@router.post("/admin/models/detector", summary="Switch the active flower detector (auto | yolo11 | pixel)")
+def set_detector(body: DetectorSwitch, admin: User = Depends(admin_only), db: Session = Depends(get_db)):
+    try:
+        info = engine.switch_detector(body.detector)
+    except FileNotFoundError as e:
+        raise HTTPException(409, str(e)) from e
+    log(db, admin, "admin.detector_switch", details={"detector": body.detector, **info})
+    db.commit()
+    return {"detector_choice": engine.detector_choice(), "active": info}
 
 
 @router.get("/datasets", summary="Dataset manifest (verified sources, licences, task support)")

@@ -1,6 +1,7 @@
 """Bridge to the ai-engine and simulation packages (kept as separate, independently testable packages)."""
 from __future__ import annotations
 
+import os
 import sys
 import threading
 from functools import lru_cache
@@ -12,6 +13,7 @@ for sub in ("ai-engine", "simulation"):
     if p not in sys.path:
         sys.path.insert(0, p)
 
+from pollinex_ai.detector import DETECTOR_CHOICES, available_detectors, load_detector  # noqa: E402
 from pollinex_ai.knowledge import get_species, load_kb  # noqa: E402
 from pollinex_ai.pipeline import GALLERY_PATH, Analyzer  # noqa: E402
 from pollinex_ai.readiness import estimate_readiness  # noqa: E402
@@ -19,6 +21,7 @@ from pollinex_ai.species import SpeciesGallery  # noqa: E402
 from pollinex_sim import SimParams, parameter_sweep, run_simulation  # noqa: E402
 
 _lock = threading.Lock()
+_detector = {"choice": os.environ.get("POLLINEX_DETECTOR", "auto")}  # auto | yolo11 | pixel (admin-switchable)
 
 
 @lru_cache(maxsize=1)
@@ -28,7 +31,28 @@ def get_analyzer() -> Analyzer:
 
     user_gallery = get_settings().gallery_dir / "species_gallery"
     path = user_gallery if user_gallery.with_suffix(".json").exists() else GALLERY_PATH
-    return Analyzer(gallery_path=path)
+    try:
+        det = load_detector(_detector["choice"])
+    except FileNotFoundError:  # e.g. the ONNX file was deleted: fall back safely instead of failing every request
+        _detector["choice"] = "auto"
+        det = load_detector("auto")
+    return Analyzer(detector=det, gallery_path=path)
+
+
+def detector_choice() -> str:
+    return _detector["choice"]
+
+
+def switch_detector(choice: str) -> dict:
+    """Safe switch: the new detector is loaded first; on any failure the previous one stays active."""
+    if choice not in DETECTOR_CHOICES:
+        raise ValueError(f"detector must be one of {DETECTOR_CHOICES}")
+    new_det = load_detector(choice)  # raises if missing -> nothing changes
+    with _lock:
+        _detector["choice"] = choice
+        an = get_analyzer()
+        an.detector = new_det
+    return an.model_info()
 
 
 def analyze(rgb, **kw) -> dict:
@@ -47,5 +71,5 @@ def add_reference(species_id: str, crop, source: str) -> dict:
         return an.gallery.counts()
 
 
-__all__ = ["SimParams", "SpeciesGallery", "analyze", "add_reference", "estimate_readiness", "get_analyzer",
+__all__ = ["DETECTOR_CHOICES", "available_detectors", "detector_choice", "switch_detector", "SimParams", "SpeciesGallery", "analyze", "add_reference", "estimate_readiness", "get_analyzer",
            "get_species", "load_kb", "parameter_sweep", "run_simulation"]

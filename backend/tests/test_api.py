@@ -244,3 +244,19 @@ def test_rate_limit(client, monkeypatch):
 def test_backend_startup_seeds_reference_data(client):
     h = client.get(f"{API}/health").json()
     assert h["status"] == "ok" and h["model"]["detector_backend"]
+
+
+def test_detector_switch_is_admin_only_and_safe(client, admin, user):
+    r = client.get(f"{API}/admin/models", headers=admin[0])
+    assert r.status_code == 200 and r.json()["detector_choice"] in {"auto", "yolo11", "pixel"}
+    avail = r.json()["available_detectors"]
+    assert client.post(f"{API}/admin/models/detector", headers=user[0], json={"detector": "pixel"}).status_code == 403
+    assert client.post(f"{API}/admin/models/detector", headers=admin[0], json={"detector": "bogus"}).status_code == 422
+    r = client.post(f"{API}/admin/models/detector", headers=admin[0], json={"detector": "pixel"})
+    assert r.status_code == 200 and r.json()["active"]["detector_backend"].startswith("pixel")
+    r = client.post(f"{API}/admin/models/detector", headers=admin[0], json={"detector": "yolo11"})
+    if avail["yolo11"]:
+        assert r.status_code == 200 and r.json()["active"]["detector_backend"] == "yolo11-onnx"
+    else:
+        assert r.status_code == 409  # missing model: previous detector stays active
+    assert client.post(f"{API}/admin/models/detector", headers=admin[0], json={"detector": "auto"}).status_code == 200

@@ -24,6 +24,11 @@ export default function AdminPage() {
     try { await api.post("/admin/models/reload"); models.reload(); health.reload(); } catch (e) { setErr((e as Error).message); }
   };
 
+  const switchDetector = async (detector: string) => {
+    setErr(null);
+    try { await api.post("/admin/models/detector", { detector }); models.reload(); activity.reload(); } catch (e) { setErr((e as Error).message); }
+  };
+
   return (
     <div>
       <PageHeader kicker="Administration" title="Admin settings">User roles, model management, system health and audit log.</PageHeader>
@@ -42,6 +47,13 @@ export default function AdminPage() {
           {models.data && (
             <div className="space-y-2 text-sm">
               <p>Active detector: <span className="font-mono">{models.data.active.detector_backend} · {models.data.active.detector_version}</span></p>
+              <label className="flex items-center gap-2 text-xs">Detector
+                <select aria-label="Active detector" className="input !py-1 text-xs" value={models.data.detector_choice ?? "auto"} onChange={(e) => switchDetector(e.target.value)}>
+                  <option value="auto">auto (YOLO11 if installed, else pixel)</option>
+                  <option value="yolo11" disabled={!models.data.available_detectors?.yolo11}>YOLO11n ONNX (AGPL-3.0)</option>
+                  <option value="pixel" disabled={!models.data.available_detectors?.pixel}>pixel model (MIT fallback)</option>
+                </select>
+              </label>
               <p>Gallery: <span className="font-mono text-xs">{JSON.stringify(models.data.active.gallery_species)}</span> · threshold {models.data.active.gallery_threshold}</p>
               <div className="kicker mt-3">Evaluation runs</div>
               <table className="table-base"><tbody>{models.data.evaluation_runs.map((e: any) => <tr key={e.id}><td>{e.task}</td><td>{e.dataset_id}/{e.split}</td><td className="font-mono text-xs">{Object.entries(e.metrics).map(([k, v]) => `${k}=${Number(v).toFixed(3)}`).join(" ")}</td></tr>)}</tbody></table>

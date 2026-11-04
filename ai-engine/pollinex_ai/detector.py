@@ -194,7 +194,7 @@ class OnnxYoloDetector:
 
     backend = "yolo11-onnx"
 
-    def __init__(self, onnx_path: str | Path, imgsz: int = 640, names: list[str] | None = None):
+    def __init__(self, onnx_path: str | Path, imgsz: int = 640, names: list[str] | None = None, conf_threshold: float = 0.25):
         import onnxruntime as ort
 
         self.session = ort.InferenceSession(str(onnx_path), providers=ort.get_available_providers())
@@ -202,8 +202,10 @@ class OnnxYoloDetector:
         self.imgsz = imgsz
         self.names = names or ["flower"]
         self.version = Path(onnx_path).stem
+        self.conf_threshold = conf_threshold  # operating threshold (chosen on validation, stored in the sidecar json)
 
-    def detect(self, rgb: np.ndarray, conf_threshold: float = 0.25, iou: float = 0.5, fast: bool = False) -> DetectionResult:
+    def detect(self, rgb: np.ndarray, conf_threshold: float | None = None, iou: float = 0.5, fast: bool = False) -> DetectionResult:
+        conf_threshold = self.conf_threshold if conf_threshold is None else conf_threshold
         t0 = time.perf_counter()
         h, w = rgb.shape[:2]
         r = self.imgsz / max(h, w)
@@ -216,7 +218,8 @@ class OnnxYoloDetector:
         cls_scores = out[4:].T
         cls = cls_scores.argmax(1)
         conf = cls_scores.max(1)
-        keep = conf >= min(conf_threshold, 0.05)
+        # keep detections down to half the operating threshold, flagged low-confidence below it (evaluation passes 0.05)
+        keep = conf >= conf_threshold * 0.5 if conf_threshold > 0.05 else conf >= conf_threshold
         boxes_xywh, conf, cls = boxes_xywh[keep], conf[keep], cls[keep]
         xyxy = np.stack([boxes_xywh[:, 0] - boxes_xywh[:, 2] / 2, boxes_xywh[:, 1] - boxes_xywh[:, 3] / 2,
                          boxes_xywh[:, 0] + boxes_xywh[:, 2] / 2, boxes_xywh[:, 1] + boxes_xywh[:, 3] / 2], 1) / r
@@ -238,5 +241,33 @@ def load_default_detector():
     if onnx.exists():
         side = onnx.with_suffix(".json")
         cfg = json.loads(side.read_text()) if side.exists() else {}
-        return OnnxYoloDetector(onnx, imgsz=cfg.get("imgsz", 640), names=cfg.get("names"))
+        return OnnxYoloDetector(onnx, imgsz=cfg.get("imgsz", 640), names=cfg.get("names"),
+                                conf_threshold=cfg.get("conf_threshold", 0.25))
     return PixelFlowerDetector()
+
+
+DETECTOR_CHOICES = ("auto", "yolo11", "pixel")
+
+
+def available_detectors() -> dict[str, bool]:
+    onnx_ok = (MODELS_DIR / "flower_yolo11n.onnx").exists()
+    try:
+        import onnxruntime  # noqa: F401
+    except ImportError:
+        onnx_ok = False
+    return {"yolo11": onnx_ok, "pixel": (MODELS_DIR / "flower_pixel_hgb.joblib").exists()}
+
+
+def load_detector(choice: str = "auto"):
+    """auto = YOLO11 ONNX when present (validated default), else pixel model. Raises if the requested model is missing."""
+    if choice not in DETECTOR_CHOICES:
+        raise ValueError(f"detector must be one of {DETECTOR_CHOICES}")
+    if choice == "auto":
+        return load_default_detector()
+    if not available_detectors()[choice]:
+        raise FileNotFoundError(f"detector '{choice}' is not available on this installation")
+    if choice == "pixel":
+        return PixelFlowerDetector()
+    onnx = MODELS_DIR / "flower_yolo11n.onnx"
+    cfg = json.loads(onnx.with_suffix(".json").read_text()) if onnx.with_suffix(".json").exists() else {}
+    return OnnxYoloDetector(onnx, imgsz=cfg.get("imgsz", 640), names=cfg.get("names"), conf_threshold=cfg.get("conf_threshold", 0.25))
