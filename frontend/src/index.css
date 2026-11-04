@@ -36,6 +36,12 @@ html, body, #root { height: 100%; }
 body { @apply bg-paper text-ink font-sans antialiased; }
 :focus-visible { outline: 2px solid rgb(var(--pollen)); outline-offset: 2px; }
 
+/* Grid and flex children default to min-width:auto, so a wide table inside an overflow-x-auto box would widen the whole
+   page on phones instead of scrolling inside its card. */
+@layer base {
+  .grid > *, main { min-width: 0; }
+}
+
 @layer components {
   .card { @apply bg-surface border border-line rounded-xl shadow-card; }
   .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed; }

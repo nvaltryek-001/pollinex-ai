@@ -20,9 +20,7 @@ test.describe.serial("scanner, camera and core flows", () => {
     await expect(page.getByText("How this result was produced")).toBeVisible();
 
     await page.goto("/app/history");
-    const first = page.getByRole("link", { name: /#\d+/ }).first();
-    await expect(first).toBeVisible();
-    await page.goto((await first.getAttribute("href"))!);
+    await page.getByRole("link", { name: /#\d+/ }).first().click();
     await expect(page.getByRole("button", { name: "PDF report" })).toBeVisible({ timeout: 15_000 });
     const [pdf] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: "PDF report" }).click()]);
     expect(pdf.suggestedFilename()).toMatch(/^pollinex_scan_\d+\.pdf$/);
@@ -92,11 +90,17 @@ test.describe.serial("scanner, camera and core flows", () => {
     await expect(page.getByText(/not AI-supported/).first()).toBeVisible();
   });
 
-  test("dashboard is responsive on small screens", async ({ page }) => {
+  test("no page scrolls sideways on a phone-sized screen", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await login(page, email);
     await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
-    expect(overflow).toBe(false);
+    for (const p of ["/app", "/app/scanner", "/app/history", "/app/species", "/app/fields", "/app/inventory", "/app/environment",
+      "/app/analytics", "/app/evaluation", "/app/datasets", "/app/research", "/app/reports", "/app/help", "/app/simulator"]) {
+      await page.goto(p);
+      await expect(page.locator("h1").first()).toBeVisible({ timeout: 15_000 });
+      await page.waitForLoadState("networkidle");
+      const w = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      expect(w, `horizontal overflow on ${p} (${w}px)`).toBeLessThanOrEqual(1);
+    }
   });
 });
