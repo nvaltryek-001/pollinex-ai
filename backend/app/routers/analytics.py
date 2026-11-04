@@ -100,8 +100,14 @@ def dashboard(scope: str = Query("mine", pattern="^(mine|all)$"), user: User = D
               db: Session = Depends(get_db)):
     m = dashboard_metrics(db, _scope(user, scope))
     evs = load_evaluation()
-    trade, ev = evs.get("detector_inference_tradeoff"), evs.get("detector_evaluation")
-    if trade:  # deployed inference configuration (chosen on validation)
+    trade, ev, ydec = evs.get("detector_inference_tradeoff"), evs.get("detector_evaluation"), evs.get("yolo11_deploy_decision")
+    if ydec and ydec.get("deployed") and (REPORTS_DIR.parent / "models" / "flower_yolo11n.onnx").exists():
+        y = ydec["usda_test"]["yolo11"]
+        m["model_performance"] = {"source": "ai-engine/reports/yolo11_deploy_decision.json - deployed YOLO11n ONNX, USDA held-out "
+                                            "test split (sunflower test mAP50 "
+                                            f"{ydec['sunflower_test']['yolo11']['mAP50']:.3f})",
+                                  "mAP50": y["mAP50"], "mAP50_95": y["mAP50_95"], "generated_at": ydec["generated_at"]}
+    elif trade:  # deployed inference configuration (chosen on validation)
         ch = trade["chosen"]["full"]
         row = next(c for c in trade["configs"] if c["side"] == ch["side"] and c["stride"] == ch["stride"])
         m["model_performance"] = {"source": f"ai-engine/reports/detector_inference_tradeoff.json - deployed config "
@@ -162,9 +168,12 @@ def report_pdf(user: User = Depends(get_current_user), db: Session = Depends(get
     metrics = dashboard_metrics(db, user.id)
     scans = db.scalars(select(Scan).where(Scan.owner_id == user.id).order_by(Scan.created_at.desc()).limit(40)).unique().all()
     sims = db.scalars(select(Simulation).where(Simulation.owner_id == user.id).order_by(Simulation.created_at.desc()).limit(30)).all()
-    ev = load_evaluation().get("detector_evaluation")
+    allev = load_evaluation()
+    ev, ydec = allev.get("detector_evaluation"), allev.get("yolo11_deploy_decision")
     evs = None
-    if ev:
+    if ydec and ydec.get("deployed") and (REPORTS_DIR.parent / "models" / "flower_yolo11n.onnx").exists():
+        evs = {"detector": "YOLO11n ONNX - USDA test split", **ydec["usda_test"]["yolo11"]}
+    elif ev:
         t = ev["variants"][ev["deployed_variant"]]["test"]
         evs = {k: t[k] for k in ("mAP50", "mAP50_95", "precision@0.5", "recall@0.5", "f1@0.5")}
     pdf = summary_pdf(user.email, metrics, scans, sims, evs)

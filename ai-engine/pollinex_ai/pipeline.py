@@ -64,7 +64,7 @@ class Analyzer:
         confident = [d for d in dets if not d.low_confidence]
         if mode == "closeup" or (mode == "auto" and not confident):
             if mode == "auto":
-                warnings.append("No confident detections from the orchard-trained detector; analysed the image as a "
+                warnings.append("No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a "
                                 "single close-up flower (close-up fallback - not a model detection).")
             mx, my = 0.1 * W, 0.1 * H
             box = [mx, my, W - mx, H - my]

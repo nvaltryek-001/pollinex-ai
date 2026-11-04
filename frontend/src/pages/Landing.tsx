@@ -69,7 +69,7 @@ export default function Landing() {
           </div>
           <dl className="grid gap-4 text-sm sm:grid-cols-2">
             {[
-              ["Trained model", "Flower detector trained and evaluated on held-out CC-BY-4.0 orchard data (apple, peach, pear)."],
+              ["Trained model", "YOLO11 flower detector trained and evaluated on held-out CC-BY-4.0 data (apple, peach, pear, sunflower)."],
               ["Reference gallery", "Open-set species matching; answers ‘unknown’ instead of forcing a label."],
               ["Heuristic", "Stage, centre-region and visible-health cues. Interpretable, not trained on labels that do not yet exist."],
               ["Rule engine / simulation", "Readiness rules from cited literature; simulated transfer is never reported as fruit set."],

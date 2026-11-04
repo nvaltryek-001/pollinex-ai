@@ -27,6 +27,18 @@ export default function EvaluationPage() {
       {data && !data.available && <Empty title="No evaluation reports">{data.detail}</Empty>}
       {det && dep && (
         <div className="space-y-5">
+          {yoloDec?.deployed && (
+            <Card title="Deployed detector: YOLO11n (ONNX, CPU)" subtitle="trained on USDA apple/peach/pear + TF sunflower boxes; each test split held out and used once">
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                <Stat label="USDA test mAP@0.50" value={num(yoloDec.usda_test.yolo11.mAP50, 3)} hint={`pixel model ${num(yoloDec.usda_test.pixel.mAP50, 3)}`} />
+                <Stat label="USDA test mAP@0.50:0.95" value={num(yoloDec.usda_test.yolo11.mAP50_95, 3)} />
+                <Stat label="Sunflower test mAP@0.50" value={num(yoloDec.sunflower_test.yolo11.mAP50, 3)} hint={`pixel model ${num(yoloDec.sunflower_test.pixel.mAP50, 3)}`} />
+                <Stat label="Sunflower test F1@0.5" value={num(yoloDec.sunflower_test.yolo11["f1@0.5"], 3)} />
+              </div>
+              <p className="mt-2 text-xs text-muted">Not trained on boxes for hibiscus, tomato, strawberry, brinjal or chilli (none exist) - detections on those crops are unvalidated. {yoloDec.licence_note}</p>
+            </Card>
+          )}
+          <div className="kicker">{yoloDec?.deployed ? "Pixel detector (previous default; MIT fallback when the ONNX file is removed)" : "Deployed detector"}</div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
             <Stat label="mAP@0.50" value={num(dep.test.mAP50, 3)} hint="test split" />
             <Stat label="mAP@0.50:0.95" value={num(dep.test.mAP50_95, 3)} />
