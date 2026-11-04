@@ -1,0 +1,3 @@
+Photos from Wikimedia Commons. Each file keeps its own licence (CC0 / public domain / CC BY / CC BY-SA) and author,
+listed per file in ATTRIBUTION.csv with the Commons file page. Images were downscaled (<= 640 px) and re-encoded.
+Species labels come from Commons flower categories (community curation); IMAGE-LEVEL labels only, no boxes.

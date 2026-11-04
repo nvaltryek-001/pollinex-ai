@@ -1,0 +1,521 @@
+file,licence,licence_url,author,file_page
+train/strawberry/commons_45027.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,unknown,https://commons.wikimedia.org/wiki/File:Strawberry_flower.jpg
+train/strawberry/commons_525715.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Rasbak,https://commons.wikimedia.org/wiki/File:Aardbei-bloemcloseup.jpg
+train/strawberry/commons_6661583.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Hedwig Storch,https://commons.wikimedia.org/wiki/File:Erdbeere5279.JPG
+val/strawberry/commons_7107936.jpg,CC BY-SA 2.5,https://creativecommons.org/licenses/by-sa/2.5,Sedum,https://commons.wikimedia.org/wiki/File:Fragaria_ois.JPG
+train/strawberry/commons_10211338.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,"https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_%27Lambada%27_frost_damage,_Aardbei_Lambada_vorstschade.jpg"
+train/strawberry/commons_10211356.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,"https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_%27Lambada%27_frost_damage_close_up,_Aardbei_Lambada_vorstschade.jpg"
+train/strawberry/commons_10315676.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_%27Korona%27_flower.jpg
+train/strawberry/commons_10315700.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_%27Korona%27_flower_(1).jpg
+train/strawberry/commons_10686572.jpg,Public domain,,Stickpen,https://commons.wikimedia.org/wiki/File:Fragariaxananassa-chandler.jpg
+train/strawberry/commons_14723702.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,"https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_flower,_aardbei_bloem_%27Karina%27.jpg"
+train/strawberry/commons_19258821.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,"https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_flower_forstdamage,_aardbei_bloem_%27Korona%27_vorstschade.jpg"
+train/strawberry/commons_26169004.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alpsdake,https://commons.wikimedia.org/wiki/File:Flower_of_Fragaria_%C3%97_ananassa.JPG
+train/strawberry/commons_26169164.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alpsdake,https://commons.wikimedia.org/wiki/File:Flowers_of_Fragaria_%C3%97_ananassa.JPG
+val/strawberry/commons_39348674.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Bff,https://commons.wikimedia.org/wiki/File:Fragaria_ananassa20140913_132.jpg
+train/strawberry/commons_58257901.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rasbak,https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97_ananassa_%27Lambada%27_flowers.jpg
+test/strawberry/commons_69462886.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Жерминаль,https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D1%83%D0%BD%D0%B8%D1%86%D1%8F_%D1%86%D0%B2%D1%96%D1%82%D0%B5.jpg
+train/strawberry/commons_89874676.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20200504Fragaria_%C3%97_ananassa1.jpg
+train/strawberry/commons_89874704.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20200504Fragaria_%C3%97_ananassa2.jpg
+train/strawberry/commons_89874725.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20200504Fragaria_%C3%97_ananassa3.jpg
+val/strawberry/commons_93256756.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Світлана Гриценко,"https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D1%83%D0%BD%D0%B8%D1%86%D1%8F,_%D1%86%D0%B2%D1%96%D1%82_%D0%BF%D0%BE%D0%BB%D1%83%D0%BD%D0%B8%D1%86%D1%96.jpg"
+train/strawberry/commons_102030460.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Богданов Егор Иванович,https://commons.wikimedia.org/wiki/File:%D0%90%D0%BA%D0%B2%D0%B0%D0%BF%D0%BE%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B4%D0%BB%D1%8F_%D0%B2%D1%8B%D1%80%D0%B0%D1%89%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BA%D0%BB%D1%83%D0%B1%D0%BD%D0%B8%D0%BA%D0%B8.jpg
+train/strawberry/commons_103966860.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Janusz Jakubowski from Warsaw, Poland",https://commons.wikimedia.org/wiki/File:Flowers_-_(PL)_Truskawka_(17492098741).jpg
+train/strawberry/commons_105377964.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,T. Kebert,https://commons.wikimedia.org/wiki/File:Fragaria_%C3%97ananassa_TK_2021-05-16_1.jpg
+test/strawberry/commons_130804979.jpg,Public domain,,"Jean-Yves Paprus from Sevremoine, France",https://commons.wikimedia.org/wiki/File:2023_04_08_2335_-_Flickr_-_Papinou49_26.jpg
+val/strawberry/commons_142351671.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,PhotoAnnaR,https://commons.wikimedia.org/wiki/File:A_flower_in_backlight.jpg
+train/strawberry/commons_162323893.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Nesnad,https://commons.wikimedia.org/wiki/File:Strawberry_blossoms_in_Kanagawa_2025_March_18.jpeg
+test/strawberry/commons_190518145.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Dominicus Johannes Bergsma.,"https://commons.wikimedia.org/wiki/File:Bloem_van_een_tuinaardbei_(Fragaria_%C3%97ananassa),_026-04-2026._(d.j.b.)_01.jpg"
+test/strawberry/commons_190518146.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Dominicus Johannes Bergsma.,"https://commons.wikimedia.org/wiki/File:Bloem_van_een_tuinaardbei_(Fragaria_%C3%97ananassa),_026-04-2026._(d.j.b.)_02.jpg"
+train/strawberry/commons_201139583.jpg,Public domain,,Filippo De Filippi (1869-1938),"https://commons.wikimedia.org/wiki/File:Spedizione_di_sua_altezza_reale_il_principe_Luigi_Amedeo_di_Savoia_duca_degli_Abruzzi_al_Monte_Sant%27Elia,_1900_-_BEIC_IE7872886_-_Fragole_in_fiore_presso_il_primo_campo.jpg"
+train/brinjal/commons_380768.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,unknown,https://commons.wikimedia.org/wiki/File:Eggplant_flower.JPG
+train/brinjal/commons_1615040.jpg,CC BY-SA 2.5,https://creativecommons.org/licenses/by-sa/2.5,Chosovi,https://commons.wikimedia.org/wiki/File:Berenjena_flor.jpg
+val/brinjal/commons_1681363.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Wilfredo R Rodriguez H,https://commons.wikimedia.org/wiki/File:Flor_de_la_Berengena.JPG
+train/brinjal/commons_2699425.jpg,Public domain,,unknown,https://commons.wikimedia.org/wiki/File:Eggplant_(Flower).jpg
+train/brinjal/commons_4446234.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Robosk,https://commons.wikimedia.org/wiki/File:Auberginknopp.JPG
+val/brinjal/commons_4663762.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Noumenon,https://commons.wikimedia.org/wiki/File:EggplantFlower.jpg
+train/brinjal/commons_10660321.jpg,Public domain,,Stickpen,https://commons.wikimedia.org/wiki/File:Eggplant-purpleblaze.jpg
+test/brinjal/commons_11404624.jpg,Public domain,,Josiedraus,https://commons.wikimedia.org/wiki/File:Eggplant-blossom-in-vivo.jpg
+train/brinjal/commons_12257784.jpg,Public domain,,Vssun at Malayalam Wikipedia,https://commons.wikimedia.org/wiki/File:Brinjal_flower.jpg
+train/brinjal/commons_15638079.jpg,Public domain,,Victor M. Vicente Selvas,https://commons.wikimedia.org/wiki/File:Flor_Solanum_melongena27.JPG
+val/brinjal/commons_17283276.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Tu7uh,https://commons.wikimedia.org/wiki/File:Bunga_terung.jpg
+val/brinjal/commons_19118154.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Zuhairali,https://commons.wikimedia.org/wiki/File:Brinjal_Flower.JPG
+train/brinjal/commons_20892664.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,കാക്കര,https://commons.wikimedia.org/wiki/File:Egg_Plant_-_%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8_05.JPG
+test/brinjal/commons_25086153.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Earth100,https://commons.wikimedia.org/wiki/File:Eggplant_Flower_in_Hong_Kong.JPG
+train/brinjal/commons_25239353.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,കാക്കര,https://commons.wikimedia.org/wiki/File:Egg_Plant_-_%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8_%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8%E0%B4%99%E0%B5%8D%E0%B4%99_01.JPG
+train/brinjal/commons_27613209.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ranjithsiji,https://commons.wikimedia.org/wiki/File:Eggplant_flower_white.JPG
+train/brinjal/commons_31857707.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Maathavan,https://commons.wikimedia.org/wiki/File:Flower_of_senndangkaththari.JPG
+train/brinjal/commons_34863237.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:FjPalapala0220SIldefonsofvf_01.JPG
+train/brinjal/commons_34863252.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:FjPalapala0220SIldefonsofvf_13.JPG
+train/brinjal/commons_34863253.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:FjPalapala0220SIldefonsofvf_14.JPG
+train/brinjal/commons_34863254.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:FjPalapala0220SIldefonsofvf_15.JPG
+train/brinjal/commons_49825059.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Owasim raja ahmed,https://commons.wikimedia.org/wiki/File:Brinjal_flower1.jpg
+train/brinjal/commons_79895380.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Frantishak,https://commons.wikimedia.org/wiki/File:Flower_of_Eggplant.jpg
+train/brinjal/commons_82107272.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Joanbanjo,"https://commons.wikimedia.org/wiki/File:Flors_d%27alberginera_pel_Pla,_Senija.jpg"
+train/brinjal/commons_89619050.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Rocky Masum 
+
+
+
+
+
+
+This work was made by Masum-al-Hasan Rocky and released under the license(s) stated below. Please feel free to use it for any purpose as long as you credit Masum-al-Hasan Rocky as a",https://commons.wikimedia.org/wiki/File:Flower_of_Long_purple_eggplant.jpg
+train/brinjal/commons_89619051.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Rocky Masum 
+
+
+
+
+
+
+This work was made by Masum-al-Hasan Rocky and released under the license(s) stated below. Please feel free to use it for any purpose as long as you credit Masum-al-Hasan Rocky as a",https://commons.wikimedia.org/wiki/File:Flower_of_Long_purple_eggplant_01.jpg
+train/brinjal/commons_107089202.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Luwenn,https://commons.wikimedia.org/wiki/File:Eggplant_flower_and_a_beetle.jpg
+train/brinjal/commons_118850628.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Billjones94,https://commons.wikimedia.org/wiki/File:Flower_of_Eggplant_at_night.jpg
+train/brinjal/commons_118937422.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,V.Thamaraiselvi,https://commons.wikimedia.org/wiki/File:Eggplant_flowers.jpg
+train/brinjal/commons_118952990.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Billjones94,https://commons.wikimedia.org/wiki/File:Eggplant_flower_at_noon.jpg
+train/brinjal/commons_119320845.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Billjones94,https://commons.wikimedia.org/wiki/File:A_brinjal_flower_at_night.jpg
+train/brinjal/commons_130992878.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Niman Lakra,https://commons.wikimedia.org/wiki/File:Flower_Of_Brinjal.jpg
+train/brinjal/commons_133382467.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Cactus0625,"https://commons.wikimedia.org/wiki/File:Aubergine_et_fleur_,_Madagascar.jpg"
+train/brinjal/commons_133382469.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Cactus0625,"https://commons.wikimedia.org/wiki/File:Aubergine_%C3%A0_fleur_violet,_Madagascar.jpg"
+train/brinjal/commons_141168579.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Dguendel,"https://commons.wikimedia.org/wiki/File:Blankenburg,_Kloster_Michaelstein,_Klostergarten,_Aubergine,_Bild_1.jpg"
+val/brinjal/commons_148608751.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Tanvir Rahat,"https://commons.wikimedia.org/wiki/File:Brinjal_flower,_Bangladesh.jpg"
+train/brinjal/commons_148904937.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Nesnad,https://commons.wikimedia.org/wiki/File:Eggplant_flower_-_Kanagawa_Japan_-_2024_May_31.jpeg
+val/brinjal/commons_195547180.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Anju Muraleedharan,https://commons.wikimedia.org/wiki/File:Flower_of_Brinjal_(Solanum_melongena).jpg
+train/brinjal/commons_1063312.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,No machine-readable author provided. Σ64 assumed (based on copyright claims).,https://commons.wikimedia.org/wiki/File:Nasu00.JPG
+train/brinjal/commons_1063317.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,No machine-readable author provided. Σ64 assumed (based on copyright claims).,https://commons.wikimedia.org/wiki/File:Nasu01.JPG
+train/brinjal/commons_2573795.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Jaeyn,https://commons.wikimedia.org/wiki/File:Japanese_eggplant_flower.jpg
+train/brinjal/commons_9129428.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Dalgial,https://commons.wikimedia.org/wiki/File:Solanum_melongena_1.JPG
+train/brinjal/commons_10818498.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Szabi237,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flower.JPG
+train/brinjal/commons_16553466.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,"Norbert Nagel, Mörfelden-Walldorf, Germany",https://commons.wikimedia.org/wiki/File:Solanum_melongena_-_eggplant_blossom_-_Aubergine_Bl%C3%BCte_01.jpg
+train/brinjal/commons_16823203.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,"Norbert Nagel, Mörfelden-Walldorf, Germany",https://commons.wikimedia.org/wiki/File:Solanum_melongena_-_eggplant_blossom_-_Aubergine_Bl%C3%BCte_02.jpg
+train/brinjal/commons_20825278.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Joydeep,https://commons.wikimedia.org/wiki/File:Solanum_melongena_24_08_2012_(2).JPG
+train/brinjal/commons_20932612.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Joydeep,https://commons.wikimedia.org/wiki/File:Solanum_melongena_26_08_2012_(2).JPG
+train/brinjal/commons_22069171.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,JDP90 (Joydeep),https://commons.wikimedia.org/wiki/File:Solanum_melongena_flower_12_09_2012.JPG
+train/brinjal/commons_24834247.jpg,CC BY 2.5,https://creativecommons.org/licenses/by/2.5,שריף עסאקלה,https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_29593_Eggplant_Flowers.jpg
+train/brinjal/commons_28901861.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_05.JPG"
+train/brinjal/commons_28901862.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_06.JPG"
+train/brinjal/commons_28901863.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_07.JPG"
+train/brinjal/commons_28901864.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_11.JPG"
+train/brinjal/commons_28901866.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_12.JPG"
+train/brinjal/commons_28901867.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_14.JPG"
+train/brinjal/commons_28901868.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:SanJose,Bayombongjf9440_13.JPG"
+train/brinjal/commons_29946871.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Rob Duval,https://commons.wikimedia.org/wiki/File:Nubiaflower.jpg
+test/brinjal/commons_34797466.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Prenn,https://commons.wikimedia.org/wiki/File:Solanum_melongena_01.JPG
+train/brinjal/commons_34863396.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JEggplant0237Palapalafvf_03.JPG
+train/brinjal/commons_34863397.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JEggplant0237Palapalafvf_02.JPG
+train/brinjal/commons_34863400.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JEggplant0237Palapalafvf_04.JPG
+train/brinjal/commons_35451755.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfSanIldefonsoAkleH8716SchoolBulacanfvf_18.JPG
+train/brinjal/commons_35451756.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfSanIldefonsoAkleH8716SchoolBulacanfvf_17.JPG
+train/brinjal/commons_35451757.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfSanIldefonsoAkleH8716SchoolBulacanfvf_19.JPG
+train/brinjal/commons_35451758.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfSanIldefonsoAkleH8716SchoolBulacanfvf_20.JPG
+train/brinjal/commons_38662928.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vengolis,https://commons.wikimedia.org/wiki/File:Solanum_melongena_03475.JPG
+train/brinjal/commons_38662929.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vengolis,https://commons.wikimedia.org/wiki/File:Solanum_melongena_03458.JPG
+train/brinjal/commons_38662931.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vengolis,https://commons.wikimedia.org/wiki/File:Solanum_melongena_03477.JPG
+val/brinjal/commons_51706013.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Solanum_melongena_L._(5287198619).jpg
+train/brinjal/commons_54384402.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,কামরুল ইসলাম শাহীন,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flowers_02.jpg
+train/brinjal/commons_54384403.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,কামরুল ইসলাম শাহীন,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flowers_01.jpg
+train/brinjal/commons_60041763.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,NANDHUPUNIYAM,https://commons.wikimedia.org/wiki/File:Solanum_melongena_-_brinjal.jpg
+train/brinjal/commons_68373442.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Filo gèn',https://commons.wikimedia.org/wiki/File:Solanum_melongena_flower_on_black_background.jpg
+train/brinjal/commons_68375196.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Filo gèn',https://commons.wikimedia.org/wiki/File:Solanum_melongena_flower_on_white_background.jpg
+train/brinjal/commons_118156472.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Billjones94,https://commons.wikimedia.org/wiki/File:Premature_Eggplant_(brinjal)_flower_captured_at_night.jpg
+test/brinjal/commons_180640016.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,MarwanMHD,https://commons.wikimedia.org/wiki/File:Ihu_3.jpg
+test/brinjal/commons_180640019.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,MarwanMHD,https://commons.wikimedia.org/wiki/File:Ihu_4.jpg
+train/brinjal/commons_5587.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Kurt Stüber [1],https://commons.wikimedia.org/wiki/File:Solanum_melongena1.jpg
+train/brinjal/commons_280611.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Mnolf,"https://commons.wikimedia.org/wiki/File:Solanum_melongena,_flower.jpg"
+train/brinjal/commons_6175229.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_080608-7439_Solanum_melongena.jpg
+train/brinjal/commons_6175242.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_080608-7441_Solanum_melongena.jpg
+train/brinjal/commons_6183809.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_080610-8269_Solanum_melongena.jpg
+train/brinjal/commons_6183833.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_080610-8272_Solanum_melongena.jpg
+train/brinjal/commons_7180099.jpg,Public domain,,JayMGoldberg,https://commons.wikimedia.org/wiki/File:White_Eggplant_fruiting_flower.jpg
+train/brinjal/commons_11080579.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Danny S.,https://commons.wikimedia.org/wiki/File:Solanum-melongena-024.JPG
+train/brinjal/commons_14738521.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Original uploaded by Aruna.,https://commons.wikimedia.org/wiki/File:%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B5%8D.JPG
+test/brinjal/commons_17977074.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Solanum_melongena-flor-1.jpg
+test/brinjal/commons_17977078.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Solanum_melongena-flor-3.jpg
+test/brinjal/commons_17977156.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Solanum_melongena-flor-5.jpg
+train/brinjal/commons_18443257.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:Vazhuthana.JPG
+train/brinjal/commons_19053919.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8_%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B5%8D.JPG
+train/brinjal/commons_19053920.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8_%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B4%BF%E0%B4%A8%E0%B5%8D%E0%B4%B1%E0%B5%86_%E0%B4%95%E0%B5%87%E0%B4%B8%E0%B4%B0%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%BE.jpg
+test/brinjal/commons_19851613.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Ranjith Siji from Cochin, India",https://commons.wikimedia.org/wiki/File:Vazhuthananga_Brinjal_flower.jpg
+train/brinjal/commons_27230191.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Хомелка,https://commons.wikimedia.org/wiki/File:Solanum_melongena_in_Kaunas_1jpg.jpg
+train/brinjal/commons_27953131.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Sajanjs,https://commons.wikimedia.org/wiki/File:%E0%B4%B5%E0%B4%B4%E0%B5%81%E0%B4%A4%E0%B4%A8%E0%B4%AF%E0%B5%81%E0%B4%9F%E0%B5%86_%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B5%8D.jpg
+train/brinjal/commons_35326097.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,FarceRéjeane,https://commons.wikimedia.org/wiki/File:%C3%89pines_sur_fleur_de_plante_%C3%A0_%C5%93ufs.jpg
+train/brinjal/commons_38659547.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vengolis,https://commons.wikimedia.org/wiki/File:UID_Plant_03035.JPG
+train/brinjal/commons_54384401.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,কামরুল ইসলাম শাহীন,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flowers_03.jpg
+train/brinjal/commons_54384404.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,কামরুল ইসলাম শাহীন,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flowers_04.jpg
+train/brinjal/commons_54384405.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,কামরুল ইসলাম শাহীন,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flowers_05.jpg
+train/brinjal/commons_54384406.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,কামরুল ইসলাম শাহীন,https://commons.wikimedia.org/wiki/File:Solanum_melongena_flowers_06.jpg
+train/brinjal/commons_71837887.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-090801-3513-Solanum_melongena-flower-Olinda-Maui_(24603277349).jpg
+train/brinjal/commons_71846077.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-091108-9420-Solanum_melongena-flower_Black_Beauty_globe-Olinda-Maui_(24989298715).jpg
+train/brinjal/commons_71846087.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-091108-9421-Solanum_melongena-flower_Black_Beauty_globe-Olinda-Maui_(24895999811).jpg
+train/brinjal/commons_71846135.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-091108-9423-Solanum_melongena-flower_Black_Beauty_globe-Olinda-Maui_(24962988286).jpg
+train/brinjal/commons_91942162.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,"https://commons.wikimedia.org/wiki/File:%E8%8C%84(%E7%9F%AE%E7%93%9C)_Solanum_melongena_-%E4%B8%AD%E5%B1%B1%E8%98%AD%E8%97%9D%E9%A4%A8_Zhongshan,_China-_(9200950276).jpg"
+train/brinjal/commons_91942878.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,"https://commons.wikimedia.org/wiki/File:%E7%99%BD%E7%9F%AE%E7%93%9C_Solanum_melongena_-%E9%A6%99%E6%B8%AF%E8%A5%BF%E8%B2%A2%E7%8D%85%E5%AD%90%E6%9C%83%E8%87%AA%E7%84%B6%E6%95%99%E8%82%B2%E4%B8%AD%E5%BF%83_Saikung,_Hong_Kong-_(9198150431).jpg"
+train/brinjal/commons_91943006.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,"https://commons.wikimedia.org/wiki/File:%E7%87%88%E7%B1%A0%E8%8C%84_Solanum_melongena_-%E9%A6%99%E6%B8%AF%E8%A5%BF%E8%B2%A2%E7%8D%85%E5%AD%90%E6%9C%83%E8%87%AA%E7%84%B6%E6%95%99%E8%82%B2%E4%B8%AD%E5%BF%83_Saikung,_Hong_Kong-_(9198147273).jpg"
+train/brinjal/commons_92051506.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Mithila Madawa,https://commons.wikimedia.org/wiki/File:Sri_Lankan_eggplant_flower_bud.jpg
+train/brinjal/commons_147097601.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Иван Ожерельев,https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BB%D0%B8%D1%81%D1%82%D1%8C%D1%8F_%D0%B3%D0%B8%D0%B3%D0%B0%D0%BD%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B1%D0%B0%D0%BA%D0%BB%D0%B0%D0%B6%D0%B0%D0%BD%D0%B0.JPG
+test/brinjal/commons_153870781.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,S.M.M.Musabbir Uddin,https://commons.wikimedia.org/wiki/File:%E0%A6%AC%E0%A7%87%E0%A6%97%E0%A7%81%E0%A6%A8%E0%A6%BF%E0%A6%B0_%E0%A6%AB%E0%A7%81%E0%A6%B2.jpg
+train/chilli/commons_712384.jpg,CC BY-SA 2.5,https://creativecommons.org/licenses/by-sa/2.5,Shizhao,https://commons.wikimedia.org/wiki/File:Capsicum_annuum_flower.JPG
+train/chilli/commons_1938424.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Rasbak at Dutch Wikipedia,https://commons.wikimedia.org/wiki/File:Paprika_bloem.jpg
+test/chilli/commons_2213005.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,User:Carstor,https://commons.wikimedia.org/wiki/File:C_annuum_beaver_dam_flower.jpg
+val/chilli/commons_5242566.jpg,Public domain,,Chaitanya B D,https://commons.wikimedia.org/wiki/File:Capsicum_Annum_Flower_Closeup.JPG
+train/chilli/commons_9429449.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,H. Zell,https://commons.wikimedia.org/wiki/File:Capsicum_annuum_002.JPG
+train/chilli/commons_15688100.jpg,Public domain,,Victor M. Vicente Selvas,https://commons.wikimedia.org/wiki/File:Flors_pebrotera_Padr%C3%B3n.JPG
+test/chilli/commons_15815645.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Prenn,https://commons.wikimedia.org/wiki/File:Capsicum_frutescens_(2).jpg
+train/chilli/commons_16085451.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Danny S.,https://commons.wikimedia.org/wiki/File:Capsicum_annuum-007.jpg
+train/chilli/commons_16085464.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Danny S.,https://commons.wikimedia.org/wiki/File:Capsicum_annuum-004.jpg
+val/chilli/commons_18751906.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Bekhzod.kh,https://commons.wikimedia.org/wiki/File:Bell_pepper_flower.jpg
+test/chilli/commons_19610130.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:C.annuuum-flor-italiano-1.jpg
+train/chilli/commons_38659552.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vengolis,https://commons.wikimedia.org/wiki/File:Capsicum_annuum_%27Black_Pearl%27_03039.jpg
+train/chilli/commons_38659690.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vengolis,https://commons.wikimedia.org/wiki/File:Capsicum_annuum_%27Black_Pearl%27_03239.jpg
+train/chilli/commons_47190562.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09803jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_25.JPG
+train/chilli/commons_47190563.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09803jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_24.JPG
+train/chilli/commons_47190609.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09833jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_01.JPG
+train/chilli/commons_47190610.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09833jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_02.JPG
+train/chilli/commons_47190611.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09833jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_03.JPG
+train/chilli/commons_47190612.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09833jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_05.JPG
+train/chilli/commons_47190613.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09833jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_04.JPG
+train/chilli/commons_47190614.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:09833jfSan_Rafael_Bulacan_Maasim_River_Diliman_Paddy_Vegetable_Fields_Roadsfvf_06.JPG
+val/chilli/commons_51603609.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Capsicum_frutescens_(1224024855).jpg
+val/chilli/commons_51603611.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Capsicum_frutescens_(1224874402).jpg
+val/chilli/commons_71260698.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Paul Zucker,https://commons.wikimedia.org/wiki/File:Efflorescence_(262728773).jpeg
+test/chilli/commons_76579568.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,"https://commons.wikimedia.org/wiki/File:Capsicum_annuum_Sweet_Pepper,_Cayenne_Pepper,_Chili_Pepper_at_Wayanad_flower_at_Wayanad_(1).jpg"
+test/chilli/commons_76579586.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,"https://commons.wikimedia.org/wiki/File:Capsicum_annuum_Sweet_Pepper,_Cayenne_Pepper,_Chili_Pepper_at_Wayanad_flower_at_Wayanad_(2).jpg"
+test/chilli/commons_76579617.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,"https://commons.wikimedia.org/wiki/File:Capsicum_annuum_Sweet_Pepper,_Cayenne_Pepper,_Chili_Pepper_at_Wayanad_flower_at_Wayanad_(3).jpg"
+train/chilli/commons_107128678.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Mannivu,https://commons.wikimedia.org/wiki/File:Flower_of_Capsicum_annuum.jpg
+train/chilli/commons_111252678.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Waithamai,https://commons.wikimedia.org/wiki/File:Capsicum_annuum_NuMex_Twilight_flowers.jpg
+val/chilli/commons_118355772.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Dennis Schubert,https://commons.wikimedia.org/wiki/File:Jalape%C3%B1o_-_Flower.jpg
+val/chilli/commons_118355773.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Dennis Schubert,https://commons.wikimedia.org/wiki/File:Numex_Twilight_-_Flower.jpg
+train/chilli/commons_127744805.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Capsicum_annuum_15-p.bot-capsic.annu-001.jpg
+train/chilli/commons_127744807.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Capsicum_annuum_15-p.bot-capsic.annu-002.jpg
+train/chilli/commons_127744812.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Capsicum_annuum_15-p.bot-capsic.annu-003.jpg
+train/chilli/commons_127744815.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Capsicum_annuum_15-p.bot-capsic.annu-004.jpg
+train/chilli/commons_146327284.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Bst9jkj,https://commons.wikimedia.org/wiki/File:Flower_of_pepper_plant.jpg
+train/chilli/commons_152270376.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Ranjithsiji,https://commons.wikimedia.org/wiki/File:Capsicum_annuum_flower_DSC_4532.jpg
+train/chilli/commons_152562024.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Nesnad,https://commons.wikimedia.org/wiki/File:Jalapeno_in_Japan_-_2024_Sept_12.jpeg
+train/chilli/commons_195068680.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Isra Rulowsinsky,https://commons.wikimedia.org/wiki/File:Flores_de_Capsicum_annuum_(Pimiento_morr%C3%B3n)_001.jpg
+train/chilli/commons_195068682.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Isra Rulowsinsky,https://commons.wikimedia.org/wiki/File:Flores_de_Capsicum_annuum_(Pimiento_morr%C3%B3n)_003.jpg
+train/chilli/commons_71880762.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-110411-4988-Capsicum_annuum-flower-Hawea_Pl_Olinda-Maui_(25056233026).jpg
+train/chilli/commons_71880779.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-110411-4989-Capsicum_annuum-flower-Hawea_Pl_Olinda-Maui_(24455715703).jpg
+train/chilli/commons_71880794.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-110411-4990-Capsicum_annuum-flower-Hawea_Pl_Olinda-Maui_(24451908844).jpg
+train/chilli/commons_91908264.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,https://commons.wikimedia.org/wiki/File:%E7%94%9C%E6%A4%92_Capsicum_annuum_Oranos_-%E9%A6%99%E6%B8%AF%E6%BC%81%E8%BE%B2%E7%BE%8E%E9%A3%9F%E5%98%89%E5%B9%B4%E8%8F%AF_Hong_Kong_Farmfest-_(9237376407).jpg
+train/chilli/commons_91908901.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,https://commons.wikimedia.org/wiki/File:%E5%BD%A9%E8%89%B2%E7%94%9C%E6%A4%92_Capsicum_annuum_Tweety_-%E9%A6%99%E6%B8%AF%E6%BC%81%E8%BE%B2%E7%BE%8E%E9%A3%9F%E5%98%89%E5%B9%B4%E8%8F%AF_Hong_Kong_Farmfest-_(9229878646).jpg
+train/chilli/commons_91908902.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,https://commons.wikimedia.org/wiki/File:%E5%BD%A9%E8%89%B2%E7%94%9C%E6%A4%92_Capsicum_annuum_Fiesta_-%E9%A6%99%E6%B8%AF%E6%BC%81%E8%BE%B2%E7%BE%8E%E9%A3%9F%E5%98%89%E5%B9%B4%E8%8F%AF_Hong_Kong_Farmfest-_(9229878698).jpg
+train/chilli/commons_91921160.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,https://commons.wikimedia.org/wiki/File:%E8%A7%80%E8%B3%9E%E8%BE%A3%E6%A4%92_Capsicum_annuum_-%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park-_(9237478957).jpg
+train/chilli/commons_91921174.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,https://commons.wikimedia.org/wiki/File:%E9%95%B7%E7%94%9C%E6%A4%92_Capsicum_annuum_Nemezis_-%E9%A6%99%E6%B8%AF%E6%BC%81%E8%BE%B2%E7%BE%8E%E9%A3%9F%E5%98%89%E5%B9%B4%E8%8F%AF_Hong_Kong_Farmfest-_(9237504361).jpg
+train/chilli/commons_91942582.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,阿橋 HQ,"https://commons.wikimedia.org/wiki/File:%E7%B4%AB%E8%BE%A3%E6%A4%92_Capsicum_frutescens_-%E9%A6%99%E6%B8%AF%E5%98%89%E9%81%93%E7%90%86%E8%BE%B2%E5%A0%B4_Kadoorie_Farm,_Hong_Kong-_(9200925932).jpg"
+train/chilli/commons_112258864.jpg,Public domain,,NASA/Megan McArthur,https://commons.wikimedia.org/wiki/File:Plant_Habitat-04_experiment_(ISS065-E-434047).jpg
+train/chilli/commons_112258978.jpg,Public domain,,NASA/Megan McArthur,https://commons.wikimedia.org/wiki/File:Plant_Habitat-04_experiment_(ISS066-E-006170).jpg
+train/chilli/commons_112260931.jpg,Public domain,,NASA/Megan McArthur,https://commons.wikimedia.org/wiki/File:Plant_Habitat-04_experiment_(ISS065-E-434036).jpg
+train/chilli/commons_112261332.jpg,Public domain,,NASA/Megan McArthur,https://commons.wikimedia.org/wiki/File:Plant_Habitat-04_experiment_(ISS066-E-006170)_(cropped).jpg
+train/chilli/commons_124064314.jpg,Public domain,,unknown,https://commons.wikimedia.org/wiki/File:RoyalEmbersFlower.JPG
+train/hibiscus/commons_26853213.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Thomas Bresson,https://commons.wikimedia.org/wiki/File:2013-06-23_15-49-59-danaus-plexippus.JPG
+train/hibiscus/commons_43478681.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_01.JPG
+train/hibiscus/commons_43478682.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_02.JPG
+train/hibiscus/commons_43478684.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_03.JPG
+train/hibiscus/commons_43478689.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_04.JPG
+train/hibiscus/commons_43478690.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_06.JPG
+train/hibiscus/commons_43478701.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_08.JPG
+train/hibiscus/commons_43478704.jpg,Public domain,,Judgefloro,https://commons.wikimedia.org/wiki/File:03601jfHibiscus_rosa_sinensis_Philippinesfvf_07.JPG
+train/hibiscus/commons_55172424.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:03037jfHibiscus_rosa-sinensis_Linn_Philippines_Bulacanfvf_27.jpg
+train/hibiscus/commons_55172427.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:03037jfHibiscus_rosa-sinensis_Linn_Philippines_Bulacanfvf_28.jpg
+train/hibiscus/commons_56436501.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:09016jfClose-ups_of_Hibiscus_rosa-sinensis_Grasshoppers_insects_Philippinesfvf_15.jpg
+train/hibiscus/commons_62429383.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_02.jpg
+train/hibiscus/commons_62429384.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_03.jpg
+train/hibiscus/commons_62429385.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_01.jpg
+train/hibiscus/commons_62429387.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_04.jpg
+train/hibiscus/commons_62429388.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_06.jpg
+train/hibiscus/commons_62429391.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_05.jpg
+train/hibiscus/commons_62429394.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_07.jpg
+train/hibiscus/commons_62429395.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_08.jpg
+train/hibiscus/commons_62429398.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_09.jpg
+train/hibiscus/commons_62429399.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_11.jpg
+train/hibiscus/commons_62429401.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_10.jpg
+train/hibiscus/commons_62429402.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_12.jpg
+train/hibiscus/commons_62429407.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_13.jpg
+train/hibiscus/commons_62429415.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_18.jpg
+train/hibiscus/commons_62429416.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_19.jpg
+train/hibiscus/commons_62429419.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_20.jpg
+train/hibiscus/commons_62429420.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_21.jpg
+train/hibiscus/commons_62429421.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_22.jpg
+train/hibiscus/commons_62429423.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_23.jpg
+train/hibiscus/commons_62429424.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_24.jpg
+train/hibiscus/commons_62429425.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_25.jpg
+train/hibiscus/commons_62429429.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_26.jpg
+train/hibiscus/commons_62429430.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_27.jpg
+train/hibiscus/commons_62429431.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_28.jpg
+train/hibiscus/commons_62429432.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_29.jpg
+train/hibiscus/commons_62429435.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_30.jpg
+train/hibiscus/commons_62429436.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_31.jpg
+train/hibiscus/commons_62429438.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Judgefloro,https://commons.wikimedia.org/wiki/File:936Hibiscus_rosa-sinensis_Linn_Philippines_Bulacan_32.jpg
+train/hibiscus/commons_130211218.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Dennis Sylvester Hurd,https://commons.wikimedia.org/wiki/File:Always_in_our_Winter_Locations_(44678528750).jpg
+train/hibiscus/commons_697150.jpg,CC BY-SA 2.5,https://creativecommons.org/licenses/by-sa/2.5,Pratheepps,https://commons.wikimedia.org/wiki/File:Hibiscus_india.JPG
+train/hibiscus/commons_3969430.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,RogerR00,https://commons.wikimedia.org/wiki/File:Brilliant01.jpg
+train/hibiscus/commons_5126646.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Christer Johansson,https://commons.wikimedia.org/wiki/File:Hibiscus_8737.jpg
+train/hibiscus/commons_7549029.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Hedwig Storch,https://commons.wikimedia.org/wiki/File:Chinesischer_Roseneibisch_(Hibiscus_rosa-sinensis)_7219.JPG
+val/hibiscus/commons_10891276.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Biswarup Ganguly,https://commons.wikimedia.org/wiki/File:Hibiscus_6531.JPG
+train/hibiscus/commons_11335450.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Meneerke bloem,https://commons.wikimedia.org/wiki/File:Hibiscus_cv01.jpg
+train/hibiscus/commons_11335457.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Meneerke bloem,https://commons.wikimedia.org/wiki/File:Hibiscus_cv02.jpg
+train/hibiscus/commons_15189762.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,Virginia McMillan,https://commons.wikimedia.org/wiki/File:Flower_In_the_hothouse_at_Wellington_Botanic_Garden.jpg
+train/hibiscus/commons_18534419.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:Hibiscus_fourteen.jpg
+train/hibiscus/commons_18534420.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:Hibiscus_fifteen.jpg
+test/hibiscus/commons_19070073.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Flowers_(181).jpg
+test/hibiscus/commons_20179812.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Toranks,https://commons.wikimedia.org/wiki/File:Flor_desconocida_2478.jpg
+test/hibiscus/commons_20179818.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Toranks,https://commons.wikimedia.org/wiki/File:Flor_desconocida_2479.jpg
+train/hibiscus/commons_22910746.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Diego Delso,"https://commons.wikimedia.org/wiki/File:Cayena_(Hibiscus_rosa-sinensis),_Conservatorio_bot%C3%A1nico,_Fort_Wayne,_Indiana,_Estados_Unidos,_2012-11-12,_DD_02.jpg"
+val/hibiscus/commons_24280442.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,carrotmadman6 from Mauritius,https://commons.wikimedia.org/wiki/File:Hibiscus_(4909573650).jpg
+train/hibiscus/commons_24671109.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,"Jean-Pierre Dalbéra from Paris, France",https://commons.wikimedia.org/wiki/File:Hibiscus_(Hoi_An)_(4411159484).jpg
+train/hibiscus/commons_24671114.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,"Jean-Pierre Dalbéra from Paris, France",https://commons.wikimedia.org/wiki/File:Hibiscus_(Hoi_An)_(4411158884).jpg
+test/hibiscus/commons_27424695.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,301man,https://commons.wikimedia.org/wiki/File:Hibiscus_Yellow_Alone.JPG
+val/hibiscus/commons_36763389.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Rosina Peixoto,https://commons.wikimedia.org/wiki/File:Hibiscus_13.JPG
+train/hibiscus/commons_41199436.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,ErickP98,https://commons.wikimedia.org/wiki/File:Estigma_de_un_Cayano.JPG
+train/hibiscus/commons_46532888.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,georama,"https://commons.wikimedia.org/wiki/File:Andratx,_Balearic_Islands,_Spain_-_panoramio_-_georama_(15).jpg"
+val/hibiscus/commons_51606355.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Hibiscus_(376619586).jpg
+val/hibiscus/commons_51607262.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Bunga_Raya_--_Hibiscus_(347890927).jpg
+val/hibiscus/commons_51607637.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Chemparati_(326908935).jpg
+test/hibiscus/commons_69737932.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Trisorn Triboon,https://commons.wikimedia.org/wiki/File:D85_9414_Photographed_by_Trisorn_Triboon_09.jpg
+train/hibiscus/commons_78366402.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Sandipoutsider,"https://commons.wikimedia.org/wiki/File:Close_wing_nectaring_of_Papilio_polytes_Linnaeus,_1758_%E2%80%93_Common_Mormon_(Male)_on_Hibiscus_rosa-sinensis_WLB_DSC_0167.jpg"
+val/hibiscus/commons_87648025.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Shagil Kannur,https://commons.wikimedia.org/wiki/File:Flower_of_Hibiscus_rosa-sinensis--in_Kerala_.jpg
+train/hibiscus/commons_93885729.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Gourank vashishtha,https://commons.wikimedia.org/wiki/File:Chinese_Rose_Hibiscus.jpg
+train/hibiscus/commons_113455055.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Charles J. Sharp,https://commons.wikimedia.org/wiki/File:Citrus_swallowtails_(Papilio_demodocus)_Principe.jpg
+train/hibiscus/commons_123147812.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,John Robert McPherson,https://commons.wikimedia.org/wiki/File:Hibiscus_CV_Newman_Rd_Chermside_P1160564.jpg
+val/hibiscus/commons_155186217.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Jim,"https://commons.wikimedia.org/wiki/File:Ceiba_pentandra_seed_fibres_on_Hibiscus_rosa-sinensis,_Chich%C3%A9n-Itz%C3%A1,_Yucatan_401725433.jpg"
+train/hibiscus/commons_155211139.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Jules Verne Times Two,"https://commons.wikimedia.org/wiki/File:Chinese_hibiscus_(Hibiscus_%C3%97_rosa-sinensis)_flower,_Estufa_Fria,_Lisbon,_Portugal_julesvernex2.jpg"
+train/hibiscus/commons_175453638.jpg,Public domain,,Pseudopanax at English Wikipedia,https://commons.wikimedia.org/wiki/File:Hawaiian_hibiscus_(Hibiscus_x_rosa-sinensis)_flower_(Niue).jpg
+train/hibiscus/commons_175453726.jpg,Public domain,,Pseudopanax at English Wikipedia,https://commons.wikimedia.org/wiki/File:Hawaiian_hibiscus_(Hibiscus_x_rosa-sinensis)_flowers_(Niue).jpg
+train/hibiscus/commons_175453744.jpg,Public domain,,Pseudopanax at English Wikipedia,https://commons.wikimedia.org/wiki/File:Hawaiian_hibiscus_(Hibiscus_x_rosa-sinensis)_flower_and_leaves_(Niue).jpg
+train/hibiscus/commons_198540390.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,কুমুদ ঘোষ,https://commons.wikimedia.org/wiki/File:China_Rose_3.jpg
+train/hibiscus/commons_198540391.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,কুমুদ ঘোষ,https://commons.wikimedia.org/wiki/File:China_Rose_-2.jpg
+train/hibiscus/commons_198540392.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,কুমুদ ঘোষ,https://commons.wikimedia.org/wiki/File:China_Rose_1.jpg
+train/hibiscus/commons_198540394.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,কুমুদ ঘোষ,https://commons.wikimedia.org/wiki/File:China_Rose_4.jpg
+train/hibiscus/commons_198540395.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,কুমুদ ঘোষ,https://commons.wikimedia.org/wiki/File:China_Rose_5.jpg
+train/hibiscus/commons_539309.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Nvineeth,https://commons.wikimedia.org/wiki/File:Hibiscus_petal.jpg
+train/hibiscus/commons_2580182.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Hedwig Storch,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_18aug2007.jpg
+train/hibiscus/commons_18534405.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:Hibiscus_one.jpg
+train/hibiscus/commons_18744350.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Kreuzschnabel,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_blossom.jpg
+train/hibiscus/commons_24852914.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,"fitri agung from Pekanbaru, Riau, Indonesia, Indonesia",https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Phuket_(8482734844).jpg
+train/hibiscus/commons_26527418.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Mick sz4,https://commons.wikimedia.org/wiki/File:Hibiscus_orange.JPG
+train/hibiscus/commons_50387909.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Krzysztof Golik,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Jardin_des_plantes_de_Montpellier_03.jpg
+train/hibiscus/commons_50387910.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Krzysztof Golik,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Jardin_des_plantes_de_Montpellier_01.jpg
+train/hibiscus/commons_50387911.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Krzysztof Golik,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Jardin_des_plantes_de_Montpellier_02.jpg
+train/hibiscus/commons_50387912.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Krzysztof Golik,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Jardin_des_plantes_de_Montpellier_04.jpg
+train/hibiscus/commons_50431635.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Krzysztof Golik,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Jardin_des_plantes_de_Montpellier_05.jpg
+train/hibiscus/commons_50431636.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Krzysztof Golik,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_in_Jardin_des_plantes_de_Montpellier_06.jpg
+val/hibiscus/commons_51607608.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_(329928245).jpg
+train/hibiscus/commons_61212578.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Photo by David J. Stang,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_Black_Baron_0zz.jpg
+train/hibiscus/commons_62313091.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Natarajanganesan,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_displaying_unique_flower_parts.jpg
+val/hibiscus/commons_72758007.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Buendia22,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_4271.jpg
+val/hibiscus/commons_72758051.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Buendia22,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_4277.jpg
+test/hibiscus/commons_139533572.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Syrio,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_03.jpg
+test/hibiscus/commons_139533573.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Syrio,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_01.jpg
+test/hibiscus/commons_139533575.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Syrio,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_02.jpg
+train/hibiscus/commons_155102972.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Agnieszka Kwiecień, Nova",https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_Ketmia_r%C3%B3%C5%BCa_chi%C5%84ska_2024-01-19_Malaga_03.jpg
+train/hibiscus/commons_155102974.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Agnieszka Kwiecień, Nova",https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_Ketmia_r%C3%B3%C5%BCa_chi%C5%84ska_2024-01-19_Malaga_04.jpg
+test/hibiscus/commons_155242798.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Krzysztof Ziarnek, Kenraiz",https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_kz01.jpg
+test/hibiscus/commons_155242799.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Krzysztof Ziarnek, Kenraiz",https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_kz02.jpg
+test/hibiscus/commons_163870066.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Wiki Farazi,"https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_at_Felda_Sungai_Sayong_in_Kota_Tinggi,_Johor_20250401_115355.jpg"
+test/hibiscus/commons_163870068.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Wiki Farazi,"https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_at_Felda_Sungai_Sayong_in_Kota_Tinggi,_Johor_20250401_125351.jpg"
+test/hibiscus/commons_163870072.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Wiki Farazi,"https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_at_Felda_Sungai_Sayong_in_Kota_Tinggi,_Johor_20250401_115420.jpg"
+test/hibiscus/commons_163870073.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Wiki Farazi,"https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_at_Felda_Sungai_Sayong_in_Kota_Tinggi,_Johor_20250401_125609.jpg"
+train/hibiscus/commons_175022041.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,ChiK,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_(pink)_1.jpg
+train/hibiscus/commons_175022042.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,ChiK,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_(pink)_2.jpg
+train/hibiscus/commons_175023589.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,ChiK,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_(white)_1.jpg
+train/hibiscus/commons_175023590.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,ChiK,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_(pink)_3.jpg
+train/hibiscus/commons_175023596.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,ChiK,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_(red)_1.jpg
+train/hibiscus/commons_193830916.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Thisisunmesh,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa_sinensis_stigma_extreme_macro_resolution_-_2_-_Dead_Hibiscus_rosa-sinensis_flower.jpg
+train/hibiscus/commons_193840761.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Godwin Borg,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_-_Rose_of_China.jpg
+train/hibiscus/commons_194748378.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Jukaper23,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa_sinensis_-_cayena_-_2026-06-18.jpg
+train/hibiscus/commons_196035442.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Ilkka Simomaa,"https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_flower_Lamma_Island,_Hong_Kong_2018-05-12.jpg"
+train/hibiscus/commons_196605628.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Aliva Sahoo,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_(52094).jpg
+train/hibiscus/commons_198840688.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ria Colva,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_also_known_as_tropical_hibiscus_is_commonly_found_in_Goa..jpg
+train/hibiscus/commons_201203419.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Utilisateur ouikipedia,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_close.jpg
+train/hibiscus/commons_196209.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,CrazyD,https://commons.wikimedia.org/wiki/File:Hibiskusbl%C3%BCte.jpg
+train/hibiscus/commons_5040818.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Anslaton,https://commons.wikimedia.org/wiki/File:Hibiscus2733.JPG
+train/hibiscus/commons_6149702.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_080531-4893_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_6159121.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_070313-5691_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_6163805.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_080103-1210_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_6181239.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_061223-2684_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_6181245.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_061223-2685_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_6181263.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_061223-2687_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_6185230.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Forest & Kim Starr,https://commons.wikimedia.org/wiki/File:Starr_070111-3206_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_12392389.jpg,Public domain,,Gramam at Malayalam Wikipedia,https://commons.wikimedia.org/wiki/File:Morning-flower.jpg
+train/hibiscus/commons_15810182.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,C T Johansson,https://commons.wikimedia.org/wiki/File:IMG_7291-Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_19333263.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Kristoffer Ondra,https://commons.wikimedia.org/wiki/File:Philippines_Red_Gumamela.JPG
+train/hibiscus/commons_28997082.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ramon FVelasquez,"https://commons.wikimedia.org/wiki/File:Sariaya,Quezonjf0093_27.JPG"
+train/hibiscus/commons_30724235.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,(Abhi (talk)),https://commons.wikimedia.org/wiki/File:Jaswand_flower.jpg
+train/hibiscus/commons_30725091.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,(Abhi (talk)),https://commons.wikimedia.org/wiki/File:Jaswand_flower_2.jpg
+test/hibiscus/commons_34237904.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,Richard Weaver,https://commons.wikimedia.org/wiki/File:Lisbon_38_(14679936724).jpg
+train/hibiscus/commons_34872674.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Rosa-Maria Rinkl,https://commons.wikimedia.org/wiki/File:Malve_40.JPG
+train/hibiscus/commons_34951630.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfHibiscus_rosa-sinensisMalolos38fvf.JPG
+train/hibiscus/commons_34951631.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfHibiscus_rosa-sinensisMalolos37fvf.JPG
+train/hibiscus/commons_34951632.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Judgefloro,https://commons.wikimedia.org/wiki/File:JfHibiscus_rosa-sinensisMalolos39fvf.JPG
+val/hibiscus/commons_49284191.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,"Francis Chung from Utara Subang Jaya, Malaysia",https://commons.wikimedia.org/wiki/File:Red_hibiscus_(Hibiscus_rosa-sinensis)_(5835546195).jpg
+train/hibiscus/commons_50552293.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Javiertoliu,https://commons.wikimedia.org/wiki/File:Rosa_-_flor.jpg
+val/hibiscus/commons_51604141.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Jasumi_(Sanskrit-_%E0%A4%9C%E0%A4%BE%E0%A4%B8%E0%A5%81%E0%A4%AE%E0%A5%80)_(984808494).jpg
+train/hibiscus/commons_59393950.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Jérémie Silvestro (If you can improve this photo development, ask me the RAW.)",https://commons.wikimedia.org/wiki/File:Hibiscus_rouge_de_Tubuai.jpg
+train/hibiscus/commons_71836396.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-090623-1733-Hibiscus_rosa_sinensis-oranger_flower_with_red_center_and_raindrops-Hana-Maui_(24336655094).jpg
+train/hibiscus/commons_71853371.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-100114-1279-Hibiscus_rosa_sinensis-pink_flower-Enchanting_Floral_Gardens_of_Kula-Maui_(24639278839).jpg
+train/hibiscus/commons_71886757.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-110215-1042-Hibiscus_rosa_sinensis-flower-KiHana_Nursery_Kihei-Maui_(24779656220).jpg
+train/hibiscus/commons_71926142.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-130304-2021-Hibiscus_rosa_sinensis-flower-Montrose_Crater_Rd_Kula-Maui_(24838527619).jpg
+train/hibiscus/commons_74377343.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Alejandro  Bayer Tamayo from Armenia, Colombia",https://commons.wikimedia.org/wiki/File:San_Joaqu%C3%ADn_(14113808930).jpg
+train/hibiscus/commons_94144546.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,KazzaMiller,https://commons.wikimedia.org/wiki/File:Pink_Hibiscus_flower.jpg
+val/hibiscus/commons_139572824.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Lisa Ann Yount,https://commons.wikimedia.org/wiki/File:Pink_hibiscus_2.jpg
+train/hibiscus/commons_150817269.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,David Saddler,https://commons.wikimedia.org/wiki/File:Shoeblack_Plant_(Hibiscus_rosa-sinensis)_-_Flickr_-_the_bridge.jpg
+val/hibiscus/commons_164712317.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Joselodos,https://commons.wikimedia.org/wiki/File:Interior_of_a_red_hibiscus.jpg
+train/hibiscus/commons_173271417.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Jozef Kotulič,https://commons.wikimedia.org/wiki/File:Kvet_%C4%8D%C3%ADnska_ru%C5%BEa_25_Slovakia_1.jpg
+train/hibiscus/commons_180441160.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Tournasol7,https://commons.wikimedia.org/wiki/File:Hibiscus_x_rosa-sinensis_in_Deshaies_(3).jpg
+train/hibiscus/commons_180441162.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,Tournasol7,https://commons.wikimedia.org/wiki/File:Hibiscus_x_rosa-sinensis_in_Deshaies_(1).jpg
+train/hibiscus/commons_192547567.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Saadtitan12,https://commons.wikimedia.org/wiki/File:Red_Hibiscus_rosa-sinensis_flower_close-up.jpg
+train/hibiscus/commons_197058893.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Mohammad hajeer,https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensisb_in_Jordan.jpg
+train/hibiscus/commons_72004530.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-170615-0060-Hibiscus_rosa_sinensis-flower_with_emerald_beetles-Old_Internet_Cafe_Sand_Island-Midway_Atoll_(35547511373).jpg
+test/hibiscus/commons_91747172.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Adnan azad asif,https://commons.wikimedia.org/wiki/File:%E0%A6%AE%E0%A7%8C%E0%A6%9F%E0%A7%81%E0%A6%B8%E0%A6%BF_%E0%A6%9C%E0%A6%AC%E0%A6%BE_%E0%A6%AB%E0%A7%81%E0%A6%B2%E0%A7%87.jpg
+val/hibiscus/commons_93097734.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,SUJIT KUMAR BISWAL,https://commons.wikimedia.org/wiki/File:%E0%AC%AE%E0%AC%A8%E0%AD%8D%E0%AC%A6%E0%AC%BE%E0%AC%B0_%E0%AC%AB%E0%AD%81%E0%AC%B2_(_China_Rose).jpg
+train/hibiscus/commons_162865538.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,VasuVR,https://commons.wikimedia.org/wiki/File:WA1215_36_Butterfly_Park_Vienna_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_162865540.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,VasuVR,https://commons.wikimedia.org/wiki/File:WA1215_35_Butterfly_Park_Vienna_Hibiscus_rosa-sinensis.jpg
+train/hibiscus/commons_193673034.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Sufe,https://commons.wikimedia.org/wiki/File:%E0%A6%9C%E0%A6%AC%E0%A6%BE_%E0%A6%AB%E0%A7%81%E0%A6%B2_(%E0%A6%95%E0%A7%87%E0%A6%B6%E0%A6%B0).jpg
+train/hibiscus/commons_201523831.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,VasuVR,https://commons.wikimedia.org/wiki/File:TNY17-11_Yelagiri_Hibiscus_pink_colour.jpg
+train/tomato/commons_1674048.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,tooony,https://commons.wikimedia.org/wiki/File:Fleur.JPG
+train/tomato/commons_1674053.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,tooony,https://commons.wikimedia.org/wiki/File:Fleur2.JPG
+train/tomato/commons_1674057.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,tooony,https://commons.wikimedia.org/wiki/File:Fleur3.JPG
+train/tomato/commons_10518671.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Andriy111,https://commons.wikimedia.org/wiki/File:Demianovych8.jpg
+train/tomato/commons_10546750.jpg,Public domain,,Juliancolton,https://commons.wikimedia.org/wiki/File:Conjoined_tomato_blossoms.JPG
+test/tomato/commons_17978484.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Aguilas-tomat-flor-2.JPG
+test/tomato/commons_17978485.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Aguilas-tomat-flor-4.JPG
+test/tomato/commons_17978486.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Aguilas-tomat-flor-1.JPG
+test/tomato/commons_17978487.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Philmarin,https://commons.wikimedia.org/wiki/File:Aguilas-tomat-flor-3.JPG
+train/tomato/commons_18022432.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Yesydrodriguez,https://commons.wikimedia.org/wiki/File:Flor_de_Solanum_lycopersicum.JPG
+val/tomato/commons_20270591.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,RTG,https://commons.wikimedia.org/wiki/File:First_flower_of_Black_Truffle_Tomato_vine.jpg
+train/tomato/commons_25003354.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Izham Alias,https://commons.wikimedia.org/wiki/File:Bunga_tomato_ceri.JPG
+train/tomato/commons_26041993.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,User:Antonella Nigro,https://commons.wikimedia.org/wiki/File:Fiori_di_pomodoro.jpeg
+train/tomato/commons_33666901.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20140629Solanum_lycopersicum1.jpg
+train/tomato/commons_33666949.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20140629Solanum_lycopersicum3.jpg
+test/tomato/commons_34888374.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vikiçizer,https://commons.wikimedia.org/wiki/File:Domatos.JPG
+test/tomato/commons_34888375.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vikiçizer,https://commons.wikimedia.org/wiki/File:Domatez.JPG
+test/tomato/commons_44195113.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Maurocatanese86,https://commons.wikimedia.org/wiki/File:Flores_de_Solanum_Lycopersicum.jpg
+train/tomato/commons_50534909.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160729Solanum_lycopersicum1.jpg
+train/tomato/commons_50534921.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160729Solanum_lycopersicum2.jpg
+train/tomato/commons_50534930.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160729Solanum_lycopersicum3.jpg
+train/tomato/commons_50631838.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160810Solanum_lycopersicum2.jpg
+train/tomato/commons_50631851.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160810Solanum_lycopersicum3.jpg
+train/tomato/commons_50783929.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160820Solanum_lycopersicum2.jpg
+train/tomato/commons_50803256.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160821Solanum_lycopersicum.jpg
+train/tomato/commons_51138052.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160831Solanum_lycopersicum2.jpg
+train/tomato/commons_51138085.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160831Solanum_lycopersicum3.jpg
+train/tomato/commons_51236551.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160903Solanum_lycopersicum2.jpg
+train/tomato/commons_51236565.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20160903Solanum_lycopersicum4.jpg
+train/tomato/commons_53021481.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20161107Solanum_lycopersicum1.jpg
+train/tomato/commons_53021520.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20161107Solanum_lycopersicum3.jpg
+train/tomato/commons_63381245.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20171011Solanum_lycopersicum1.jpg
+train/tomato/commons_63381255.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,AnRo0002,https://commons.wikimedia.org/wiki/File:20171011Solanum_lycopersicum3.jpg
+train/tomato/commons_73145053.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Joanbanjo,"https://commons.wikimedia.org/wiki/File:Flor_de_tomaquera_pel_Pla,_Senija.jpg"
+val/tomato/commons_84438649.jpg,CC BY 4.0,https://creativecommons.org/licenses/by/4.0,PROPOLI87,https://commons.wikimedia.org/wiki/File:FIOR_DI_POMODORO.jpg
+val/tomato/commons_90853547.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Massine MOUSSAOUI,https://commons.wikimedia.org/wiki/File:Fleure_de_la_tomate.jpg
+train/tomato/commons_107082351.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Mannivu,https://commons.wikimedia.org/wiki/File:Fiori_di_Solanum_lycopersicum.jpg
+test/tomato/commons_138245329.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Famartin,"https://commons.wikimedia.org/wiki/File:2023-09-28_15_01_59_Leaves_and_flowers_on_a_tomato_plant_along_High_Acres_Avenue_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+test/tomato/commons_138245330.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Famartin,"https://commons.wikimedia.org/wiki/File:2023-09-28_15_02_26_Flower_on_a_tomato_plant_along_High_Acres_Avenue_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+test/tomato/commons_138245332.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Famartin,"https://commons.wikimedia.org/wiki/File:2023-09-28_15_03_03_Flower_on_a_tomato_plant_along_High_Acres_Avenue_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+train/tomato/commons_99255.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,unknown,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_-_Fleurtomate.jpg
+train/tomato/commons_915089.jpg,Public domain,,Karelj,https://commons.wikimedia.org/wiki/File:Raj%C4%8De1.jpg
+train/tomato/commons_1947446.jpg,Public domain,,Karelj,https://commons.wikimedia.org/wiki/File:Rajce.jpg
+test/tomato/commons_2409754.jpg,CC BY-SA 2.5,https://creativecommons.org/licenses/by-sa/2.5,André Karwath aka Aka,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_-_Tomato_flower_(aka).jpg
+train/tomato/commons_4414919.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Mariuszjbie,https://commons.wikimedia.org/wiki/File:Pomidory2.jpg
+train/tomato/commons_11106222.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,H. Zell,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_002.JPG
+train/tomato/commons_14655941.jpg,Public domain,,Victor M. Vicente Selvas,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_-_Flor_tomaca_057.jpg
+val/tomato/commons_15965029.jpg,CC BY-SA 3.0 de,https://creativecommons.org/licenses/by-sa/3.0/de/deed.en,Schwäbin,https://commons.wikimedia.org/wiki/File:Kirschtomaten_Bl%C3%BCten_01.jpg
+train/tomato/commons_22531944.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Piotr Frydecki,https://commons.wikimedia.org/wiki/File:Kwiat_pomidora.JPG
+train/tomato/commons_22877043.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,"Rüdiger Kratz, St. Ingbert",https://commons.wikimedia.org/wiki/File:Gartentomate_Bl%C3%BCte_065.jpg
+train/tomato/commons_25891358.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Slick,https://commons.wikimedia.org/wiki/File:Gartenpflanzen_2012-09-01-0298.jpg
+train/tomato/commons_25891361.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Slick,https://commons.wikimedia.org/wiki/File:Gartenpflanzen_2012-09-01-0299.jpg
+train/tomato/commons_25891365.jpg,CC0,http://creativecommons.org/publicdomain/zero/1.0/deed.en,Slick,https://commons.wikimedia.org/wiki/File:Gartenpflanzen_2012-09-01-0300.jpg
+val/tomato/commons_42790369.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,MOs810,https://commons.wikimedia.org/wiki/File:Pomidor_kwitnie_(Lycopersicon).JPG
+test/tomato/commons_44195114.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Maurocatanese86,https://commons.wikimedia.org/wiki/File:Solanum_Lycopersicum_Flor_Amarilla.jpg
+val/tomato/commons_51599979.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_(2274005259).jpg
+val/tomato/commons_51706001.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Koti-t-takkali_(Tamil-_%E0%AE%95%E0%AF%8A%E0%AE%9F%E0%AE%BF%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%BE%E0%AE%B3%E0%AE%BF)_(5287313685).jpg
+test/tomato/commons_54906333.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(1).jpg
+test/tomato/commons_54906353.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(2).jpg
+test/tomato/commons_54906363.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(3).jpg
+test/tomato/commons_54906385.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(4).jpg
+test/tomato/commons_54906395.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(5).jpg
+test/tomato/commons_54906408.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(6).jpg
+test/tomato/commons_54906424.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(7).jpg
+test/tomato/commons_54906433.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_flowers_at_Peravoor_(8).jpg
+train/tomato/commons_61211466.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Photo by David J. Stang,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_Supersweet_100_0zz.jpg
+train/tomato/commons_61211467.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Photo by David J. Stang,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_Supersweet_100_1zz.jpg
+train/tomato/commons_69914388.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Przemek P,https://commons.wikimedia.org/wiki/File:Kwiat_pomidora_(1).jpg
+test/tomato/commons_72152068.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,PetrohsW,https://commons.wikimedia.org/wiki/File:PlantaJitomate_ohs01.jpg
+train/tomato/commons_74604898.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Zbigniew Niepokój,https://commons.wikimedia.org/wiki/File:Kwiat_pomidora_zwyczajnego.jpg
+test/tomato/commons_76583950.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_from_Wayanad_(1).jpg
+test/tomato/commons_76583969.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_from_Wayanad_(2).jpg
+test/tomato/commons_76583985.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_from_Wayanad_(3).jpg
+test/tomato/commons_76583997.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Vinayaraj,https://commons.wikimedia.org/wiki/File:Lycopersicon_esculentum_-_Tomato_from_Wayanad_(4).jpg
+train/tomato/commons_84520427.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Niepokój Zbigniew,https://commons.wikimedia.org/wiki/File:Kwiat_pomidora.Solanum_lycopersicum._02.jpg
+train/tomato/commons_84520428.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Niepokój Zbigniew,https://commons.wikimedia.org/wiki/File:Kwiat_pomidora.Solanum_lycopersicum._01.jpg
+train/tomato/commons_84520430.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Niepokój Zbigniew,https://commons.wikimedia.org/wiki/File:Kwiat_pomidora.Solanum_lycopersicum._03.jpg
+train/tomato/commons_100556443.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Juan Carlos Fonseca Mata,https://commons.wikimedia.org/wiki/File:Flower_of_Solanum_lycopersicum.jpg
+train/tomato/commons_127950424.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-004.jpg
+train/tomato/commons_127950428.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-005.jpg
+val/tomato/commons_1661589.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Goldlocki,https://commons.wikimedia.org/wiki/File:TomateBl%C3%BCtegebogengenerativ.jpg
+val/tomato/commons_1673380.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Goldlocki,https://commons.wikimedia.org/wiki/File:TomateCherryBl%C3%BCtegeschlossen.jpg
+train/tomato/commons_2735240.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Reaperman,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_kv%C4%9Bt1.JPG
+train/tomato/commons_2735247.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Reaperman,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_kv%C4%9Bt2.JPG
+train/tomato/commons_3261317.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Rasbak at Dutch Wikipedia,https://commons.wikimedia.org/wiki/File:Tomaat_bloem.jpg
+train/tomato/commons_3332466.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,Serena from Europe,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_flower.jpg
+val/tomato/commons_9957762.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Bff,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum20090613_127.jpg
+val/tomato/commons_9957766.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Bff,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum20090613_130.jpg
+train/tomato/commons_11447781.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,unknown,https://commons.wikimedia.org/wiki/File:Tomato_San_Marzano_flower_01.jpg
+train/tomato/commons_15381356.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,TigerisLagoona,https://commons.wikimedia.org/wiki/File:Tomato_Flower.jpg
+train/tomato/commons_17015511.jpg,Public domain,,Jake7401 at en.wikipedia,https://commons.wikimedia.org/wiki/File:Tomato_Flower_1.jpg
+val/tomato/commons_17513356.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,CostaPPPR,https://commons.wikimedia.org/wiki/File:Tomate2DSC_1623.jpg
+train/tomato/commons_20038346.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Danny Steven S.,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_by_Danny_S._-_002.JPG
+train/tomato/commons_20058505.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Danny Steven S.,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_by_Danny_S._-_003.JPG
+test/tomato/commons_21863093.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Javier martin,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_flores_2011-6-26_SierraMadrona.jpg
+val/tomato/commons_21958747.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,Ton Rulkens from Mozambique,https://commons.wikimedia.org/wiki/File:Tomato_flower_(4580431553).jpg
+train/tomato/commons_22623048.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,Bruce from San Francisco,https://commons.wikimedia.org/wiki/File:Tomato_flower_-_past_and_present.jpg
+val/tomato/commons_25147862.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,OliBac from FRANCE,https://commons.wikimedia.org/wiki/File:Syrphe_hoverfly_(3712346750).jpg
+train/tomato/commons_25319081.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,കാക്കര,https://commons.wikimedia.org/wiki/File:Tomato_-_%E0%B4%A4%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B4%BE%E0%B4%B3%E0%B4%BF_06.JPG
+train/tomato/commons_33118313.jpg,CC BY-SA 2.0 de,https://creativecommons.org/licenses/by-sa/2.0/de/deed.en,"--M.J. 20:47, 21. Jun. 2007 (CEST)",https://commons.wikimedia.org/wiki/File:Tomatenbl%C3%BCte.jpg
+val/tomato/commons_51600631.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Tamato_(Gujarati-_%E0%AA%9F%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%8B)_(2195136915).jpg
+train/tomato/commons_52064227.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Dat doris,https://commons.wikimedia.org/wiki/File:Tomatebl%C3%BCte-1.jpg
+train/tomato/commons_52064228.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Dat doris,https://commons.wikimedia.org/wiki/File:Tomatebl%C3%BCte-2.jpg
+train/tomato/commons_71351357.jpg,CC BY 3.0,https://creativecommons.org/licenses/by/3.0,Brebenel Silviu,https://commons.wikimedia.org/wiki/File:Tomato_Flowers_(41138184).jpeg
+train/tomato/commons_71838000.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-090801-3522-Solanum_lycopersicum-flowers_in_garden-Olinda-Maui_(24343982123).jpg
+train/tomato/commons_71844520.jpg,CC BY 3.0 us,https://creativecommons.org/licenses/by/3.0/us/deed.en,Forest and Kim Starr,https://commons.wikimedia.org/wiki/File:Starr-090707-2405-Solanum_lycopersicum-flowers-Olinda-Maui_(24942757446).jpg
+train/tomato/commons_74267366.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Stefan.lefnaer,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_sl8.jpg
+train/tomato/commons_81367329.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Dennis Lamczak,https://commons.wikimedia.org/wiki/File:Tomato_Blossom_(107515765).jpeg
+train/tomato/commons_81715949.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,Rolf Dietrich Brecher from Germany,https://commons.wikimedia.org/wiki/File:Tomate_(48103224123).jpg
+train/tomato/commons_81715952.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,Rolf Dietrich Brecher from Germany,https://commons.wikimedia.org/wiki/File:Tomato_flower_(48103286592).jpg
+train/tomato/commons_106533241.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Derk29,https://commons.wikimedia.org/wiki/File:Tomato_Flower_2021.jpg
+train/tomato/commons_118825453.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Jayachandranjay,https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum.jpg
+train/tomato/commons_127950432.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-006.jpg
+train/tomato/commons_127950439.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-007.jpg
+train/tomato/commons_127950443.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-008.jpg
+train/tomato/commons_127950445.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-009.jpg
+train/tomato/commons_127950482.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-023.jpg
+train/tomato/commons_127950483.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-024.jpg
+train/tomato/commons_127950486.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,"Ayotte, Gilles, 1948-",https://commons.wikimedia.org/wiki/File:Solanum_lycopersicum_15-p.bot-lyco.escu-025.jpg
+train/tomato/commons_151125209.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,Jennifer C.,https://commons.wikimedia.org/wiki/File:Tomato_Plant_(4165132990).jpg
+train/tomato/commons_484071.jpg,CC BY-SA 2.5,https://creativecommons.org/licenses/by-sa/2.5,Niek Willems,https://commons.wikimedia.org/wiki/File:Tomato_flowers.jpeg
+val/tomato/commons_1133945.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Felagund,https://commons.wikimedia.org/wiki/File:Tomato_flower.JPG
+train/tomato/commons_2352217.jpg,CC BY-SA 3.0,http://creativecommons.org/licenses/by-sa/3.0/,Thegreenj,https://commons.wikimedia.org/wiki/File:Tomatoflower.jpg
+test/tomato/commons_3660957.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,DXLINH,https://commons.wikimedia.org/wiki/File:Tomato_flower.jpg
+train/tomato/commons_14892020.jpg,Public domain,,ShajiA at Malayalam Wikipedia.,https://commons.wikimedia.org/wiki/File:%E0%B4%A4%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B4%BE%E0%B4%B3%E0%B4%BF_%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B5%8D.jpg
+val/tomato/commons_14970433.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,Muffet,https://commons.wikimedia.org/wiki/File:Tomato_flower_blossom.jpg
+train/tomato/commons_15479214.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Sanjay Acharya,https://commons.wikimedia.org/wiki/File:Tomato_plant_flowers.jpg
+train/tomato/commons_18459679.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,"Edukeralam, (Navaneeth Krishnan S)",https://commons.wikimedia.org/wiki/File:Tomato-Flower.JPG
+train/tomato/commons_18459683.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,"Edukeralam, (Navaneeth Krishnan S)",https://commons.wikimedia.org/wiki/File:Tomato-Flower2.JPG
+train/tomato/commons_18684064.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:Tomato_flowers2.jpg
+train/tomato/commons_18684067.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Ks.mini,https://commons.wikimedia.org/wiki/File:Tomato_flower1.jpg
+test/tomato/commons_23081911.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Earth100,https://commons.wikimedia.org/wiki/File:Tomato_flower_and_young_fruit.jpg
+val/tomato/commons_24919450.jpg,Public domain,,Jon Sullivan,https://commons.wikimedia.org/wiki/File:Tomatoes_blossoms_flowers.jpg
+train/tomato/commons_25225874.jpg,CC BY 2.0,https://creativecommons.org/licenses/by/2.0,"Dwight Sipler from Stow, MA, USA",https://commons.wikimedia.org/wiki/File:Tomato_flowers_(2548884493).jpg
+train/tomato/commons_27707531.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Maziar.a 1997,https://commons.wikimedia.org/wiki/File:%DA%AF%D9%84%D9%90_%D9%85%DB%8C%D9%88%D9%87_%DA%AF%D9%88%D8%AC%D9%87.jpg
+val/tomato/commons_35103800.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alessio Sbarbaro User_talk:Yoggysot,https://commons.wikimedia.org/wiki/File:Tomato_flower_001.jpg
+val/tomato/commons_35103833.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alessio Sbarbaro User_talk:Yoggysot,https://commons.wikimedia.org/wiki/File:Tomato_flower_005.jpg
+val/tomato/commons_35103857.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alessio Sbarbaro User_talk:Yoggysot,https://commons.wikimedia.org/wiki/File:Tomato_flower_002.jpg
+val/tomato/commons_35103897.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alessio Sbarbaro User_talk:Yoggysot,https://commons.wikimedia.org/wiki/File:Tomato_flower_003.jpg
+val/tomato/commons_35103906.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alessio Sbarbaro User_talk:Yoggysot,https://commons.wikimedia.org/wiki/File:Tomato_flower_004.jpg
+test/tomato/commons_41358773.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,Syrio,https://commons.wikimedia.org/wiki/File:Tomato_flowers_01.JPG
+val/tomato/commons_41748485.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,വരി വര,https://commons.wikimedia.org/wiki/File:%E0%B4%A4%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B4%BE%E0%B4%B3%E0%B4%BF%E0%B4%AF%E0%B5%81%E0%B4%9F%E0%B5%86_%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B5%8D.jpg
+val/tomato/commons_42956288.jpg,CC BY-SA 3.0,https://creativecommons.org/licenses/by-sa/3.0,Alessio Sbarbaro User_talk:Yoggysot,https://commons.wikimedia.org/wiki/File:Tomato_flower_006.jpg
+val/tomato/commons_51599981.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Dinesh Valke from Thane, India",https://commons.wikimedia.org/wiki/File:Vilayati_Vangi_(Marathi-_%E0%A4%B5%E0%A4%BF%E0%A4%B2%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%80_%E0%A4%B5%E0%A4%BE%E0%A4%82%E0%A4%97%E0%A5%80)_(2274789840).jpg
+train/tomato/commons_60794794.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,PaulaN,"https://commons.wikimedia.org/wiki/File:Tomato_flowers,_July_22,_2016.jpg"
+train/tomato/commons_112958204.jpg,CC BY-SA 2.0,https://creativecommons.org/licenses/by-sa/2.0,"Jens Cederskjold from København S, Danmark","https://commons.wikimedia.org/wiki/File:Tomato_flowers_in_the_greenhouse,_which_may_result_in_tomatoes,_even_though_autumn_is_upon_us._(51528945310).jpg"
+train/tomato/commons_119885270.jpg,CC BY-SA 4.0,https://creativecommons.org/licenses/by-sa/4.0,மலர்விழி.சி,https://commons.wikimedia.org/wiki/File:Tomato_plant_2.jpg

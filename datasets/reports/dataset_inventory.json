@@ -1,20 +1,38 @@
 {
-  "generated_at": "2026-11-03T16:12:20.985915+00:00",
+  "generated_at": "2026-11-04T03:50:35.984839+00:00",
   "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. Report figures, segmentation masks and gallery crops (derived from already-counted images) are counted separately.",
-  "total_dataset_images": 1479,
+  "total_dataset_images": 1985,
   "species_image_counts": {
-    "hibiscus": 91,
-    "tomato": 200,
+    "hibiscus": 256,
+    "tomato": 347,
     "sunflower": 828,
     "apple": 155,
     "peach": 95,
     "pear": 47,
-    "strawberry": 15,
-    "brinjal": 20,
-    "chilli": 28,
+    "strawberry": 44,
+    "brinjal": 131,
+    "chilli": 82,
     "unspecified": 0
   },
   "datasets": {
+    "processed/commons_flowers": {
+      "images": 506,
+      "masks": 0,
+      "decoded": 506,
+      "corrupt": [],
+      "bytes": 78175281,
+      "by_ext": {
+        ".jpg": 506
+      },
+      "by_species": {
+        "brinjal": 111,
+        "chilli": 54,
+        "hibiscus": 165,
+        "strawberry": 29,
+        "tomato": 147
+      },
+      "megabytes": 78.2
+    },
     "processed/inat_flowering": {
       "images": 761,
       "masks": 0,
@@ -84,15 +102,15 @@
     "reports": {
       "images": 0,
       "masks": 0,
-      "decoded": 11,
+      "decoded": 16,
       "corrupt": [],
-      "bytes": 1562352,
-      "report_figures": 11,
+      "bytes": 2426768,
+      "report_figures": 16,
       "by_ext": {
-        ".jpg": 11
+        ".jpg": 16
       },
       "by_species": {},
-      "megabytes": 1.6
+      "megabytes": 2.4
     }
   },
   "yolo_pairing": {
@@ -108,15 +126,15 @@
       "images_without_labels": 0,
       "labels_without_images": 0
     },
-    "processed/tf_flower_detection_sunflower/train/images": {
-      "images": 439,
-      "label_files": 439,
-      "images_without_labels": 0,
-      "labels_without_images": 0
-    },
     "processed/tf_flower_detection_sunflower/val/images": {
       "images": 94,
       "label_files": 94,
+      "images_without_labels": 0,
+      "labels_without_images": 0
+    },
+    "processed/tf_flower_detection_sunflower/train/images": {
+      "images": 439,
+      "label_files": 439,
       "images_without_labels": 0,
       "labels_without_images": 0
     }
