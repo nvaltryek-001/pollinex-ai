@@ -9,6 +9,8 @@ def test_health_and_openapi(client):
     r = client.get(f"{API}/health")
     assert r.status_code == 200 and r.json()["checks"]["database"] == "ok"
     assert r.json()["database_backend"] in ("sqlite", "postgresql")
+    # the validation-selected crop/scene species rule must be active in the served analyzer (regression: it was off in production)
+    assert r.json()["model"]["species_context"]["crop_weight"] == 0.25
     spec = client.get("/openapi.json").json()
     assert "/api/v1/scans" in spec["paths"] and "/api/v1/simulations/{sim_id}/replay" in spec["paths"]
 

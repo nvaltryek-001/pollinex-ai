@@ -3,5 +3,7 @@
   "abstain_share": 0.0,
   "selected_on": "validation",
   "report": "ai-engine/reports/species_context_rule.json",
-  "generated_at": "2026-11-04T14:57:49+00:00"
+  "generated_at": "2026-11-04T14:57:49+00:00",
+  "embed_version": "mnv3l-v1",
+  "applies_to": "galleries built on this embedding (the shipped gallery and researcher-extended copies of it)"
 }

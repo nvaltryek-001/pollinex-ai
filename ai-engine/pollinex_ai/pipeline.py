@@ -37,8 +37,12 @@ class Analyzer:
             self.gallery = SpeciesGallery.load(gp) if gp.with_suffix(".json").exists() else SpeciesGallery()
         self.structure_model = load_structure_model()  # None until a structure model trained on real annotations exists
         # crop/scene vote blending selected on validation for the shipped gallery only (species_context_rule.py)
+        # It applies to any gallery on the same embedding (the shipped one, or a researcher-extended copy of it); it is
+        # skipped for galleries passed in as objects (tests, experiments) and for other embeddings.
         ctx = MODELS_DIR / "species_context.json"
-        self.species_context = (json.loads(ctx.read_text()) if gallery is None and gallery_path is None and ctx.exists() else {})
+        cfg = json.loads(ctx.read_text()) if ctx.exists() else {}
+        same_embedding = cfg.get("embed_version", self.gallery.meta.get("embed_version")) == self.gallery.meta.get("embed_version")
+        self.species_context = cfg if gallery is None and same_embedding and self.gallery.vectors else {}
 
     def model_info(self) -> dict:
         return {"detector_backend": self.detector.backend, "detector_version": self.detector.version,

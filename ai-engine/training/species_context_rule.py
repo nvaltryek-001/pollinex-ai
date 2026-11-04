@@ -169,7 +169,7 @@ def main():
     (ENGINE / "reports" / "species_context_rule.json").write_text(json.dumps(out, indent=2))
     if args.save and adopt:
         (ENGINE / "models" / "species_context.json").write_text(json.dumps({
-            "crop_weight": best_a, "abstain_share": best_t, "selected_on": "validation",
+            "crop_weight": best_a, "abstain_share": best_t, "selected_on": "validation", "embed_version": g.meta["embed_version"],
             "report": "ai-engine/reports/species_context_rule.json", "generated_at": out["generated_at"]}, indent=2))
         print("saved ai-engine/models/species_context.json")
     elif args.save:
