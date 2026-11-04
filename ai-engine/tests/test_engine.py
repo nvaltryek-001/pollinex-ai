@@ -261,3 +261,27 @@ def test_gallery_background_references_map_to_unknown_and_uncertain_flag():
     out = g.predict_vector(q)
     assert out["species"] in {"apple", "pear"} and out["uncertain"] is True
     assert g.predict_vector(a)["uncertain"] is False or g.predict_vector(a)["confidence"] < 0.6
+
+
+def test_structure_model_hook_marks_trained_classes_without_inventing():
+    from pollinex_ai.detector import Detection, DetectionResult
+    from pollinex_ai.structure import analyze_centre, apply_structure_model
+
+    class FakeStructureModel:  # test double standing in for an ONNX model trained on real annotations
+        names = ["anther", "stigma"]
+        version = "fake-structures"
+
+        def detect(self, crop):
+            d = Detection(box=[10, 10, 20, 20], score=0.9, area_px=100.0, center=[15, 15], label="anther")
+            return DetectionResult([d], "fake", self.version, 1.0, (crop.shape[1], crop.shape[0]))
+
+    crop = np.full((120, 120, 3), (230, 230, 240), np.uint8)
+    cv2.circle(crop, (60, 60), 50, (240, 240, 250), -1)
+    cv2.circle(crop, (60, 60), 12, (230, 200, 20), -1)
+    base = analyze_centre(crop)
+    assert base["structure_detection_available"] is False
+    out = apply_structure_model(base, crop, FakeStructureModel())
+    st = {s["structure"]: s for s in out["structures"]}
+    assert st["anther"]["status"] == "trained_model" and st["anther"]["visible"] is True
+    assert st["stigma"]["status"] == "trained_model" and st["stigma"]["visible"] is False
+    assert st["stamen"]["status"] == "not_ai_validated" and st["pistil"]["status"] == "not_ai_validated"

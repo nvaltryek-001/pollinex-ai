@@ -20,6 +20,7 @@ from .maturity import estimate_stage
 from .pose import estimate_pose
 from .readiness import estimate_readiness
 from .species import UNKNOWN, SpeciesGallery, crop_box
+from .structure import apply_structure_model, load_structure_model
 from .structure import analyze_centre
 
 GALLERY_PATH = MODELS_DIR / "species_gallery"
@@ -33,10 +34,12 @@ class Analyzer:
         else:
             gp = Path(gallery_path) if gallery_path else GALLERY_PATH
             self.gallery = SpeciesGallery.load(gp) if gp.with_suffix(".json").exists() else SpeciesGallery()
+        self.structure_model = load_structure_model()  # None until a structure model trained on real annotations exists
 
     def model_info(self) -> dict:
         return {"detector_backend": self.detector.backend, "detector_version": self.detector.version,
-                "gallery_species": self.gallery.counts(), "gallery_threshold": self.gallery.threshold}
+                "gallery_species": self.gallery.counts(), "gallery_threshold": self.gallery.threshold,
+                "structure_model": self.structure_model.version if self.structure_model is not None else None}
 
     def _prob_crop(self, res, box):
         if res.prob_map is None:
@@ -89,6 +92,8 @@ class Analyzer:
             if detail:
                 stage = estimate_stage(crop, pc)
                 centre = analyze_centre(crop, pc)
+                if self.structure_model is not None:
+                    centre = apply_structure_model(centre, crop, self.structure_model)
                 health = analyze_health(crop, pc)
                 item.update({
                     "stage": stage, "structure": centre, "health": health,

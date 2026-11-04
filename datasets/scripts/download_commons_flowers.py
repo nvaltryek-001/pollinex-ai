@@ -29,6 +29,7 @@ import re
 import shutil
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter, defaultdict
@@ -54,33 +55,39 @@ SPECIES = {
 FLOWER_WORDS = ("flower", "blossom", "inflorescence")
 
 
-def api(params: dict, tries: int = 4) -> dict:
-    params = {**params, "format": "json", "formatversion": "2"}
-    url = API + "?" + urllib.parse.urlencode(params)
+def _wait(e: Exception, i: int) -> None:
+    """Back off; honour Retry-After on HTTP 429 (Wikimedia rate limit)."""
+    delay = 5 * (i + 1)
+    if isinstance(e, urllib.error.HTTPError) and e.code == 429:
+        try:
+            delay = max(delay, int(e.headers.get("Retry-After", "30")))
+        except ValueError:
+            delay = max(delay, 30)
+    print(f"  retry in {delay}s after {e}", file=sys.stderr)
+    time.sleep(delay)
+
+
+def _open(url: str, tries: int) -> bytes:
     for i in range(tries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return json.loads(r.read())
-        except Exception as e:  # noqa: BLE001
-            if i == tries - 1:
-                raise
-            print("  retry", e, file=sys.stderr)
-            time.sleep(4 * (i + 1))
-    raise RuntimeError
-
-
-def get_bytes(url: str) -> bytes:
-    for i in range(3):
-        try:
+            time.sleep(0.4)  # stay well under the API rate limit
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=60) as r:
                 return r.read()
-        except Exception:  # noqa: BLE001
-            if i == 2:
+        except Exception as e:  # noqa: BLE001
+            if i == tries - 1:
                 raise
-            time.sleep(3 * (i + 1))
+            _wait(e, i)
     raise RuntimeError
+
+
+def api(params: dict, tries: int = 8) -> dict:
+    params = {**params, "format": "json", "formatversion": "2"}
+    return json.loads(_open(API + "?" + urllib.parse.urlencode(params), tries))
+
+
+def get_bytes(url: str) -> bytes:
+    return _open(url, 6)
 
 
 def members(cat: str, kind: str) -> list[dict]:
@@ -188,6 +195,17 @@ def main():
               "label_source": "Commons category curation (community), visually spot-checked via contact sheets",
               "per_species": {}}
     for sp in args.species:
+        try:
+            fetch_one(sp, args, report, rows, seen_sha, seen_dh)
+        except Exception as e:  # noqa: BLE001 - keep what was downloaded for the other species
+            report["per_species"][sp] = {"error": f"{type(e).__name__}: {e}"[:300],
+                                         "kept": sum(r["species"] == sp for r in rows)}
+            print(f"[{sp}] FAILED: {e}", file=sys.stderr)
+    finish(report, rows)
+
+
+def fetch_one(sp, args, report, rows, seen_sha, seen_dh):
+    if True:
         cats = flower_categories(SPECIES[sp])
         files = {}
         for c in cats:
@@ -256,6 +274,9 @@ def main():
         print(sp, json.dumps(report["per_species"][sp])[:600])
         contact_sheet(sorted((OUT / "test" / sp).glob("*.jpg")) + sorted((OUT / "val" / sp).glob("*.jpg")) +
                       sorted((OUT / "train" / sp).glob("*.jpg")), REPORTS / f"commons_flowers_{sp}.jpg")
+
+
+def finish(report, rows):
     authors = defaultdict(set)
     for r in rows:
         authors[r["author"]].add(r["split"])

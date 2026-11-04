@@ -6,8 +6,9 @@ visually distinct *centre region* of an open flower (where anthers/stigma usuall
 whether a saturated yellow cluster - a common appearance of dehisced anthers - is visible there.
 
 Outputs are labelled ``method: heuristic`` and ``structure_detection_available: False``.
-When a trained structure model (ai-engine/models/structures_yolo.onnx) is installed, the pipeline
-reports that model's detections instead.
+When a trained structure model (ai-engine/models/structures_yolo.onnx + .json sidecar with class names, trained with
+the CVAT workflow in datasets/annotation/) is installed, ``apply_structure_model`` adds its detections and switches the
+status of every structure class the model covers from ``not_ai_validated`` to ``trained_model``. No such model exists yet.
 """
 from __future__ import annotations
 
@@ -15,6 +16,44 @@ import cv2
 import numpy as np
 
 from .regions import colour_classes, crop_flower_mask
+
+STRUCTURE_CLASSES = ("anther", "stigma", "stamen", "pistil", "petal")
+
+
+def load_structure_model():
+    """Returns an ONNX structure detector if ai-engine/models/structures_yolo.onnx exists, else None."""
+    import json
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parents[1] / "models" / "structures_yolo.onnx"
+    if not path.exists():
+        return None
+    from .detector import OnnxYoloDetector
+
+    side = path.with_suffix(".json")
+    cfg = json.loads(side.read_text()) if side.exists() else {}
+    return OnnxYoloDetector(path, imgsz=cfg.get("imgsz", 640), names=cfg.get("names", list(STRUCTURE_CLASSES)),
+                            conf_threshold=cfg.get("conf_threshold", 0.25))
+
+
+def apply_structure_model(result: dict, crop: np.ndarray, model) -> dict:
+    """Merge a trained structure detector's output into the heuristic result (model = object with .detect/.names)."""
+    res = model.detect(crop)
+    dets = [d for d in res.detections if not d.low_confidence]
+    found: dict[str, list] = {}
+    for d in dets:
+        found.setdefault(d.label, []).append({"box": d.box, "score": round(d.score, 4)})
+    covered = set(getattr(model, "names", STRUCTURE_CLASSES))
+    for st in result.get("structures", []):
+        name = "petal" if st["structure"] == "petals" else st["structure"]
+        if name in covered:
+            st.update({"status": "trained_model", "visible": name in found,
+                       "detail": f"{len(found.get(name, []))} detected by {model.version}", "detections": found.get(name, [])})
+    result.update({"structure_detection_available": True, "structure_model": model.version,
+                   "method": "trained_model+heuristic_centre",
+                   "note": "Structures detected by the installed structure model; centre region from the heuristic. "
+                           "Visibility only - not pollen viability or fertilisation."})
+    return result
 
 
 def analyze_centre(crop: np.ndarray, prob_crop: np.ndarray | None = None) -> dict:

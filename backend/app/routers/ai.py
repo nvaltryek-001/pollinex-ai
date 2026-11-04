@@ -52,8 +52,11 @@ async def classify(file: UploadFile = File(...), user: User = Depends(get_curren
 
 @router.post("/structure", summary="Centre-region heuristic for a single flower crop (not anther/stigma detection)")
 async def structure(file: UploadFile = File(...), user: User = Depends(get_current_user)):
-    from pollinex_ai.structure import analyze_centre
-    return analyze_centre(await _rgb(file))
+    from pollinex_ai.structure import analyze_centre, apply_structure_model
+    rgb = await _rgb(file)
+    out = analyze_centre(rgb)
+    sm = engine.get_analyzer().structure_model
+    return apply_structure_model(out, rgb, sm) if sm is not None else out
 
 
 @router.post("/maturity", summary="Developmental-stage heuristic for a single flower crop")
