@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { ErrorBoundary } from "./ErrorBoundary";
 import {
   Activity, BarChart3, BookOpen, Boxes, Camera, CloudSun, Database, FileDown, Flower2, Gauge, HeartPulse, History,
-  LayoutDashboard, LogOut, Map as MapIcon, Menu, Microscope, Moon, ScanSearch, Settings, LifeBuoy, Sprout, Sun, Timer, X,
+  LayoutDashboard, LogOut, Map as MapIcon, Menu, Microscope, Moon, ScanSearch, Settings, LifeBuoy, UserCog, Sprout, Sun, Timer, X,
 } from "lucide-react";
 import { useAuth } from "../lib/auth";
 import { useTheme } from "../lib/theme";
@@ -34,6 +34,7 @@ const NAV: { group: string; items: Item[] }[] = [
     { to: "/app/datasets", label: "Datasets", icon: <Database size={16} /> },
     { to: "/app/reports", label: "Reports", icon: <FileDown size={16} /> },
     { to: "/app/admin", label: "Admin settings", icon: <Settings size={16} />, roles: ["admin"] },
+    { to: "/app/settings", label: "User settings", icon: <UserCog size={16} /> },
     { to: "/app/help", label: "Help & documentation", icon: <LifeBuoy size={16} /> },
   ]},
 ];

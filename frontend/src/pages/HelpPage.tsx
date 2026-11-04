@@ -26,9 +26,10 @@ const MODULES: [string, string, string][] = [
   ["/app/datasets", "Datasets", "Image counts, licences and attribution for every dataset."],
   ["/app/research", "Research centre", "The research papers behind the methods."],
   ["/app/reports", "Reports", "Summary PDF and CSV exports."],
+  ["/app/settings", "User settings", "Display name, password change (signs out other sessions) and theme."],
 ];
 
-const CAN = ["Detect flowers (YOLO11n, ONNX, 960 px)", "Recognise 8 species from a reference gallery, or answer unknown",
+const CAN = ["Detect flowers (YOLO11n, ONNX, 960 px)", "Recognise 8 species from a reference gallery, or answer unknown (strawberry is answered as unknown - looks like strawberry)",
   "Estimate stage, visible centre region and visible colour anomalies with heuristics", "Estimate visual pollination readiness with rules",
   "Show general botanical information about the identified species", "Save scans and export PDF / CSV / JSON"];
 const CANNOT = ["Recognise strawberry automatically (too few reference photos)", "Detect or identify fruit - no fruit model is trained",

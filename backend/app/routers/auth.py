@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from ..db import get_db
 from ..models import Role, User
-from ..schemas import LoginIn, RegisterIn, TokenOut, UserOut
+from ..schemas import LoginIn, PasswordChangeIn, ProfileIn, RegisterIn, TokenOut, UserOut
 from ..security import create_token, get_current_user, hash_password, password_policy, verify_password
 from ..services.ratelimit import client_ip, limit
 from ..services.records import log
@@ -56,3 +56,29 @@ def logout(user: User = Depends(get_current_user), db: Session = Depends(get_db)
 @router.get("/me", response_model=UserOut)
 def me(user: User = Depends(get_current_user)):
     return UserOut.of(user)
+
+
+@router.patch("/me", response_model=UserOut, summary="Update your own profile (display name)")
+def update_me(body: ProfileIn, user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    user.full_name = body.full_name.strip()
+    log(db, user, "auth.profile_update", "user", user.id)
+    db.commit()
+    db.refresh(user)
+    return UserOut.of(user)
+
+
+@router.post("/change-password", response_model=TokenOut, summary="Change your password (signs out every other session)")
+def change_password(body: PasswordChangeIn, request: Request, user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    limit(f"pwchange:{user.id}:{client_ip(request)}", 10, 3600)
+    if not verify_password(body.current_password, user.password_hash):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "Current password is incorrect")
+    if body.new_password == body.current_password:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "New password must differ from the current one")
+    password_policy(body.new_password)
+    user.password_hash = hash_password(body.new_password)
+    user.token_version += 1  # revoke every existing token; the caller gets a fresh one below
+    log(db, user, "auth.password_change", "user", user.id)
+    db.commit()
+    db.refresh(user)
+    token, exp = create_token(user)
+    return TokenOut(access_token=token, expires_at=exp, user=UserOut.of(user))

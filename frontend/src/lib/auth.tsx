@@ -9,6 +9,8 @@ interface AuthState {
   register: (email: string, password: string, fullName: string) => Promise<void>;
   logout: () => Promise<void>;
   hasRole: (...roles: Role[]) => boolean;
+  updateProfile: (fullName: string) => Promise<void>;
+  changePassword: (current: string, next: string) => Promise<void>;
 }
 
 const Ctx = createContext<AuthState | null>(null);
@@ -34,6 +36,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     register: async (email, password, full_name) => accept(await api.post<TokenOut>("/auth/register", { email, password, full_name })),
     logout: async () => { try { await api.post("/auth/logout"); } finally { clear(); } },
     hasRole: (...roles) => !!user && roles.includes(user.role),
+    updateProfile: async (full_name) => setUser(await api.patch<User>("/auth/me", { full_name })),
+    changePassword: async (current_password, new_password) =>
+      accept(await api.post<TokenOut>("/auth/change-password", { current_password, new_password })),
   }), [user, loading, clear]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

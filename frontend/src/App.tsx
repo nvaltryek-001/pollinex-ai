@@ -27,6 +27,7 @@ const ReportsPage = lazy(() => import("./pages/ReportsPage"));
 const DatasetsPage = lazy(() => import("./pages/DatasetsPage"));
 const AdminPage = lazy(() => import("./pages/AdminPage"));
 const HelpPage = lazy(() => import("./pages/HelpPage"));
+const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
 function Protected({ children, roles }: { children: ReactNode; roles?: Role[] }) {
   const { user, loading, hasRole } = useAuth();
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="reports" element={<ReportsPage />} />
           <Route path="datasets" element={<DatasetsPage />} />
           <Route path="help" element={<HelpPage />} />
+          <Route path="settings" element={<SettingsPage />} />
           <Route path="admin" element={<Protected roles={["admin"]}><AdminPage /></Protected>} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />

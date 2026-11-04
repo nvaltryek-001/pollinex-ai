@@ -292,3 +292,24 @@ def test_single_service_serves_spa_with_fallback(client, tmp_path, monkeypatch):
     assert c.get("/assets/app.js").text == "console.log(1)"
     assert c.get("/api/v1/does-not-exist").status_code == 404
     assert c.get("/../etc/passwd").status_code in (200, 404) and "root:" not in c.get("/../etc/passwd").text
+
+
+def test_profile_update_and_password_change(client):
+    reg = client.post(f"{API}/auth/register", json={"email": "settings@example.com", "password": "Str0ngPassword!", "full_name": "S"})
+    h = {"Authorization": f"Bearer {reg.json()['access_token']}"}
+    r = client.patch(f"{API}/auth/me", headers=h, json={"full_name": "  Field Researcher  "})
+    assert r.status_code == 200 and r.json()["full_name"] == "Field Researcher"
+    assert client.patch(f"{API}/auth/me", headers=h, json={"full_name": "x" * 121}).status_code == 422
+    assert client.patch(f"{API}/auth/me", json={"full_name": "anon"}).status_code == 401
+    # wrong current password, weak new password, unchanged password are all rejected
+    bad = client.post(f"{API}/auth/change-password", headers=h, json={"current_password": "nope-nope-nope", "new_password": "An0therStr0ngPass!"})
+    assert bad.status_code == 400
+    assert client.post(f"{API}/auth/change-password", headers=h, json={"current_password": "Str0ngPassword!", "new_password": "short"}).status_code == 422
+    assert client.post(f"{API}/auth/change-password", headers=h, json={"current_password": "Str0ngPassword!", "new_password": "Str0ngPassword!"}).status_code == 400
+    ok = client.post(f"{API}/auth/change-password", headers=h, json={"current_password": "Str0ngPassword!", "new_password": "An0therStr0ngPass!"})
+    assert ok.status_code == 200
+    # the old token is revoked, the returned one works, and only the new password logs in
+    assert client.get(f"{API}/auth/me", headers=h).status_code == 401
+    assert client.get(f"{API}/auth/me", headers={"Authorization": f"Bearer {ok.json()['access_token']}"}).status_code == 200
+    assert client.post(f"{API}/auth/login", json={"email": "settings@example.com", "password": "Str0ngPassword!"}).status_code == 401
+    assert client.post(f"{API}/auth/login", json={"email": "settings@example.com", "password": "An0therStr0ngPass!"}).status_code == 200

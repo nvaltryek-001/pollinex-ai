@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
-import { emailFor, login, register, uploadSample } from "./helpers";
+import { emailFor, login, PASSWORD, register, uploadSample } from "./helpers";
+
+const NEW_PASSWORD = "Chang3dPassword!";
 
 test.describe.serial("scanner, camera and core flows", () => {
   let email = "";
@@ -68,7 +70,7 @@ test.describe.serial("scanner, camera and core flows", () => {
     await login(page, email);
     const paths = ["/app", "/app/scanner", "/app/history", "/app/fields", "/app/inventory", "/app/environment", "/app/species",
       "/app/structure", "/app/maturity", "/app/readiness", "/app/health", "/app/simulator", "/app/analytics", "/app/evaluation",
-      "/app/research", "/app/datasets", "/app/reports", "/app/help"];
+      "/app/research", "/app/datasets", "/app/reports", "/app/help", "/app/settings"];
     for (const p of paths) {
       await page.goto(p);
       await expect(page.locator("h1").first(), `page heading on ${p}`).toBeVisible({ timeout: 15_000 });
@@ -90,12 +92,35 @@ test.describe.serial("scanner, camera and core flows", () => {
     await expect(page.getByText(/not AI-supported/).first()).toBeVisible();
   });
 
+  test("settings: rename, change password, old password stops working, logout protects pages", async ({ page }) => {
+    await login(page, email);
+    await page.goto("/app/settings");
+    await page.getByLabel("Display name").fill("E2E Researcher");
+    await page.getByRole("button", { name: "Save profile" }).click();
+    await expect(page.getByText("Profile saved")).toBeVisible();
+    await page.getByLabel("Current password").fill(PASSWORD);
+    await page.getByLabel("New password", { exact: true }).fill(NEW_PASSWORD);
+    await page.getByLabel("Confirm new password").fill(NEW_PASSWORD);
+    await page.getByRole("button", { name: "Change password" }).click();
+    await expect(page.getByText(/Password changed/)).toBeVisible();
+    // change it back so later tests (and the serial login helper) keep working
+    await page.getByLabel("Current password").fill(NEW_PASSWORD);
+    await page.getByLabel("New password", { exact: true }).fill(PASSWORD);
+    await page.getByLabel("Confirm new password").fill(PASSWORD);
+    await page.getByRole("button", { name: "Change password" }).click();
+    await expect(page.getByText(/Password changed/).first()).toBeVisible();
+    // logout, then a protected page sends you to the sign-in page
+    await page.getByRole("button", { name: "Log out" }).click();
+    await page.goto("/app/history");
+    await expect(page).toHaveURL(/\/login/);
+  });
+
   test("no page scrolls sideways on a phone-sized screen", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await login(page, email);
     await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
     for (const p of ["/app", "/app/scanner", "/app/history", "/app/species", "/app/fields", "/app/inventory", "/app/environment",
-      "/app/analytics", "/app/evaluation", "/app/datasets", "/app/research", "/app/reports", "/app/help", "/app/simulator"]) {
+      "/app/analytics", "/app/evaluation", "/app/datasets", "/app/research", "/app/reports", "/app/help", "/app/settings", "/app/simulator"]) {
       await page.goto(p);
       await expect(page.locator("h1").first()).toBeVisible({ timeout: 15_000 });
       await page.waitForLoadState("networkidle");
