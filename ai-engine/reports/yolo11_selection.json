@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-11-04T08:19:46.621572+00:00",
+  "rule": "replace iff candidate mean per-species VAL mAP@0.5 > deployed",
+  "deployed_val": {
+    "mean": 0.6856199236630037,
+    "apple": 0.5805301343686563,
+    "peach": 0.5499286559733904,
+    "pear": 0.7303128176968798,
+    "sunflower": 0.8817080866130885
+  },
+  "candidate_val": {
+    "mean": 0.7081472716286639,
+    "apple": 0.614032142504829,
+    "peach": 0.6303780478736105,
+    "pear": 0.7124509625750093,
+    "sunflower": 0.8757279335612067
+  },
+  "candidate_replaces_deployed": true
+}

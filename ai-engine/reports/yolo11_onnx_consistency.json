@@ -1,0 +1,11 @@
+{
+  "images": "first 30 test images of each set",
+  "imgsz": 960,
+  "pytorch_boxes": 1021,
+  "onnx_boxes": 1097,
+  "matched_iou>=0.8": 873,
+  "matched_fraction_of_pytorch": 0.8550440744368266,
+  "matched_fraction_of_onnx": 0.7958067456700091,
+  "mean_abs_score_diff": 0.040929410738906775,
+  "mean_iou_of_matches": 0.9373324027312717
+}
