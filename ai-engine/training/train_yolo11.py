@@ -41,6 +41,7 @@ def main():
     ap.add_argument("--weights", default=None)
     ap.add_argument("--evaluate-only", action="store_true")
     ap.add_argument("--seed", type=int, default=20261102)
+    ap.add_argument("--report-name", default="yolo11_evaluation", help="reports/<name>.json (+ <name>_training_curve.csv)")
     args = ap.parse_args()
 
     from ultralytics import YOLO  # imported here so the rest of the repo never needs torch
@@ -72,7 +73,7 @@ def main():
         "speed_ms": test.speed,
     }
     (ENGINE / "reports").mkdir(exist_ok=True)
-    (ENGINE / "reports" / "yolo11_evaluation.json").write_text(json.dumps(report, indent=2))
+    (ENGINE / "reports" / f"{args.report_name}.json").write_text(json.dumps(report, indent=2))
     onnx = Path(model.export(format="onnx", imgsz=args.imgsz, simplify=True, dynamic=False))
     out_dir = ENGINE / "runs" / "export"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -81,7 +82,7 @@ def main():
                                                              "trained_at": report["generated_at"]}))
     res_csv = weights.parent.parent / "results.csv"
     if res_csv.exists():
-        shutil.copy2(res_csv, ENGINE / "reports" / "yolo11_training_curve.csv")
+        shutil.copy2(res_csv, ENGINE / "reports" / f"{args.report_name.replace('_evaluation', '')}_training_curve.csv")
     print(json.dumps(report, indent=2))
 
 
