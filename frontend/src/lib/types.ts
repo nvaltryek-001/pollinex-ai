@@ -23,6 +23,8 @@ export interface SpeciesResult {
   similarity?: number;
   reason?: string;
   candidates?: { species: string; vote_share: number }[];
+  uncertain?: boolean;
+  support?: "validated" | "limited_evidence" | "not_supported" | "not_evaluated";
   original_prediction?: string;
   original_confidence?: number | null;
 }

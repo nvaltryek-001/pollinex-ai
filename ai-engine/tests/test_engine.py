@@ -222,7 +222,7 @@ def test_deployed_gallery_only_contains_gated_species():
     assert ver in EMBEDDERS
     supported = meta["meta"].get("supported_species")
     if supported is not None:
-        assert set(meta["labels"]) == set(supported)
+        assert set(meta["labels"]) - {"__background__"} == set(supported)
         rep = MODELS_DIR.parent / "reports" / "species_multi_evaluation.json"
         if rep.exists():
             r = _json.loads(rep.read_text())
@@ -244,3 +244,20 @@ def test_deployed_yolo11_onnx_runs_and_is_default():
     for d in res.detections:
         x1, y1, x2, y2 = d.box
         assert 0 <= x1 <= x2 <= 640 and 0 <= y1 <= y2 <= 480 and 0 <= d.score <= 1
+
+
+def test_gallery_background_references_map_to_unknown_and_uncertain_flag():
+    from pollinex_ai.species import BACKGROUND, UNKNOWN, SpeciesGallery
+    g = SpeciesGallery()
+    g.k, g.threshold = 3, 0.0
+    a, b, bg = np.eye(4, dtype=np.float32)[:3]
+    g.add_vectors("apple", np.stack([a, a]))
+    g.add_vectors(BACKGROUND, np.stack([bg, bg, bg]))
+    assert g.predict_vector(bg)["species"] == UNKNOWN and "background" in g.predict_vector(bg)["reason"]
+    assert BACKGROUND not in g.counts() and g.species == ["apple"] and g.background_references() == 3
+    g.add_vectors("pear", np.stack([b, b]))
+    q = (a + b) / np.linalg.norm(a + b)
+    g.k = 4  # 2 apple + 2 pear neighbours -> vote share 0.5 -> uncertain
+    out = g.predict_vector(q)
+    assert out["species"] in {"apple", "pear"} and out["uncertain"] is True
+    assert g.predict_vector(a)["uncertain"] is False or g.predict_vector(a)["confidence"] < 0.6

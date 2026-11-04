@@ -75,12 +75,16 @@ class Analyzer:
             res_for_crop = res
         flowers = []
         for i, d in enumerate(dets[:max_flowers]):
-            crop = crop_box(rgb, d.box, pad=0.1)
+            # close-up: exactly the centre-80 % crop the gallery was evaluated on; detections: 10 % context padding
+            crop = crop_box(rgb, d.box, pad=0.0 if det_method == "closeup_fallback" else 0.1)
             pc = self._prob_crop(res_for_crop, d.box) if res_for_crop is not None else None
             if species_hint:
                 sp = {"species": species_hint, "confidence": 1.0, "method": "user_declared", "candidates": []}
             else:
                 sp = {**self.gallery.predict(crop), "method": "trained_reference_gallery"}
+                status = self.gallery.meta.get("species_status", {})
+                if sp["species"] != UNKNOWN:
+                    sp["support"] = status.get(sp["species"], "not_evaluated")
             item: dict[str, Any] = {"id": i, "detection": {**d.to_dict(), "method": det_method}, "species": sp}
             if detail:
                 stage = estimate_stage(crop, pc)

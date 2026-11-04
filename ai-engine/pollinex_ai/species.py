@@ -29,6 +29,8 @@ CNN_EMBED_VERSION = "mnv3l-v1"    # ImageNet MobileNetV3-Large features via ONNX
 MODELS_DIR = Path(__file__).resolve().parents[1] / "models"
 CROP_SIZE = 64
 UNKNOWN = "unknown"
+BACKGROUND = "__background__"   # reference label for real non-flower crops (USDA mask negatives); never returned
+UNCERTAIN_VOTE_SHARE = 0.60     # fixed rule (not tuned): top vote share below this -> "uncertain": true
 
 
 def embed_crop(rgb: np.ndarray) -> np.ndarray:
@@ -108,10 +110,13 @@ class SpeciesGallery:
 
     @property
     def species(self) -> list[str]:
-        return sorted(set(self.labels))
+        return sorted(set(self.labels) - {BACKGROUND})
 
     def counts(self) -> dict[str, int]:
-        return dict(Counter(self.labels))
+        return {k: v for k, v in Counter(self.labels).items() if k != BACKGROUND}
+
+    def background_references(self) -> int:
+        return sum(lab == BACKGROUND for lab in self.labels)
 
     # ---- inference ----
     def _scores(self, q: np.ndarray) -> tuple[list[tuple[str, float]], float]:
@@ -132,15 +137,21 @@ class SpeciesGallery:
     def predict_vector(self, q: np.ndarray) -> dict:
         ranked, best_sim = self._scores(q)
         if not ranked:
-            return {"species": UNKNOWN, "confidence": 0.0, "similarity": 0.0, "candidates": [],
+            return {"species": UNKNOWN, "confidence": 0.0, "similarity": 0.0, "candidates": [], "uncertain": True,
                     "reason": "reference gallery is empty"}
+        cands = [{"species": s, "vote_share": round(v, 4)} for s, v in ranked[:3] if s != BACKGROUND]
         sp, share = ranked[0]
         if best_sim < self.threshold:
             return {"species": UNKNOWN, "confidence": round(1 - best_sim, 4), "similarity": round(best_sim, 4),
-                    "candidates": [{"species": s, "vote_share": round(v, 4)} for s, v in ranked[:3]],
+                    "candidates": cands, "uncertain": False,
                     "reason": f"nearest reference similarity {best_sim:.3f} < open-set threshold {self.threshold:.3f}"}
-        return {"species": sp, "confidence": round(share, 4), "similarity": round(best_sim, 4),
-                "candidates": [{"species": s, "vote_share": round(v, 4)} for s, v in ranked[:3]], "reason": "knn-vote"}
+        if sp == BACKGROUND:
+            return {"species": UNKNOWN, "confidence": round(share, 4), "similarity": round(best_sim, 4), "candidates": cands,
+                    "uncertain": False, "reason": "nearest references are background (non-flower) crops"}
+        uncertain = share < UNCERTAIN_VOTE_SHARE
+        return {"species": sp, "confidence": round(share, 4), "similarity": round(best_sim, 4), "candidates": cands,
+                "uncertain": uncertain,
+                "reason": "knn-vote" + (f"; top vote share {share:.2f} < {UNCERTAIN_VOTE_SHARE} - uncertain" if uncertain else "")}
 
     def predict(self, rgb_crop: np.ndarray) -> dict:
         return self.predict_vector(self.embed_fn(rgb_crop))

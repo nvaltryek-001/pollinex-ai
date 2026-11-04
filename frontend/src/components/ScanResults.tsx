@@ -52,7 +52,7 @@ export function ScanResults({ scan: initial, localPreview }: { scan: Scan; local
                   {flowers.map((x, i) => (
                     <tr key={i} onClick={() => setSel(i)} className={`cursor-pointer ${sel === i ? "bg-raised" : "hover:bg-raised/60"}`}>
                       <td className="font-mono">{i}</td>
-                      <td>{x.species.species}{x.species.species !== "unknown" && <span className="ml-1 text-muted">{pct(x.species.confidence, 0)}</span>}</td>
+                      <td>{x.species.species}{x.species.species !== "unknown" && <span className="ml-1 text-muted">{pct(x.species.confidence, 0)}</span>}{x.species.uncertain && <span className="ml-1 text-xs text-alert">uncertain</span>}</td>
                       <td>{x.stage ? label(x.stage.stage) : "—"}</td>
                       <td>{x.readiness ? <Pill tone={readinessTone(x.readiness.category)}>{label(x.readiness.category)}</Pill> : "—"}</td>
                       <td className="font-mono">{x.detection.method === "closeup_fallback" ? "n/a" : pct(x.detection.score, 0)}</td>
@@ -86,6 +86,12 @@ export function FlowerDetail({ f, scanId, onUpdated }: { f: Flower; scanId?: num
 
       <Card title="Species" right={<MethodBadge method={f.species.method} />}>
         <div className="flex items-baseline justify-between"><span className="font-display text-2xl capitalize">{f.species.species}</span><span className="font-mono text-sm">{pct(f.species.confidence)}</span></div>
+        <div className="mt-1 flex flex-wrap gap-1">
+          {f.species.uncertain && <Pill tone="warn">uncertain</Pill>}
+          {f.species.support === "validated" && <Pill tone="good">validated species</Pill>}
+          {f.species.support === "limited_evidence" && <Pill tone="warn">limited test evidence</Pill>}
+          {f.species.support === "not_supported" && <Pill tone="bad">not AI-supported</Pill>}
+        </div>
         {f.species.reason && <p className="mt-1 text-xs text-muted">{f.species.reason}</p>}
         {f.species.candidates && f.species.candidates.length > 0 && (
           <div className="mt-2 space-y-1">{f.species.candidates.map((c) => (

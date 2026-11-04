@@ -76,9 +76,9 @@ export default function Scanner() {
         </div>
         <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
           <select aria-label="Analysis mode" className="input" value={mode} onChange={(e) => setMode(e.target.value)}>
-            <option value="auto">Mode: auto</option>
-            <option value="scene">Mode: scene (many flowers)</option>
-            <option value="closeup">Mode: single close-up</option>
+            <option value="auto">Mode: auto (field image, falls back to close-up)</option>
+            <option value="scene">Mode: field image (many flowers)</option>
+            <option value="closeup">Mode: close-up (one flower - recommended for species)</option>
           </select>
           <select aria-label="Species hint" className="input" value={speciesHint} onChange={(e) => setSpeciesHint(e.target.value)}>
             <option value="">Species: let the model decide</option>
