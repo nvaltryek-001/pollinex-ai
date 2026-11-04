@@ -1,11 +1,29 @@
 """Shared helpers: per-crop flower mask and colour-class fractions used by the heuristic modules."""
 from __future__ import annotations
 
+import hashlib
+from collections import OrderedDict
+
 import cv2
 import numpy as np
 
+_MASK_CACHE: OrderedDict = OrderedDict()  # stage/centre/health/pose all need the same mask: compute it once per crop
+
 
 def crop_flower_mask(crop: np.ndarray, prob_crop: np.ndarray | None = None) -> np.ndarray:
+    key = (crop.shape, hashlib.sha1(np.ascontiguousarray(crop).tobytes()).hexdigest(),
+           None if prob_crop is None else hashlib.sha1(np.ascontiguousarray(prob_crop).tobytes()).hexdigest())
+    if key in _MASK_CACHE:
+        _MASK_CACHE.move_to_end(key)
+        return _MASK_CACHE[key].copy()
+    m = _crop_flower_mask(crop, prob_crop)
+    _MASK_CACHE[key] = m
+    while len(_MASK_CACHE) > 64:
+        _MASK_CACHE.popitem(last=False)
+    return m.copy()
+
+
+def _crop_flower_mask(crop: np.ndarray, prob_crop: np.ndarray | None = None) -> np.ndarray:
     """Binary mask of the flower inside a crop.
 
     Uses the detector's probability map when available; otherwise falls back to a GrabCut

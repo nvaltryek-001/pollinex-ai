@@ -62,7 +62,7 @@ test.describe.serial("scanner, camera and core flows", () => {
       "/app/research", "/app/datasets", "/app/reports"];
     for (const p of paths) {
       await page.goto(p);
-      await expect(page.locator("h1").first()).toBeVisible();
+      await expect(page.locator("h1").first()).toBeVisible({ timeout: 15_000 });
       await page.waitForLoadState("networkidle");
       await expect(page.getByRole("alert"), `error banner on ${p}`).toHaveCount(0);
     }

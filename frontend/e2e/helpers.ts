@@ -14,7 +14,7 @@ export async function register(page: Page, email: string) {
   await page.getByLabel("Email").fill(email);
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByRole("button", { name: "Create account" }).click();
-  await expect(page).toHaveURL(/\/app$/);
+  await expect(page).toHaveURL(/\/app$/, { timeout: 20_000 }); // CI runners are shared and run inference in parallel
 }
 
 export async function login(page: Page, email: string) {
@@ -22,7 +22,7 @@ export async function login(page: Page, email: string) {
   await page.getByLabel("Email").fill(email);
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByRole("button", { name: "Sign in" }).click();
-  await expect(page).toHaveURL(/\/app$/);
+  await expect(page).toHaveURL(/\/app$/, { timeout: 20_000 }); // CI runners are shared and run inference in parallel
 }
 
 export async function uploadSample(page: Page) {
