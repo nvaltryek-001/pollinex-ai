@@ -73,67 +73,81 @@ See README table. Deployed config: **mAP50 0.410, mAP50-95 0.191**, P 0.169, R 0
 * Next steps: YOLO11 at 1280 px on the same splits; bark hard-negative mining; tiling (Schouten et al.).
 
 ## Module 2 · Species gallery (`species.py`, `training/build_species_gallery_multi.py`)
-**Current deployed gallery (2026-11-03): embedding `mnv3l-v1`, 6 AI-supported species, open-set threshold 0.6375.**
+**Deployed (2026-11-04, gallery v2):** embedding `mnv3l-v1` (ImageNet MobileNetV3-Large, ONNX, BSD-3, not fine-tuned), kNN with k = 7, open-set threshold 0.30, plus **540 background references**. The background references are real non-flower crops from the USDA **train** masks; a background match returns `unknown`.
 
-The deployed gallery is built as follows:
+**Pre-registered variant choice on validation** (2 embeddings × background on/off × balancing at 300 references on/off):
 
-* **Embedding.** Two embeddings are built, each with all 9 candidate species. Each threshold is tuned on validation. The one with the higher validation macro-F1 is deployed; this rule was fixed before any results existed.
-  * `hcd-v1` (hand-crafted colour, HOG and LBP features) scored validation macro-F1 0.442.
-  * `mnv3l-v1` (ImageNet MobileNetV3-Large pooled features, not fine-tuned, `models/embed_mnv3l.onnx`, 11.9 MB, BSD-3 weights) scored validation macro-F1 0.586.
-* **References** come from training data only:
+| Variant | Val macro-F1 | Val unknown recall |
+|---|--:|--:|
+| hcd-v1, no background | 0.497 | 0.29 |
+| hcd-v1, background, balanced | 0.583 | 0.75 |
+| mnv3l-v1, no background (previous deployed setup) | 0.758 | 0.24 |
+| **mnv3l-v1, background (deployed)** | **0.832** | 0.67 |
+| mnv3l-v1, background, balanced | 0.810 | 0.81 |
 
-  | Source | Images |
-  |---|---|
-  | USDA flower crops | apple 955 · peach 543 · pear 442 (crops; includes 67/52/18 iNaturalist apple/peach/pear photos) |
-  | Sunflower | 533 close-ups + 142 iNaturalist photos |
-  | iNaturalist | hibiscus 71 · tomato 138 |
+**References** (training splits only):
 
-* **Gating.** A species is enabled only if it has ≥ 50 references and **validation** recall and precision are both ≥ 0.50. This rule was also fixed in advance.
+| Source | References |
+|---|---|
+| USDA crops | apple 888 · peach 491 · pear 424 |
+| TF sunflower close-ups | 533 |
+| iNaturalist and Commons | apple 67 · peach 52 · pear 18 · sunflower 142 · hibiscus 204 · tomato 230 · brinjal 109 · chilli 66 · strawberry 31 |
 
-| Species | Refs | Val recall | Val precision | Status |
-|---|--:|--:|--:|---|
-| apple | 955 | 0.94 | 0.77 | ✅ AI-supported |
-| peach | 543 | 0.83 | 0.74 | ✅ |
-| pear | 442 | 0.83 | 0.79 | ✅ |
-| sunflower | 675 | 0.92 | 1.00 | ✅ |
-| hibiscus | 71 | 0.92 | 1.00 (13 val images) | ✅ |
-| tomato | 138 | 0.61 | 0.81 | ✅ |
-| strawberry | 10 | 0.33 | 1.00 | ❌ too few images |
-| brinjal | 15 | 0.00 | — | ❌ too few images |
-| chilli | 25 | 0.00 | — | ❌ too few images |
+**Gate:** ≥ 50 references and validation recall and precision ≥ 0.50.
+* **Enabled:** apple, peach, pear, sunflower, hibiscus, tomato, brinjal and chilli.
+* **Not enabled:** strawberry (31 references; validation recall 0.43).
 
-**Test results.** Evaluated once, after all choices were fixed (`reports/species_multi_evaluation.json`):
+**Support status** is shown on every result: `validated` with ≥ 20 test images, otherwise `limited_evidence`. Brinjal (11) and chilli (7) are limited evidence.
 
-* **Overall:** accuracy 0.746, macro-F1 0.727.
-* **By source:**
+**`uncertain`** is set when the top vote share is below 0.60 (a fixed rule, not tuned).
 
-  | Test set | Images | Accuracy |
-  |---|--:|--:|
-  | USDA flower crops | 694 | 0.927 |
-  | iNaturalist | 109 | 0.716 |
-  | Sunflower close-ups | 95 | 0.968 |
+**Test**, used once: accuracy **0.874**, macro-F1 **0.862**.
 
-* **Per species (F1):**
+| Class | P | R | F1 | n |
+|---|--:|--:|--:|--:|
+| apple | 0.851 | 0.933 | 0.890 | 403 |
+| brinjal | 0.667 | 0.909 | 0.769 | 11 |
+| chilli | 1.000 | 0.714 | 0.833 | 7 |
+| hibiscus | 0.778 | 0.913 | 0.840 | 23 |
+| peach | 0.848 | 0.918 | 0.881 | 158 |
+| pear | 0.855 | 0.855 | 0.855 | 165 |
+| sunflower | 0.952 | 0.937 | 0.944 | 126 |
+| tomato | 0.925 | 0.984 | 0.954 | 63 |
+| unknown | 0.934 | 0.686 | 0.791 | 226 |
 
-  | Species | F1 |
-  |---|--:|
-  | apple | 0.82 |
-  | peach | 0.78 |
-  | pear | 0.80 |
-  | sunflower | 0.93 |
-  | tomato | 0.88 (34 images) |
-  | hibiscus | 0.71 (7 images; a very small sample) |
+**By source:**
 
-* **Known regression:** USDA background crops are rejected as `unknown` only **9.5 %** of the time (0.468 with `hcd-v1`). Validation showed the same weakness (unknown recall 0.24) before test was run. Since the ImageNet embedding sees bark and leaves as "flower-like", false detections are usually given a species. This matters in **scene** mode. **Close-up** mode (one flower per photo) matches how the gallery was evaluated.
-* **Unsupported species** in the iNaturalist test set are not forced into a class:
+| Test set | Images | Accuracy |
+|---|--:|--:|
+| USDA crops | 694 | 0.924 |
+| USDA background | 220 | 0.705 |
+| Sunflower close-ups | 94 | 0.979 |
+| iNaturalist | 109 | 0.798 |
+| Commons | 65 | 0.892 |
 
-  | True species | Predicted as |
-  |---|---|
-  | brinjal | apple |
-  | chilli | unknown |
-  | strawberry | sunflower ×1, apple ×1 |
+**Strawberry** test photos are assigned other species (brinjal ×3, sunflower, apple, tomato), not `unknown`.
 
-* **Confound:** the USDA species are each from one camera setup, and iNaturalist photos are whole scenes with centre crops. Field performance per crop is not established.
+**Confusion matrix** (rows = truth; columns apple, brinjal, chilli, hibiscus, peach, pear, sunflower, tomato, unknown):
+```
+apple      376  0  0  1   8   9   0  0   9
+brinjal      0 10  0  1   0   0   0  0   0
+chilli       0  2  5  0   0   0   0  0   0
+hibiscus     0  0  0 21   0   0   1  1   0
+peach        1  0  0  2 145   7   3  0   0
+pear        19  0  0  0   4 141   0  0   1
+sunflower    1  0  0  2   1   0 118  3   1
+tomato       0  0  0  0   0   0   1 62   0
+unknown     45  3  0  0  13   8   1  1 155
+```
+**Caveats:**
+* The threshold of 0.30 is at the bottom of the swept range. With background references, rejection is done mostly by the background class rather than the threshold.
+* iNaturalist and Commons photos are evaluated as centre crops of whole scenes. In the app, **Close-up** mode uses exactly that crop.
+
+## Module 3 · Structure-model hook
+`structure.apply_structure_model` loads `models/structures_yolo.onnx` (+ `.json` with class names) when it exists. It then sets
+each covered class (anther, stigma, stamen, pistil, petal) to `trained_model`, with detections. Classes it does not cover stay
+`not_ai_validated`. The hook is unit-tested with a stand-in model. **No structure model exists yet**, because 0 structure annotations exist.
+Workflow: `datasets/annotation/make_annotation_batch.py` → CVAT → `annotation_stats.py --coco --to-yolo` → `train_yolo11.py`.
 
 ## Modules 3, 4, 6, 7 · Heuristics
 | Module | Method | Output flag |

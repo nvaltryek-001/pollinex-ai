@@ -2,22 +2,26 @@
 
 Source of truth: `datasets/dataset_sources.json` (+ `dataset_manifest.csv`). Status values: **integrated**, **script_only**,
 **documented_only**, **unverified**, **audited_not_used**, **unreachable**. Verified 2026-11-03.
-File-level inventory (every image decoded and hashed): `datasets/reports/dataset_inventory.md` — **1,479 images**:
+File-level inventory (every image decoded and hashed): `datasets/reports/dataset_inventory.md`. **1,985 images** (2026-11-04):
 
-| Species | Images |
-|---|--:|
-| apple | 155 |
-| peach | 95 |
-| pear | 47 |
-| sunflower | 828 |
-| hibiscus | 91 |
-| tomato | 200 |
-| strawberry | 15 |
-| brinjal | 20 |
-| chilli | 28 |
+| Species | Box-annotated | iNaturalist | Commons | **Total** |
+|---|--:|--:|--:|--:|
+| apple | 48 | 107 | — | **155** |
+| peach | 24 | 71 | — | **95** |
+| pear | 18 | 29 | — | **47** |
+| sunflower | 628 | 200 | — | **828** |
+| hibiscus | — | 91 | 165 | **256** |
+| tomato | — | 200 | 147 | **347** |
+| strawberry | — | 15 | 29 | **44** |
+| brinjal | — | 20 | 111 | **131** |
+| chilli | — | 28 | 54 | **82** |
 
-The count excludes the 628 derived sunflower crops. Full audit:
-`docs/FINAL_PROJECT_AND_DATASET_AUDIT.md`.
+The 628 derived sunflower crops are excluded from these counts. Quality audit (`datasets/reports/dataset_quality_audit.md`, all sources together):
+* **Integrity:** 0 corrupt, 0 exact duplicates, 18 images under 160 px.
+* **Near-duplicates:** 2 pairs (dHash ≤ 4), checked across all sources and splits.
+* **Cross-split leakage:** 1 pair, two photos of the same TF sunflower. The test member is excluded from every test evaluation (`datasets/processed/leakage_exclusions.txt`).
+* **Label review:** the one image flagged earlier as suspected label noise was reviewed and kept (`datasets/processed/label_review.csv`). The latest run flags 0.
+* **Suitability:** every image supports species recognition. 718 have boxes for detection. 240 sunflower images are close-up structure candidates (largest box ≥ 15 % of the frame); this means a structure *could* be annotated, not that it is visible.
 
 ## Integrated: Multi-species Fruit Flower (USDA)
 * Citation: Dias, Tabb & Medeiros (2018), *IEEE RA-L* 3(4):3003–3010; data doi:10.15482/USDA.ADC/1423466. Licence CC BY 4.0 (`datasets/licenses/`).
@@ -78,6 +82,22 @@ Augmentation is never materialised on disk; the pixel classifier samples pixels 
   * Whole-scene photos; small flowers for tomato and chilli.
   * The flowering annotation is per observation, so a few photos show fruit (seen on `datasets/reports/inat_flowering_<species>.jpg`).
   * **Strawberry, brinjal and chilli have too few openly licensed flowering observations**: most iNaturalist photos are CC BY-NC.
+
+## Integrated: Wikimedia Commons flower categories (image-level species labels)
+* Source: Commons API, run in GitHub Actions (`.github/workflows/commons.yml`, `download_commons_flowers.py`).
+* **Selection:** only files in sub-categories of `Category:<scientific name>` whose title contains the genus and "flower", "blossom" or "inflorescence". Examples: `Solanum melongena (flowers)`, `Capsicum annuum (flowers)`, `Fragaria × ananassa (flowers)`, and the Hibiscus rosa-sinensis flower close-up categories. Every category used is listed in `datasets/reports/commons_flowers_report.json`.
+* **Licence, checked per file:** CC BY-SA 326 · CC0 / public domain 108 · CC BY 72. NC, ND, FAL and GFDL-only files are excluded. Author, licence, licence URL and file page are in `ATTRIBUTION.csv`. 4 CC BY-SA files have no author in their metadata; their attribution is the linked Commons file page.
+* **Duplicates and splits:** near-duplicates are removed against all other committed sets (4 dropped, many iNaturalist photos are mirrored on Commons). Splits are by **author**; 0 authors appear in more than one split.
+* **Kept per species:**
+
+  | Species | Images |
+  |---|--:|
+  | hibiscus | 165 |
+  | tomato | 147 |
+  | brinjal | 111 |
+  | chilli | 54 |
+  | strawberry | 29 |
+* **Label quality:** species labels come from community category curation, which is weaker than iNaturalist Research Grade. I reviewed every contact sheet (`datasets/reports/commons_flowers_<species>.jpg`). Brinjal, chilli and tomato look clean. The strawberry category includes a few non-photo or ground-cover images, which are kept and reported rather than hand-removed.
 
 ## Audited, not used
 * INESC Flower Detection (Zenodo 7708815, CC BY 4.0): 206 images, 990 boxes; species not stated and not identifiable (grayscale /
