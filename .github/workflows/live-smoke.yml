@@ -30,3 +30,10 @@ jobs:
           test "$(curl -s -o /dev/null -w '%{http_code}' $BASE/api/v1/reports/scans/1.pdf)" = "401"
           curl -fsS "$BASE/app/help" | grep -q '<div id="root">'
           python3 -c "import json;d=json.load(open('health.json'));print('database_backend =',d.get('database_backend'),'(persistent)' if d.get('database_backend')=='postgresql' else '(NOT persistent - set DATABASE_URL to the Render PostgreSQL URL)')"
+      - name: Development-pass features are deployed
+        run: |
+          python3 -c "import json;d=json.load(open('openapi.json'));p=d['paths'];assert '/api/v1/auth/change-password' in p and 'patch' in p['/api/v1/auth/me'];print('settings endpoints present')"
+          test "$(curl -s -o /dev/null -w '%{http_code}' -X POST $BASE/api/v1/auth/change-password -H 'Content-Type: application/json' -d '{}')" = "401"
+          python3 -c "import json;m=json.load(open('health.json'))['model'];print('species_context',m.get('species_context'));assert m.get('species_context',{}).get('crop_weight')==0.25"
+          curl -fsS -I "$BASE/api/v1/health" | grep -i "strict-transport-security"
+          curl -fsS "$BASE/app/settings" | grep -q '<div id="root">'

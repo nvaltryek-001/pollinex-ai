@@ -5,7 +5,7 @@
 <br>
 
 [![CI](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/automated%20tests-103%20passing-2e7d4f)
+![Tests](https://img.shields.io/badge/automated%20tests-111%20passing-2e7d4f)
 ![Platforms](https://img.shields.io/badge/verified%20on-Ubuntu%20%7C%20Windows-1d3a2a)
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776ab?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/react-18-61dafb?logo=react&logoColor=black)
@@ -474,14 +474,14 @@ Every push to `main` runs the full stack on clean **Ubuntu and Windows** machine
 
 | Check | Result |
 |---|:-:|
-| AI engine + simulator tests (incl. dataset integrity audit, species knowledge base) | ✅ 47 |
-| Backend API, auth, roles, DB, uploads, inference, per-scan PDF | ✅ 27 |
+| AI engine + simulator tests (incl. dataset integrity audit, species knowledge base, species decision rules, annotation gate) | ✅ 51 |
+| Backend API, auth, roles, DB, uploads, inference, per-scan PDF, settings / password change, CSV injection guard | ✅ 29 |
 | Frontend unit & component tests (Vitest, incl. species info panel) | ✅ 13 |
-| Playwright end-to-end — desktop + Pixel 7, **simulated camera**, live scan, species correction, species panel for all 9 species, PDF/CSV download, every page, no sideways scrolling on phones | ✅ 16 |
+| Playwright end-to-end — desktop + Pixel 7, **simulated camera**, live scan, species correction, species panel for all 9 species, PDF/CSV download, settings + logout + route protection, every page, no sideways scrolling on phones | ✅ 18 |
 | TypeScript strict type-check · production build | ✅ |
 | Migrations on **PostgreSQL 16** and SQLite · backend startup | ✅ |
 | Docker images + Docker Compose smoke test | ✅ |
-| **Windows**: `setup_windows.ps1` → `test_windows.ps1 -E2E` → backend health | ✅ (Playwright 14 passed, 2 screenshot tests skipped by design) |
+| **Windows**: `setup_windows.ps1` → `test_windows.ps1 -E2E` → backend health | ✅ (Playwright 16 passed, 2 screenshot tests skipped by design) |
 | Reproducible model evaluation (`[evaluate]` workflow) | ✅ reproduces the committed metrics |
 
 ```powershell

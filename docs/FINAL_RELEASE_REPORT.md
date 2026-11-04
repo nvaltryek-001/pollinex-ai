@@ -97,6 +97,11 @@ The master checklist is [`PROJECT_AUDIT_CHECKLIST.md`](PROJECT_AUDIT_CHECKLIST.m
   * npm: 2 moderate findings in the shipped bundle (react-router 6) and high/critical findings in dev-only test tooling. All need major upgrades and are documented in [`SECURITY_AUDIT.md`](SECURITY_AUDIT.md).
 * **Docs:** [`MODEL_CARDS.md`](MODEL_CARDS.md), [`ETHICS_AND_LICENSING.md`](ETHICS_AND_LICENSING.md), and two new diagrams in
   `ARCHITECTURE.md` (species decision; data and training flow).
+* **Tests:** CI run 41858332619 on `189b01a`, all 5 jobs green: engine and simulator 51, backend 29, Vitest 13,
+  Playwright 18 (Windows: 16 passed, 2 screenshot tests skipped). Total **111**.
+  * On the first attempt, the mobile *documentation screenshot* test timed out while capturing the 3-D simulator.
+  * A re-run of the failed job passed. This is recorded as an intermittent flake in a non-functional test; all functional tests passed on both attempts.
+  * A real race in the new settings E2E test was found on Windows and fixed: logout could run before the password had been restored.
 * **Data expansion is blocked.** Openly licensed strawberry flower photos are exhausted on iNaturalist (15) and in Commons
   (29). Oxford 102 cannot be reached, FlowerNet needs a manual download, and PlantCLEF's terms are unverified.
 
