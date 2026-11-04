@@ -43,6 +43,9 @@ TOPICS = {
     "flower_stage": ("flowering stage detection deep learning", r"(bloom|flower).*(stage|phenolog)", 3),
     "flower_dataset": ("flower image dataset detection", r"flower.*dataset|dataset.*flower", 2),
 }
+EXCLUDE_TITLE_REVIEWED = re.compile(r"date palm: a review|nano drone technology|vanilla planifolia|TM6 as a transcriptional|"
+                                    r"sorghum spike|mountain meadows|YNU Flower|vertical farms and pollination|"
+                                    r"knowledge-based evolutionary algorithm", re.I)  # reviewed 2026-11-04: off-topic / low evidence
 EXCLUDE_TITLE = re.compile(r"pollination algorithm|flower pollination optimi|rumor|drowning|battery|diagnos", re.I)
 ALREADY_IN_DRIVE = [  # papers the user already placed in the Drive folder (matched by title, not re-uploaded)
     "chilli pepper flower detection approach based on yolov8", "yo-afd", "tomato flowers and buds in greenhouses on 3p2r",
@@ -85,7 +88,7 @@ def get(url: str, tries: int = 5, binary: bool = False):
                 data = r.read()
                 return (data, r.headers.get("Content-Type", "")) if binary else json.loads(data)
         except urllib.error.HTTPError as e:
-            if e.code in (404, 410) or i == tries - 1:
+            if e.code in (403, 404, 410, 418) or i == tries - 1:  # publisher refuses automated download: keep the link
                 raise
             time.sleep(int(e.headers.get("Retry-After", "5")) if e.code == 429 else 3 * (i + 1))
         except Exception:  # noqa: BLE001
@@ -122,6 +125,9 @@ def pdf_candidates(w: dict) -> list[tuple[str, str]]:
             if doi.startswith("10.1186/") and "biomedcentral.com" in lp:
                 host = lp.split("/")[2]
                 out.append((f"https://{host}/counter/pdf/{doi}", lic))
+            pmc = re.search(r"PMC\d+", (loc.get("landing_page_url") or "") + " " + (loc.get("pdf_url") or ""))
+            if pmc:  # Europe PMC's documented PDF rendering endpoint for open-access articles
+                out.append((f"https://europepmc.org/backend/ptpmcrender.fcgi?accid={pmc.group(0)}&blobtype=pdf", lic))
             if doi.lower().startswith("10.48550/arxiv."):
                 out.append((f"https://arxiv.org/pdf/{doi.split('.', 2)[2]}", lic))
     seen, uniq = set(), []
@@ -163,7 +169,7 @@ def main():
         for w in res:
             key = (w.get("doi") or w["id"]).lower()
             t = (w.get("title") or "")
-            if key in seen or not t or not re.search(gate, t, re.I) or EXCLUDE_TITLE.search(t):
+            if key in seen or not t or not re.search(gate, t, re.I) or EXCLUDE_TITLE.search(t) or EXCLUDE_TITLE_REVIEWED.search(t):
                 continue
             if any(x in t.lower() for x in ALREADY_IN_DRIVE):
                 print("  already in Drive:", t[:80])
