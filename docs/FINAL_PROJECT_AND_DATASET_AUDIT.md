@@ -1,5 +1,8 @@
 # Final Project & Dataset Audit
 
+> **Superseded on 2026-11-04 by [`FINAL_RELEASE_REPORT.md`](FINAL_RELEASE_REPORT.md).** The numbers below are the audit as of commit
+> `d434111`: 718 images, no YOLO11, and a 4-species gallery. They are kept for history.
+
 _Audit date: 2026-11-03. Every number below was produced by a script or a test run in this audit, not copied from earlier
 documents. The image inventory is `datasets/reports/dataset_inventory.{json,md}`, re-created by
 `python datasets/scripts/audit_datasets.py`._

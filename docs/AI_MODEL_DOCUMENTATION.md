@@ -1,20 +1,56 @@
 # AI Model Documentation
 
-## Model choice (and why not a deep detector — yet)
-The specification asked to investigate YOLOv8, YOLO11 and RT-DETR and to choose by reproducible experiment, compute budget,
-licence and available annotations. Constraints in the build environment: 2 vCPU, no GPU, and **no access to PyPI** (PyTorch and
-Ultralytics could not be installed). The deployed detector is therefore a CPU model trained from scratch with
-scikit-learn; a YOLO11 recipe (`ai-engine/training/train_yolo11.py`) and an ONNX runtime backend are provided so the deep model
-can be trained on any machine with PyTorch and dropped in without code changes.
+## Model choice
+**Deployed detector (2026-11-04): YOLO11n, exported to ONNX** (`models/flower_yolo11n.onnx`, 10.8 MB, input 800 px, one class `flower`).
+It runs on CPU with onnxruntime. The earlier pixel boosted-trees model is kept as the MIT-licensed fallback and is used automatically
+when the ONNX file is absent.
 
-| Candidate | Licence | Needs | Decision |
-|---|---|---|---|
-| Ultralytics YOLO11-n | AGPL-3.0 | PyTorch; GPU recommended | recipe + ONNX backend shipped; not trained here |
-| YOLOv8 | AGPL-3.0 | same | superseded by YOLO11 in the same package |
-| RT-DETR | Apache-2.0 (paper code) / AGPL in Ultralytics | heavier training | rejected for laptop budget |
-| **Pixel boosted trees + watershed** | BSD (scikit-learn) | CPU only | **deployed** |
+| Candidate | Licence | Decision |
+|---|---|---|
+| **Ultralytics YOLO11n** | AGPL-3.0 | **deployed.** Trained on CPU in GitHub Actions; passed the deploy rule |
+| Pixel boosted trees + watershed | BSD (scikit-learn) | fallback (MIT-compatible) |
+| YOLOv8 | AGPL-3.0 | superseded by YOLO11 in the same package |
+| RT-DETR | Apache-2.0 / AGPL in Ultralytics | not tried (CPU budget) |
 
-## Module 1 · Flower detector (`pollinex_ai/detector.py`)
+### Module 1a · YOLO11n (`training/train_yolo11.py`, `.github/workflows/yolo.yml`)
+
+**Data.** Built by `--combined`: USDA apple/peach/pear boxes plus TF Flower Detection sunflower boxes, one class. Each source keeps its own split:
+
+| Split | USDA | Sunflower |
+|---|--:|--:|
+| Train | 54 | 439 |
+| Val | 14 | 94 |
+| Test | 22 | 95 |
+
+**Training.** COCO-pretrained `yolo11n.pt` with Ultralytics defaults, plus:
+* image size 800, batch 16, seed 20261102, deterministic, patience 15, `close_mosaic=5`
+* a 4-hour time cap; 97 epochs completed
+* CPU on a GitHub runner, run 41663935349, finished 2026-11-03
+* `best.pt` chosen on validation fitness (val mAP@0.5 0.728)
+
+**Pre-registered deploy rule** (`training/yolo_deploy_rule.py`, written before training): deploy only if USDA-test mAP@0.5 is at
+least the pixel model's, measured with the same evaluation code (`evaluate_detector_on.py`). Result: 0.541 ≥ 0.410, so **deployed**.
+
+**Held-out test results** (`reports/yolo11_deploy_decision.json`, re-run locally from the committed ONNX with identical numbers):
+
+| Test set | mAP@0.5 | mAP@0.5:0.95 | P@0.5 | R@0.5 | F1@0.5 |
+|---|--:|--:|--:|--:|--:|
+| USDA (22 images, 929 flowers) | 0.541 | 0.277 | 0.265 | 0.746 | 0.391 |
+| Sunflower (95 images, 406 flowers) | 0.867 | 0.682 | 0.543 | 0.921 | 0.683 |
+
+The pixel model scores 0.410 / 0.190 on USDA and 0.001 on sunflower under the same protocol.
+
+**Speed and counting.**
+* Mean latency is 34 ms per USDA image on the GitHub runner and about 150 ms in this workspace (pixel model 910 ms on the runner).
+* Count errors are large at the evaluation threshold of 0.05: USDA count MAE 77 against MAE 110 for the pixel model.
+
+**Limitations.**
+* No boxes exist for hibiscus, tomato, strawberry, brinjal or chilli, so detection on those crops is unvalidated.
+* On a tomato field photo, detections were labelled apple or pear by the species gallery. The gallery's tomato references are whole-scene photos, not crops. Use **Close-up** mode for single flowers.
+
+**Licence.** AGPL-3.0; see `models/YOLO11_LICENSE_NOTE.md`.
+
+## Module 1b · Pixel detector (fallback; `pollinex_ai/detector.py`)
 * **Features** (`features.py`, version `pfx-v1`): RGB, Lab a/b, L, hue-as-vector × saturation, saturation, value, whiteness
   (V·(1−S)), excess-green; for σ ∈ {1,2,4}: smoothed a, b, L, whiteness, ExG, gradient magnitude, σ²-normalised LoG, local std.
   36 channels.

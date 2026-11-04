@@ -1,15 +1,15 @@
 # Release checklist: final completion phase
 
 _Started 2026-11-03 from commit `444a2ae`. ✅ = done and verified · 🟡 = done with stated limits · ❌ = blocked (reason given).
-Final numbers are in `docs/FINAL_PROJECT_AND_DATASET_AUDIT.md`. This list is kept in sync with it._
+Final numbers are in `docs/FINAL_RELEASE_REPORT.md`._
 
 ## Phase 1: issues found by the repository audit
 | # | Issue (as found at `444a2ae`) | Resolution |
 |---|---|---|
-| 1 | 5 of 9 species (hibiscus, tomato, strawberry, brinjal, chilli) had **0 images** | 🟡 iNaturalist flowering photos, species-verified and openly licensed (see Phase 2). Counts vary by species. |
-| 2 | Species gallery covered 4 species with no rule for when a species counts as "supported" | ✅ `build_species_gallery_multi.py` applies a gating rule that was written before any results existed and is decided on validation data. The test split is used once. |
+| 1 | 5 of 9 species (hibiscus, tomato, strawberry, brinjal, chilli) had **0 images** | 🟡 761 iNaturalist photos: hibiscus 91, tomato 200, strawberry 15, brinjal 20, chilli 28, plus field photos of the other 4. Strawberry, brinjal and chilli are still too few. |
+| 2 | Species gallery covered 4 species with no rule for when a species counts as "supported" | ✅ 6 species enabled (apple, peach, pear, sunflower, hibiscus, tomato). `build_species_gallery_multi.py` applies a gating rule that was written before any results existed and is decided on validation data. The test split is used once. |
 | 3 | YOLO11 recipe was never run | ✅ `.github/workflows/yolo.yml` trains it on CPU with the same evaluation code as the existing detector. A deploy rule, also written before any results, decides whether it replaces the existing detector. |
-| 4 | The existing detector cannot find sunflowers (mAP@0.5 0.001) | Addressed by the YOLO11 run on USDA + sunflower boxes (result in audit §8). |
+| 4 | The existing detector cannot find sunflowers (mAP@0.5 0.001) | ✅ YOLO11n deployed: sunflower test mAP@0.5 0.867 and USDA test 0.541 (vs 0.410). See `FINAL_RELEASE_REPORT.md` §3.1. |
 | 5 | Annotation schema had only flower, anther_region and stigma | ✅ Full CVAT schema: flower box (with species and stage attributes), centre point, petal, anther, stigma, stamen, pistil and health_issue, plus class definitions. |
 | 6 | No annotation statistics or QA tool | ✅ `annotation_stats.py`: per-dataset and per-species statistics, CVAT-COCO validation and conversion to YOLO with splits by capture session. Unit-tested. |
 | 7 | No Colab notebook | ✅ `notebooks/train_yolo11_colab.ipynb` |

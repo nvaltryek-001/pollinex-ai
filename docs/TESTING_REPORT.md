@@ -1,5 +1,19 @@
 # Testing Report
 
+> **2026-11-04, final release:** CI run 41764626714 on `ef89228`, the first commit with YOLO11n ONNX deployed and the 6-species gallery. All 5 jobs passed:
+>
+> | Job | Result |
+> |---|---|
+> | AI engine + simulator | 43 passed |
+> | Backend | 24 passed |
+> | Vitest | 11 passed |
+> | Type-check and build | ✅ |
+> | Playwright | 14 passed |
+> | Docker | ✅ |
+> | Windows fresh clone | 43 / 24 / 11 / 12 passed (2 skipped by design) |
+>
+> Details: `FINAL_RELEASE_REPORT.md` §6.
+
 _Last updated 2026-11-03 (session 3)._
 
 ## Where the tests ran
