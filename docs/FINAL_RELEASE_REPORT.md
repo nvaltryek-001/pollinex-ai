@@ -1,6 +1,49 @@
 # POLLINEX AI: Final Release Report
 
-_Report date: 2026-11-04. Repository: https://github.com/nvaltryek-001/pollinex-ai (branch `main`)._
+_Report date: 2026-11-04 (updated after the second YOLO11 run, gallery v2, the Commons dataset and deployment).
+Repository: https://github.com/nvaltryek-001/pollinex-ai (branch `main`). **Live demo: https://pollinex-api.onrender.com**._
+
+> **Update (later the same day).** Sections 1–8 below were written for the first release. These numbers replace the older figures:
+> * **Images:** **1,985**. The 506 new ones come from Wikimedia Commons, and the quality audit (`datasets/reports/dataset_quality_audit.md`) found 0 corrupt files, 0 exact duplicates and 1 leakage pair, which is excluded from evaluation.
+> * **Per species:**
+>
+>   | Species | Images |
+>   |---|--:|
+>   | apple | 155 |
+>   | peach | 95 |
+>   | pear | 47 |
+>   | sunflower | 828 |
+>   | hibiscus | 256 |
+>   | tomato | 347 |
+>   | strawberry | 44 |
+>   | brinjal | 131 |
+>   | chilli | 82 |
+> * **Species gallery v2:**
+>   * ImageNet MobileNetV3 embeddings plus 540 real background references, chosen on validation.
+>   * **8 species are AI-supported.** Brinjal and chilli have *limited evidence* (11 and 7 test images); strawberry is not supported.
+>   * Test: accuracy **0.874**, macro-F1 **0.862**. Background rejection rose from 0.095 to **0.705**.
+>   * An explicit `uncertain` flag and a support status are attached to every species result.
+> * **Detector:** **YOLO11n at 960 px** replaced the 800 px model under the validation-only selection rule.
+>   * Test mAP@0.5: **USDA 0.593** (800 px model: 0.541; pixel model: 0.410) and **sunflower 0.871** (94 images).
+>   * Per species: apple 0.602, peach 0.568, pear 0.609, sunflower 0.871.
+>   * Operating threshold 0.30, chosen on validation.
+>   * ONNX matches PyTorch on 85.5 % of boxes at IoU ≥ 0.8.
+>   * Admins can switch between YOLO11, the pixel model and auto; the switch falls back safely.
+> * **Reproductive structures:**
+>   * Full CVAT workflow, an annotation-batch builder (283 real images selected), and a COCO→YOLO converter.
+>   * A structure-model hook that switches classes to `trained_model` once a model trained on real annotations is installed.
+>   * Still **0 structure annotations**, so these outputs remain heuristics.
+> * **Research:** 50 papers checked against OpenAlex (`research/papers/`) and numbered citation documents in the Drive folder.
+> * **Deployment:**
+>   * Render free web service: the Docker image builds the React app, and FastAPI serves it on the same origin.
+>   * Data is not persistent until the created Render PostgreSQL URL is set as `DATABASE_URL`.
+>   * Vercel project creation was refused (HTTP 403) by the connected account.
+> * **Fixes found while testing:**
+>   * The Datasets page crashed on per-species count objects. A page error boundary now catches render errors.
+>   * Close-up analysis ran GrabCut four times per flower (now about 3 s → 0.5 s per image).
+>   * E2E waits now suit shared CI runners.
+>   * Hosted `postgres://` URLs are now mapped to psycopg 3.
+
 
 Every number here comes from a committed report file or a test run named below. Nothing is estimated. "Not done" items are
 listed in §8.

@@ -17,6 +17,12 @@
 **Point a phone at a flower. Pollinex detects it, recognises the species (or honestly says _unknown_), reads its visible<br>
 stage and health, explains whether it looks ready for pollination — and lets you simulate pollen transfer in 3-D.**
 
+### 🌐 Live demo: **https://pollinex-api.onrender.com**
+
+<sub>Render free plan (Singapore). The first request after ~15 min idle takes about a minute while the server wakes up.
+The demo database is reset on restart; see [Live demo](#-live-demo).</sub>
+
+[Live demo](#-live-demo) ·
 [Quick start](#-quick-start) ·
 [Screenshots](#-screenshots) ·
 [Features](#-features) ·
@@ -164,6 +170,33 @@ Model evaluation · Analytics · Research centre · Datasets · Reports · Admin
 
 ---
 
+## 🌐 Live demo
+
+| | |
+|---|---|
+| **App** (React UI and API on one origin) | **https://pollinex-api.onrender.com** |
+| API docs (OpenAPI / Swagger) | https://pollinex-api.onrender.com/docs |
+| Health check (models, database) | https://pollinex-api.onrender.com/api/v1/health |
+
+**Try it:**
+1. Open the app and register. *The first account on a fresh database becomes admin.*
+2. Go to **Flower scanner** and upload a flower photo. For one flower, choose *Mode: close-up*.
+
+The deployed stack:
+* **Detector:** YOLO11n ONNX at 960 px.
+* **Species gallery:** ImageNet MobileNetV3 embeddings with 8 AI-supported species.
+* **Simulator, readiness rules and heuristics:** all included.
+
+Limits of the free hosting:
+* **Cold start:** about 1 minute after 15 minutes idle.
+* **Hardware:** 512 MB RAM and a shared CPU, so a scan takes a few seconds.
+* **Data is not persistent:** the demo uses SQLite in the container, so accounts and scans are lost when the service restarts.
+  * A free Render PostgreSQL instance (`pollinex-db`, expires after 30 days) has been created for persistence.
+  * To use it, paste its *Internal Database URL* into the service's `DATABASE_URL` variable in the Render dashboard. The app converts `postgres://` URLs itself.
+* **Vercel:** a separate frontend deployment was not possible, because the connected Vercel account refused project creation (HTTP 403). `frontend/vercel.json` is ready for a one-click import with `VITE_API_URL=https://pollinex-api.onrender.com`.
+
+---
+
 ## 🚀 Quick start
 
 ### Windows (recommended)
@@ -299,14 +332,14 @@ More: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) · [`docs/DATABASE_SCHEMA.m
 ## 📈 Measured results
 
 <sub>From `ai-engine/reports/*.json`. Each held-out test split is used once, all choices are made on validation, and all inference runs on CPU.
-Detector: YOLO11n trained in GitHub Actions on CPU (97 epochs, 800 px) on USDA apple/peach/pear and TF sunflower boxes. It was scored
+Detector: YOLO11n trained in GitHub Actions on CPU (960 px, 64 epochs) on USDA apple/peach/pear and TF sunflower boxes. It was scored
 by the same evaluation code as the earlier pixel model and deployed under a rule fixed before training.</sub>
 
 <table>
 <tr>
-<td align="center" width="25%"><h2>0.541</h2>detector mAP@0.5<br><sub>USDA orchard test (pixel model 0.410)</sub></td>
-<td align="center" width="25%"><h2>0.867</h2>detector mAP@0.5<br><sub>sunflower test (pixel model 0.001)</sub></td>
-<td align="center" width="25%"><h2>34 ms</h2>per orchard image<br><sub>ONNX, GitHub CPU runner (pixel model 910 ms)</sub></td>
+<td align="center" width="25%"><h2>0.593</h2>detector mAP@0.5<br><sub>USDA orchard test (pixel model 0.410)</sub></td>
+<td align="center" width="25%"><h2>0.871</h2>detector mAP@0.5<br><sub>sunflower test (pixel model 0.001)</sub></td>
+<td align="center" width="25%"><h2>~97 ms</h2>per image at 960 px<br><sub>ONNX, GitHub CPU runner (pixel model 910 ms)</sub></td>
 <td align="center" width="25%"><h2>8 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.874 · macro-F1 0.862</sub></td>
 </tr>
 </table>
@@ -317,13 +350,25 @@ by the same evaluation code as the earlier pixel model and deployed under a rule
 | Test set | Model | mAP@0.5 | mAP@0.5:0.95 | Precision@0.5 | Recall@0.5 | F1@0.5 |
 |---|---|--:|--:|--:|--:|--:|
 | USDA apple/peach/pear (22 images, 929 flowers) | pixel (previous default) | 0.410 | 0.190 | 0.169 | 0.610 | 0.265 |
-| | **YOLO11n (deployed)** | **0.541** | **0.277** | 0.265 | 0.746 | 0.391 |
-| TF sunflower close-ups (95 images, 406 flowers) | pixel | 0.001 | 0.001 | 0.001 | 0.015 | 0.002 |
-| | **YOLO11n (deployed)** | **0.867** | **0.682** | 0.543 | 0.921 | 0.683 |
+| | YOLO11n 800 px (first model) | 0.541 | 0.277 | 0.265 | 0.746 | 0.391 |
+| | **YOLO11n 960 px (deployed)** | **0.593** | **0.332** | 0.313 | 0.778 | 0.446 |
+| TF sunflower close-ups (94 images, 405 flowers; 1 leaked image excluded) | pixel | 0.001 | 0.001 | 0.001 | 0.015 | 0.002 |
+| | **YOLO11n 960 px (deployed)** | **0.871** | **0.694** | 0.628 | 0.921 | 0.747 |
 
 - Precision and recall are measured at the lowest score threshold (0.05). The app marks detections below 0.25 as low-confidence.
 - Ultralytics' own validator on the combined test split gives mAP@0.5 0.671 and mAP@0.5:0.95 0.432.
-- Training curve: `ai-engine/reports/yolo11_training_curve.csv`. The ONNX model is 10.8 MB and its sidecar (`flower_yolo11n.json`) records 800 px.
+- **Why 960 px replaced 800 px:** the 960 px model replaced the first one under a selection rule that looks only at validation data, fixed before training. Mean per-species val mAP@0.5 was 0.708 against 0.686 (`yolo11_selection.json`).
+- **Per-species test mAP@0.5** (`detector_analysis_yolo11_test.json`):
+
+  | Species | mAP@0.5 |
+  |---|--:|
+  | apple | 0.602 |
+  | peach | 0.568 |
+  | pear | 0.609 |
+  | sunflower | 0.871 |
+
+  The operating threshold of 0.30 was chosen on validation by F1. At that threshold, P / R / F1 is 0.704 / 0.657 / 0.679.
+- **ONNX vs PyTorch:** 85.5 % of PyTorch boxes are matched by the exported ONNX model at IoU ≥ 0.8, with mean IoU 0.94 (`yolo11_onnx_consistency.json`). Letterbox padding differs slightly between the two.
 - **No boxes exist for hibiscus, tomato, strawberry, brinjal or chilli**, so detection on those crops is untested.
 - **Licence:** YOLO11 is AGPL-3.0 (see `ai-engine/models/YOLO11_LICENSE_NOTE.md`). Delete the `.onnx` file to fall back to the MIT pixel model.
 </details>
@@ -499,7 +544,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 - **No anther / stigma detector**: structures, stage, health and pose are labelled heuristics until annotated data exists.
 - Readiness is a **visual estimate**; simulation is **computation** — neither proves pollen viability or fertilisation.
 - Camera is verified with a simulated camera and phone emulation; test on your own phone over HTTPS.
-- **No public deployment yet** (Render + Vercel configs are ready).
+- **Public demo** runs on Render's free plan. Data is not persistent until a PostgreSQL URL is set, and there is no Vercel frontend; see [Live demo](#-live-demo).
 
 ## 🔭 Roadmap
 

@@ -13,8 +13,21 @@ docker compose logs -f backend
   `frontend` (nginx serving the build and proxying `/api` incl. WebSockets).
 * Put a TLS terminator (Caddy, Traefik, nginx + certbot) in front of port 8080 — HTTPS is required for phone cameras.
 
+## Live deployment (2026-11-04): Render, single service
+* **Service:** `pollinex-api` (Docker, free plan, Singapore) at **https://pollinex-api.onrender.com**.
+  * `backend/Dockerfile` builds the React app in a Node stage. FastAPI then serves `frontend/dist` with an SPA fallback, so UI and API share one origin and no CORS setup is needed.
+  * `/api/v1/*` is the API, `/docs` is OpenAPI, and every other path returns the app.
+* **Environment:** `POLLINEX_ENV=production`, a generated `JWT_SECRET`, `AUTO_CREATE_TABLES=false` (Alembic runs at start), and `WEB_CONCURRENCY=1`.
+  * `DATABASE_URL` currently points at SQLite inside the container, which is **not persistent**.
+* **Persistence:** the database `pollinex-db` (free PostgreSQL, Singapore, expires 2026-12-04) has been created.
+  1. In the Render dashboard, copy its **Internal Database URL**.
+  2. Set it as the service's `DATABASE_URL`. A `postgres://…` URL is converted to `postgresql+psycopg://` automatically.
+  3. Redeploy.
+* **Auto-deploy:** pushes to `main` only redeploy automatically if Render's GitHub app has access to the repo. Otherwise use **Manual Deploy**.
+* **First account becomes admin.** Register right after a fresh database is created.
+
 ## Render (API) + Vercel (web)
-1. Render → *New Blueprint* → select the repo → `deployment/render.yaml` (creates the API service, a 1 GB disk and PostgreSQL).
+1. Render → *New Blueprint* → select the repo → `deployment/render.yaml` (creates the API service and PostgreSQL on free plans; no disk on the free plan).
    Set `CORS_ORIGINS` to the Vercel URL.
 2. Vercel → import `frontend/` → env `VITE_API_URL=https://<render-service>.onrender.com`. `vercel.json` handles SPA routing and
    the camera permissions policy.
