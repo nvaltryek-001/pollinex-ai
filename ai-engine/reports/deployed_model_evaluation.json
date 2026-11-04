@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T11:21:24+00:00",
+  "generated_at": "2026-11-04T15:08:10+00:00",
   "integrity": {
     "usda_fruit_flower": {
       "images": 90,
@@ -113,7 +113,7 @@
           "mAP50_95": 0.3789114462634011
         }
       },
-      "latency_ms_mean": 257.00739072727237
+      "latency_ms_mean": 285.5370142727183
     },
     "tf_flower_detection_sunflower": {
       "images": 94,
@@ -135,7 +135,7 @@
           "mAP50_95": 0.6939158234444605
         }
       },
-      "latency_ms_mean": 217.68321897872784
+      "latency_ms_mean": 227.66658759574634
     }
   },
   "classification": {
@@ -162,7 +162,8 @@
         "chilli": 66,
         "hibiscus": 204,
         "tomato": 230,
-        "__background__": 540
+        "__background__": 540,
+        "__unsupported__:strawberry": 31
       }
     },
     "labels": [
@@ -188,8 +189,8 @@
       "hibiscus": 23,
       "tomato": 63
     },
-    "accuracy": 0.873942470389171,
-    "macro_f1": 0.8619079813837821,
+    "accuracy": 0.8781725888324873,
+    "macro_f1": 0.8819728586879021,
     "per_species": {
       "apple": {
         "precision": 0.8506787330316742,
@@ -198,9 +199,9 @@
         "support": 403
       },
       "brinjal": {
-        "precision": 0.6666666666666666,
-        "recall": 0.9090909090909091,
-        "f1": 0.7692307692307692,
+        "precision": 0.8461538461538461,
+        "recall": 1.0,
+        "f1": 0.9166666666666666,
         "support": 11
       },
       "chilli": {
@@ -210,9 +211,9 @@
         "support": 7
       },
       "hibiscus": {
-        "precision": 0.7777777777777778,
+        "precision": 0.8076923076923077,
         "recall": 0.9130434782608695,
-        "f1": 0.84,
+        "f1": 0.8571428571428572,
         "support": 23
       },
       "peach": {
@@ -228,9 +229,9 @@
         "support": 165
       },
       "sunflower": {
-        "precision": 0.9516129032258065,
+        "precision": 0.959349593495935,
         "recall": 0.9365079365079365,
-        "f1": 0.944,
+        "f1": 0.9477911646586347,
         "support": 126
       },
       "tomato": {
@@ -240,9 +241,9 @@
         "support": 63
       },
       "unknown": {
-        "precision": 0.9337349397590361,
-        "recall": 0.6858407079646017,
-        "f1": 0.7908163265306122,
+        "precision": 0.9352941176470588,
+        "recall": 0.7035398230088495,
+        "f1": 0.8030303030303031,
         "support": 226
       }
     },
@@ -260,9 +261,9 @@
       ],
       [
         0,
-        10,
+        11,
         0,
-        1,
+        0,
         0,
         0,
         0,
@@ -337,14 +338,14 @@
       ],
       [
         45,
-        3,
+        0,
         0,
         0,
         13,
         8,
+        0,
         1,
-        1,
-        155
+        159
       ]
     ],
     "by_source": {
@@ -373,22 +374,22 @@
       },
       "inat_test": {
         "n": 109,
-        "accuracy": 0.7981651376146789,
-        "macro_f1": 0.5911410470620997,
+        "accuracy": 0.8165137614678899,
+        "macro_f1": 0.781657848324515,
         "unsupported_true_species_predicted_as": {
           "strawberry": {
-            "sunflower": 1,
+            "unknown": 1,
             "apple": 1
           }
         }
       },
       "commons_test": {
         "n": 65,
-        "accuracy": 0.8923076923076924,
-        "macro_f1": 0.7068817204301074,
+        "accuracy": 0.9384615384615385,
+        "macro_f1": 0.9001284736768607,
         "unsupported_true_species_predicted_as": {
           "strawberry": {
-            "brinjal": 3,
+            "unknown": 3,
             "tomato": 1
           }
         }

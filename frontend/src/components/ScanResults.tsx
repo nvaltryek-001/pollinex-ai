@@ -93,6 +93,7 @@ export function FlowerDetail({ f, scanId, onUpdated }: { f: Flower; scanId?: num
           {f.species.support === "validated" && <Pill tone="good">validated species</Pill>}
           {f.species.support === "limited_evidence" && <Pill tone="warn">limited test evidence</Pill>}
           {f.species.support === "not_supported" && <Pill tone="bad">not AI-supported</Pill>}
+          {f.species.looks_like_unsupported && <Pill tone="warn">looks like {f.species.looks_like_unsupported} - not AI-supported, select manually</Pill>}
         </div>
         {f.species.reason && <p className="mt-1 text-xs text-muted">{f.species.reason}</p>}
         {f.species.context && (

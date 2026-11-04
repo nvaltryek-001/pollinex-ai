@@ -223,12 +223,22 @@ def test_deployed_gallery_only_contains_gated_species():
     assert ver in EMBEDDERS
     supported = meta["meta"].get("supported_species")
     if supported is not None:
-        assert set(meta["labels"]) - {"__background__"} == set(supported)
+        from pollinex_ai.species import UNSUPPORTED_PREFIX, is_reject_label
+        # labels the gallery can RETURN are exactly the gated species; reject-only labels are never returned
+        assert {lab for lab in meta["labels"] if not is_reject_label(lab)} == set(supported)
+        reject_only = {lab[len(UNSUPPORTED_PREFIX):] for lab in meta["labels"] if lab.startswith(UNSUPPORTED_PREFIX)}
+        assert not reject_only & set(supported)
         rep = MODELS_DIR.parent / "reports" / "species_multi_evaluation.json"
         if rep.exists():
             r = _json.loads(rep.read_text())
             assert sorted(supported) == r["enabled_species"]
             assert all(r["gating"][s]["enabled"] for s in supported)
+            assert all(not r["gating"][s]["enabled"] for s in reject_only)  # rejection refs only for gate-failed species
+        g = SpeciesGallery.load(path)
+        for sp in reject_only:
+            outs = [g.predict_vector(g.vectors[j]) for j, lab in enumerate(g.labels) if lab == UNSUPPORTED_PREFIX + sp]
+            assert all(o["species"] != sp for o in outs)  # a gate-failed species is never returned
+            assert sum(o["species"] == "unknown" for o in outs) > len(outs) / 2  # its own references mostly reject
     g = SpeciesGallery.load(path)
     out = g.predict(np.full((64, 64, 3), (200, 40, 60), np.uint8))
     assert out["species"] == "unknown" or out["species"] in set(meta["labels"])

@@ -28,6 +28,8 @@ export interface SpeciesResult {
   original_prediction?: string;
   original_confidence?: number | null;
   /** auto mode: votes of the box crop blended with the whole photo (weight selected on validation) */
+  /** "unknown" because the nearest references belong to a species that is not AI-supported (e.g. strawberry) */
+  looks_like_unsupported?: string;
   context?: { crop_weight: number; crop_top: string | null; scene_top: string | null };
 }
 

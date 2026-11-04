@@ -45,7 +45,7 @@ sys.path.insert(0, str(ENGINE / "training"))
 from pollinex_ai.detector import load_default_detector  # noqa: E402
 from pollinex_ai.metrics import classification_report  # noqa: E402
 from pollinex_ai.pipeline import GALLERY_PATH  # noqa: E402
-from pollinex_ai.species import BACKGROUND, UNKNOWN, SpeciesGallery, crop_box  # noqa: E402
+from pollinex_ai.species import UNKNOWN, SpeciesGallery, crop_box, is_reject_label  # noqa: E402
 from evaluate_detector_on import excluded_stems  # noqa: E402
 from train_species import DATA, SEED, background_crops  # noqa: E402
 
@@ -70,7 +70,7 @@ def decide(g: SpeciesGallery, dist: dict[str, float], best_sim: float, t: float)
     if not dist or best_sim < g.threshold:
         return UNKNOWN
     sp, share = max(dist.items(), key=lambda kv: kv[1])
-    if sp == BACKGROUND or share < t:
+    if is_reject_label(sp) or share < t:
         return UNKNOWN
     return sp
 
@@ -94,7 +94,7 @@ def photos(split: str) -> list[tuple[str, Path]]:
 def items(split: str, g, det) -> tuple[list[dict], list[dict]]:
     """Per photo: true label, auto-mode top-flower crop votes (or None = close-up fallback), scene votes."""
     auto, close = [], []
-    enabled = set(g.labels) - {BACKGROUND}
+    enabled = set(g.species)
     for sp, p in photos(split):
         y = sp if sp in enabled else UNKNOWN
         rgb = np.array(Image.open(p).convert("RGB"))
@@ -130,7 +130,7 @@ def main():
     args = ap.parse_args()
     g = SpeciesGallery.load(GALLERY_PATH)
     det = load_default_detector()
-    labels = sorted(set(g.labels) - {BACKGROUND}) + [UNKNOWN]
+    labels = sorted(set(g.species)) + [UNKNOWN]
     print("embedding validation photos ...", flush=True)
     va_auto, va_close = items("val", g, det)
     grid_a = {a: score_auto(g, va_auto, a, 0.0, labels)["macro_f1"] for a in CROP_WEIGHTS}

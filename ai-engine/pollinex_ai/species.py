@@ -30,6 +30,12 @@ MODELS_DIR = Path(__file__).resolve().parents[1] / "models"
 CROP_SIZE = 64
 UNKNOWN = "unknown"
 BACKGROUND = "__background__"   # reference label for real non-flower crops (USDA mask negatives); never returned
+UNSUPPORTED_PREFIX = "__unsupported__:"  # references of a species that failed the support gate: used only to say "unknown"
+
+
+def is_reject_label(label: str) -> bool:
+    """Reference labels that are never returned as a species (background crops, gate-failed species)."""
+    return label == BACKGROUND or label.startswith(UNSUPPORTED_PREFIX)
 UNCERTAIN_VOTE_SHARE = 0.60     # fixed rule (not tuned): top vote share below this -> "uncertain": true
 
 
@@ -110,10 +116,14 @@ class SpeciesGallery:
 
     @property
     def species(self) -> list[str]:
-        return sorted(set(self.labels) - {BACKGROUND})
+        return sorted({lab for lab in self.labels if not is_reject_label(lab)})
 
     def counts(self) -> dict[str, int]:
-        return {k: v for k, v in Counter(self.labels).items() if k != BACKGROUND}
+        return {k: v for k, v in Counter(self.labels).items() if not is_reject_label(k)}
+
+    def rejection_references(self) -> dict[str, int]:
+        """Unsupported-species references (label -> count), e.g. {'strawberry': 31}."""
+        return {k[len(UNSUPPORTED_PREFIX):]: v for k, v in Counter(self.labels).items() if k.startswith(UNSUPPORTED_PREFIX)}
 
     def background_references(self) -> int:
         return sum(lab == BACKGROUND for lab in self.labels)
@@ -149,15 +159,15 @@ class SpeciesGallery:
         fused = sorted(((k, crop_weight * dc.get(k, 0.0) + (1 - crop_weight) * ds.get(k, 0.0)) for k in keys), key=lambda t: -t[1])
         out = self._decide(fused, max(bc, bs) if crop_weight < 1 else bc)
         crop_top = rc[0][0] if rc else None
-        out["context"] = {"crop_weight": crop_weight, "crop_top": UNKNOWN if crop_top == BACKGROUND else crop_top,
-                          "scene_top": UNKNOWN if (rs and rs[0][0] == BACKGROUND) else (rs[0][0] if rs else None)}
+        out["context"] = {"crop_weight": crop_weight, "crop_top": UNKNOWN if crop_top and is_reject_label(crop_top) else crop_top,
+                          "scene_top": UNKNOWN if (rs and is_reject_label(rs[0][0])) else (rs[0][0] if rs else None)}
         return out
 
     def _decide(self, ranked: list[tuple[str, float]], best_sim: float) -> dict:
         if not ranked:
             return {"species": UNKNOWN, "confidence": 0.0, "similarity": 0.0, "candidates": [], "uncertain": True,
                     "reason": "reference gallery is empty"}
-        cands = [{"species": s, "vote_share": round(v, 4)} for s, v in ranked[:3] if s != BACKGROUND]
+        cands = [{"species": s, "vote_share": round(v, 4)} for s, v in ranked[:3] if not is_reject_label(s)]
         sp, share = ranked[0]
         if best_sim < self.threshold:
             return {"species": UNKNOWN, "confidence": round(1 - best_sim, 4), "similarity": round(best_sim, 4),
@@ -166,6 +176,12 @@ class SpeciesGallery:
         if sp == BACKGROUND:
             return {"species": UNKNOWN, "confidence": round(share, 4), "similarity": round(best_sim, 4), "candidates": cands,
                     "uncertain": False, "reason": "nearest references are background (non-flower) crops"}
+        if sp.startswith(UNSUPPORTED_PREFIX):
+            name = sp[len(UNSUPPORTED_PREFIX):]
+            return {"species": UNKNOWN, "confidence": round(share, 4), "similarity": round(best_sim, 4), "candidates": cands,
+                    "uncertain": False, "looks_like_unsupported": name,
+                    "reason": f"nearest references are {name}, which is not AI-supported (too little evaluation data) - "
+                              f"select it manually if that is what this is"}
         uncertain = share < UNCERTAIN_VOTE_SHARE
         return {"species": sp, "confidence": round(share, 4), "similarity": round(best_sim, 4), "candidates": cands,
                 "uncertain": uncertain,

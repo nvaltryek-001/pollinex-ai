@@ -144,10 +144,10 @@ KEYS = ("precision@0.5", "recall@0.5", "mAP50", "mAP50_95")
 def classification() -> dict:
     from build_species_gallery_multi import load_all, predict  # heavy import: embeds every split with the shipped ONNX
     from pollinex_ai.pipeline import GALLERY_PATH
-    from pollinex_ai.species import BACKGROUND, UNKNOWN, SpeciesGallery
+    from pollinex_ai.species import UNKNOWN, SpeciesGallery
 
     g = SpeciesGallery.load(GALLERY_PATH)
-    enabled = sorted(set(g.labels) - {BACKGROUND})
+    enabled = sorted(set(g.species))
     data = load_all(g.meta["embed_version"])  # same functions + seed as the build -> identical test items
     labels = enabled + [UNKNOWN]
     by_source, all_t, all_p = {}, [], []
