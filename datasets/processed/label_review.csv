@@ -1,0 +1,2 @@
+file,decision,note
+datasets/processed/inat_flowering/test/strawberry/inat_6122153_7664616.jpg,kept,"Flagged by the label-noise check (neighbours: apple). Visual review 2026-11-04: five white petals, yellow centre, trifoliate serrated Fragaria leaves - consistent with strawberry; iNaturalist identification kept."

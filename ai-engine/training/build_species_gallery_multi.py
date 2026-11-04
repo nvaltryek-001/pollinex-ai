@@ -46,6 +46,7 @@ sys.path.insert(0, str(ENGINE))
 sys.path.insert(0, str(ENGINE / "training"))
 from pollinex_ai.metrics import classification_report  # noqa: E402
 from pollinex_ai.species import BACKGROUND, EMBEDDERS, UNKNOWN, SpeciesGallery, cnn_available  # noqa: E402
+from evaluate_detector_on import excluded_stems  # noqa: E402
 from train_species import DATA, SEED, background_crops, flower_crops  # noqa: E402
 
 PROC = ROOT / "datasets" / "processed"
@@ -68,7 +69,8 @@ def centre(img: np.ndarray, frac: float = 0.8) -> np.ndarray:
 def embed_dir(d: Path, label: str, embed) -> list[tuple[str, np.ndarray]]:
     if not d.is_dir():
         return []
-    return [(label, embed(centre(np.array(Image.open(p).convert("RGB"))))) for p in sorted(d.glob("*.jpg"))]
+    skip = excluded_stems() if "test" in d.parts else set()
+    return [(label, embed(centre(np.array(Image.open(p).convert("RGB"))))) for p in sorted(d.glob("*.jpg")) if p.stem not in skip]
 
 
 def image_source(root: Path, split: str, embed) -> list[tuple[str, np.ndarray]]:

@@ -23,12 +23,24 @@ sys.path.insert(0, str(ENGINE))
 from pollinex_ai.detector import OnnxYoloDetector, PixelFlowerDetector, load_default_detector  # noqa: E402
 
 
+EXCLUSIONS = Path(__file__).resolve().parents[2] / "datasets" / "processed" / "leakage_exclusions.txt"
+
+
+def excluded_stems() -> set[str]:
+    """Test images with a near-duplicate in train/val (dataset_quality_audit.py) - skipped in every TEST evaluation."""
+    if not EXCLUSIONS.exists():
+        return set()
+    return {ln.split("#")[0].strip() for ln in EXCLUSIONS.read_text().splitlines() if ln.split("#")[0].strip()}
+
+
 def image_list(data: Path, split: str) -> list[Path]:
     """Supports both <data>/<split>/images/*.jpg and <data>/<split>.txt (lines './images/x.jpg')."""
     txt = data / f"{split}.txt"
     if txt.exists():
-        return [data / line.strip().removeprefix("./") for line in txt.read_text().splitlines() if line.strip()]
-    return sorted((data / split / "images").glob("*.jpg"))
+        out = [data / line.strip().removeprefix("./") for line in txt.read_text().splitlines() if line.strip()]
+    else:
+        out = sorted((data / split / "images").glob("*.jpg"))
+    return [p for p in out if p.stem not in excluded_stems()] if split == "test" else out
 
 
 def label_path(im: Path) -> Path:

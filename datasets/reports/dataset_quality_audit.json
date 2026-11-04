@@ -1,0 +1,228 @@
+{
+  "generated_at": "2026-11-04T03:31:45.023662+00:00",
+  "images_checked": 1479,
+  "decoded_ok": 1479,
+  "corrupt": [],
+  "smaller_than_160px": [
+    "datasets/processed/tf_flower_detection_sunflower/train/images/1240626292_52cd5d7fb1_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/15240466871_ec45b65554_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/184682652_c927a49226_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/2720698862_486d3ec079_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/3784815653_5df39aa9c2_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/4271193206_666ef60aa0_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/4933229357_1c5cc03f65_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/4933230395_7930697335_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/4933230547_394f618009_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/5069564563_ae03792c3c_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/7530313068_ddd2dc1f44_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/9558628596_722c29ec60_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/9558630626_52a1b7d702_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/train/images/9904127656_f76a5a4811_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/test/images/184682920_97ae41ce60_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/test/images/6606809995_edee55b770_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/test/images/6606813305_c992231d29_m.jpg",
+    "datasets/processed/tf_flower_detection_sunflower/test/images/9216286162_6ceefdd1b4_m.jpg"
+  ],
+  "exact_duplicate_groups": 0,
+  "near_duplicate_pairs": 2,
+  "cross_split_leakage_pairs": [
+    {
+      "a": "datasets/processed/tf_flower_detection_sunflower/val/images/2588453601_66f2a03cca_n.jpg",
+      "a_split": "val",
+      "b": "datasets/processed/tf_flower_detection_sunflower/test/images/2588234269_c4bfd0d8b9_n.jpg",
+      "b_split": "test",
+      "hamming": 3,
+      "same_species": true
+    }
+  ],
+  "per_species": {
+    "apple": {
+      "images": 155,
+      "recognition": 155,
+      "detection": 48,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "usda_fruit_flower": 48,
+        "inat_flowering": 107
+      },
+      "splits": {
+        "train": 96,
+        "val": 30,
+        "test": 29
+      },
+      "licences": {
+        "usda_fruit_flower: CC BY 4.0": 48,
+        "inat_flowering: cc-by": 67,
+        "inat_flowering: cc0": 34,
+        "inat_flowering: cc-by-sa": 6
+      }
+    },
+    "brinjal": {
+      "images": 20,
+      "recognition": 20,
+      "detection": 0,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "inat_flowering": 20
+      },
+      "splits": {
+        "train": 15,
+        "val": 4,
+        "test": 1
+      },
+      "licences": {
+        "inat_flowering: cc-by": 17,
+        "inat_flowering: cc0": 1,
+        "inat_flowering: cc-by-sa": 2
+      }
+    },
+    "chilli": {
+      "images": 28,
+      "recognition": 28,
+      "detection": 0,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "inat_flowering": 28
+      },
+      "splits": {
+        "train": 25,
+        "test": 1,
+        "val": 2
+      },
+      "licences": {
+        "inat_flowering: cc-by": 17,
+        "inat_flowering: cc0": 10,
+        "inat_flowering: cc-by-sa": 1
+      }
+    },
+    "hibiscus": {
+      "images": 91,
+      "recognition": 91,
+      "detection": 0,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "inat_flowering": 91
+      },
+      "splits": {
+        "train": 71,
+        "test": 7,
+        "val": 13
+      },
+      "licences": {
+        "inat_flowering: cc0": 14,
+        "inat_flowering: cc-by": 65,
+        "inat_flowering: cc-by-sa": 12
+      }
+    },
+    "peach": {
+      "images": 95,
+      "recognition": 95,
+      "detection": 24,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "usda_fruit_flower": 24,
+        "inat_flowering": 71
+      },
+      "splits": {
+        "train": 66,
+        "val": 13,
+        "test": 16
+      },
+      "licences": {
+        "usda_fruit_flower: CC BY 4.0": 24,
+        "inat_flowering: cc-by": 55,
+        "inat_flowering: cc-by-sa": 6,
+        "inat_flowering: cc0": 10
+      }
+    },
+    "pear": {
+      "images": 47,
+      "recognition": 47,
+      "detection": 18,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "usda_fruit_flower": 18,
+        "inat_flowering": 29
+      },
+      "splits": {
+        "val": 9,
+        "test": 9,
+        "train": 29
+      },
+      "licences": {
+        "usda_fruit_flower: CC BY 4.0": 18,
+        "inat_flowering: cc0": 5,
+        "inat_flowering: cc-by": 23,
+        "inat_flowering: cc-by-sa": 1
+      }
+    },
+    "strawberry": {
+      "images": 15,
+      "recognition": 15,
+      "detection": 0,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "inat_flowering": 15
+      },
+      "splits": {
+        "train": 10,
+        "val": 3,
+        "test": 2
+      },
+      "licences": {
+        "inat_flowering: cc0": 5,
+        "inat_flowering: cc-by": 9,
+        "inat_flowering: cc-by-sa": 1
+      }
+    },
+    "sunflower": {
+      "images": 828,
+      "recognition": 828,
+      "detection": 628,
+      "closeup_structure_candidate": 240,
+      "sources": {
+        "tf_flower_detection_sunflower": 628,
+        "inat_flowering": 200
+      },
+      "splits": {
+        "train": 581,
+        "val": 120,
+        "test": 127
+      },
+      "licences": {
+        "tf_flower_detection_sunflower: CC BY 4.0 (boxes) / CC-BY Flickr (image)": 628,
+        "inat_flowering: cc-by": 158,
+        "inat_flowering: cc0": 35,
+        "inat_flowering: cc-by-sa": 7
+      }
+    },
+    "tomato": {
+      "images": 200,
+      "recognition": 200,
+      "detection": 0,
+      "closeup_structure_candidate": 0,
+      "sources": {
+        "inat_flowering": 200
+      },
+      "splits": {
+        "train": 138,
+        "val": 28,
+        "test": 34
+      },
+      "licences": {
+        "inat_flowering: cc-by-sa": 20,
+        "inat_flowering: cc-by": 154,
+        "inat_flowering: cc0": 26
+      }
+    }
+  },
+  "suspected_label_noise": [
+    {
+      "file": "datasets/processed/inat_flowering/test/strawberry/inat_6122153_7664616.jpg",
+      "label": "strawberry",
+      "neighbours_say": "apple",
+      "min_neighbour_cosine": 0.815
+    }
+  ],
+  "suitability_rule": "closeup_structure_candidate = boxes exist AND largest box >= 15 % of the image AND >= 160 px min side; it says a flower is large enough to annotate structures, not that they are visible"
+}

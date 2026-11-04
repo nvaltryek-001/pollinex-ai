@@ -1,0 +1,4 @@
+# Test images excluded from every evaluation because a near-duplicate (same flower, other photo) is in train/val.
+# Found by datasets/scripts/dataset_quality_audit.py (dHash Hamming <= 4) on 2026-11-04. Files are kept; only evaluation skips them.
+# format: <stem>  # reason
+2588234269_c4bfd0d8b9_n  # TF sunflower test; near-duplicate of val image 2588453601_66f2a03cca_n (Hamming 3), also a gallery reference

@@ -33,6 +33,8 @@ datasets/processed/*
 !datasets/processed/sunflower_gallery/
 !datasets/processed/inat_flowering/
 !datasets/processed/commons_flowers/
+!datasets/processed/leakage_exclusions.txt
+!datasets/processed/label_review.csv
 
 # training artefacts (small deployed models in ai-engine/models are committed deliberately)
 ai-engine/runs/
