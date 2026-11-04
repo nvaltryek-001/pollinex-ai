@@ -16,9 +16,22 @@ SCAN_COLUMNS = ["scan_id", "created_at", "source", "detection_method", "flower_c
                 "detection_score", "low_confidence", "health_status", "x1", "y1", "x2", "y2"]
 
 
+def _cell(v):
+    """Spreadsheet formula-injection guard (OWASP): text starting with = + - @ tab or CR is prefixed with a quote."""
+    return "'" + v if isinstance(v, str) and v[:1] in ("=", "+", "-", "@", "\t", "\r") else v
+
+
+class _SafeWriter:
+    def __init__(self, buf):
+        self._w = csv.writer(buf)
+
+    def writerow(self, row):
+        self._w.writerow([_cell(v) for v in row])
+
+
 def scans_csv(scans) -> bytes:
     buf = io.StringIO()
-    w = csv.writer(buf)
+    w = _SafeWriter(buf)
     w.writerow(SCAN_COLUMNS)
     for s in scans:
         if not s.detections:

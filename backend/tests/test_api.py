@@ -313,3 +313,9 @@ def test_profile_update_and_password_change(client):
     assert client.get(f"{API}/auth/me", headers={"Authorization": f"Bearer {ok.json()['access_token']}"}).status_code == 200
     assert client.post(f"{API}/auth/login", json={"email": "settings@example.com", "password": "Str0ngPassword!"}).status_code == 401
     assert client.post(f"{API}/auth/login", json={"email": "settings@example.com", "password": "An0therStr0ngPass!"}).status_code == 200
+
+
+def test_csv_cells_are_formula_injection_safe():
+    from app.services.reports import _cell
+    assert _cell("=HYPERLINK(1)") == "'=HYPERLINK(1)" and _cell("@SUM(A1)") == "'@SUM(A1)" and _cell("+1") == "'+1"
+    assert _cell("tomato") == "tomato" and _cell(-3.5) == -3.5 and _cell(None) is None

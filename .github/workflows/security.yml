@@ -1,0 +1,38 @@
+name: Security (dependency audit)
+# Known-vulnerability scan of the pinned Python lock file and the npm lock file. Runs weekly, on demand, and on pushes
+# whose message contains [security]. High/critical npm findings and any Python finding fail the job.
+on:
+  workflow_dispatch:
+  schedule: [{ cron: "17 3 * * 1" }]
+  push:
+    branches: [main]
+jobs:
+  audit:
+    if: github.event_name != 'push' || contains(github.event.head_commit.message, '[security]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: pip-audit (backend/requirements.lock.txt)
+        run: |
+          pip install pip-audit
+          pip-audit -r backend/requirements.lock.txt --desc on -f markdown -o pip-audit.md || echo "PIP_AUDIT_FAILED=1" >> $GITHUB_ENV
+          cat pip-audit.md
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - name: npm audit (production dependencies)
+        working-directory: frontend
+        run: |
+          npm audit --omit=dev --json > ../npm-audit.json || true
+          npm audit --omit=dev || true
+          node -e "const a=require('../npm-audit.json').metadata.vulnerabilities;console.log('npm prod vulnerabilities',JSON.stringify(a));if((a.high||0)+(a.critical||0)>0)process.exit(1)"
+      - name: npm audit (all, informational)
+        working-directory: frontend
+        run: npm audit || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: dependency-audit, path: "pip-audit.md\nnpm-audit.json" }
+      - name: Fail on Python vulnerabilities
+        run: test -z "$PIP_AUDIT_FAILED"
