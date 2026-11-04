@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-11-03T18:56:53.214573+00:00",
+  "generated_at": "2026-11-04T10:37:34.739881+00:00",
   "rule": "deploy YOLO11 iff USDA-test mAP@0.5 (same evaluation code) >= pixel detector's",
+  "deployed_model": "flower_yolo11n (960 px, run 41767345604) - replaced the 800 px model by the validation-only rule in yolo11_selection.json",
   "usda_test": {
     "pixel": {
       "mAP50": 0.4103329385652515,
@@ -10,29 +11,37 @@
       "f1@0.5": 0.26507713884992984
     },
     "yolo11": {
-      "mAP50": 0.54144203381076,
-      "mAP50_95": 0.27691767976181464,
-      "precision@0.5": 0.2645038167938931,
-      "recall@0.5": 0.7459634015069968,
-      "f1@0.5": 0.39053254437869817
+      "mAP50": 0.5932617000481302,
+      "mAP50_95": 0.3318448393932862,
+      "precision@0.5": 0.312987012987013,
+      "recall@0.5": 0.7782561894510226,
+      "f1@0.5": 0.44643408459401046
     }
   },
   "sunflower_test": {
     "pixel": {
-      "mAP50": 0.0006721385783102547,
-      "mAP50_95": 0.0005214732857021324,
-      "precision@0.5": 0.0010666666666666667,
-      "recall@0.5": 0.014778325123152709,
-      "f1@0.5": 0.001989719781130824
+      "mAP50": 0.0006733127441184485,
+      "mAP50_95": 0.0005220554179980264,
+      "precision@0.5": 0.0010826416456153013,
+      "recall@0.5": 0.014814814814814815,
+      "f1@0.5": 0.0020178241129981504
     },
     "yolo11": {
-      "mAP50": 0.8667331487235582,
-      "mAP50_95": 0.6821295469275259,
-      "precision@0.5": 0.5428156748911466,
-      "recall@0.5": 0.9211822660098522,
-      "f1@0.5": 0.6831050228310502
+      "mAP50": 0.8706326642679443,
+      "mAP50_95": 0.6939158234444605,
+      "precision@0.5": 0.6279461279461279,
+      "recall@0.5": 0.9209876543209876,
+      "f1@0.5": 0.7467467467467468
     }
   },
+  "test_note": "Sunflower test = 94 images: 1 image with a near-duplicate in val is excluded (datasets/processed/leakage_exclusions.txt).",
   "deployed": true,
-  "licence_note": "Ultralytics YOLO11 is AGPL-3.0; the exported model is distributed under AGPL-3.0 terms (see ai-engine/models/YOLO11_LICENSE_NOTE.md). Delete the .onnx to fall back to the MIT pixel model."
+  "licence_note": "Ultralytics YOLO11 is AGPL-3.0; the exported model is distributed under AGPL-3.0 terms (see ai-engine/models/YOLO11_LICENSE_NOTE.md). Delete the .onnx to fall back to the MIT pixel model.",
+  "history": {
+    "first_model_800px": {
+      "usda_test_mAP50": 0.54144203381076,
+      "sunflower_test_mAP50": 0.8667331487235582,
+      "decision": "deployed 2026-11-03 (rule: >= pixel model on USDA test)"
+    }
+  }
 }
