@@ -34,6 +34,48 @@ sequenceDiagram
   A-->>B: ScanDetail JSON → overlay + cards
 ```
 
+## Species decision inside the analyzer (auto mode)
+
+```mermaid
+flowchart LR
+  I[uploaded photo] --> DET[YOLO11n ONNX<br/>class: flower]
+  DET -->|confident boxes| C[box crop + 10 % pad]
+  DET -->|none| F[close-up fallback:<br/>centre 80 % = one flower]
+  I --> SC[centre 80 % of photo]
+  C --> EC[MobileNetV3 embedding]
+  SC --> ES[MobileNetV3 embedding]
+  F --> EF[MobileNetV3 embedding]
+  EC --> V1[k-NN votes]
+  ES --> V2[k-NN votes]
+  V1 & V2 --> B["blend: 0.25 x crop + 0.75 x photo<br/>(weight chosen on validation)"]
+  EF --> V3[k-NN votes]
+  B & V3 --> R{top vote}
+  R -->|enabled species| SP[species + confidence + support status]
+  R -->|background or strawberry refs,<br/>or similarity below threshold| U[unknown + reason]
+  SP & U --> RULES[stage / centre / health heuristics<br/>-> readiness rules + species KB]
+```
+
+## Data and training flow
+
+```mermaid
+flowchart TB
+  subgraph Sources [licensed sources]
+    USDA[USDA fruit flower<br/>CC BY 4.0, boxes]
+    TF[TF Flower Detection<br/>sunflower, CC BY 4.0, boxes]
+    INAT[iNaturalist<br/>CC0/BY/BY-SA, image labels]
+    COM[Wikimedia Commons<br/>CC0/BY/BY-SA/PD, image labels]
+  end
+  Sources --> AUD[dataset_quality_audit.py<br/>decode, duplicates, leakage]
+  AUD --> SPL[grouped train / val / test<br/>+ leakage exclusions]
+  SPL -->|boxes only| YOLO[train_yolo11.py -> select on val -> deploy rule -> ONNX]
+  SPL -->|crops / photos| GAL[build_species_gallery_multi.py<br/>gate on val]
+  GAL --> CTX[species_context_rule.py<br/>species_unsupported_rule.py<br/>chosen on val]
+  SPL -->|image-level photos| PROP[propose_species_boxes.py<br/>UNVERIFIED proposals]
+  PROP --> CVAT[human review in CVAT]
+  CVAT --> IMP[import_verified_boxes.py] --> SD[train_species_detector.py<br/>gated: pending]
+  YOLO & CTX --> EVAL[evaluate_deployed_models.py<br/>test, once]
+```
+
 ## Live scanning
 * Client samples one frame every *N* ms (0.5–5 s, user-adjustable). A new frame is **only sent when the previous result
   arrived** (back-pressure); skipped ticks are counted and shown.

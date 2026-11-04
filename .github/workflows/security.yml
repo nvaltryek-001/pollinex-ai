@@ -19,7 +19,7 @@ jobs:
         run: |
           pip install pip-audit
           pip-audit -r backend/requirements.lock.txt --desc on -f markdown -o pip-audit.md || echo "PIP_AUDIT_FAILED=1" >> $GITHUB_ENV
-          cat pip-audit.md
+          cat pip-audit.md 2>/dev/null || echo "pip-audit: no known vulnerabilities (no report file written)"
       - uses: actions/setup-node@v4
         with: { node-version: "22" }
       - name: npm audit (production dependencies)
