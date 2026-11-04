@@ -56,7 +56,13 @@ This section supersedes the updates below it. Every claim links to a file or to 
 **Failure found and fixed:** in the previous run (41820896150), the new mobile E2E step timed out. Playwright reported that its click on the history link was intercepted by the *No pollination actions logged* placeholder, apparently while the page layout was still shifting. The test now opens the scan through the link's `href`. The same flow passed on desktop, including the PDF and CSV downloads.
 
 ### Deployment (verified facts only)
-* **Render service `pollinex-api`:** see the live check below for the deployed commit.
+* **Render service `pollinex-api`:** commit `5335a16` is live (deploy `dep-dblhilbm8hqs739akgig`, started manually).
+  Later commits only change docs and workflows. The live smoke run [41822914659](https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41822914659) passed:
+  * health ok, with YOLO11 ONNX and 8 gallery species;
+  * the SPA deep links `/app/scanner` and `/app/help` are served;
+  * a JS asset returns 200, and OpenAPI lists 50 paths, including the per-scan PDF;
+  * unauthenticated `/scans` and `/reports/scans/1.pdf` return 401;
+  * `database_backend = sqlite`, which confirms that the data is **not yet persistent**.
 * **Persistent PostgreSQL: not yet connected (owner action).**
   * `pollinex-db` exists, but its connection string cannot be read with the available tools, and it must not be committed.
   * Steps: Render → `pollinex-db` → copy the **Internal Database URL** → `pollinex-api` → *Environment* → `DATABASE_URL` → save, then redeploy.
