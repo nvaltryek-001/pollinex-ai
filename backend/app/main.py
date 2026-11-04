@@ -56,6 +56,8 @@ def create_app() -> FastAPI:
         resp.headers.setdefault("X-Content-Type-Options", "nosniff")
         resp.headers.setdefault("Referrer-Policy", "no-referrer")
         resp.headers.setdefault("X-Frame-Options", "DENY")
+        if s.environment == "production":  # production is served over HTTPS only (Render)
+            resp.headers.setdefault("Strict-Transport-Security", "max-age=31536000")
         return resp
 
     @app.exception_handler(Exception)
