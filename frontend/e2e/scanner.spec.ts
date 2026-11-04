@@ -20,7 +20,9 @@ test.describe.serial("scanner, camera and core flows", () => {
     await expect(page.getByText("How this result was produced")).toBeVisible();
 
     await page.goto("/app/history");
-    await page.getByRole("link", { name: /#\d+/ }).first().click();
+    const first = page.getByRole("link", { name: /#\d+/ }).first();
+    await expect(first).toBeVisible();
+    await page.goto((await first.getAttribute("href"))!);
     await expect(page.getByRole("button", { name: "PDF report" })).toBeVisible({ timeout: 15_000 });
     const [pdf] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: "PDF report" }).click()]);
     expect(pdf.suggestedFilename()).toMatch(/^pollinex_scan_\d+\.pdf$/);

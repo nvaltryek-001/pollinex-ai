@@ -199,3 +199,17 @@ Licence reminder: Ultralytics YOLO11 is AGPL-3.0.
 Every trained artefact stores its configuration next to its metrics: `models/flower_pixel_hgb.joblib → params`
 (threshold, min_area, peak_distance, work_side, stride, fast_side, version, training data), `models/species_gallery.json`
 (k, threshold, embedding version, sources) and the `params`/`seed` blocks in each `reports/*.json`.
+
+## Reproducible evaluation of the deployed models
+`python scripts/evaluate_deployed_models.py` loads the shipped detector and gallery and evaluates them on the held-out test splits.
+Detection results and classification results are written to separate sections of
+[`MODEL_EVALUATION_RESULTS.md`](MODEL_EVALUATION_RESULTS.md). The 2026-11-04 run reproduced the committed numbers exactly:
+
+| Detection | P@0.5 (deployed thr. 0.30) | R@0.5 (0.30) | mAP@0.5 | mAP@0.5:0.95 |
+|---|--:|--:|--:|--:|
+| USDA apple/peach/pear | 0.647 | 0.578 | 0.593 | 0.332 |
+| TF sunflower | 0.817 | 0.837 | 0.871 | 0.694 |
+
+Species classification: 1,182 test items, accuracy 0.874, macro-F1 0.862.
+
+No model predicts fruit, disease, pollen viability or reproductive structures.

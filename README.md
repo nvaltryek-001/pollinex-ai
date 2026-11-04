@@ -128,21 +128,22 @@ All 20 captures live in [`docs/screenshots/`](docs/screenshots/).
 | ⏳ | **Maturity stage** | Bud · early bloom · partially open · fully open · senescent, with score distribution and an *uncertain* flag. | `heuristic` |
 | 🔬 | **Flower structures** | Petal and centre regions, pollen-like cluster. Anther, stigma, stamen and pistil shown as **not AI-validated** (no labelled data exists yet). | `heuristic` |
 | 🩺 | **Visual health** | Browning, spots, discolouration, irregular outline — measurements only, **never a disease name**. | `heuristic` |
+| 📖 | **Species information** | For the identified species: family, flower and petals, visible reproductive parts, flowering period (with regional notes), pollination mechanism, pollinators, self/cross-pollination, fruit and agricultural relevance, with sources. Labelled *reference knowledge, not from this image*; stored as data in [`species_botany.json`](ai-engine/pollinex_ai/knowledge/species_botany.json). | `knowledge base` |
 | 🎯 | **Pollination readiness** | Species-specific rules: strategy, supporting observations, confidence, uncertainty, biological limits and sources. | `rule engine` |
 | 🧭 | **Pose & approach** | Image-space centre, facing estimate and alignment vector (explicitly *not* real-world distance). | `heuristic` |
 | 🌀 | **3-D simulator** | Six species modes, particles with trails, play / pause / replay / speed, alignment & wind sweeps, 2-D fallback. | `simulation` |
 | ⛅ | **Environment** | Manual records or Open-Meteo (conditions, source, timestamp); missing/stale-data warnings lower confidence. | — |
 | 📱 | **Live scanner** | Laptop & phone cameras, permission handling, camera switching, sampled live inference with back-pressure, capture & save. | — |
-| 📊 | **Analytics & reports** | Dashboard, trends, simulation history, model performance; PDF, CSV and JSON downloads. | — |
+| 📊 | **Analytics & reports** | Dashboard, trends, simulation history, model performance. Every scan has a **PDF report** (image, detections, species, model versions, species information, readiness explanation, limitations) plus CSV and JSON exports. | — |
 | 🔐 | **Platform** | JWT auth, **admin / researcher / user** roles, rate limiting, audit log, secure uploads (EXIF/GPS stripped), dark & light themes. | — |
 
 <details>
-<summary><b>All 20 pages</b></summary>
+<summary><b>All 21 pages</b></summary>
 <br>
 
 Landing · Sign in / Register · Dashboard · Flower scanner · Species recognition · Flower structure · Maturity stages ·
 Pollination readiness · Plant health · Virtual simulator · Environment · Field management · Flower inventory · Pollination history ·
-Model evaluation · Analytics · Research centre · Datasets · Reports · Admin settings
+Model evaluation · Analytics · Research centre · Datasets · Reports · Admin settings · Help & documentation
 </details>
 
 ### 🌱 Supported crops
@@ -190,9 +191,10 @@ The deployed stack:
 Limits of the free hosting:
 * **Cold start:** about 1 minute after 15 minutes idle.
 * **Hardware:** 512 MB RAM and a shared CPU, so a scan takes a few seconds.
-* **Data is not persistent:** the demo uses SQLite in the container, so accounts and scans are lost when the service restarts.
+* **Data is not persistent:** the demo uses SQLite in the container, so accounts and scans are lost when the service restarts. `/api/v1/health` shows `database_backend`.
   * A free Render PostgreSQL instance (`pollinex-db`, expires after 30 days) has been created for persistence.
   * To use it, paste its *Internal Database URL* into the service's `DATABASE_URL` variable in the Render dashboard. The app converts `postgres://` URLs itself.
+* **Auto-deploy:** pushes do not reach Render yet (its GitHub app needs access to this repository; steps in the [deployment guide](docs/DEPLOYMENT_GUIDE.md)). Deploys are started manually.
 * **Vercel:** a separate frontend deployment was not possible, because the connected Vercel account refused project creation (HTTP 403). `frontend/vercel.json` is ready for a one-click import with `VITE_API_URL=https://pollinex-api.onrender.com`.
 
 ---
@@ -343,6 +345,9 @@ by the same evaluation code as the earlier pixel model and deployed under a rule
 <td align="center" width="25%"><h2>8 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.874 · macro-F1 0.862</sub></td>
 </tr>
 </table>
+
+**Reproduce every number above** from the shipped models, with no training: `python scripts/evaluate_deployed_models.py`.
+It writes [`docs/MODEL_EVALUATION_RESULTS.md`](docs/MODEL_EVALUATION_RESULTS.md), which contains the dataset integrity audit, detection P/R/mAP per species and the species confusion matrix. Detection and classification are reported separately. The `[evaluate]` workflow runs it in CI.
 
 <details>
 <summary><b>YOLO11n vs. pixel detector (same evaluation code, held-out test)</b></summary>
@@ -536,7 +541,8 @@ Full review, gaps and BibTeX: [`research/`](research/).
 
 ## ⚠️ Limitations
 
-- The detector is trained on **apple, peach, pear and sunflower** boxes only. Precision on cluttered orchard scenes is still low (0.27 at the lowest threshold).
+- The detector is trained on **apple, peach, pear and sunflower** boxes only. On cluttered orchard scenes, precision is 0.65 and recall 0.58 at the deployed 0.30 threshold.
+- **Fruit is not recognised.** No fruit dataset or model exists; fruit details are general species knowledge only.
 - **Strawberry** (44 images, 31 references) is not AI-supported. Its test photos are misassigned rather than returned as *unknown*.
 - **Brinjal and chilli** are AI-supported on **limited evidence** (11 and 7 test images). The UI shows this status on every result.
 - New-crop images are **species-labelled photos only** (no boxes). Commons labels come from community category curation, which is weaker than iNaturalist identifications.
@@ -567,6 +573,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 | [AI models](docs/AI_MODEL_DOCUMENTATION.md) | [Datasets](docs/DATASET_DOCUMENTATION.md) |
 | [Simulator](docs/SIMULATOR_DOCUMENTATION.md) | [Research methodology](docs/RESEARCH_METHODOLOGY.md) |
 | [Installation](docs/INSTALLATION_GUIDE.md) · [Deployment](docs/DEPLOYMENT_GUIDE.md) | [User manual](docs/USER_MANUAL.md) |
+| [**Model evaluation results (reproducible)**](docs/MODEL_EVALUATION_RESULTS.md) · [Species knowledge base](docs/SPECIES_KNOWLEDGE_BASE.md) | [Audit checklist](docs/PROJECT_AUDIT_CHECKLIST.md) |
 | [**Final release report**](docs/FINAL_RELEASE_REPORT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md) · [Earlier audit](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md) | [Completion audit](docs/PROJECT_COMPLETION_AUDIT.md) · [Next steps](docs/NEXT_SESSION_TASKS.md) |
 
 ---

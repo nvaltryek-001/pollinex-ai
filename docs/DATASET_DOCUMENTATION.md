@@ -120,3 +120,17 @@ was found. `datasets/annotation/ANNOTATION_GUIDELINES.md` + `cvat_labels.json` d
 ## Rules followed
 No invented datasets · no classification labels used for detection · no synthetic images mixed with real ones · independent test
 set used once · attribution preserved · no image archives or large weights committed.
+
+## Integrity audit (reproducible)
+`python scripts/evaluate_deployed_models.py` (section 1) and the CI test `test_dataset_integrity_audit_passes` check that:
+* every image in the USDA, TF-sunflower, iNaturalist and Commons splits decodes;
+* every YOLO label row has 5 fields with normalised coordinates in [0, 1] and positive size;
+* species folders are among the 9 known species;
+* no exact-duplicate image (SHA-256 of the decoded pixels) appears in two different splits;
+* the near-duplicate test image in `datasets/processed/leakage_exclusions.txt` is skipped in every test evaluation.
+
+The 2026-11-04 run passed: 0 decode errors, 0 invalid label rows, 0 cross-split duplicates. See
+[`MODEL_EVALUATION_RESULTS.md`](MODEL_EVALUATION_RESULTS.md).
+
+Fruit: no fruit images or labels are in the repository. See [`SPECIES_KNOWLEDGE_BASE.md`](SPECIES_KNOWLEDGE_BASE.md) for the
+planned, separate fruit dataset workflow.
