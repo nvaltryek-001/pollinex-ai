@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { ErrorBoundary } from "./ErrorBoundary";
 import {
   Activity, BarChart3, BookOpen, Boxes, Camera, CloudSun, Database, FileDown, Flower2, Gauge, HeartPulse, History,
   LayoutDashboard, LogOut, Map as MapIcon, Menu, Microscope, Moon, ScanSearch, Settings, Sprout, Sun, Timer, X,
@@ -93,7 +94,7 @@ export function Layout() {
             <button className="btn-ghost !px-2 !py-1.5" onClick={logout} aria-label="Log out"><LogOut size={16} /></button>
           </div>
         </header>
-        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 md:px-8"><Outlet /></main>
+        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 md:px-8"><ErrorBoundary resetKey={loc.pathname}><Outlet /></ErrorBoundary></main>
       </div>
     </div>
   );

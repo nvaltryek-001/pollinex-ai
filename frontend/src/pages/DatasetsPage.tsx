@@ -38,7 +38,9 @@ export default function DatasetsPage() {
             <dl className="grid grid-cols-[100px_1fr] gap-x-3 gap-y-1 text-xs">
               <dt className="text-muted">Licence</dt><dd>{d.license}</dd>
               <dt className="text-muted">Supports</dt><dd>{d.task_support}</dd>
-              {d.details.species && <><dt className="text-muted">Species</dt><dd>{Array.isArray(d.details.species) ? d.details.species.join(", ") : d.details.species}</dd></>}
+              {d.details.species && <><dt className="text-muted">Species</dt><dd>{Array.isArray(d.details.species) ? d.details.species.join(", ")
+                : typeof d.details.species === "object" ? Object.entries(d.details.species as Record<string, number>).map(([k, v]) => `${k} ${v}`).join(" · ")
+                : String(d.details.species)}</dd></>}
               {d.details.original_images != null && <><dt className="text-muted">Images</dt><dd>{String(d.details.original_images)}</dd></>}
               {d.details.reason && <><dt className="text-muted">Decision</dt><dd>{d.details.reason}</dd></>}
               {d.details.leakage_warning && <><dt className="text-muted">Leakage</dt><dd className="text-pollen">{d.details.leakage_warning}</dd></>}
