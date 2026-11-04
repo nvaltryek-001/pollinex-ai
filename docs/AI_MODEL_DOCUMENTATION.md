@@ -213,3 +213,26 @@ Detection results and classification results are written to separate sections of
 Species classification: 1,182 test items, accuracy 0.874, macro-F1 0.862.
 
 No model predicts fruit, disease, pollen viability or reproductive structures.
+
+## What is trained, what is rule-based, what is simulated
+| Kind | Components |
+|---|---|
+| **Trained AI** | YOLO11n flower detector (one class, `flower`, trained on apple/peach/pear/sunflower boxes); species reference gallery (MobileNetV3 embeddings + k-NN, 8 species enabled, background references for *unknown*) |
+| **Rule-based / heuristic** | developmental stage, centre region (pollen-like cluster), visible health indicators, pose, pollination readiness |
+| **Simulation** | virtual pollen-transfer simulator (seeded particle model) |
+
+The detector has a single `flower` class. It does not predict species, and it has no boxes for hibiscus, tomato, strawberry, brinjal or chilli.
+
+## End-to-end check on real photos of all nine species
+`scripts/sample_inference_check.py` runs the full pipeline on the first 5 held-out iNaturalist/Commons test photos per species.
+This is a smoke check, not a metric. On 2026-11-04 the top flower's species matched the photo label as follows:
+
+| Mode | apple | peach | pear | sunflower | hibiscus | tomato | brinjal | chilli | strawberry (not supported) | 8 supported species |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| close-up | 4/5 | 3/5 | 2/5 | 4/5 | 4/5 | 5/5 | 4/5 | 3/5 | 0/5 | **29/40** |
+| auto | 3/5 | 1/5 | 1/5 | 4/5 | 4/5 | 3/5 | 2/5 | 3/5 | 0/5 | **24/40** |
+
+**Finding:** auto mode classifies the crop of the top detection box, which is often smaller or off-centre in whole-scene
+photos. Close-up mode classifies the whole frame, which matches how the gallery was built and evaluated (centre crop). For a
+single flower, use close-up mode. Strawberry was never returned as *unknown*. Its photos were assigned to other species,
+which is a known weakness of the open-set rejection.

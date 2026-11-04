@@ -134,3 +134,36 @@ The 2026-11-04 run passed: 0 decode errors, 0 invalid label rows, 0 cross-split 
 
 Fruit: no fruit images or labels are in the repository. See [`SPECIES_KNOWLEDGE_BASE.md`](SPECIES_KNOWLEDGE_BASE.md) for the
 planned, separate fruit dataset workflow.
+
+## Per-species inventory (machine-readable)
+`datasets/reports/species_inventory.json` and `.md` are built from the files on disk by
+`datasets/scripts/build_species_inventory.py`, after `dataset_quality_audit.py` has run. Last run 2026-11-04:
+* 1,985 images, all of which decode; 0 corrupt.
+* 0 exact-duplicate groups and 2 near-duplicate pairs.
+* 1 cross-split leakage pair, which is excluded from test.
+
+| Species | Images | train / val / test | Images with boxes | Boxes | Sources |
+|---|--:|---|--:|--:|---|
+| apple | 155 | 96 / 30 / 29 | 48 | 2,470 | USDA 48, iNaturalist 107 |
+| peach | 95 | 66 / 13 / 16 | 24 | 924 | USDA 24, iNaturalist 71 |
+| pear | 47 | 29 / 9 / 9 | 18 | 1,257 | USDA 18, iNaturalist 29 |
+| sunflower | 828 | 581 / 120 / 127 | 628 | 2,432 | TF Flower Detection 628, iNaturalist 200 |
+| hibiscus | 256 | 204 / 29 / 23 | 0 | 0 | iNaturalist 91, Commons 165 |
+| tomato | 347 | 230 / 54 / 63 | 0 | 0 | iNaturalist 200, Commons 147 |
+| strawberry | 44 | 31 / 7 / 6 | 0 | 0 | iNaturalist 15, Commons 29 |
+| brinjal | 131 | 109 / 11 / 11 | 0 | 0 | iNaturalist 20, Commons 111 |
+| chilli | 82 | 66 / 9 / 7 | 0 | 0 | iNaturalist 28, Commons 54 |
+
+Every image has a classification label. Only USDA and TF Flower Detection images have boxes. iNaturalist and Commons photos are
+never used as detection data.
+
+External datasets (status from `datasets/dataset_sources.json`):
+
+| Dataset | Status |
+|---|---|
+| USDA, TF Flower Detection (sunflower subset), iNaturalist, Wikimedia Commons | integrated: downloaded and committed |
+| INESC flower detection | audited, not used: unknown species, leakage between splits |
+| Oxford 102 | unreachable from the workspace and GitHub runners; script only (`download_oxford102_subset.py`) |
+| FlowerNet | script only: manual download, then `ingest_flowernet_originals.py` |
+| Eindhoven Wildflower, DoPI, FloPE | documented only (licence or scope does not fit, or no download) |
+| PlantCLEF | unverified terms; not downloaded |

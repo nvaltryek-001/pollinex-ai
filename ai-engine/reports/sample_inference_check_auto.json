@@ -1,0 +1,806 @@
+{
+  "generated_at": "2026-11-04T13:17:22+00:00",
+  "mode": "auto",
+  "model": {
+    "detector_backend": "yolo11-onnx",
+    "detector_version": "flower_yolo11n",
+    "gallery_species": {
+      "apple": 955,
+      "peach": 543,
+      "pear": 442,
+      "sunflower": 675,
+      "brinjal": 109,
+      "chilli": 66,
+      "hibiscus": 204,
+      "tomato": 230
+    },
+    "gallery_threshold": 0.3,
+    "gallery_version": "mnv3l-v1",
+    "structure_model": null
+  },
+  "note": "Real held-out test photos (iNaturalist / Commons), full pipeline. Detection boxes exist only for apple, peach, pear and sunflower; for other species the detector is untrained, so close-up fallback is expected. Stage/structure/health are heuristics and readiness is rule-based; their method fields are recorded per image.",
+  "summary": {
+    "apple": {
+      "photos": 5,
+      "top_species_predictions": {
+        "apple": 3,
+        "pear": 2
+      },
+      "detection_methods": {
+        "trained_model": 4,
+        "closeup_fallback": 1
+      },
+      "top_species_matches_label": 3
+    },
+    "peach": {
+      "photos": 5,
+      "top_species_predictions": {
+        "apple": 3,
+        "hibiscus": 1,
+        "peach": 1
+      },
+      "detection_methods": {
+        "trained_model": 5
+      },
+      "top_species_matches_label": 1
+    },
+    "pear": {
+      "photos": 5,
+      "top_species_predictions": {
+        "apple": 3,
+        "pear": 1,
+        "brinjal": 1
+      },
+      "detection_methods": {
+        "trained_model": 3,
+        "closeup_fallback": 2
+      },
+      "top_species_matches_label": 1
+    },
+    "sunflower": {
+      "photos": 5,
+      "top_species_predictions": {
+        "tomato": 1,
+        "sunflower": 4
+      },
+      "detection_methods": {
+        "closeup_fallback": 1,
+        "trained_model": 4
+      },
+      "top_species_matches_label": 4
+    },
+    "hibiscus": {
+      "photos": 5,
+      "top_species_predictions": {
+        "hibiscus": 4,
+        "pear": 1
+      },
+      "detection_methods": {
+        "closeup_fallback": 2,
+        "trained_model": 3
+      },
+      "top_species_matches_label": 4
+    },
+    "tomato": {
+      "photos": 5,
+      "top_species_predictions": {
+        "tomato": 3,
+        "apple": 2
+      },
+      "detection_methods": {
+        "closeup_fallback": 2,
+        "trained_model": 3
+      },
+      "top_species_matches_label": 3
+    },
+    "strawberry": {
+      "photos": 5,
+      "top_species_predictions": {
+        "unknown": 1,
+        "apple": 1,
+        "brinjal": 2,
+        "sunflower": 1
+      },
+      "detection_methods": {
+        "trained_model": 3,
+        "closeup_fallback": 2
+      },
+      "top_species_matches_label": 0
+    },
+    "brinjal": {
+      "photos": 5,
+      "top_species_predictions": {
+        "hibiscus": 1,
+        "brinjal": 2,
+        "peach": 1,
+        "apple": 1
+      },
+      "detection_methods": {
+        "closeup_fallback": 2,
+        "trained_model": 3
+      },
+      "top_species_matches_label": 2
+    },
+    "chilli": {
+      "photos": 5,
+      "top_species_predictions": {
+        "chilli": 3,
+        "brinjal": 2
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 3
+    }
+  },
+  "images": [
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_113188828_191250913.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 1394,
+      "top_species": "apple",
+      "top_species_confidence": 0.567,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_116354214_196388210.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 18,
+      "latency_ms": 1249,
+      "top_species": "apple",
+      "top_species_confidence": 0.564,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_123816254_209794063.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1511,
+      "top_species": "pear",
+      "top_species_confidence": 0.714,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "approaching",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_1364297_1687673.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 5,
+      "latency_ms": 317,
+      "top_species": "apple",
+      "top_species_confidence": 0.713,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_160694419_277703680.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 17,
+      "latency_ms": 578,
+      "top_species": "pear",
+      "top_species_confidence": 0.861,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_11112722_15707342.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 38,
+      "latency_ms": 726,
+      "top_species": "apple",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "38 flowers detected; detailed analysis limited to the top 25 by confidence."
+      ]
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_182602315_318411484.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 443,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.572,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_203031961_358659183.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 315,
+      "top_species": "apple",
+      "top_species_confidence": 0.57,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_203279975_359132234.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 4,
+      "latency_ms": 360,
+      "top_species": "peach",
+      "top_species_confidence": 0.572,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_246288551_439641911.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 11,
+      "latency_ms": 388,
+      "top_species": "apple",
+      "top_species_confidence": 0.861,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_113188530_191250232.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 6,
+      "latency_ms": 380,
+      "top_species": "apple",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "past_window",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_118551461_200312287.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1014,
+      "top_species": "pear",
+      "top_species_confidence": 0.575,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_1364302_1687682.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1388,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.288,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_376153215_687731801.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 7,
+      "latency_ms": 315,
+      "top_species": "apple",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_41170626_65288889.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 8,
+      "latency_ms": 307,
+      "top_species": "apple",
+      "top_species_confidence": 0.857,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_230524902_409329094.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 605,
+      "top_species": "tomato",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_234463899_416824211.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 1,
+      "latency_ms": 236,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_234509350_416910019.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 249,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_234808409_417495354.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 1,
+      "latency_ms": 229,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_235036102_417935692.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 1,
+      "latency_ms": 269,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_190263689_333486012.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1011,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.712,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_243266564_433763433.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 1,
+      "latency_ms": 367,
+      "top_species": "hibiscus",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_243273868_433778909.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 776,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.852,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_337383905_613307237.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 479,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.856,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_35744018_56398349.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 16,
+      "latency_ms": 1525,
+      "top_species": "pear",
+      "top_species_confidence": 0.57,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_133961661_228260204.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 547,
+      "top_species": "tomato",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_135426427_230965620.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 5,
+      "latency_ms": 279,
+      "top_species": "apple",
+      "top_species_confidence": 0.571,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_139542147_238682066.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 34,
+      "latency_ms": 1302,
+      "top_species": "tomato",
+      "top_species_confidence": 0.849,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "34 flowers detected; detailed analysis limited to the top 25 by confidence."
+      ]
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_148386621_255521846.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 3,
+      "latency_ms": 272,
+      "top_species": "apple",
+      "top_species_confidence": 0.861,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_171061097_296788397.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1446,
+      "top_species": "tomato",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/inat_flowering/test/strawberry/inat_45873971_72757143.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 8,
+      "latency_ms": 334,
+      "top_species": "unknown",
+      "top_species_confidence": 0.429,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "indeterminate",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/inat_flowering/test/strawberry/inat_6122153_7664616.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 3,
+      "latency_ms": 264,
+      "top_species": "apple",
+      "top_species_confidence": 0.85,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/commons_flowers/test/strawberry/commons_130804979.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 328,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.715,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/commons_flowers/test/strawberry/commons_190518145.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 4723,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.719,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/commons_flowers/test/strawberry/commons_190518146.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 4,
+      "latency_ms": 272,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/inat_flowering/test/brinjal/inat_203981936_360480353.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 673,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.427,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "approaching",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_11404624.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 256,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.859,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_153870781.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 2570,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.723,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_17977074.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 2,
+      "latency_ms": 232,
+      "top_species": "peach",
+      "top_species_confidence": 0.426,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_17977078.jpg",
+      "detection_method": "trained_model",
+      "flower_count": 3,
+      "latency_ms": 267,
+      "top_species": "apple",
+      "top_species_confidence": 0.57,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/inat_flowering/test/chilli/inat_253573176_454060627.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 690,
+      "top_species": "chilli",
+      "top_species_confidence": 0.433,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_15815645.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 13109,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.58,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_19610130.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 3041,
+      "top_species": "chilli",
+      "top_species_confidence": 0.859,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_2213005.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1279,
+      "top_species": "chilli",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_76579568.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 6510,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.709,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": [
+        "No confident detections from the flower detector (trained on apple, peach, pear and sunflower boxes); analysed the image as a single close-up flower (close-up fallback - not a model detection)."
+      ]
+    }
+  ]
+}

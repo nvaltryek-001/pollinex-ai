@@ -1,6 +1,6 @@
 # Dataset inventory (actual files)
 
-_Generated 2026-11-04T05:17:34.390209+00:00 by `datasets/scripts/audit_datasets.py`._
+_Generated 2026-11-04T13:14:26.454549+00:00 by `datasets/scripts/audit_datasets.py`._
 
 **Dataset images present: 1985** (masks and report figures excluded).
 

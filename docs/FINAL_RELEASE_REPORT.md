@@ -73,12 +73,27 @@ This section supersedes the updates below it. Every claim links to a file or to 
 * **Vercel: blocked.** The connected account returns HTTP 403 on project creation, and the team has 0 projects. It is optional, because Render serves the UI; import steps are in the deployment guide.
 * **Secrets:** `JWT_SECRET` is set only on Render. No credentials are in the repository.
 
+### Later the same evening (15-minute audit pass)
+* **Mobile layout bug fixed.** Pages could scroll sideways on phones, by 53–56 px on Model evaluation, because grid children
+  kept their minimum content width and several tables had no scroll box. Grid children may now shrink, and cards scroll their
+  own wide content. A new E2E test checks 15 pages for sideways scrolling at 390 px. It caught the bug; the fix passed CI
+  run 41835299076. The mobile history-link click from the earlier failure now works without a workaround.
+* **Vitest:** 2 new species-panel tests, so Vitest is now 13. Total automated tests: 103.
+* **Per-species dataset inventory:** `datasets/reports/species_inventory.json` is built from the files on disk; the audit
+  was re-run with unchanged counts. It includes the status of the 10 external datasets.
+* **End-to-end inference on real photos of all 9 species** (`scripts/sample_inference_check.py`): the top flower's species
+  matched the photo label in 29/40 (close-up) and 24/40 (auto) photos of the 8 supported species, and strawberry got 0/5.
+  Auto mode is weaker on whole-scene photos because it classifies the detection crop. This is documented as a limitation and
+  has not been fixed yet.
+* **Windows guide** for `N:\pollinex-ai`: [`LOCAL_SETUP.md`](LOCAL_SETUP.md).
+
 ### Still not done
 * There are no reproductive-structure, stage, health or fruit models, because no annotations exist for them.
 * There are no boxes for 5 species.
 * Strawberry is not AI-supported.
 * Brinjal and chilli rest on limited evidence.
 * The phone camera has not been tested on a real device over HTTPS.
+* Species recognition in auto mode on whole-scene photos is weaker than in close-up mode (see above).
 
 ---
 

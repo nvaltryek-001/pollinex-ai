@@ -5,7 +5,7 @@
 <br>
 
 [![CI](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/automated%20tests-101%20passing-2e7d4f)
+![Tests](https://img.shields.io/badge/automated%20tests-103%20passing-2e7d4f)
 ![Platforms](https://img.shields.io/badge/verified%20on-Ubuntu%20%7C%20Windows-1d3a2a)
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776ab?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/react-18-61dafb?logo=react&logoColor=black)
@@ -204,7 +204,8 @@ Limits of the free hosting:
 ### Windows (recommended)
 
 > Needs **Python 3.12** ([python.org](https://www.python.org/downloads/), tick *Add python.exe to PATH*), **Node.js 20+**, **Git**.
-> No GPU, no paid API, no hardware.
+> No GPU, no paid API, no hardware. Step-by-step guide, including a drive such as `N:\pollinex-ai`, tests and stopping:
+> [`docs/LOCAL_SETUP.md`](docs/LOCAL_SETUP.md).
 
 ```powershell
 git clone https://github.com/nvaltryek-001/pollinex-ai.git
@@ -466,8 +467,8 @@ Every push to `main` runs the full stack on clean **Ubuntu and Windows** machine
 |---|:-:|
 | AI engine + simulator tests (incl. dataset integrity audit, species knowledge base) | ✅ 47 |
 | Backend API, auth, roles, DB, uploads, inference, per-scan PDF | ✅ 27 |
-| Frontend unit & component tests (Vitest) | ✅ 11 |
-| Playwright end-to-end — desktop + Pixel 7, **simulated camera**, live scan, species correction, species panel for all 9 species, PDF/CSV download, every page | ✅ 16 |
+| Frontend unit & component tests (Vitest, incl. species info panel) | ✅ 13 |
+| Playwright end-to-end — desktop + Pixel 7, **simulated camera**, live scan, species correction, species panel for all 9 species, PDF/CSV download, every page, no sideways scrolling on phones | ✅ 16 |
 | TypeScript strict type-check · production build | ✅ |
 | Migrations on **PostgreSQL 16** and SQLite · backend startup | ✅ |
 | Docker images + Docker Compose smoke test | ✅ |
@@ -547,6 +548,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 - **Strawberry** (44 images, 31 references) is not AI-supported. Its test photos are misassigned rather than returned as *unknown*.
 - **Brinjal and chilli** are AI-supported on **limited evidence** (11 and 7 test images). The UI shows this status on every result.
 - New-crop images are **species-labelled photos only** (no boxes). Commons labels come from community category curation, which is weaker than iNaturalist identifications.
+- In **auto** mode, species recognition uses the top detection box. On whole-scene photos this is weaker than **close-up** mode: 24/40 vs 29/40 correct on real test photos of the 8 supported species ([details](docs/AI_MODEL_DOCUMENTATION.md#end-to-end-check-on-real-photos-of-all-nine-species)).
 - 31 % of orchard background crops are still given a species. Use **Close-up** mode for single flowers.
 - **No anther / stigma detector**: structures, stage, health and pose are labelled heuristics until annotated data exists.
 - Readiness is a **visual estimate**; simulation is **computation** — neither proves pollen viability or fertilisation.

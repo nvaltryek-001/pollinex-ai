@@ -1,0 +1,757 @@
+{
+  "generated_at": "2026-11-04T13:18:26+00:00",
+  "mode": "closeup",
+  "model": {
+    "detector_backend": "yolo11-onnx",
+    "detector_version": "flower_yolo11n",
+    "gallery_species": {
+      "apple": 955,
+      "peach": 543,
+      "pear": 442,
+      "sunflower": 675,
+      "brinjal": 109,
+      "chilli": 66,
+      "hibiscus": 204,
+      "tomato": 230
+    },
+    "gallery_threshold": 0.3,
+    "gallery_version": "mnv3l-v1",
+    "structure_model": null
+  },
+  "note": "Real held-out test photos (iNaturalist / Commons), full pipeline. Detection boxes exist only for apple, peach, pear and sunflower; for other species the detector is untrained, so close-up fallback is expected. Stage/structure/health are heuristics and readiness is rule-based; their method fields are recorded per image.",
+  "summary": {
+    "apple": {
+      "photos": 5,
+      "top_species_predictions": {
+        "apple": 4,
+        "pear": 1
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 4
+    },
+    "peach": {
+      "photos": 5,
+      "top_species_predictions": {
+        "sunflower": 1,
+        "hibiscus": 1,
+        "peach": 3
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 3
+    },
+    "pear": {
+      "photos": 5,
+      "top_species_predictions": {
+        "apple": 2,
+        "pear": 2,
+        "brinjal": 1
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 2
+    },
+    "sunflower": {
+      "photos": 5,
+      "top_species_predictions": {
+        "tomato": 1,
+        "sunflower": 4
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 4
+    },
+    "hibiscus": {
+      "photos": 5,
+      "top_species_predictions": {
+        "hibiscus": 4,
+        "sunflower": 1
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 4
+    },
+    "tomato": {
+      "photos": 5,
+      "top_species_predictions": {
+        "tomato": 5
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 5
+    },
+    "strawberry": {
+      "photos": 5,
+      "top_species_predictions": {
+        "sunflower": 1,
+        "apple": 1,
+        "brinjal": 3
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 0
+    },
+    "brinjal": {
+      "photos": 5,
+      "top_species_predictions": {
+        "hibiscus": 1,
+        "brinjal": 4
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 4
+    },
+    "chilli": {
+      "photos": 5,
+      "top_species_predictions": {
+        "chilli": 3,
+        "brinjal": 2
+      },
+      "detection_methods": {
+        "closeup_fallback": 5
+      },
+      "top_species_matches_label": 3
+    }
+  },
+  "images": [
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_113188828_191250913.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 603,
+      "top_species": "apple",
+      "top_species_confidence": 0.855,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_116354214_196388210.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 760,
+      "top_species": "apple",
+      "top_species_confidence": 0.713,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_123816254_209794063.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1174,
+      "top_species": "pear",
+      "top_species_confidence": 0.714,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "approaching",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_1364297_1687673.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 38,
+      "top_species": "apple",
+      "top_species_confidence": 0.714,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "apple",
+      "file": "datasets/processed/inat_flowering/test/apple/inat_160694419_277703680.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 350,
+      "top_species": "apple",
+      "top_species_confidence": 0.568,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_11112722_15707342.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 271,
+      "top_species": "sunflower",
+      "top_species_confidence": 0.567,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_182602315_318411484.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 286,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.712,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "past_window",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_203031961_358659183.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 729,
+      "top_species": "peach",
+      "top_species_confidence": 0.578,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "past_window",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_203279975_359132234.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 480,
+      "top_species": "peach",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "peach",
+      "file": "datasets/processed/inat_flowering/test/peach/inat_246288551_439641911.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 328,
+      "top_species": "peach",
+      "top_species_confidence": 0.305,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_113188530_191250232.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 387,
+      "top_species": "apple",
+      "top_species_confidence": 0.709,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_118551461_200312287.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 810,
+      "top_species": "pear",
+      "top_species_confidence": 0.575,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_1364302_1687682.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1146,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.288,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_376153215_687731801.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 708,
+      "top_species": "apple",
+      "top_species_confidence": 0.423,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "pear",
+      "file": "datasets/processed/inat_flowering/test/pear/inat_41170626_65288889.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 709,
+      "top_species": "pear",
+      "top_species_confidence": 0.572,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "approaching",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_230524902_409329094.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 460,
+      "top_species": "tomato",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_234463899_416824211.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 414,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_234509350_416910019.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 680,
+      "top_species": "sunflower",
+      "top_species_confidence": 0.862,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_234808409_417495354.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 41,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "sunflower",
+      "file": "datasets/processed/inat_flowering/test/sunflower/inat_235036102_417935692.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 520,
+      "top_species": "sunflower",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_190263689_333486012.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 774,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.712,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_243266564_433763433.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 530,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.854,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_243273868_433778909.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 237,
+      "top_species": "hibiscus",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_337383905_613307237.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 307,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.856,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "hibiscus",
+      "file": "datasets/processed/inat_flowering/test/hibiscus/inat_35744018_56398349.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 529,
+      "top_species": "sunflower",
+      "top_species_confidence": 0.428,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_133961661_228260204.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 376,
+      "top_species": "tomato",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_135426427_230965620.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 498,
+      "top_species": "tomato",
+      "top_species_confidence": 0.864,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_139542147_238682066.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 426,
+      "top_species": "tomato",
+      "top_species_confidence": 0.847,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_148386621_255521846.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 316,
+      "top_species": "tomato",
+      "top_species_confidence": 0.574,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "tomato",
+      "file": "datasets/processed/inat_flowering/test/tomato/inat_171061097_296788397.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1329,
+      "top_species": "tomato",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/inat_flowering/test/strawberry/inat_45873971_72757143.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 296,
+      "top_species": "sunflower",
+      "top_species_confidence": 0.43,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/inat_flowering/test/strawberry/inat_6122153_7664616.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 42,
+      "top_species": "apple",
+      "top_species_confidence": 0.718,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/commons_flowers/test/strawberry/commons_130804979.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 116,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.715,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/commons_flowers/test/strawberry/commons_190518145.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 5106,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.719,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "strawberry",
+      "file": "datasets/processed/commons_flowers/test/strawberry/commons_190518146.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 12244,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.716,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/inat_flowering/test/brinjal/inat_203981936_360480353.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 487,
+      "top_species": "hibiscus",
+      "top_species_confidence": 0.427,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_11404624.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 59,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.712,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_153870781.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 3146,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.723,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_17977074.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 1931,
+      "top_species": "brinjal",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "brinjal",
+      "file": "datasets/processed/commons_flowers/test/brinjal/commons_17977078.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 104,
+      "top_species": "brinjal",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/inat_flowering/test/chilli/inat_253573176_454060627.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 421,
+      "top_species": "chilli",
+      "top_species_confidence": 0.433,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_15815645.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 12457,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.58,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_19610130.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 2878,
+      "top_species": "chilli",
+      "top_species_confidence": 0.859,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_2213005.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 907,
+      "top_species": "chilli",
+      "top_species_confidence": 1.0,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "likely_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    },
+    {
+      "true_species": "chilli",
+      "file": "datasets/processed/commons_flowers/test/chilli/commons_76579568.jpg",
+      "detection_method": "closeup_fallback",
+      "flower_count": 1,
+      "latency_ms": 6252,
+      "top_species": "brinjal",
+      "top_species_confidence": 0.709,
+      "species_method": "trained_reference_gallery",
+      "stage_method": "heuristic",
+      "readiness": "not_ready",
+      "readiness_method": "rule_engine",
+      "warnings": []
+    }
+  ]
+}

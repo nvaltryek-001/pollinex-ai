@@ -3,7 +3,16 @@
 _Date: 2026-11-03 · Repository: <https://github.com/nvaltryek-001/pollinex-ai> (branch `main`)._
 _Verification: GitHub Actions runs #41626877962 and #41628075012 (all jobs green) plus the workspace's own engine tests._
 
-## 1. Status in one paragraph
+> **Current status (2026-11-04, supersedes the counts below).** 21 pages, 101 automated tests green in CI on Ubuntu and
+> Windows (engine + simulator 47, backend 27, Vitest 13, Playwright 16). The deployed models are YOLO11n ONNX and gallery v2.
+> * **Data:** 1,985 images, 9 species; boxes for 4 of them.
+> * **Species recognition:** 8 of 9 AI-supported; strawberry is not.
+> * **Not trained models:** stage, structures, health and pose are heuristics, and readiness is rule-based.
+> * **Live demo:** on Render, without persistent data until `DATABASE_URL` is set.
+> * **Details:** [`FINAL_RELEASE_REPORT.md`](FINAL_RELEASE_REPORT.md) and [`PROJECT_AUDIT_CHECKLIST.md`](PROJECT_AUDIT_CHECKLIST.md).
+> * **Superseded:** the counts in this section are from 2026-11-03. "20 pages" is now 21, and the earlier test numbers are out of date.
+
+## 1. Status in one paragraph (2026-11-03)
 POLLINEX AI is **built, started and tested**: the FastAPI backend starts against PostgreSQL 16 and SQLite, migrations apply,
 the React production build succeeds, and 37 engine, 24 backend, 11 frontend-unit and 14 browser end-to-end tests pass on clean
 Ubuntu runners. The Windows setup and test scripts were run on a fresh Windows runner, and Docker Compose was smoke-tested.

@@ -1,6 +1,6 @@
 # Dataset quality audit
 
-_Generated 2026-11-04T04:16:27.295339+00:00 by `datasets/scripts/dataset_quality_audit.py`._
+_Generated 2026-11-04T13:14:19.854645+00:00 by `datasets/scripts/dataset_quality_audit.py`._
 
 Images checked **1985** · decoded **1985** · corrupt **0** · < 160 px **18** · exact-duplicate groups **0** · near-duplicate pairs **2** · **cross-split leakage pairs 1** · suspected label noise **0** (review list)
 

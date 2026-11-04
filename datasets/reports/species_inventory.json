@@ -1,0 +1,398 @@
+{
+  "generated_at": "2026-11-04T13:15:01+00:00",
+  "source_files": [
+    "datasets/reports/dataset_quality_audit.json",
+    "datasets/dataset_sources.json",
+    "datasets/processed/*/labels"
+  ],
+  "totals": {
+    "images": 1985,
+    "decoded_ok": 1985,
+    "corrupt": [],
+    "exact_duplicate_groups": 0,
+    "near_duplicate_pairs": 2,
+    "cross_split_leakage_pairs": [
+      {
+        "a": "datasets/processed/tf_flower_detection_sunflower/val/images/2588453601_66f2a03cca_n.jpg",
+        "a_split": "val",
+        "b": "datasets/processed/tf_flower_detection_sunflower/test/images/2588234269_c4bfd0d8b9_n.jpg",
+        "b_split": "test",
+        "hamming": 3,
+        "same_species": true,
+        "resolved_by_test_exclusion": true
+      }
+    ],
+    "leakage_excluded_from_test": [
+      "2588234269_c4bfd0d8b9_n"
+    ],
+    "smaller_than_160px": [
+      "datasets/processed/tf_flower_detection_sunflower/train/images/1240626292_52cd5d7fb1_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/15240466871_ec45b65554_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/184682652_c927a49226_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/2720698862_486d3ec079_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/3784815653_5df39aa9c2_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/4271193206_666ef60aa0_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/4933229357_1c5cc03f65_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/4933230395_7930697335_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/4933230547_394f618009_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/5069564563_ae03792c3c_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/7530313068_ddd2dc1f44_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/9558628596_722c29ec60_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/9558630626_52a1b7d702_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/train/images/9904127656_f76a5a4811_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/test/images/184682920_97ae41ce60_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/test/images/6606809995_edee55b770_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/test/images/6606813305_c992231d29_m.jpg",
+      "datasets/processed/tf_flower_detection_sunflower/test/images/9216286162_6ceefdd1b4_m.jpg"
+    ]
+  },
+  "rule": "Only USDA and TF Flower Detection images carry boxes. iNaturalist and Commons photos are image-level species labels and are never used as detection data.",
+  "species": {
+    "apple": {
+      "images_total": 155,
+      "classification_labelled_images": 155,
+      "detection_images_with_boxes": 48,
+      "detection_boxes": 2470,
+      "detection_boxes_by_split": {
+        "train": 1578,
+        "val": 389,
+        "test": 503
+      },
+      "images_by_split": {
+        "train": 96,
+        "val": 30,
+        "test": 29
+      },
+      "images_by_source": {
+        "usda_fruit_flower": 48,
+        "inat_flowering": 107
+      },
+      "licences": {
+        "usda_fruit_flower: CC BY 4.0": 48,
+        "inat_flowering: cc-by": 67,
+        "inat_flowering: cc0": 34,
+        "inat_flowering: cc-by-sa": 6
+      },
+      "downloaded": true
+    },
+    "peach": {
+      "images_total": 95,
+      "classification_labelled_images": 95,
+      "detection_images_with_boxes": 24,
+      "detection_boxes": 924,
+      "detection_boxes_by_split": {
+        "train": 620,
+        "val": 134,
+        "test": 170
+      },
+      "images_by_split": {
+        "train": 66,
+        "val": 13,
+        "test": 16
+      },
+      "images_by_source": {
+        "usda_fruit_flower": 24,
+        "inat_flowering": 71
+      },
+      "licences": {
+        "usda_fruit_flower: CC BY 4.0": 24,
+        "inat_flowering: cc-by": 55,
+        "inat_flowering: cc-by-sa": 6,
+        "inat_flowering: cc0": 10
+      },
+      "downloaded": true
+    },
+    "pear": {
+      "images_total": 47,
+      "classification_labelled_images": 47,
+      "detection_images_with_boxes": 18,
+      "detection_boxes": 1257,
+      "detection_boxes_by_split": {
+        "train": 872,
+        "val": 129,
+        "test": 256
+      },
+      "images_by_split": {
+        "val": 9,
+        "test": 9,
+        "train": 29
+      },
+      "images_by_source": {
+        "usda_fruit_flower": 18,
+        "inat_flowering": 29
+      },
+      "licences": {
+        "usda_fruit_flower: CC BY 4.0": 18,
+        "inat_flowering: cc0": 5,
+        "inat_flowering: cc-by": 23,
+        "inat_flowering: cc-by-sa": 1
+      },
+      "downloaded": true
+    },
+    "sunflower": {
+      "images_total": 828,
+      "classification_labelled_images": 828,
+      "detection_images_with_boxes": 628,
+      "detection_boxes": 2432,
+      "detection_boxes_by_split": {
+        "train": 1665,
+        "val": 361,
+        "test": 406
+      },
+      "images_by_split": {
+        "train": 581,
+        "val": 120,
+        "test": 127
+      },
+      "images_by_source": {
+        "tf_flower_detection_sunflower": 628,
+        "inat_flowering": 200
+      },
+      "licences": {
+        "tf_flower_detection_sunflower: CC BY 4.0 (boxes) / CC-BY Flickr (image)": 628,
+        "inat_flowering: cc-by": 158,
+        "inat_flowering: cc0": 35,
+        "inat_flowering: cc-by-sa": 7
+      },
+      "downloaded": true
+    },
+    "hibiscus": {
+      "images_total": 256,
+      "classification_labelled_images": 256,
+      "detection_images_with_boxes": 0,
+      "detection_boxes": 0,
+      "detection_boxes_by_split": {},
+      "images_by_split": {
+        "train": 204,
+        "test": 23,
+        "val": 29
+      },
+      "images_by_source": {
+        "inat_flowering": 91,
+        "commons_flowers": 165
+      },
+      "licences": {
+        "inat_flowering: cc0": 14,
+        "inat_flowering: cc-by": 65,
+        "inat_flowering: cc-by-sa": 12,
+        "commons_flowers: CC BY 3.0": 13,
+        "commons_flowers: Public domain": 11,
+        "commons_flowers: CC0": 39,
+        "commons_flowers: CC BY-SA 2.5": 1,
+        "commons_flowers: CC BY-SA 3.0": 23,
+        "commons_flowers: CC BY 2.0": 8,
+        "commons_flowers: CC BY-SA 4.0": 46,
+        "commons_flowers: CC BY-SA 2.0": 6,
+        "commons_flowers: CC BY 4.0": 13,
+        "commons_flowers: CC BY 3.0 us": 5
+      },
+      "downloaded": true
+    },
+    "tomato": {
+      "images_total": 347,
+      "classification_labelled_images": 347,
+      "detection_images_with_boxes": 0,
+      "detection_boxes": 0,
+      "detection_boxes_by_split": {},
+      "images_by_split": {
+        "train": 230,
+        "val": 54,
+        "test": 63
+      },
+      "images_by_source": {
+        "inat_flowering": 200,
+        "commons_flowers": 147
+      },
+      "licences": {
+        "inat_flowering: cc-by-sa": 20,
+        "inat_flowering: cc-by": 154,
+        "inat_flowering: cc0": 26,
+        "commons_flowers: CC BY-SA 3.0": 49,
+        "commons_flowers: Public domain": 7,
+        "commons_flowers: CC0": 20,
+        "commons_flowers: CC BY-SA 4.0": 49,
+        "commons_flowers: CC BY 4.0": 1,
+        "commons_flowers: CC BY-SA 2.5": 2,
+        "commons_flowers: CC BY-SA 3.0 de": 1,
+        "commons_flowers: CC BY-SA 2.0": 8,
+        "commons_flowers: CC BY 2.0": 6,
+        "commons_flowers: CC BY-SA 2.0 de": 1,
+        "commons_flowers: CC BY 3.0": 1,
+        "commons_flowers: CC BY 3.0 us": 2
+      },
+      "downloaded": true
+    },
+    "strawberry": {
+      "images_total": 44,
+      "classification_labelled_images": 44,
+      "detection_images_with_boxes": 0,
+      "detection_boxes": 0,
+      "detection_boxes_by_split": {},
+      "images_by_split": {
+        "train": 31,
+        "val": 7,
+        "test": 6
+      },
+      "images_by_source": {
+        "inat_flowering": 15,
+        "commons_flowers": 29
+      },
+      "licences": {
+        "inat_flowering: cc0": 5,
+        "inat_flowering: cc-by": 9,
+        "inat_flowering: cc-by-sa": 1,
+        "commons_flowers: CC BY-SA 3.0": 12,
+        "commons_flowers: CC BY-SA 2.5": 1,
+        "commons_flowers: Public domain": 3,
+        "commons_flowers: CC BY-SA 4.0": 7,
+        "commons_flowers: CC0": 3,
+        "commons_flowers: CC BY 4.0": 2,
+        "commons_flowers: CC BY-SA 2.0": 1
+      },
+      "downloaded": true
+    },
+    "brinjal": {
+      "images_total": 131,
+      "classification_labelled_images": 131,
+      "detection_images_with_boxes": 0,
+      "detection_boxes": 0,
+      "detection_boxes_by_split": {},
+      "images_by_split": {
+        "train": 109,
+        "val": 11,
+        "test": 11
+      },
+      "images_by_source": {
+        "inat_flowering": 20,
+        "commons_flowers": 111
+      },
+      "licences": {
+        "inat_flowering: cc-by": 17,
+        "inat_flowering: cc0": 1,
+        "inat_flowering: cc-by-sa": 2,
+        "commons_flowers: CC BY-SA 3.0": 37,
+        "commons_flowers: CC BY-SA 2.5": 1,
+        "commons_flowers: CC0": 1,
+        "commons_flowers: Public domain": 6,
+        "commons_flowers: CC BY 3.0": 8,
+        "commons_flowers: CC BY-SA 4.0": 46,
+        "commons_flowers: CC BY 4.0": 2,
+        "commons_flowers: CC BY 2.5": 1,
+        "commons_flowers: CC BY-SA 2.0": 5,
+        "commons_flowers: CC BY 3.0 us": 4
+      },
+      "downloaded": true
+    },
+    "chilli": {
+      "images_total": 82,
+      "classification_labelled_images": 82,
+      "detection_images_with_boxes": 0,
+      "detection_boxes": 0,
+      "detection_boxes_by_split": {},
+      "images_by_split": {
+        "train": 66,
+        "test": 7,
+        "val": 9
+      },
+      "images_by_source": {
+        "inat_flowering": 28,
+        "commons_flowers": 54
+      },
+      "licences": {
+        "inat_flowering: cc-by": 17,
+        "inat_flowering: cc0": 10,
+        "inat_flowering: cc-by-sa": 1,
+        "commons_flowers: CC BY-SA 2.5": 1,
+        "commons_flowers: CC BY-SA 3.0": 8,
+        "commons_flowers: Public domain": 15,
+        "commons_flowers: CC BY-SA 4.0": 13,
+        "commons_flowers: CC BY-SA 2.0": 8,
+        "commons_flowers: CC BY 3.0": 1,
+        "commons_flowers: CC BY 4.0": 2,
+        "commons_flowers: CC0": 3,
+        "commons_flowers: CC BY 3.0 us": 3
+      },
+      "downloaded": true
+    }
+  },
+  "external_datasets": {
+    "usda_fruit_flower": {
+      "name": "Multi-species Fruit Flower Detection (apple, peach, pear)",
+      "status": "integrated",
+      "note": "Processed set (90 images + masks + YOLO labels) committed in datasets/processed/usda_fruit_flower; original 207-image archive (~6 GB clone) is re-created by the prepare script."
+    },
+    "tf_flower_detection": {
+      "name": "TensorFlow Flower Detection Dataset (INESC TEC)",
+      "status": "integrated",
+      "note": "Only the sunflower subset (628 images, 2,432 boxes) is committed; other classes are not target crops. Close-up photos, not field crops."
+    },
+    "inat_flowering": {
+      "name": "iNaturalist flowering photos (species-verified, openly licensed)",
+      "status": "integrated",
+      "note": ""
+    },
+    "commons_flowers": {
+      "name": "Wikimedia Commons flower categories (strawberry, brinjal, chilli, hibiscus, tomato)",
+      "status": "integrated",
+      "note": ""
+    },
+    "tf_flower_photos": {
+      "name": "TensorFlow flower_photos (5 classes, Google)",
+      "status": "integrated",
+      "note": "Not committed as a separate dataset; per-image attributions for the committed sunflower subset are in its LICENSE.txt"
+    },
+    "inesc_flower_detection": {
+      "name": "Flower Detection Dataset (INESC TEC)",
+      "status": "audited_not_used",
+      "note": "species unknown; 49 near-duplicate pairs cross its train/val/test splits (augmented copies) - leakage risk"
+    },
+    "oxford102": {
+      "name": "Oxford 102 Category Flower Dataset",
+      "status": "unreachable",
+      "note": "robots.ox.ac.uk and thor.robots.ox.ac.uk mirrors timed out from the build workspace and from GitHub Actions runners (2026-11-03). Script ready; run it on a machine that can reach the host."
+    },
+    "flowernet": {
+      "name": "FlowerNet: A Multi-Class Flower Image Dataset",
+      "status": "script_only",
+      "note": ""
+    },
+    "ewd": {
+      "name": "Eindhoven Wildflower Dataset (EWD)",
+      "status": "documented_only",
+      "note": "Non-commercial licence and none of the nine target crops; useful for methodology (tiling, annotation rules), not ingested."
+    },
+    "dopi": {
+      "name": "DoPI - Database of Pollinator Interactions",
+      "status": "documented_only",
+      "note": "Great Britain only; not representative of Indian field conditions for the target crops. Importer planned for knowledge-base enrichment with explicit geographic caveat."
+    },
+    "flope": {
+      "name": "FloPE synthetic pose data",
+      "status": "documented_only",
+      "note": "No public dataset download located for this project; method informs our image-space pose module only."
+    },
+    "plantclef": {
+      "name": "PlantCLEF (LifeCLEF)",
+      "status": "unverified",
+      "note": "Could not verify current terms; very large; not needed for nine crops."
+    },
+    "reproductive_structures": {
+      "name": "Anther / stigma / pollen annotated images for the 9 target crops",
+      "status": "documented_only",
+      "note": "No openly licensed, reachable dataset with anther/stigma annotations for these crops was found. A CVAT annotation workflow is provided (datasets/annotation/)."
+    },
+    "tomato_flower_candidates": {
+      "name": "Tomato / strawberry flower detection sets on Roboflow Universe, 4TU (Rob2Pheno) and Hugging Face",
+      "status": "unverified",
+      "note": "Hosts unreachable from the build environment; licences not verified. Candidates for future ingestion via the generic YOLO ingest script."
+    }
+  },
+  "status_legend": {
+    "integrated": "downloaded, verified (decode, duplicates, pairing), prepared and committed or used for training/evaluation",
+    "script_only": "metadata verified at the source; download/ingest script provided; not downloaded in the build environment (host blocked)",
+    "documented_only": "investigated; not ingested (licence, access or task mismatch) - reason given",
+    "unverified": "source could not be reached to verify licence/content; listed for completeness only",
+    "audited_not_used": "downloaded and inspected; not used (reason given)",
+    "unreachable": "download attempted from the build workspace AND GitHub Actions runners; all attempts failed"
+  }
+}

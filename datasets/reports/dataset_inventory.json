@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T05:17:34.390209+00:00",
+  "generated_at": "2026-11-04T13:14:26.454549+00:00",
   "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. Report figures, segmentation masks and gallery crops (derived from already-counted images) are counted separately.",
   "total_dataset_images": 1985,
   "species_image_counts": {
