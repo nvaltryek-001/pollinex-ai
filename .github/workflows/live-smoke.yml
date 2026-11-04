@@ -1,0 +1,26 @@
+name: Live demo smoke test
+# Read-only checks against the public Render deployment (no accounts are created, so the first-user-admin rule is untouched).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  smoke:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[smoke]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env: { BASE: "https://pollinex-api.onrender.com" }
+    steps:
+      - name: Wake + health (models, database)
+        run: |
+          for i in $(seq 1 20); do curl -fsS -m 60 "$BASE/api/v1/health" -o health.json && break; sleep 15; done
+          cat health.json; python3 -c "import json;d=json.load(open('health.json'));assert d['status']=='ok',d;assert d['model']['detector_backend']=='yolo11-onnx';print('species',sorted(d['model']['gallery_species']))"
+      - name: SPA served on the same origin (deep link + asset)
+        run: |
+          curl -fsS "$BASE/app/scanner" -o index.html; grep -q '<div id="root">' index.html
+          A=$(grep -o '/assets/[^"]*\.js' index.html | head -1); echo "asset $A"; curl -fsS -o /dev/null -w "%{http_code} %{size_download} bytes\n" "$BASE$A"
+      - name: API surface
+        run: |
+          curl -fsS "$BASE/openapi.json" -o openapi.json
+          python3 -c "import json;d=json.load(open('openapi.json'));print(len(d['paths']),'paths');assert '/api/v1/scans' in d['paths']"
+          test "$(curl -s -o /dev/null -w '%{http_code}' $BASE/api/v1/scans)" = "401"
