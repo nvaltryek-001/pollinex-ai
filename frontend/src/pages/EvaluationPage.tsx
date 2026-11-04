@@ -154,7 +154,8 @@ export default function EvaluationPage() {
                   <table className="table-base"><thead><tr><th>Species</th><th>Refs</th><th>val R</th><th>val P</th><th>Status</th></tr></thead>
                     <tbody>{Object.entries(multi.gating as AnyObj).map(([k, v]) => (
                       <tr key={k}><td>{k}</td><td>{v.references}</td><td className="font-mono">{num(v.val_recall ?? 0, 2)}</td><td className="font-mono">{num(v.val_precision ?? 0, 2)}</td>
-                        <td>{v.enabled ? "AI-supported" : "not enabled"}</td></tr>))}</tbody></table>
+                        <td>{v.enabled ? (multi.species_status?.[k] === "limited_evidence" ? `AI-supported · limited test evidence (${multi.test_support?.[k] ?? 0} images)` : "AI-supported · validated") : "not supported"}</td></tr>))}</tbody></table>
+                  {multi.variant && <p className="mt-2 text-xs text-muted">Variant chosen on validation: <code>{multi.variant}</code> · {multi.background_references ?? 0} background references · threshold {num(multi.threshold, 3)}</p>}
                   <div className="kicker mb-1 mt-4">Test by source</div>
                   <table className="table-base"><tbody>{Object.entries(multi.test_by_source as AnyObj).map(([k, v]) => (
                     <tr key={k}><td>{label(k)}</td><td>{v.n}</td><td className="font-mono">{pct(v.report.accuracy)}</td></tr>))}</tbody></table>
