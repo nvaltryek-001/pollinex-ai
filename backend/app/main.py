@@ -4,12 +4,13 @@ from __future__ import annotations
 import logging
 import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from .config import get_settings
+from .config import REPO_ROOT, get_settings
 from .db import Base, SessionLocal, engine
 from .routers import admin, ai, analytics, auth, records, scans, simulations
 from .services.seed import seed
@@ -65,9 +66,25 @@ def create_app() -> FastAPI:
     for r in (auth.router, scans.router, ai.router, simulations.router, records.router, analytics.router, admin.router):
         app.include_router(r, prefix="/api/v1")
 
-    @app.get("/", include_in_schema=False)
-    def root():
-        return {"name": "POLLINEX AI API", "docs": "/docs", "health": "/api/v1/health"}
+    dist = Path(os.environ.get("FRONTEND_DIST", str(REPO_ROOT / "frontend" / "dist")))
+    if (dist / "index.html").exists():  # single-service deployment: the API also serves the built React app
+        from fastapi.responses import FileResponse
+        from fastapi.staticfiles import StaticFiles
+
+        app.mount("/assets", StaticFiles(directory=dist / "assets"), name="assets")
+
+        @app.get("/{path:path}", include_in_schema=False)
+        def spa(path: str):
+            if path.startswith(("api/", "docs", "redoc", "openapi.json")):
+                return JSONResponse({"detail": "Not Found"}, status_code=404)
+            f = (dist / path).resolve()
+            if path and f.is_file() and dist.resolve() in f.parents:
+                return FileResponse(f)
+            return FileResponse(dist / "index.html", headers={"Permissions-Policy": "camera=(self), geolocation=(self)"})
+    else:
+        @app.get("/", include_in_schema=False)
+        def root():
+            return {"name": "POLLINEX AI API", "docs": "/docs", "health": "/api/v1/health"}
 
     return app
 

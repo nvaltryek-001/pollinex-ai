@@ -272,3 +272,18 @@ def test_hosting_postgres_urls_use_psycopg3(monkeypatch):
         assert Settings().ensure().database_url == "postgresql+psycopg://u:p@h:5432/db"
     monkeypatch.setenv("DATABASE_URL", "postgresql+psycopg://u:p@h/db")
     assert Settings().ensure().database_url == "postgresql+psycopg://u:p@h/db"
+
+
+def test_single_service_serves_spa_with_fallback(client, tmp_path, monkeypatch):
+    from fastapi.testclient import TestClient
+
+    from app.main import create_app
+    (tmp_path / "assets").mkdir()
+    (tmp_path / "index.html").write_text("<html>pollinex spa</html>")
+    (tmp_path / "assets" / "app.js").write_text("console.log(1)")
+    monkeypatch.setenv("FRONTEND_DIST", str(tmp_path))
+    c = TestClient(create_app())  # no lifespan: routing only
+    assert "pollinex spa" in c.get("/app/scanner").text
+    assert c.get("/assets/app.js").text == "console.log(1)"
+    assert c.get("/api/v1/does-not-exist").status_code == 404
+    assert c.get("/../etc/passwd").status_code in (200, 404) and "root:" not in c.get("/../etc/passwd").text

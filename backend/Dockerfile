@@ -1,4 +1,13 @@
 # Build from the repository root:  docker build -f backend/Dockerfile -t pollinex-backend .
+# Stage 1: build the React app (served by the API itself in single-service deployments, e.g. Render free plan)
+FROM node:22-slim AS web
+WORKDIR /web
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY frontend/ ./
+ENV VITE_API_URL=""
+RUN npx vite build
+
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
@@ -15,6 +24,7 @@ COPY research research
 COPY datasets/dataset_sources.json datasets/dataset_sources.json
 COPY datasets/reports datasets/reports
 COPY backend backend
+COPY --from=web /web/dist frontend/dist
 RUN mkdir -p backend/storage && chown -R pollinex:pollinex backend/storage
 
 USER pollinex
