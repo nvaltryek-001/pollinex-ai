@@ -76,20 +76,22 @@ def committed_report() -> dict:
         pairs = [(im, sun / s / "labels" / f"{im.stem}.txt", "sunflower", s)
                  for s in ("train", "val", "test") for im in sorted((sun / s / "images").glob("*.jpg"))]
         datasets.append(yolo_stats("tf_flower_detection_sunflower", pairs))
-    inat = PROC / "inat_flowering" / "manifest.csv"
-    if inat.exists():
-        rows = list(csv.DictReader(inat.open(encoding="utf-8")))
-        per = defaultdict(lambda: {"images": 0, "split": Counter(), "quality_flags": Counter(), "identification": Counter()})
+    for name in ("inat_flowering", "commons_flowers"):
+        man = PROC / name / "manifest.csv"
+        if not man.exists():
+            continue
+        rows = list(csv.DictReader(man.open(encoding="utf-8")))
+        per = defaultdict(lambda: {"images": 0, "split": Counter(), "quality_flags": Counter(), "label_source": Counter()})
         for r in rows:
             d = per[r["species"]]
             d["images"] += 1
             d["split"][r["split"]] += 1
-            d["identification"][r["identification"]] += 1
+            d["label_source"][r.get("identification") or f"commons:{r.get('category', '')}"] += 1
             for f in filter(None, r["quality_flags"].split(";")):
                 d["quality_flags"][f] += 1
-        datasets.append({"dataset": "inat_flowering", "annotation_type": "image-level species label only (no boxes)",
+        datasets.append({"dataset": name, "annotation_type": "image-level species label only (no boxes)",
                          "per_species": {k: {"images": v["images"], "image_level_labels": v["images"], "box_annotations": 0,
-                                             "split": dict(v["split"]), "identification": dict(v["identification"]),
+                                             "split": dict(v["split"]), "label_source": dict(v["label_source"]),
                                              "quality_flags": dict(v["quality_flags"])} for k, v in per.items()}})
     totals = {sp: {"images": 0, "box_annotations": 0, "image_level_labels": 0} for sp in SPECIES}
     for d in datasets:
@@ -115,7 +117,7 @@ def write_md(rep: dict) -> str:
     for d in rep["datasets"]:
         L += ["", f"## {d['dataset']} — {d['annotation_type']}", "", "| Species | Images | Boxes | Split | Details |", "|---|--:|--:|---|---|"]
         for sp, v in d["per_species"].items():
-            det = {k: v[k] for k in ("boxes_per_image", "relative_box_area", "quality_flags", "identification") if k in v}
+            det = {k: v[k] for k in ("boxes_per_image", "relative_box_area", "quality_flags", "label_source") if k in v}
             L.append(f"| {sp} | {v['images']} | {v.get('box_annotations', 0)} | {v['split']} | `{json.dumps(det)}` |")
     L += ["", rep["note"], ""]
     return "\n".join(L)

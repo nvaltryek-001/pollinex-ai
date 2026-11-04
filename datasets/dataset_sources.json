@@ -1,5 +1,5 @@
 {
-  "verified_on": "2026-11-03",
+  "verified_on": "2026-11-04",
   "status_legend": {
     "integrated": "downloaded, verified (decode, duplicates, pairing), prepared and committed or used for training/evaluation",
     "script_only": "metadata verified at the source; download/ingest script provided; not downloaded in the build environment (host blocked)",
@@ -116,6 +116,55 @@
         "Whole-scene photos; flowers can be small (tomato, chilli).",
         "The flowering annotation is per observation: a few chosen photos show fruit, not flowers (seen on the contact sheets).",
         "Strawberry (15), brinjal (20) and chilli (28) have too few openly licensed, annotated observations - below the gallery gating minimum of 50."
+      ]
+    },
+    {
+      "id": "commons_flowers",
+      "name": "Wikimedia Commons flower categories (strawberry, brinjal, chilli, hibiscus, tomato)",
+      "url": "https://commons.wikimedia.org/ (API)",
+      "license": "per file: CC0 / public domain / CC BY * / CC BY-SA * (NC, ND, FAL, GFDL-only excluded); author + licence + file page per file in ATTRIBUTION.csv",
+      "status": "integrated",
+      "task_support": "image-level species labels only (NO boxes) - species gallery references and evaluation",
+      "species": {
+        "strawberry": 29,
+        "brinjal": 111,
+        "chilli": 54,
+        "hibiscus": 165,
+        "tomato": 147
+      },
+      "original_images": 506,
+      "licence_families": {
+        "CC BY-SA": 326,
+        "CC0/PD": 108,
+        "CC BY": 72
+      },
+      "categories": {
+        "strawberry": [
+          "Category:Fragaria × ananassa (flowers)"
+        ],
+        "brinjal": [
+          "Category:Solanum melongena (flowers)"
+        ],
+        "chilli": [
+          "Category:Capsicum annuum (flowers)",
+          "Category:Capsicum frutescens (flowers)"
+        ],
+        "hibiscus": [
+          "Category:Close-up photographs of Hibiscus rosa-sinensis cultivar flowers",
+          "Category:Close-ups of Hibiscus rosa-sinensis flowers of orange cultivars",
+          "Category:Close-ups of Hibiscus rosa-sinensis flowers of red cultivars",
+          "Category:Hibiscus rosa-sinensis (flowers)",
+          "Category:Insects on Hibiscus rosa-sinensis flowers"
+        ],
+        "tomato": [
+          "Category:Solanum lycopersicum (flowers)"
+        ]
+      },
+      "verification": "category curation (community, weaker than iNaturalist Research Grade) + visual review of contact sheets; per-file licence; SHA-1 + dHash duplicates against all other committed sets; author-grouped splits (0 authors in more than one split)",
+      "prepare_script": "datasets/scripts/download_commons_flowers.py (run in .github/workflows/commons.yml)",
+      "issues": [
+        "Some photographers upload series of the same plant (kept in one split by author grouping).",
+        "Strawberry category includes a few non-photo / ground-cover images (visible on the contact sheet)."
       ]
     },
     {

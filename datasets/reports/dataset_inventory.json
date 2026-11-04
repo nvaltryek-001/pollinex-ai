@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T03:50:35.984839+00:00",
+  "generated_at": "2026-11-04T05:17:34.390209+00:00",
   "note": "Counts only image files (jpg/jpeg/png/webp/bmp) physically present under datasets/. Report figures, segmentation masks and gallery crops (derived from already-counted images) are counted separately.",
   "total_dataset_images": 1985,
   "species_image_counts": {
@@ -126,15 +126,15 @@
       "images_without_labels": 0,
       "labels_without_images": 0
     },
-    "processed/tf_flower_detection_sunflower/val/images": {
-      "images": 94,
-      "label_files": 94,
-      "images_without_labels": 0,
-      "labels_without_images": 0
-    },
     "processed/tf_flower_detection_sunflower/train/images": {
       "images": 439,
       "label_files": 439,
+      "images_without_labels": 0,
+      "labels_without_images": 0
+    },
+    "processed/tf_flower_detection_sunflower/val/images": {
+      "images": 94,
+      "label_files": 94,
       "images_without_labels": 0,
       "labels_without_images": 0
     }

@@ -1,6 +1,6 @@
 # Annotation statistics
 
-_Generated 2026-11-03T16:12:21.095597+00:00 by `datasets/scripts/annotation_stats.py`._
+_Generated 2026-11-04T05:17:44.146494+00:00 by `datasets/scripts/annotation_stats.py`._
 
 | Species | Images | Box annotations | Image-level labels |
 |---|--:|--:|--:|
@@ -8,11 +8,11 @@ _Generated 2026-11-03T16:12:21.095597+00:00 by `datasets/scripts/annotation_stat
 | peach | 95 | 924 | 95 |
 | pear | 47 | 1257 | 47 |
 | sunflower | 828 | 2432 | 828 |
-| hibiscus | 91 | 0 | 91 |
-| tomato | 200 | 0 | 200 |
-| strawberry | 15 | 0 | 15 |
-| brinjal | 20 | 0 | 20 |
-| chilli | 28 | 0 | 28 |
+| hibiscus | 256 | 0 | 256 |
+| tomato | 347 | 0 | 347 |
+| strawberry | 44 | 0 | 44 |
+| brinjal | 131 | 0 | 131 |
+| chilli | 82 | 0 | 82 |
 
 | Schema class (CVAT) | Annotations |
 |---|--:|
@@ -43,14 +43,24 @@ _Generated 2026-11-03T16:12:21.095597+00:00 by `datasets/scripts/annotation_stat
 
 | Species | Images | Boxes | Split | Details |
 |---|--:|--:|---|---|
-| hibiscus | 91 | 0 | {'train': 71, 'test': 7, 'val': 13} | `{"quality_flags": {}, "identification": {"research_grade": 19, "cultivated_with_agreement": 72}}` |
-| tomato | 200 | 0 | {'train': 138, 'val': 28, 'test': 34} | `{"quality_flags": {}, "identification": {"research_grade": 180, "cultivated_with_agreement": 20}}` |
-| strawberry | 15 | 0 | {'train': 10, 'val': 3, 'test': 2} | `{"quality_flags": {}, "identification": {"research_grade": 12, "cultivated_with_agreement": 3}}` |
-| brinjal | 20 | 0 | {'train': 15, 'val': 4, 'test': 1} | `{"quality_flags": {}, "identification": {"research_grade": 11, "cultivated_with_agreement": 9}}` |
-| chilli | 28 | 0 | {'train': 25, 'test': 1, 'val': 2} | `{"quality_flags": {}, "identification": {"research_grade": 26, "cultivated_with_agreement": 2}}` |
-| sunflower | 200 | 0 | {'train': 142, 'test': 32, 'val': 26} | `{"quality_flags": {"dark": 1}, "identification": {"research_grade": 182, "cultivated_with_agreement": 18}}` |
-| apple | 107 | 0 | {'test': 17, 'train': 67, 'val': 23} | `{"quality_flags": {}, "identification": {"research_grade": 97, "cultivated_with_agreement": 10}}` |
-| peach | 71 | 0 | {'train': 52, 'test': 10, 'val': 9} | `{"quality_flags": {"dark": 1}, "identification": {"research_grade": 54, "cultivated_with_agreement": 17}}` |
-| pear | 29 | 0 | {'test': 5, 'train': 18, 'val': 6} | `{"quality_flags": {}, "identification": {"research_grade": 21, "cultivated_with_agreement": 8}}` |
+| hibiscus | 91 | 0 | {'train': 71, 'test': 7, 'val': 13} | `{"quality_flags": {}, "label_source": {"research_grade": 19, "cultivated_with_agreement": 72}}` |
+| tomato | 200 | 0 | {'train': 138, 'val': 28, 'test': 34} | `{"quality_flags": {}, "label_source": {"research_grade": 180, "cultivated_with_agreement": 20}}` |
+| strawberry | 15 | 0 | {'train': 10, 'val': 3, 'test': 2} | `{"quality_flags": {}, "label_source": {"research_grade": 12, "cultivated_with_agreement": 3}}` |
+| brinjal | 20 | 0 | {'train': 15, 'val': 4, 'test': 1} | `{"quality_flags": {}, "label_source": {"research_grade": 11, "cultivated_with_agreement": 9}}` |
+| chilli | 28 | 0 | {'train': 25, 'test': 1, 'val': 2} | `{"quality_flags": {}, "label_source": {"research_grade": 26, "cultivated_with_agreement": 2}}` |
+| sunflower | 200 | 0 | {'train': 142, 'test': 32, 'val': 26} | `{"quality_flags": {"dark": 1}, "label_source": {"research_grade": 182, "cultivated_with_agreement": 18}}` |
+| apple | 107 | 0 | {'test': 17, 'train': 67, 'val': 23} | `{"quality_flags": {}, "label_source": {"research_grade": 97, "cultivated_with_agreement": 10}}` |
+| peach | 71 | 0 | {'train': 52, 'test': 10, 'val': 9} | `{"quality_flags": {"dark": 1}, "label_source": {"research_grade": 54, "cultivated_with_agreement": 17}}` |
+| pear | 29 | 0 | {'test': 5, 'train': 18, 'val': 6} | `{"quality_flags": {}, "label_source": {"research_grade": 21, "cultivated_with_agreement": 8}}` |
+
+## commons_flowers — image-level species label only (no boxes)
+
+| Species | Images | Boxes | Split | Details |
+|---|--:|--:|---|---|
+| strawberry | 29 | 0 | {'train': 21, 'val': 4, 'test': 4} | `{"quality_flags": {}, "label_source": {"commons:Category:Fragaria \u00d7 ananassa (flowers)": 29}}` |
+| brinjal | 111 | 0 | {'train': 94, 'val': 7, 'test': 10} | `{"quality_flags": {"blurry": 4, "dark": 1}, "label_source": {"commons:Category:Solanum melongena (flowers)": 111}}` |
+| chilli | 54 | 0 | {'train': 41, 'test': 6, 'val': 7} | `{"quality_flags": {"blurry": 2}, "label_source": {"commons:Category:Capsicum annuum (flowers)": 50, "commons:Category:Capsicum frutescens (flowers)": 4}}` |
+| hibiscus | 165 | 0 | {'train': 133, 'val': 16, 'test': 16} | `{"quality_flags": {"blurry": 4}, "label_source": {"commons:Category:Insects on Hibiscus rosa-sinensis flowers": 8, "commons:Category:Hibiscus rosa-sinensis (flowers)": 53, "commons:Category:Close-ups of Hibiscus rosa-sinensis flowers of orange cultivars": 28, "commons:Category:Close-up photographs of Hibiscus rosa-sinensis cultivar flowers": 37, "commons:Category:Close-ups of Hibiscus rosa-sinensis flowers of red cultivars": 39}}` |
+| tomato | 147 | 0 | {'train': 92, 'test': 29, 'val': 26} | `{"quality_flags": {"blurry": 3, "dark": 5}, "label_source": {"commons:Category:Solanum lycopersicum (flowers)": 147}}` |
 
 No CVAT exports exist in the repository yet: every structure / centre / stage / health class has 0 annotations. Nothing here is generated or inferred.
