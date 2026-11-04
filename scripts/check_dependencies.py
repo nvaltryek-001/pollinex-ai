@@ -65,9 +65,22 @@ else:
         sys.path.insert(0, str(ROOT / "ai-engine"))
         from pollinex_ai.detector import PixelFlowerDetector  # noqa: E402
         d = PixelFlowerDetector(bundle)
-        line("OK", "detector loads", d.version)
+        line("OK", "fallback detector loads", d.version)
     except Exception as e:  # noqa: BLE001
-        fail("detector loads", f"{type(e).__name__}: {e} - retrain if scikit-learn differs from 1.9.1")
+        fail("fallback detector loads", f"{type(e).__name__}: {e} - retrain if scikit-learn differs from 1.9.1")
+try:
+    sys.path.insert(0, str(ROOT / "ai-engine"))
+    from pollinex_ai.detector import load_default_detector  # noqa: E402
+    d = load_default_detector()
+    if d.backend == "yolo11-onnx":
+        line("OK", "default detector (YOLO11 ONNX)", d.version)
+    else:
+        fail("default detector", f"{d.backend} {d.version} - ai-engine/models/flower_yolo11n.onnx missing, using the pixel fallback")
+except Exception as e:  # noqa: BLE001
+    fail("default detector (YOLO11 ONNX)", f"{type(e).__name__}: {e} - pip install onnxruntime")
+for f in ("embed_mnv3l.onnx",):
+    p = ROOT / "ai-engine" / "models" / f
+    (line("OK", f + " (species embedding)") if p.exists() else fail(f, "missing - species gallery v2 needs it"))
 for f in ("species_gallery.json", "species_gallery.npz"):
     p = ROOT / "ai-engine" / "models" / f
     (line("OK", f) if p.exists() else fail(f, "missing - run ai-engine/training/train_species.py"))
