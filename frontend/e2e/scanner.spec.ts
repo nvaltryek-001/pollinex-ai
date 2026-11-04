@@ -102,5 +102,11 @@ test.describe.serial("scanner, camera and core flows", () => {
       const w = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       expect(w, `horizontal overflow on ${p} (${w}px)`).toBeLessThanOrEqual(1);
     }
+    // a saved scan's result page (image, tables, species panel, provenance card)
+    await page.goto("/app/history");
+    await page.getByRole("link", { name: /#\d+/ }).first().click();
+    await expect(page.getByText("How this result was produced")).toBeVisible({ timeout: 15_000 });
+    const w = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(w, `horizontal overflow on the scan detail page (${w}px)`).toBeLessThanOrEqual(1);
   });
 });
