@@ -101,14 +101,21 @@ test.describe.serial("scanner, camera and core flows", () => {
     await page.getByLabel("Current password").fill(PASSWORD);
     await page.getByLabel("New password", { exact: true }).fill(NEW_PASSWORD);
     await page.getByLabel("Confirm new password").fill(NEW_PASSWORD);
-    await page.getByRole("button", { name: "Change password" }).click();
-    await expect(page.getByText(/Password changed/)).toBeVisible();
+    const [first] = await Promise.all([
+      page.waitForResponse((r) => r.url().includes("/auth/change-password")),
+      page.getByRole("button", { name: "Change password" }).click(),
+    ]);
+    expect(first.status()).toBe(200);
+    await expect(page.getByText(/Password changed/).first()).toBeVisible();
     // change it back so later tests (and the serial login helper) keep working
     await page.getByLabel("Current password").fill(NEW_PASSWORD);
     await page.getByLabel("New password", { exact: true }).fill(PASSWORD);
     await page.getByLabel("Confirm new password").fill(PASSWORD);
-    await page.getByRole("button", { name: "Change password" }).click();
-    await expect(page.getByText(/Password changed/).first()).toBeVisible();
+    const [second] = await Promise.all([
+      page.waitForResponse((r) => r.url().includes("/auth/change-password")),
+      page.getByRole("button", { name: "Change password" }).click(),
+    ]);
+    expect(second.status()).toBe(200); // the original password is restored before logging out
     // logout, then a protected page sends you to the sign-in page
     await page.getByRole("button", { name: "Log out" }).click();
     await page.goto("/app/history");
