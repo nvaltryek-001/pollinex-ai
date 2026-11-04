@@ -143,20 +143,22 @@ Model evaluation · Analytics · Research centre · Datasets · Reports · Admin
 
 | Crop | Pollination strategy in the knowledge base | Simulator mode | Dataset images in repo | Detector | Species gallery |
 |---|---|---|--:|:-:|:-:|
-| 🍅 Tomato | vibration of poricidal anthers (buzz-like) | `vibration` | 200 | ⚠️ no boxes (unvalidated) | ✅ |
-| 🍆 Brinjal | vibration; long/medium-styled flowers set best | `vibration` | 20 | ⚠️ no boxes | ❌ too few images |
-| 🌶️ Chilli | brushing / gentle shaking | `brush` | 28 | ⚠️ no boxes | ❌ too few images |
-| 🍎 Apple | compatible cross-cultivar pollen | `cross_transfer` | 155 | ✅ YOLO11 | ✅ |
-| 🍐 Pear | compatible cross-cultivar pollen | `cross_transfer` | 47 | ✅ YOLO11 | ✅ |
-| 🍑 Peach | mostly self-fertile; brush supplement | `brush` | 95 | ✅ YOLO11 | ✅ |
-| 🍓 Strawberry | even coverage of all pistils | `air_assisted` | 15 | ⚠️ no boxes | ❌ too few images |
-| 🌻 Sunflower | ring-by-ring floret progression | `ring_progression` | 828 | ✅ YOLO11 | ✅ |
-| 🌺 Hibiscus | pollen onto five stigma pads | `column_transfer` | 91 | ⚠️ no boxes (unvalidated) | ✅ |
+| 🍅 Tomato | vibration of poricidal anthers (buzz-like) | `vibration` | 347 | ⚠️ no boxes (unvalidated) | ✅ validated |
+| 🍆 Brinjal | vibration; long/medium-styled flowers set best | `vibration` | 131 | ⚠️ no boxes | 🟡 limited evidence (11 test images) |
+| 🌶️ Chilli | brushing / gentle shaking | `brush` | 82 | ⚠️ no boxes | 🟡 limited evidence (7 test images) |
+| 🍎 Apple | compatible cross-cultivar pollen | `cross_transfer` | 155 | ✅ YOLO11 | ✅ validated |
+| 🍐 Pear | compatible cross-cultivar pollen | `cross_transfer` | 47 | ✅ YOLO11 | ✅ validated |
+| 🍑 Peach | mostly self-fertile; brush supplement | `brush` | 95 | ✅ YOLO11 | ✅ validated |
+| 🍓 Strawberry | even coverage of all pistils | `air_assisted` | 44 | ⚠️ no boxes | ❌ not supported (31 references) |
+| 🌻 Sunflower | ring-by-ring floret progression | `ring_progression` | 828 | ✅ YOLO11 | ✅ validated |
+| 🌺 Hibiscus | pollen onto five stigma pads | `column_transfer` | 256 | ⚠️ no boxes (unvalidated) | ✅ validated |
 
-> **Verified 2026-11-03** ([final release report](docs/FINAL_RELEASE_REPORT.md)): 1,479 real images. 718 have flower boxes
-> (USDA + sunflower). 761 are iNaturalist photos with species labels only (CC0 / CC BY / CC BY-SA), and these are never used as boxes.
-> The species gallery enables a crop only if it passes a validation gate that was fixed before any results existed. **Strawberry, brinjal and chilli did not pass**:
-> they have too few openly licensed photos. No anther, stigma, stamen or pistil annotations exist for any crop.
+> **Verified 2026-11-04** ([final release report](docs/FINAL_RELEASE_REPORT.md)): **1,985 real images**.
+> * 718 have flower boxes (USDA + sunflower).
+> * 1,267 have image-level species labels only: 761 from iNaturalist and 506 from Wikimedia Commons, each with its own per-photo licence and attribution. These are never used as boxes.
+> * A crop counts as AI-supported only if it passes a validation gate fixed before any results existed. It counts as *validated* only with ≥ 20 test images.
+> * **Strawberry did not pass** (31 references). **Brinjal and chilli passed, but on very few test images.**
+> * No anther, stigma, stamen or pistil annotations exist for any crop.
 > Crops without references return **unknown** until reference images are added — or the user selects the species.
 > New crops are added with one JSON entry + reference photos; no code changes.
 
@@ -305,7 +307,7 @@ by the same evaluation code as the earlier pixel model and deployed under a rule
 <td align="center" width="25%"><h2>0.541</h2>detector mAP@0.5<br><sub>USDA orchard test (pixel model 0.410)</sub></td>
 <td align="center" width="25%"><h2>0.867</h2>detector mAP@0.5<br><sub>sunflower test (pixel model 0.001)</sub></td>
 <td align="center" width="25%"><h2>34 ms</h2>per orchard image<br><sub>ONNX, GitHub CPU runner (pixel model 910 ms)</sub></td>
-<td align="center" width="25%"><h2>6 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.746 · macro-F1 0.727</sub></td>
+<td align="center" width="25%"><h2>8 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.874 · macro-F1 0.862</sub></td>
 </tr>
 </table>
 
@@ -347,30 +349,37 @@ no comparison with published deep detectors is claimed.
 
 Built by `ai-engine/training/build_species_gallery_multi.py`; full report in `ai-engine/reports/species_multi_evaluation.json`.
 
-- **Embedding:** chosen on validation by the higher macro-F1. ImageNet MobileNetV3 (`mnv3l-v1`) scored 0.586 and the hand-crafted `hcd-v1` scored 0.442.
-- **Gate:** a species is enabled only with ≥ 50 references and validation recall and precision ≥ 0.50. The gate was fixed before any results existed.
+- **Variant:** chosen on validation by macro-F1, out of 2 embeddings × background references on/off × class balancing on/off.
+  - Winner: ImageNet MobileNetV3 with **540 real background references** (USDA mask-negative crops, mapped to `unknown`) and no balancing. It scored validation macro-F1 0.832.
+  - The best hand-crafted variant scored 0.583. The previous deployed setup (no background references) scored 0.758.
+- **Gate:** ≥ 50 references and validation recall and precision ≥ 0.50. A species counts as *validated* only with ≥ 20 test images.
+- **Explicit `uncertain` flag:** set when the top vote share is below 0.60.
 - **Test:** used once.
 
 | Test set | Images | Accuracy |
 |---|--:|--:|
-| USDA orchard flower crops (apple/peach/pear) | 694 | 0.927 |
-| iNaturalist field photos (9 species) | 109 | 0.716 |
-| Sunflower close-ups | 95 | 0.968 |
-| USDA background crops → `unknown` | 220 | **0.095** (was 0.468 with `hcd-v1`) |
+| USDA orchard flower crops (apple/peach/pear) | 694 | 0.924 |
+| iNaturalist field photos | 109 | 0.798 |
+| Wikimedia Commons photos (independent source) | 65 | 0.892 |
+| Sunflower close-ups | 94 | 0.979 |
+| USDA background crops → `unknown` | 220 | **0.705** (previous gallery 0.095) |
 
-Per-species test F1:
+Overall test accuracy **0.874**, macro-F1 **0.862**.
 
-| Species | F1 |
-|---|--:|
-| apple | 0.82 |
-| peach | 0.78 |
-| pear | 0.80 |
-| sunflower | 0.93 |
-| tomato | 0.88 (34 images) |
-| hibiscus | 0.71 (only 7 images) |
+| Species | Precision | Recall | F1 | Test images |
+|---|--:|--:|--:|--:|
+| apple | 0.85 | 0.93 | 0.89 | 403 |
+| peach | 0.85 | 0.92 | 0.88 | 158 |
+| pear | 0.86 | 0.86 | 0.86 | 165 |
+| sunflower | 0.95 | 0.94 | 0.94 | 126 |
+| tomato | 0.93 | 0.98 | 0.95 | 63 |
+| hibiscus | 0.78 | 0.91 | 0.84 | 23 |
+| brinjal | 0.67 | 0.91 | 0.77 | **11** |
+| chilli | 1.00 | 0.71 | 0.83 | **7** |
+| unknown / background | 0.93 | 0.69 | 0.79 | 226 |
 
-Strawberry, brinjal and chilli are **not** AI-supported (10–25 references). Background rejection got worse, so prefer
-**Close-up** mode for single flowers.
+Strawberry is **not** AI-supported. All 6 of its test photos were assigned another species (brinjal ×3, sunflower, apple, tomato), not
+`unknown`.
 </details>
 
 **Sunflower extension** (`species_extension_evaluation.json`, `detector_on_tf_flower_detection_sunflower.json`): the deployed pixel
@@ -464,6 +473,7 @@ pollinex-ai/
 | **Multi-species Fruit Flower** — Dias, Tabb & Medeiros (2018), USDA Ag Data Commons, [doi:10.15482/USDA.ADC/1423466](https://doi.org/10.15482/USDA.ADC/1423466) | CC BY 4.0 | ✅ integrated (train / eval / gallery) |
 | TensorFlow Flower Detection (INESC TEC, [Zenodo 7768292](https://zenodo.org/records/7768292)) + species from TF `flower_photos` (CC-BY Flickr) | CC BY 4.0 | ✅ sunflower subset: 628 images, 2,432 boxes (gallery + detection data) |
 | **iNaturalist** flowering photos — 9 species, species-verified ([script](datasets/scripts/download_inat_flowering.py)) | CC0 / CC BY / CC BY-SA per photo | ✅ 761 images, image-level labels only (per-file attribution) |
+| **Wikimedia Commons** flower categories — hibiscus, tomato, strawberry, brinjal, chilli ([script](datasets/scripts/download_commons_flowers.py)) | CC0 / PD / CC BY / CC BY-SA per file | ✅ 506 images, image-level labels only (per-file author, licence and file page) |
 | INESC Flower Detection ([Zenodo 7708815](https://zenodo.org/records/7708815)) | CC BY 4.0 | audited, not used (species unknown, split leakage) |
 | Oxford 102 Flowers (Nilsback & Zisserman, 2008) | research use (unverified) | script ready; host unreachable from build env and CI |
 | FlowerNet ([Mendeley](https://data.mendeley.com/datasets/26nvt3t27m)) | MIT | ingest script (originals only) |
@@ -482,9 +492,10 @@ Full review, gaps and BibTeX: [`research/`](research/).
 ## ⚠️ Limitations
 
 - The detector is trained on **apple, peach, pear and sunflower** boxes only. Precision on cluttered orchard scenes is still low (0.27 at the lowest threshold).
-- **Strawberry, brinjal and chilli** have only 15–28 openly licensed images and are not AI-supported. They return *unknown*, or the user selects the species.
-- New-species images are **species-labelled photos only** (no boxes). Hibiscus has 7 test images, so its test result is uncertain.
-- The ImageNet embedding rejects orchard background crops as *unknown* only 9.5 % of the time. Use Close-up mode for single flowers.
+- **Strawberry** (44 images, 31 references) is not AI-supported. Its test photos are misassigned rather than returned as *unknown*.
+- **Brinjal and chilli** are AI-supported on **limited evidence** (11 and 7 test images). The UI shows this status on every result.
+- New-crop images are **species-labelled photos only** (no boxes). Commons labels come from community category curation, which is weaker than iNaturalist identifications.
+- 31 % of orchard background crops are still given a species. Use **Close-up** mode for single flowers.
 - **No anther / stigma detector**: structures, stage, health and pose are labelled heuristics until annotated data exists.
 - Readiness is a **visual estimate**; simulation is **computation** — neither proves pollen viability or fertilisation.
 - Camera is verified with a simulated camera and phone emulation; test on your own phone over HTTPS.
