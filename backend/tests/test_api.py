@@ -246,7 +246,10 @@ def test_backend_startup_seeds_reference_data(client):
     assert h["status"] == "ok" and h["model"]["detector_backend"]
 
 
-def test_detector_switch_is_admin_only_and_safe(client, admin, user):
+def test_detector_switch_is_admin_only_and_safe(client, admin):
+    # own account: the shared `user` token is revoked by the role change in test_admin_user_management
+    reg = client.post(f"{API}/auth/register", json={"email": "detector-switch@example.com", "password": "Str0ngPassword!", "full_name": "D"})
+    user = ({"Authorization": f"Bearer {reg.json()['access_token']}"}, reg.json()["user"])
     r = client.get(f"{API}/admin/models", headers=admin[0])
     assert r.status_code == 200 and r.json()["detector_choice"] in {"auto", "yolo11", "pixel"}
     avail = r.json()["available_detectors"]
