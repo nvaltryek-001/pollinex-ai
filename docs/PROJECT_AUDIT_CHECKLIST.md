@@ -1,61 +1,76 @@
-# Project audit checklist (2026-11-04)
+# Master requirements checklist (2026-11-04)
 
-Status key:
-* **Implemented + tested**: covered by an automated test that ran in CI.
-* **Implemented, manual check**: works when tried by hand, but no automated test covers it.
-* **Incomplete**: a part of the feature is missing.
-* **Not available**: no model or data exists, and the app says so.
+Each requirement was checked against the code, data, models and tests, not against the docs. A page existing does not
+count as done.
 
-A page existing was never counted as "working".
+**Status codes:**
+* **T**: implemented and tested; an automated test ran in CI.
+* **V**: implemented, but not fully validated; works, with no or partial automated coverage or evidence.
+* **P**: partially implemented.
+* **M**: missing.
+* **B**: blocked by unavailable data or external access.
 
-## Application modules (21)
+## Application modules (Part 7)
+| # | Requirement | Status | Evidence / gap |
+|--:|---|:-:|---|
+| 1 | Landing page | T | Screenshot E2E test; links into register and login |
+| 2 | Registration and login | T | Backend auth tests; E2E register and login flows; password policy (Vitest) |
+| 3 | Dashboard | T | DB-backed totals (`test_dashboard_reflects_database`); E2E page sweep; no sideways scroll on a phone |
+| 4 | Image upload | T | Validation, EXIF strip and real inference (backend); E2E upload |
+| 5 | Live camera scanning | T* | E2E with a fake camera, live frames and permission denied. *Not tested on a real phone over HTTPS* |
+| 6 | Flower detection | T | YOLO11n ONNX, engine ONNX tests, reproducible test metrics. One `flower` class; no boxes for 5 species |
+| 7 | Species recognition | T | Gallery and crop/scene blend, both selected on validation; strawberry rejected as unknown; correction flow (E2E) |
+| 8 | Species information | T | `species_botany.json` for 9 species; loader validation test; E2E panel for all 9 species |
+| 9 | Botanical analysis (visible) | V | Centre-region / petal heuristics, labelled `heuristic` |
+| 10 | Reproductive-structure analysis | P | Heuristic plus a hook for a trained model. **0 structure annotations, so no model.** Schema now includes sepal |
+| 11 | Flower maturity analysis | P | Stage heuristic with distribution and uncertainty. No stage labels, so no ML claim |
+| 12 | Pollination readiness | T | Rule engine; inputs, uncertainty and limitations shown; engine tests |
+| 13 | Virtual simulator | T | Simulator tests; E2E run, replay and disclaimer |
+| 14 | Environmental information | T | Backend CRUD; Open-Meteo off in tests; E2E sweep |
+| 15 | Scan history | T | E2E opens a saved scan; pagination; isolation between users |
+| 16 | Scan details | T | Provenance and limitations card, species panel, blend explanation; E2E |
+| 17 | Analytics | T | Computed from records; E2E sweep |
+| 18 | PDF reports | T | Summary PDF and per-scan PDF (backend tests; E2E download) |
+| 19 | CSV reports | T | Backend test, formula-injection guard, E2E download |
+| 20 | User settings | T | Display name, password change (revokes sessions), theme; backend and E2E tests |
+| 21 | Help and documentation | T | `/app/help`; E2E sweep |
+| — | Admin settings | T (API) | Role change, last-admin guard, detector switch (backend). The UI page is not in the E2E sweep |
+| — | Logout and route protection | T | E2E logout, then `/app/history` redirects to `/login` |
 
-| Module | Status | Evidence / notes |
-|---|---|---|
-| Dashboard | Implemented + tested | E2E page sweep and small-screen test. Totals come from the database (backend `test_dashboard_reflects_database`). |
-| Scanner (upload) | Implemented + tested | E2E: register → upload → real detections → species correction → history. Backend: upload validation and real inference. |
-| Scanner (camera / live) | Implemented + tested | E2E with a fake camera device; a permission-denied error test. |
-| Species identification | Implemented + tested | Gallery classification (engine tests); E2E info panel for all 9 species. Strawberry is shown as *not AI-supported*. |
-| Flower detection | Implemented + tested | YOLO11n ONNX; engine ONNX tests; test-set metrics reproduced by `scripts/evaluate_deployed_models.py`. Detection is evaluated for apple, peach, pear and sunflower only. |
-| Flower structures | Implemented (heuristic) | Centre-region colour heuristic, labelled as such. **Incomplete:** there are 0 structure annotations, so no trained structure model exists. |
-| Maturity analysis | Implemented (heuristic) | Stage heuristic with distribution and uncertainty; no trained stage model. |
-| Pollination readiness | Implemented + tested | Rule-based. Inputs, uncertainty and limitations are shown; engine tests cover it. |
-| Virtual simulator | Implemented + tested | E2E run/replay/disclaimer; simulator unit tests. |
-| Environment information | Implemented + tested | Backend CRUD tests; E2E page sweep. |
-| Plant health | Implemented (heuristic) | Visible colour anomalies only, with no disease claims. |
-| Field management | Implemented + tested | Backend CRUD and ownership tests; E2E page sweep. |
-| Inventory | Implemented + tested | Backend CRUD tests; E2E page sweep. |
-| Scan history | Implemented + tested | E2E opens a saved scan; backend checks pagination and isolation between users. |
-| Scan results / detail | Implemented + tested | Provenance and limitations card, species panel, and PDF/CSV/JSON export (E2E downloads; backend `/reports/scans/{id}.pdf`). |
-| Model evaluation | Implemented + tested | Page reads committed reports; E2E page sweep. |
-| Dataset management | Implemented + tested | Page error boundary added after a crash was found; E2E page sweep. |
-| Analytics | Implemented + tested | Computed from the user's records; E2E page sweep. |
-| Research centre | Implemented + tested | 50 papers checked against OpenAlex; E2E page sweep. |
-| Reports | Implemented + tested | Summary PDF, scans CSV, per-scan PDF (backend tests). |
-| Admin settings | Implemented + tested (API) | Backend: role change, last-admin protection, activity log, detector switch. The UI page is not in the E2E sweep, because the E2E user is not always the first account and therefore not always admin. |
-| Authentication and roles | Implemented + tested | Register/login/refresh/revoke tests; role guards (`scope=all` requires researcher/admin). |
-| Help and documentation | Implemented + tested | New in this release; E2E page sweep. |
+## Data (Part 2)
+| Requirement | Status | Evidence / gap |
+|---|:-:|---|
+| 9-species image inventory from disk | T | `species_inventory.json`; integrity test (decode, labels, cross-split duplicates) |
+| USDA, TF Flower Detection, iNaturalist, Commons | T | Downloaded, licensed per file, attribution kept |
+| More strawberry, brinjal and chilli photos | B | iNaturalist (open licence + flowering annotation) and the Commons flower categories are exhausted (15 and 29 strawberry). Own photos are needed |
+| Oxford 102 | B | Hosts unreachable from the workspace and from GitHub runners; script only |
+| FlowerNet | B | Manual download required; ingest script only |
+| PlantCLEF | B | Terms not verified; very large; not downloaded |
+| Eindhoven Wildflower, DoPI, FloPE | B | Licence or scope mismatch, or no download; documented only |
 
-## AI, data and knowledge
+## Models and research (Parts 3–6, 8)
+| Requirement | Status | Evidence / gap |
+|---|:-:|---|
+| Nine-species detection | P / B | Proposals for 1,267 photos, a verified-only importer and a gated trainer exist. **Status `pending_verified_annotations`**: human review in CVAT is needed |
+| Per-species detection metrics | T (4 species) | apple, peach, pear, sunflower. None claimed for the other 5 |
+| Structure detector (anther, stigma, stamen, pistil, petal, sepal) | B | Schema, guidelines, batch builder and model hook exist; 0 annotations |
+| ML maturity classifier | B | Needs the `stage` attribute on reviewed boxes |
+| Auto-mode species weakness | T | Fixed by a crop/scene blend chosen on validation; test auto accuracy 0.704 → 0.806 (and 0.832 with rejection references) |
+| Strawberry / unsupported species | T | Rejection-only references; strawberry → unknown on 4 of 6 test photos (was 0); never returned as strawberry |
+| Confidence calibration | P | Abstention thresholds were tested on validation and **not adopted** (they lowered macro-F1). The `uncertain` flag below a 0.60 vote share remains |
+| Model cards, data-flow diagrams, ethics and licensing | T | `MODEL_CARDS.md`, `ARCHITECTURE.md` (diagrams checked with mmdc), `ETHICS_AND_LICENSING.md` |
+| Reproducibility | T | `evaluate_deployed_models.py` (`[evaluate]` workflow), `*_rule.py` decision scripts with saved reports |
+| Fruit recognition | B | No dataset; stated in the UI, the PDF and the docs |
 
-| Item | Status | Notes |
-|---|---|---|
-| Datasets (1,985 images, 9 species) | Implemented + tested | `test_dataset_integrity_audit_passes`: every image decodes, labels are valid, no cross-split exact duplicates, leakage exclusion applied. |
-| Detector metrics | Reproduced | USDA test mAP@0.5 0.593 / mAP@0.5:0.95 0.332; sunflower 0.871 / 0.694 (`docs/MODEL_EVALUATION_RESULTS.md`). |
-| Species gallery metrics | Reproduced | Test accuracy 0.874, macro-F1 0.862, 1,182 items, confusion matrix in the results doc. |
-| Species knowledge base (9 species) | Implemented + tested | `species_botany.json` plus validation in the loader (`docs/SPECIES_KNOWLEDGE_BASE.md`). |
-| Fruit recognition | Not available | No dataset or model. Stated in the UI, the PDF and the docs; a future workflow is documented. |
-| Reproductive-structure model | Not available | CVAT workflow and batch builder exist, but there are 0 annotations. |
-
-## Deployment
-
-| Item | Status | Notes |
-|---|---|---|
-| Render web service (UI + API, one origin) | Implemented, verified live | Read-only smoke workflow `[smoke]`. |
-| ONNX model loads in production | Verified live | `/api/v1/health` reports `yolo11-onnx` and 8 gallery species. |
-| Persistent PostgreSQL | **Incomplete (needs owner action)** | The `pollinex-db` instance exists. Its connection string is not readable through the tools available to the assistant, and secrets must not be committed. The owner must paste the Internal Database URL into `DATABASE_URL` (see `DEPLOYMENT_GUIDE.md`). Until then, data is lost on restart. |
-| Migrations | Implemented + tested | Alembic upgrade at start (`AUTO_CREATE_TABLES=false`); CI runs migrations on PostgreSQL 16. |
-| GitHub → Render auto-deploy | **Incomplete (needs owner action)** | The service has `autoDeploy: yes`, but pushes did not start deploys, which points to the Render GitHub app lacking access to the repo. Deploys were triggered manually. |
-| Vercel | **Blocked (HTTP 403)** | The connected account refuses project creation. The app does not need Vercel, because Render serves the UI. |
-| Secrets | OK | `JWT_SECRET` is set only on Render; nothing secret is in git. |
-| CORS / security | OK | Same-origin UI; `CORS_ORIGINS` is limited to the Vercel origin; production refuses to start without `JWT_SECRET`; rate limits on auth and scans. |
+## Platform (Parts 9–11)
+| Requirement | Status | Evidence / gap |
+|---|:-:|---|
+| SQLite local, PostgreSQL production, migrations | T | CI: Alembic up/down/up on SQLite and PostgreSQL 16; `postgres://` URL mapping test |
+| Persistent data on Render | **B** | The `pollinex-db` URL must be pasted into `DATABASE_URL` by the owner. Health currently reports `database_backend: sqlite` |
+| Render deployment, health, API docs | T | Live smoke workflow; `/docs` |
+| Automatic GitHub → Render deploy | **B** | Render's GitHub app needs access to the repository (owner action). Deploys are started manually |
+| Vercel | B | HTTP 403 for the connected account; optional |
+| Docker | T | CI builds the image (frontend stage included) |
+| Security controls | T | `SECURITY_AUDIT.md`; pip-audit clean |
+| npm advisories | P | Shipped bundle: 2 moderate (react-router 6). Dev tooling: high and critical in vitest/tinypool. All are major upgrades, planned separately |
+| Windows fresh clone | T | CI `windows-latest`: setup, tests and E2E; `LOCAL_SETUP.md` covers N:\ |

@@ -101,7 +101,7 @@ See README table. Deployed config: **mAP50 0.410, mAP50-95 0.191**, P 0.169, R 0
 
 **`uncertain`** is set when the top vote share is below 0.60 (a fixed rule, not tuned).
 
-**Test**, used once: accuracy **0.874**, macro-F1 **0.862**.
+**Test**, used once: accuracy **0.874**, macro-F1 **0.862** (gallery v2 as built). With the strawberry rejection references added later (below), the reproducible evaluation gives 0.878 / 0.882.
 
 | Class | P | R | F1 | n |
 |---|--:|--:|--:|--:|
@@ -210,7 +210,7 @@ Detection results and classification results are written to separate sections of
 | USDA apple/peach/pear | 0.647 | 0.578 | 0.593 | 0.332 |
 | TF sunflower | 0.817 | 0.837 | 0.871 | 0.694 |
 
-Species classification: 1,182 test items, accuracy 0.874, macro-F1 0.862.
+Species classification: 1,182 test items, accuracy 0.878, macro-F1 0.882 (with strawberry rejection references).
 
 No model predicts fruit, disease, pollen viability or reproductive structures.
 
@@ -229,10 +229,20 @@ This is a smoke check, not a metric. On 2026-11-04 the top flower's species matc
 
 | Mode | apple | peach | pear | sunflower | hibiscus | tomato | brinjal | chilli | strawberry (not supported) | 8 supported species |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| close-up | 4/5 | 3/5 | 2/5 | 4/5 | 4/5 | 5/5 | 4/5 | 3/5 | 0/5 | **29/40** |
-| auto | 3/5 | 1/5 | 1/5 | 4/5 | 4/5 | 3/5 | 2/5 | 3/5 | 0/5 | **24/40** |
+| close-up (before the fixes below) | 4/5 | 3/5 | 2/5 | 4/5 | 4/5 | 5/5 | 4/5 | 3/5 | 0/5 | 29/40 |
+| auto (before) | 3/5 | 1/5 | 1/5 | 4/5 | 4/5 | 3/5 | 2/5 | 3/5 | 0/5 | 24/40 |
+| close-up (deployed) | 4/5 | 3/5 | 2/5 | 4/5 | 4/5 | 5/5 | 5/5 | 3/5 | 0/5 (4 → unknown) | **30/40** |
+| auto (deployed) | 4/5 | 2/5 | 1/5 | 4/5 | 4/5 | 5/5 | 5/5 | 3/5 | 0/5 (4 → unknown) | **28/40** |
 
-**Finding:** auto mode classifies the crop of the top detection box, which is often smaller or off-centre in whole-scene
-photos. Close-up mode classifies the whole frame, which matches how the gallery was built and evaluated (centre crop). For a
-single flower, use close-up mode. Strawberry was never returned as *unknown*. Its photos were assigned to other species,
-which is a known weakness of the open-set rejection.
+**Finding and fix:** auto mode classified only the crop of the top detection box, which is often small or off-centre in
+whole-scene photos. Close-up mode classifies the whole frame, which matches how the gallery was built. Two changes followed,
+both selected on **validation** by pre-registered rules and then evaluated once on test (every test photo, not just these 5):
+
+1. **Crop/scene blend** (`ai-engine/training/species_context_rule.py`, `models/species_context.json`). Fused votes =
+   0.25 × crop + 0.75 × whole photo. Validation macro-F1 by crop weight 1.0/0.75/0.5/0.25/0.0: 0.622/0.640/0.691/**0.720**/0.657.
+   Test, auto mode: accuracy 0.704 → 0.806, macro-F1 0.610 → 0.669.
+   Abstaining below a vote share of 0.40–0.60 lowered the validation objective every time, so it was **not adopted**.
+2. **Rejection references for gate-failed species** (`species_unsupported_rule.py`). The 31 strawberry training photos are
+   stored as `__unsupported__:strawberry` and are never returned. When they win the vote, the answer is *unknown* with
+   `looks_like_unsupported: strawberry`. Validation objective 0.714 → 0.751.
+   Test: auto accuracy 0.832 and macro-F1 0.778; close-up 0.784 and 0.702; strawberry → unknown 4/6 (was 0/6).

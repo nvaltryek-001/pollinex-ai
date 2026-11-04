@@ -343,7 +343,7 @@ by the same evaluation code as the earlier pixel model and deployed under a rule
 <td align="center" width="25%"><h2>0.593</h2>detector mAP@0.5<br><sub>USDA orchard test (pixel model 0.410)</sub></td>
 <td align="center" width="25%"><h2>0.871</h2>detector mAP@0.5<br><sub>sunflower test (pixel model 0.001)</sub></td>
 <td align="center" width="25%"><h2>~97 ms</h2>per image at 960 px<br><sub>ONNX, GitHub CPU runner (pixel model 910 ms)</sub></td>
-<td align="center" width="25%"><h2>8 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.874 · macro-F1 0.862</sub></td>
+<td align="center" width="25%"><h2>8 / 9</h2>species passed the AI-support gate<br><sub>test accuracy 0.878 · macro-F1 0.882</sub></td>
 </tr>
 </table>
 
@@ -410,12 +410,21 @@ Built by `ai-engine/training/build_species_gallery_multi.py`; full report in `ai
 | Test set | Images | Accuracy |
 |---|--:|--:|
 | USDA orchard flower crops (apple/peach/pear) | 694 | 0.924 |
-| iNaturalist field photos | 109 | 0.798 |
-| Wikimedia Commons photos (independent source) | 65 | 0.892 |
+| iNaturalist field photos | 109 | 0.817 |
+| Wikimedia Commons photos (independent source) | 65 | 0.938 |
 | Sunflower close-ups | 94 | 0.979 |
 | USDA background crops → `unknown` | 220 | **0.705** (previous gallery 0.095) |
 
-Overall test accuracy **0.874**, macro-F1 **0.862**.
+Overall test accuracy **0.878**, macro-F1 **0.882**, with strawberry rejection references (strawberry photos must come back as *unknown*). Before them it was 0.874 / 0.862.
+
+**Whole photos, top flower** (`species_context_rule.py`, `species_unsupported_rule.py`; both choices made on validation, test used once):
+
+| Mode (test) | Accuracy | Macro-F1 | Strawberry → unknown |
+|---|--:|--:|--:|
+| auto, crop only (previous) | 0.704 | 0.610 | 1/6 |
+| auto, crop + whole-photo blend | 0.806 | 0.669 | 0/6 |
+| **auto, blend + strawberry rejection (deployed)** | **0.832** | **0.778** | **4/6** |
+| close-up (deployed) | 0.784 | 0.702 | — |
 
 | Species | Precision | Recall | F1 | Test images |
 |---|--:|--:|--:|--:|
@@ -545,10 +554,10 @@ Full review, gaps and BibTeX: [`research/`](research/).
 
 - The detector is trained on **apple, peach, pear and sunflower** boxes only. On cluttered orchard scenes, precision is 0.65 and recall 0.58 at the deployed 0.30 threshold.
 - **Fruit is not recognised.** No fruit dataset or model exists; fruit details are general species knowledge only.
-- **Strawberry** (44 images, 31 references) is not AI-supported. Its test photos are misassigned rather than returned as *unknown*.
+- **Strawberry** (44 images, 31 references) is not AI-supported. Its photos are used only as rejection references: the answer is *unknown, looks like strawberry* (4 of 6 test photos), never "strawberry". Choose it manually.
 - **Brinjal and chilli** are AI-supported on **limited evidence** (11 and 7 test images). The UI shows this status on every result.
 - New-crop images are **species-labelled photos only** (no boxes). Commons labels come from community category curation, which is weaker than iNaturalist identifications.
-- In **auto** mode, species recognition uses the top detection box. On whole-scene photos this is weaker than **close-up** mode: 24/40 vs 29/40 correct on real test photos of the 8 supported species ([details](docs/AI_MODEL_DOCUMENTATION.md#end-to-end-check-on-real-photos-of-all-nine-species)).
+- In **auto** mode, species votes blend the detection crop (25 %) with the whole photo (75 %), a weight chosen on validation. Single flowers are still best scanned in **close-up** mode ([details](docs/AI_MODEL_DOCUMENTATION.md#end-to-end-check-on-real-photos-of-all-nine-species)).
 - 31 % of orchard background crops are still given a species. Use **Close-up** mode for single flowers.
 - **No anther / stigma detector**: structures, stage, health and pose are labelled heuristics until annotated data exists.
 - Readiness is a **visual estimate**; simulation is **computation** — neither proves pollen viability or fertilisation.
@@ -560,7 +569,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 - [x] Train YOLO11 and compare on the same test split (CPU workflow; GPU [Colab notebook](notebooks/train_yolo11_colab.ipynb))
 - [x] Sunflower, hibiscus and tomato species references with held-out evaluation
 - [ ] More openly licensed flower photos for strawberry, brinjal and chilli (own photos + CVAT workflow)
-- [ ] Flower boxes for the five new crops (CVAT schema and converter included)
+- [ ] Flower boxes for the five new crops: machine proposals for all 1,267 photos are ready in `datasets/annotation/proposals/` and need human review in CVAT; a gated 9-class trainer is included
 - [ ] Trained stage and reproductive-structure models
 - [ ] Field trial: natural vs manual vs app-assisted pollination ([design](research/methodology.md))
 - [ ] Public deployment and offline-capable PWA
@@ -577,6 +586,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 | [Simulator](docs/SIMULATOR_DOCUMENTATION.md) | [Research methodology](docs/RESEARCH_METHODOLOGY.md) |
 | [Installation](docs/INSTALLATION_GUIDE.md) · [Deployment](docs/DEPLOYMENT_GUIDE.md) | [User manual](docs/USER_MANUAL.md) |
 | [**Model evaluation results (reproducible)**](docs/MODEL_EVALUATION_RESULTS.md) · [Species knowledge base](docs/SPECIES_KNOWLEDGE_BASE.md) | [Audit checklist](docs/PROJECT_AUDIT_CHECKLIST.md) |
+| [Model cards](docs/MODEL_CARDS.md) · [Ethics & licensing](docs/ETHICS_AND_LICENSING.md) | [Security audit](docs/SECURITY_AUDIT.md) · [Local setup (Windows)](docs/LOCAL_SETUP.md) |
 | [**Final release report**](docs/FINAL_RELEASE_REPORT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md) · [Earlier audit](docs/FINAL_PROJECT_AND_DATASET_AUDIT.md) | [Completion audit](docs/PROJECT_COMPLETION_AUDIT.md) · [Next steps](docs/NEXT_SESSION_TASKS.md) |
 
 ---

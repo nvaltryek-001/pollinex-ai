@@ -31,7 +31,7 @@ This section supersedes the updates below it. Every claim links to a file or to 
     | USDA | 0.593 | 0.332 | 0.647 | 0.578 | apple 0.602, peach 0.568, pear 0.609 |
     | Sunflower | 0.871 | 0.694 | 0.817 | 0.837 | — |
 
-  * Species classification, reported separately: 1,182 test items, accuracy 0.874, macro-F1 0.862, with a confusion matrix and per-species P/R/F1.
+  * Species classification, reported separately: 1,182 test items, accuracy 0.874, macro-F1 0.862 at that time (0.878 / 0.882 after the strawberry rejection references below), with a confusion matrix and per-species P/R/F1.
   * **No detection performance is claimed for hibiscus, tomato, strawberry, brinjal or chilli**, because no boxes exist for them.
 * **Dataset integrity audit:** a CI test (`test_dataset_integrity_audit_passes`) checks that all images decode, that label rows are valid, that species folders are known, that no exact duplicate crosses splits, and that the leakage exclusion is applied. It passed.
 * **Audit checklist** for all 21 modules plus data and deployment: [`PROJECT_AUDIT_CHECKLIST.md`](PROJECT_AUDIT_CHECKLIST.md).
@@ -72,6 +72,33 @@ This section supersedes the updates below it. Every claim links to a file or to 
   * Fix: give Render's GitHub app access to the repository, or add a deploy-hook secret. Steps are in [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md).
 * **Vercel: blocked.** The connected account returns HTTP 403 on project creation, and the team has 0 projects. It is optional, because Render serves the UI; import steps are in the deployment guide.
 * **Secrets:** `JWT_SECRET` is set only on Render. No credentials are in the repository.
+
+### Development pass (2026-11-04 evening): what changed
+The master checklist is [`PROJECT_AUDIT_CHECKLIST.md`](PROJECT_AUDIT_CHECKLIST.md).
+
+* **Auto-mode species recognition fixed.** Votes from the detection crop are blended with votes from the whole photo,
+  with the weight (0.25) chosen on validation. Test, top flower in auto mode: accuracy 0.704 → 0.806.
+* **Strawberry no longer gets a confident wrong answer.** Its 31 training photos are rejection-only references. On test,
+  4 of 6 strawberry photos are answered *unknown, looks like strawberry* (before: 0 of 6), and strawberry is never returned
+  as a species. Auto accuracy rises to 0.832 and macro-F1 to 0.778. The gallery's crop evaluation is now accuracy 0.878,
+  macro-F1 0.882.
+* **Abstention thresholds were tested and rejected,** because they lowered validation macro-F1 at every threshold.
+* **User settings:** display name, password change (checks the current password and the policy, revokes other sessions),
+  theme. Covered by backend and E2E tests, as are logout and the protected-route redirect.
+* **Nine-species detection pipeline:**
+  * 1,267 photos have unverified YOLO11 box proposals, about 8,300 boxes in all, as CVAT pre-annotations.
+  * The importer accepts only boxes ticked `verified` and keeps each photo's split.
+  * The 9-class trainer is gated (≥ 50 train, 15 val and 15 test verified images per class). Status:
+    **pending_verified_annotations**; only the published apple/peach/pear/sunflower boxes exist so far.
+* **Structures:** `sepal` was added to the label schema, the guidelines and the model hook. There are still 0 structure annotations.
+* **Security:**
+  * CSV formula-injection guard and HSTS in production.
+  * New dependency-audit workflow: pip-audit clean.
+  * npm: 2 moderate findings in the shipped bundle (react-router 6) and high/critical findings in dev-only test tooling. All need major upgrades and are documented in [`SECURITY_AUDIT.md`](SECURITY_AUDIT.md).
+* **Docs:** [`MODEL_CARDS.md`](MODEL_CARDS.md), [`ETHICS_AND_LICENSING.md`](ETHICS_AND_LICENSING.md), and two new diagrams in
+  `ARCHITECTURE.md` (species decision; data and training flow).
+* **Data expansion is blocked.** Openly licensed strawberry flower photos are exhausted on iNaturalist (15) and in Commons
+  (29). Oxford 102 cannot be reached, FlowerNet needs a manual download, and PlantCLEF's terms are unverified.
 
 ### Later the same evening (15-minute audit pass)
 * **Mobile layout bug fixed.** Pages could scroll sideways on phones, by 53–56 px on Model evaluation, because grid children
