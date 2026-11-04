@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-11-04T15:21:59+00:00",
+  "data": "import_verified_boxes.py --include-existing (USDA + TF sunflower ground truth); 0 human-verified proposal images so far",
+  "classes": [
+    "apple",
+    "peach",
+    "pear",
+    "sunflower",
+    "hibiscus",
+    "tomato",
+    "strawberry",
+    "brinjal",
+    "chilli"
+  ],
+  "verified_images_per_class": {
+    "apple": {
+      "train": 29,
+      "val": 7,
+      "test": 12
+    },
+    "peach": {
+      "train": 14,
+      "val": 4,
+      "test": 6
+    },
+    "pear": {
+      "train": 11,
+      "val": 3,
+      "test": 4
+    },
+    "sunflower": {
+      "train": 439,
+      "val": 94,
+      "test": 94
+    },
+    "hibiscus": {},
+    "tomato": {},
+    "strawberry": {},
+    "brinjal": {},
+    "chilli": {}
+  },
+  "gate": {
+    "passed": false,
+    "short_classes": {
+      "apple": {
+        "have": {
+          "train": 29,
+          "val": 7,
+          "test": 12
+        },
+        "still_needed": {
+          "train": 21,
+          "val": 8,
+          "test": 3
+        }
+      },
+      "peach": {
+        "have": {
+          "train": 14,
+          "val": 4,
+          "test": 6
+        },
+        "still_needed": {
+          "train": 36,
+          "val": 11,
+          "test": 9
+        }
+      },
+      "pear": {
+        "have": {
+          "train": 11,
+          "val": 3,
+          "test": 4
+        },
+        "still_needed": {
+          "train": 39,
+          "val": 12,
+          "test": 11
+        }
+      },
+      "hibiscus": {
+        "have": {},
+        "still_needed": {
+          "train": 50,
+          "val": 15,
+          "test": 15
+        }
+      },
+      "tomato": {
+        "have": {},
+        "still_needed": {
+          "train": 50,
+          "val": 15,
+          "test": 15
+        }
+      },
+      "strawberry": {
+        "have": {},
+        "still_needed": {
+          "train": 50,
+          "val": 15,
+          "test": 15
+        }
+      },
+      "brinjal": {
+        "have": {},
+        "still_needed": {
+          "train": 50,
+          "val": 15,
+          "test": 15
+        }
+      },
+      "chilli": {
+        "have": {},
+        "still_needed": {
+          "train": 50,
+          "val": 15,
+          "test": 15
+        }
+      }
+    },
+    "rule": "each of 9 classes >= 50 train and >= 15 val and test images with verified boxes"
+  },
+  "status": "pending_verified_annotations",
+  "model": null
+}

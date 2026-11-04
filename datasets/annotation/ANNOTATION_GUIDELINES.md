@@ -32,6 +32,7 @@ the iNaturalist-only species have fewer non-test photos).
 | `stigma` | polygon | Receptive tip of the pistil (hibiscus: each of the 5 pads separately). | `receptive_looking` (visual only) |
 | `stamen` | polygon | Filament + anther when the filament is visible; otherwise annotate only `anther`. | — |
 | `pistil` | polygon | Style + stigma (+ ovary if visible). Hibiscus: the staminal column is **not** the pistil. | — |
+| `sepal` | polygon | Each visible sepal (green outer whorl below the petals; strawberry calyx lobes; tomato/brinjal/chilli calyx lobes). Sunflower: involucral bracts are **not** sepals - do not label. | — |
 | `health_issue` | polygon | A visible abnormality on petals/sepals. Describe, never diagnose a disease. | `kind` |
 
 ### Stage definitions (attribute `stage` on `flower`)
@@ -43,6 +44,15 @@ the iNaturalist-only species have fewer non-test photos).
 | `fully_open` | Petals fully spread; anthers/stigma fully exposed. |
 | `senescent` | Petals wilting, browning, dropping, or ovary swelling. |
 | `uncertain` | Use instead of guessing (counted separately; excluded from training). |
+
+## 2b. Machine box proposals (optional, never ground truth)
+`python datasets/annotation/propose_species_boxes.py` writes CVAT-importable COCO files in
+`datasets/annotation/proposals/` with `flower` boxes from the deployed detector, each annotation tagged
+`"verified": false`. Import them into CVAT as pre-annotations, then **correct every box** (move, delete, add missed
+flowers, set `species`). Mark the job *completed* only after review. Only completed, reviewed CVAT exports may be passed to
+`import_verified_boxes.py`. Unreviewed proposals are rejected by the importer and are never used for training or evaluation.
+The detector was trained only on apple, peach, pear and sunflower, so proposals for the other five species will miss
+and mis-box flowers - they save clicks, they are not labels.
 
 ## 3. Rules (adapted from Schouten et al., 2024)
 1. Tight boxes around the visible part of each flower.

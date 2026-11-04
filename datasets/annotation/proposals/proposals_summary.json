@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-11-04T15:20:39+00:00",
+  "status": "UNVERIFIED machine proposals - not ground truth",
+  "detector": "yolo11-onnx flower_yolo11n",
+  "conf_floor": 0.15,
+  "per_species": {
+    "apple": {
+      "photos": 107,
+      "proposed_boxes": 2002,
+      "photos_without_proposal": 15,
+      "splits": {
+        "test": 17,
+        "train": 67,
+        "val": 23
+      }
+    },
+    "peach": {
+      "photos": 71,
+      "proposed_boxes": 1270,
+      "photos_without_proposal": 1,
+      "splits": {
+        "train": 52,
+        "test": 10,
+        "val": 9
+      }
+    },
+    "pear": {
+      "photos": 29,
+      "proposed_boxes": 716,
+      "photos_without_proposal": 2,
+      "splits": {
+        "test": 5,
+        "train": 18,
+        "val": 6
+      }
+    },
+    "sunflower": {
+      "photos": 200,
+      "proposed_boxes": 676,
+      "photos_without_proposal": 1,
+      "splits": {
+        "train": 142,
+        "test": 32,
+        "val": 26
+      }
+    },
+    "hibiscus": {
+      "photos": 256,
+      "proposed_boxes": 1193,
+      "photos_without_proposal": 13,
+      "splits": {
+        "train": 204,
+        "test": 23,
+        "val": 29
+      }
+    },
+    "tomato": {
+      "photos": 347,
+      "proposed_boxes": 1220,
+      "photos_without_proposal": 96,
+      "splits": {
+        "train": 230,
+        "val": 54,
+        "test": 63
+      }
+    },
+    "strawberry": {
+      "photos": 44,
+      "proposed_boxes": 535,
+      "photos_without_proposal": 2,
+      "splits": {
+        "train": 31,
+        "val": 7,
+        "test": 6
+      }
+    },
+    "brinjal": {
+      "photos": 131,
+      "proposed_boxes": 525,
+      "photos_without_proposal": 27,
+      "splits": {
+        "train": 109,
+        "val": 11,
+        "test": 11
+      }
+    },
+    "chilli": {
+      "photos": 82,
+      "proposed_boxes": 201,
+      "photos_without_proposal": 28,
+      "splits": {
+        "train": 66,
+        "test": 7,
+        "val": 9
+      }
+    }
+  }
+}

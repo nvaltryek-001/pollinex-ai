@@ -1,0 +1,1268 @@
+file,species,split,source,n_proposals,licence,status
+inat_flowering/test/apple/inat_384853643_704525092.jpg,apple,test,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_376152865_687730840.jpg,apple,test,inat_flowering,5,cc0,unverified_proposal
+inat_flowering/train/apple/inat_360646719_658093790.jpg,apple,train,inat_flowering,10,cc0,unverified_proposal
+inat_flowering/train/apple/inat_360645516_658092600.jpg,apple,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/apple/inat_359404830_655687964.jpg,apple,train,inat_flowering,52,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_352823111_643854852.jpg,apple,train,inat_flowering,42,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_350754809_639993622.jpg,apple,test,inat_flowering,61,cc-by-sa,unverified_proposal
+inat_flowering/train/apple/inat_347227057_633071031.jpg,apple,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_334403849_607262790.jpg,apple,train,inat_flowering,88,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_333367226_605202351.jpg,apple,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_322003652_582432155.jpg,apple,test,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_281213143_505143659.jpg,apple,train,inat_flowering,20,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_277451196_498187864.jpg,apple,train,inat_flowering,34,cc0,unverified_proposal
+inat_flowering/val/apple/inat_276715602_496899274.jpg,apple,val,inat_flowering,15,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_276693368_496863568.jpg,apple,val,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_274224834_493028911.jpg,apple,val,inat_flowering,14,cc0,unverified_proposal
+inat_flowering/val/apple/inat_273953122_492590685.jpg,apple,val,inat_flowering,104,cc0,unverified_proposal
+inat_flowering/train/apple/inat_273384702_491702348.jpg,apple,train,inat_flowering,91,cc0,unverified_proposal
+inat_flowering/train/apple/inat_271965677_489258564.jpg,apple,train,inat_flowering,40,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_271260914_487919289.jpg,apple,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_269864982_485267221.jpg,apple,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_268247435_482151351.jpg,apple,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/apple/inat_267420314_480571530.jpg,apple,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/val/apple/inat_248649930_444327825.jpg,apple,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_248649175_444326227.jpg,apple,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_247427743_441912237.jpg,apple,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_247022624_441098145.jpg,apple,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_218077347_385869323.jpg,apple,train,inat_flowering,40,cc0,unverified_proposal
+inat_flowering/train/apple/inat_215808654_381591812.jpg,apple,train,inat_flowering,13,cc0,unverified_proposal
+inat_flowering/train/apple/inat_213527117_377361223.jpg,apple,train,inat_flowering,32,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_213030177_376468526.jpg,apple,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_208180884_368309319.jpg,apple,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/apple/inat_208180574_368308699.jpg,apple,train,inat_flowering,17,cc0,unverified_proposal
+inat_flowering/train/apple/inat_207870974_367734948.jpg,apple,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/apple/inat_207786386_367575973.jpg,apple,train,inat_flowering,32,cc0,unverified_proposal
+inat_flowering/test/apple/inat_207009124_366962924.jpg,apple,test,inat_flowering,30,cc0,unverified_proposal
+inat_flowering/train/apple/inat_206833368_365783634.jpg,apple,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/apple/inat_205226786_362848159.jpg,apple,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_195613549_344182030.jpg,apple,train,inat_flowering,26,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_195280404_343504108.jpg,apple,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/val/apple/inat_187305056_327526744.jpg,apple,val,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_163532683_282849295.jpg,apple,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/train/apple/inat_163092067_282051996.jpg,apple,train,inat_flowering,4,cc0,unverified_proposal
+inat_flowering/test/apple/inat_161562103_279270807.jpg,apple,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_161468475_279095091.jpg,apple,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_160772073_277840040.jpg,apple,train,inat_flowering,11,cc0,unverified_proposal
+inat_flowering/train/apple/inat_160750833_277803068.jpg,apple,train,inat_flowering,90,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_160694419_277703680.jpg,apple,test,inat_flowering,32,cc0,unverified_proposal
+inat_flowering/train/apple/inat_159252831_275138710.jpg,apple,train,inat_flowering,46,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_158355051_273646948.jpg,apple,train,inat_flowering,24,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_157727406_272668287.jpg,apple,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_143263577_245678960.jpg,apple,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_141521820_242471724.jpg,apple,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_141246239_241928347.jpg,apple,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_138408850_236562751.jpg,apple,val,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/test/apple/inat_123816254_209794063.jpg,apple,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_119315966_201676075.jpg,apple,val,inat_flowering,137,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_119248446_201564381.jpg,apple,val,inat_flowering,47,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_118169274_199626704.jpg,apple,train,inat_flowering,13,cc0,unverified_proposal
+inat_flowering/val/apple/inat_117234752_197962732.jpg,apple,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_116354214_196388210.jpg,apple,test,inat_flowering,32,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_116089634_195932099.jpg,apple,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_115288421_194605221.jpg,apple,train,inat_flowering,16,cc0,unverified_proposal
+inat_flowering/train/apple/inat_115175811_194414599.jpg,apple,train,inat_flowering,8,cc0,unverified_proposal
+inat_flowering/val/apple/inat_113801109_192233185.jpg,apple,val,inat_flowering,46,cc-by-sa,unverified_proposal
+inat_flowering/test/apple/inat_113188828_191250913.jpg,apple,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_113063913_191030272.jpg,apple,train,inat_flowering,14,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_112077102_189280154.jpg,apple,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_110856971_187074760.jpg,apple,val,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_109550893_184659403.jpg,apple,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_86269990_142092881.jpg,apple,val,inat_flowering,17,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_81454722_133606962.jpg,apple,test,inat_flowering,33,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_78437499_128369492.jpg,apple,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_78208228_127962032.jpg,apple,test,inat_flowering,19,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_77739213_127161667.jpg,apple,test,inat_flowering,15,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_76449771_125059412.jpg,apple,val,inat_flowering,15,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_75867249_124138630.jpg,apple,train,inat_flowering,39,cc0,unverified_proposal
+inat_flowering/train/apple/inat_75496572_123522690.jpg,apple,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_62465326_100087856.jpg,apple,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_62465324_100087851.jpg,apple,train,inat_flowering,48,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_47993535_76130449.jpg,apple,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_44803652_71026568.jpg,apple,train,inat_flowering,32,cc0,unverified_proposal
+inat_flowering/train/apple/inat_44619411_70739381.jpg,apple,train,inat_flowering,17,cc0,unverified_proposal
+inat_flowering/test/apple/inat_44249868_70148074.jpg,apple,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_44090190_69907822.jpg,apple,val,inat_flowering,28,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_43389645_68848980.jpg,apple,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_37740544_59891210.jpg,apple,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/apple/inat_32097182_50309508.jpg,apple,test,inat_flowering,45,cc0,unverified_proposal
+inat_flowering/train/apple/inat_28924614_45115199.jpg,apple,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_27296327_42454759.jpg,apple,train,inat_flowering,49,cc-by-sa,unverified_proposal
+inat_flowering/train/apple/inat_26352338_40912841.jpg,apple,train,inat_flowering,65,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_26283489_40798807.jpg,apple,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_25220008_39040855.jpg,apple,val,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/apple/inat_23646059_36601715.jpg,apple,train,inat_flowering,18,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_20293709_31329724.jpg,apple,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/apple/inat_17370554_26381985.jpg,apple,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_13916755_20559763.jpg,apple,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/val/apple/inat_12785285_18533397.jpg,apple,val,inat_flowering,16,cc0,unverified_proposal
+inat_flowering/train/apple/inat_12453252_17965297.jpg,apple,train,inat_flowering,7,cc0,unverified_proposal
+inat_flowering/val/apple/inat_12388061_17851974.jpg,apple,val,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_12377501_17834366.jpg,apple,train,inat_flowering,21,cc0,unverified_proposal
+inat_flowering/train/apple/inat_8950720_12062222.jpg,apple,train,inat_flowering,28,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_4525387_5480377.jpg,apple,val,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_2923111_3347439.jpg,apple,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/val/apple/inat_2312066_2571239.jpg,apple,val,inat_flowering,4,cc-by-sa,unverified_proposal
+inat_flowering/test/apple/inat_1364297_1687673.jpg,apple,test,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/apple/inat_1036486_1299581.jpg,apple,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_400339984_734637872.jpg,peach,train,inat_flowering,121,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_395742110_725662060.jpg,peach,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/peach/inat_392266327_718854832.jpg,peach,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_392266316_718853730.jpg,peach,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_390810529_716026969.jpg,peach,train,inat_flowering,23,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_390810527_716026709.jpg,peach,train,inat_flowering,19,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_388701550_711935581.jpg,peach,test,inat_flowering,40,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_351413513_641289924.jpg,peach,train,inat_flowering,4,cc0,unverified_proposal
+inat_flowering/train/peach/inat_349394716_637354469.jpg,peach,train,inat_flowering,7,cc0,unverified_proposal
+inat_flowering/train/peach/inat_345535943_629724015.jpg,peach,train,inat_flowering,51,cc0,unverified_proposal
+inat_flowering/train/peach/inat_344407916_627531021.jpg,peach,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_341772611_622249299.jpg,peach,train,inat_flowering,16,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_320879278_580228084.jpg,peach,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_314537323_568108480.jpg,peach,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_290002663_521652729.jpg,peach,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_269048273_483694340.jpg,peach,test,inat_flowering,4,cc0,unverified_proposal
+inat_flowering/val/peach/inat_268697375_483018640.jpg,peach,val,inat_flowering,89,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_268561134_482754360.jpg,peach,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_267552122_480826097.jpg,peach,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_267413265_480569190.jpg,peach,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/val/peach/inat_267279806_480306318.jpg,peach,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_267269258_480285609.jpg,peach,train,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/peach/inat_266949592_479670902.jpg,peach,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/peach/inat_266765651_479318736.jpg,peach,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_264893236_475709963.jpg,peach,train,inat_flowering,19,cc-by-sa,unverified_proposal
+inat_flowering/train/peach/inat_261364353_469539513.jpg,peach,train,inat_flowering,10,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_246288551_439641911.jpg,peach,test,inat_flowering,18,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_235804067_419412304.jpg,peach,train,inat_flowering,33,cc-by,unverified_proposal
+inat_flowering/val/peach/inat_203803617_360310347.jpg,peach,val,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_203279975_359132234.jpg,peach,test,inat_flowering,5,cc0,unverified_proposal
+inat_flowering/train/peach/inat_203165431_358912493.jpg,peach,train,inat_flowering,53,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_203031961_358659183.jpg,peach,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/peach/inat_201142396_355013346.jpg,peach,val,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_200432039_353623565.jpg,peach,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_182602315_318411484.jpg,peach,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_174805452_303728665.jpg,peach,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_164376457_284405061.jpg,peach,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_153032045_264257747.jpg,peach,train,inat_flowering,23,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_152629491_263505945.jpg,peach,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_152403477_263087858.jpg,peach,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/peach/inat_152149031_262617967.jpg,peach,val,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_149920100_258414880.jpg,peach,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_109697745_184929541.jpg,peach,train,inat_flowering,26,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_97342846_161875978.jpg,peach,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_75445541_123430785.jpg,peach,test,inat_flowering,19,cc-by,unverified_proposal
+inat_flowering/val/peach/inat_74537750_121832263.jpg,peach,val,inat_flowering,19,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_72628091_118447203.jpg,peach,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_71632505_116653833.jpg,peach,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_71295112_116054468.jpg,peach,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_67517057_109101963.jpg,peach,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_60894427_97391231.jpg,peach,train,inat_flowering,97,cc0,unverified_proposal
+inat_flowering/val/peach/inat_59939855_95810703.jpg,peach,val,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_42235915_67047082.jpg,peach,train,inat_flowering,6,cc0,unverified_proposal
+inat_flowering/train/peach/inat_40830152_64725440.jpg,peach,train,inat_flowering,16,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_40605834_64359026.jpg,peach,test,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_40016509_63548962.jpg,peach,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_39124947_62064742.jpg,peach,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_33580376_52752776.jpg,peach,train,inat_flowering,48,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_24999881_38677681.jpg,peach,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/val/peach/inat_22247408_34450340.jpg,peach,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_20086002_31018082.jpg,peach,train,inat_flowering,10,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_19327626_29717006.jpg,peach,train,inat_flowering,27,cc-by-sa,unverified_proposal
+inat_flowering/val/peach/inat_18229326_27856265.jpg,peach,val,inat_flowering,9,cc0,unverified_proposal
+inat_flowering/train/peach/inat_17708143_26993155.jpg,peach,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/test/peach/inat_11112722_15707342.jpg,peach,test,inat_flowering,45,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_11107170_15695986.jpg,peach,train,inat_flowering,27,cc-by-sa,unverified_proposal
+inat_flowering/train/peach/inat_10909922_15337830.jpg,peach,train,inat_flowering,72,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_10252066_14182207.jpg,peach,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_5573507_6882160.jpg,peach,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_4193532_4995729.jpg,peach,train,inat_flowering,45,cc-by,unverified_proposal
+inat_flowering/train/peach/inat_2740811_3094980.jpg,peach,train,inat_flowering,57,cc-by-sa,unverified_proposal
+inat_flowering/test/pear/inat_376153215_687731801.jpg,pear,test,inat_flowering,10,cc0,unverified_proposal
+inat_flowering/train/pear/inat_358968505_654889250.jpg,pear,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_352796357_643813917.jpg,pear,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_313553706_566228257.jpg,pear,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_244090140_435357601.jpg,pear,train,inat_flowering,28,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_243314353_433855692.jpg,pear,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_211982834_374645007.jpg,pear,train,inat_flowering,18,cc-by,unverified_proposal
+inat_flowering/val/pear/inat_205245768_362883335.jpg,pear,val,inat_flowering,123,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_204282217_361058436.jpg,pear,train,inat_flowering,10,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_163603353_282985718.jpg,pear,train,inat_flowering,54,cc0,unverified_proposal
+inat_flowering/train/pear/inat_161464626_279087820.jpg,pear,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_159273401_275130368.jpg,pear,train,inat_flowering,78,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_157172509_271788730.jpg,pear,train,inat_flowering,21,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_154277650_266558160.jpg,pear,train,inat_flowering,11,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_141230216_241899068.jpg,pear,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_119408854_201843445.jpg,pear,train,inat_flowering,48,cc-by,unverified_proposal
+inat_flowering/test/pear/inat_118551461_200312287.jpg,pear,test,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_117432739_198328139.jpg,pear,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/val/pear/inat_116739298_197081112.jpg,pear,val,inat_flowering,16,cc0,unverified_proposal
+inat_flowering/test/pear/inat_113188530_191250232.jpg,pear,test,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/val/pear/inat_76980825_125893154.jpg,pear,val,inat_flowering,44,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_71090477_115685279.jpg,pear,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/val/pear/inat_42790707_67942595.jpg,pear,val,inat_flowering,11,cc-by,unverified_proposal
+inat_flowering/val/pear/inat_42501044_67485264.jpg,pear,val,inat_flowering,86,cc-by,unverified_proposal
+inat_flowering/train/pear/inat_41782062_66293458.jpg,pear,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/pear/inat_41170626_65288889.jpg,pear,test,inat_flowering,21,cc-by,unverified_proposal
+inat_flowering/val/pear/inat_34231485_53848697.jpg,pear,val,inat_flowering,71,cc-by-sa,unverified_proposal
+inat_flowering/train/pear/inat_22752500_35260437.jpg,pear,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/test/pear/inat_1364302_1687682.jpg,pear,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_412484496_758998626.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_411926295_757838754.jpg,sunflower,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_411926268_757834453.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_411926265_757834448.jpg,sunflower,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_411926255_757834429.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_411886709_757779861.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_411865188_757749143.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_410806784_755611644.jpg,sunflower,test,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_409711033_753381904.jpg,sunflower,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_407115626_748083244.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_406875817_747607038.jpg,sunflower,val,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_406662614_747177665.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_406397643_746645187.jpg,sunflower,train,inat_flowering,4,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_405820062_745475608.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_405315351_744458075.jpg,sunflower,val,inat_flowering,25,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_404607461_743057204.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_404607359_743057019.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_404013703_741863897.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_403937006_741720931.jpg,sunflower,test,inat_flowering,28,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_403820687_741497881.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_403035075_739944318.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_402584762_739069405.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_402311464_739302852.jpg,sunflower,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_402215471_738345635.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_401966145_737849638.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_401927442_737771328.jpg,sunflower,test,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/val/sunflower/inat_400895888_735751797.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_400834437_735592500.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_400519549_734997471.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_398975550_731954008.jpg,sunflower,val,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_398233122_730500887.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_397080940_728250547.jpg,sunflower,train,inat_flowering,10,cc-by-sa,unverified_proposal
+inat_flowering/train/sunflower/inat_396166621_726495284.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_395635841_725445368.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_392379498_719081728.jpg,sunflower,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_392379440_719081576.jpg,sunflower,train,inat_flowering,5,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_391102025_716598275.jpg,sunflower,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_390666472_715745807.jpg,sunflower,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_389220246_712925370.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_389193738_712868208.jpg,sunflower,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_388081142_710716209.jpg,sunflower,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_386913255_708455231.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_386115467_706927983.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_385907307_706529047.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_384440929_703731785.jpg,sunflower,test,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_384419733_703687873.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_383695797_702287191.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_382322565_699648836.jpg,sunflower,train,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_382146191_699300604.jpg,sunflower,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/val/sunflower/inat_378983804_693192843.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_374550829_684623977.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_373777046_683112046.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_372746167_681139531.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_371355542_678485946.jpg,sunflower,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_370985524_677777997.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_367930407_671962206.jpg,sunflower,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_364506390_665430856.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_354743401_647096345.jpg,sunflower,train,inat_flowering,11,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_354151677_646118574.jpg,sunflower,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_352861636_643916448.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_351919245_642276035.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_345409067_629474122.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_345210098_629084453.jpg,sunflower,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/sunflower/inat_342193772_623101247.jpg,sunflower,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_337357282_613251886.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_335075559_608645532.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_335028275_608537809.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_334669198_607806255.jpg,sunflower,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_334464107_607398290.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_334359843_607184475.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_333819501_606079629.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_333673279_605778174.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_332806489_604064259.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_331982082_602374823.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_330422237_599164169.jpg,sunflower,train,inat_flowering,10,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_330002123_598303705.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_329362938_597014324.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_328638249_595560083.jpg,sunflower,test,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_325714539_589775392.jpg,sunflower,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_323824912_586003861.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_322703509_583824735.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_322233003_582889200.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_322231411_582879884.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_322231410_582878865.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_322231408_582878833.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_321596263_581631862.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_320114846_578735944.jpg,sunflower,train,inat_flowering,8,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_319990496_578492130.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_319973444_578462035.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_319881661_578284417.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_318594252_575824784.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_317568450_573853944.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_316407846_571662409.jpg,sunflower,test,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_315954219_570816094.jpg,sunflower,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_315434093_569823777.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_314530226_568095885.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_314359180_567787831.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_313452983_566054564.jpg,sunflower,train,inat_flowering,13,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_313299322_565767500.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_312597449_564415491.jpg,sunflower,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_312149265_563548695.jpg,sunflower,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_311837110_562961289.jpg,sunflower,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_311500646_562326361.jpg,sunflower,val,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_311334461_562008525.jpg,sunflower,test,inat_flowering,10,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_310864535_561068316.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_310858629_561082163.jpg,sunflower,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_308720448_556996982.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_307607236_554858194.jpg,sunflower,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_306836917_553377184.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_306652070_553030675.jpg,sunflower,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_306105663_551984823.jpg,sunflower,train,inat_flowering,4,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_305220715_550295261.jpg,sunflower,train,inat_flowering,3,cc-by-sa,unverified_proposal
+inat_flowering/test/sunflower/inat_304969565_549825340.jpg,sunflower,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_304013462_548011272.jpg,sunflower,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_303891583_547778337.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_303528081_547082335.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_303307143_546668782.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_301992188_544223874.jpg,sunflower,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_301606287_543499127.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_300259056_540988811.jpg,sunflower,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_299006100_538648276.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_298592633_537862835.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_298033620_536807057.jpg,sunflower,train,inat_flowering,6,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_297908235_536557702.jpg,sunflower,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_295919585_532780181.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_295187764_531383989.jpg,sunflower,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_295117126_531253082.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_294978324_530988088.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_294608084_530289055.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_293610365_528420381.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_292683928_526724358.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_287725210_517364194.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_284920518_512094838.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_284499188_511312706.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_283799660_509970719.jpg,sunflower,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_281601282_505872380.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_279128981_501224887.jpg,sunflower,test,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_272731689_490673660.jpg,sunflower,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/test/sunflower/inat_266029942_477939337.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_262544789_471579419.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_261863178_470538665.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_261389750_469589467.jpg,sunflower,val,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/sunflower/inat_259086645_465003106.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_259034161_464896976.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_256209809_459312358.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_251504477_450029250.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_251472894_449965578.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_250587264_448198879.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_250582746_448189183.jpg,sunflower,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_250378231_447777254.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_250305382_447624656.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_248671878_444374187.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_248652093_444332478.jpg,sunflower,train,inat_flowering,42,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_248368056_443760740.jpg,sunflower,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_247322392_441699705.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_246722168_440510766.jpg,sunflower,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_245350305_437797173.jpg,sunflower,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_245288921_437676873.jpg,sunflower,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_245287528_437674054.jpg,sunflower,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_245239892_437583749.jpg,sunflower,train,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/val/sunflower/inat_244256880_435685628.jpg,sunflower,val,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_243815604_434809967.jpg,sunflower,test,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_243772469_434735124.jpg,sunflower,val,inat_flowering,16,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_243626790_434447796.jpg,sunflower,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_243303122_433834834.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_242728571_432739316.jpg,sunflower,train,inat_flowering,3,cc-by-sa,unverified_proposal
+inat_flowering/train/sunflower/inat_241733273_430862505.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_241666209_430734674.jpg,sunflower,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_241662874_430727974.jpg,sunflower,train,inat_flowering,17,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_241393695_430213508.jpg,sunflower,train,inat_flowering,8,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_241146294_429734529.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_241090113_429632362.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_240996272_429443941.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_240433356_428355323.jpg,sunflower,val,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_239903466_427339049.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_239719756_426987666.jpg,sunflower,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_239411744_426393349.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_239411479_426392718.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_239410522_426390486.jpg,sunflower,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_239203985_425982624.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_238506975_424628724.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_238139359_423914888.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_237861546_423385345.jpg,sunflower,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_237856674_423376011.jpg,sunflower,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_237459783_422610314.jpg,sunflower,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_236440854_420645355.jpg,sunflower,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_236305559_420384047.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_235670573_419159104.jpg,sunflower,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/sunflower/inat_235041866_417947175.jpg,sunflower,test,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_235036102_417935692.jpg,sunflower,test,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_234808409_417495354.jpg,sunflower,test,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_234509350_416910019.jpg,sunflower,test,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_234463899_416824211.jpg,sunflower,test,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/sunflower/inat_233979619_415889440.jpg,sunflower,train,inat_flowering,4,cc-by-sa,unverified_proposal
+inat_flowering/train/sunflower/inat_233307735_414614624.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/sunflower/inat_233062567_414149287.jpg,sunflower,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_232269406_412630990.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_232201504_412498047.jpg,sunflower,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/sunflower/inat_231109248_410430109.jpg,sunflower,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/sunflower/inat_230524902_409329094.jpg,sunflower,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_410815360_755628440.jpg,hibiscus,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_405461608_744757997.jpg,hibiscus,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_405234762_744301095.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_397645958_729356816.jpg,hibiscus,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_397645957_729356820.jpg,hibiscus,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_396477126_727064570.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_396271523_726708556.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_388453877_711449720.jpg,hibiscus,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_379882468_694930325.jpg,hibiscus,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_352415892_643224596.jpg,hibiscus,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/test/hibiscus/inat_337383905_613307237.jpg,hibiscus,test,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_334109013_606668031.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_326035238_590410062.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_326031748_590403911.jpg,hibiscus,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_323629073_585619206.jpg,hibiscus,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_287289002_516556206.jpg,hibiscus,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_283387452_509201341.jpg,hibiscus,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_277475159_498110170.jpg,hibiscus,val,inat_flowering,17,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_277474575_498062985.jpg,hibiscus,val,inat_flowering,25,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_261208013_469231016.jpg,hibiscus,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_254011650_454897295.jpg,hibiscus,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_253846396_454601158.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_252678791_452361259.jpg,hibiscus,train,inat_flowering,7,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_247823786_442693194.jpg,hibiscus,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_247171794_441389326.jpg,hibiscus,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_246013223_439083067.jpg,hibiscus,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/val/hibiscus/inat_245002662_437072197.jpg,hibiscus,val,inat_flowering,3,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_244138575_435454157.jpg,hibiscus,train,inat_flowering,3,cc-by-sa,unverified_proposal
+inat_flowering/test/hibiscus/inat_243273868_433778909.jpg,hibiscus,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/hibiscus/inat_243266564_433763433.jpg,hibiscus,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_225591559_400001583.jpg,hibiscus,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_210505807_372323539.jpg,hibiscus,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_194666215_342242089.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_194315774_341534076.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/hibiscus/inat_190263689_333486012.jpg,hibiscus,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_188020937_328953760.jpg,hibiscus,train,inat_flowering,31,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_185083408_323181365.jpg,hibiscus,train,inat_flowering,5,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_180158425_313770703.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_175165505_304393486.jpg,hibiscus,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_174753528_303629216.jpg,hibiscus,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/val/hibiscus/inat_159766410_276052833.jpg,hibiscus,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_156579685_270772663.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_150830887_260153676.jpg,hibiscus,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_149440221_257510547.jpg,hibiscus,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_147381901_253596584.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_147348807_253534120.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_146256558_251411472.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_143128693_245441071.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_142963017_245169371.jpg,hibiscus,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_104085364_174361300.jpg,hibiscus,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_89269303_147398347.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_77865633_127376922.jpg,hibiscus,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_71844542_117046970.jpg,hibiscus,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_71361471_116175258.jpg,hibiscus,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_71361373_116175079.jpg,hibiscus,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/hibiscus/inat_69258923_112348078.jpg,hibiscus,test,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/test/hibiscus/inat_66693850_107573710.jpg,hibiscus,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_66608589_107416174.jpg,hibiscus,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_65438074_105324518.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_61306494_98087486.jpg,hibiscus,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_56776631_90501067.jpg,hibiscus,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_56330383_89760607.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_55761270_88812242.jpg,hibiscus,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_55761173_88812075.jpg,hibiscus,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_53605102_85265092.jpg,hibiscus,train,inat_flowering,14,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_50944929_80919212.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_45664436_72419892.jpg,hibiscus,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_44226858_70122490.jpg,hibiscus,val,inat_flowering,34,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_42566575_67592934.jpg,hibiscus,train,inat_flowering,4,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_42467513_67431486.jpg,hibiscus,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/val/hibiscus/inat_41517696_65869746.jpg,hibiscus,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_36857091_58331674.jpg,hibiscus,train,inat_flowering,21,cc0,unverified_proposal
+inat_flowering/test/hibiscus/inat_35744018_56398349.jpg,hibiscus,test,inat_flowering,26,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_34847412_54895205.jpg,hibiscus,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_32042938_50217342.jpg,hibiscus,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_22133931_34266826.jpg,hibiscus,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_21561233_33371466.jpg,hibiscus,train,inat_flowering,10,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_17883944_27306373.jpg,hibiscus,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_17849883_27248390.jpg,hibiscus,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_17487881_26600312.jpg,hibiscus,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_16161233_24228903.jpg,hibiscus,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_12899253_18731092.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_12899247_18730979.jpg,hibiscus,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_11417190_16280618.jpg,hibiscus,val,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_10397308_14434889.jpg,hibiscus,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_8729130_11711348.jpg,hibiscus,train,inat_flowering,4,cc-by-sa,unverified_proposal
+inat_flowering/val/hibiscus/inat_8367633_11125133.jpg,hibiscus,val,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/hibiscus/inat_7356093_9536804.jpg,hibiscus,train,inat_flowering,10,cc-by,unverified_proposal
+inat_flowering/train/hibiscus/inat_7072506_9082680.jpg,hibiscus,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/hibiscus/inat_4565013_5514264.jpg,hibiscus,val,inat_flowering,15,cc-by-sa,unverified_proposal
+inat_flowering/train/hibiscus/inat_3321106_3837073.jpg,hibiscus,train,inat_flowering,1,cc-by,unverified_proposal
+commons_flowers/train/hibiscus/commons_26853213.jpg,hibiscus,train,commons_flowers,3,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478681.jpg,hibiscus,train,commons_flowers,4,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478682.jpg,hibiscus,train,commons_flowers,6,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478684.jpg,hibiscus,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478689.jpg,hibiscus,train,commons_flowers,3,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478690.jpg,hibiscus,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478701.jpg,hibiscus,train,commons_flowers,2,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_43478704.jpg,hibiscus,train,commons_flowers,3,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_55172424.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_55172427.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_56436501.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429383.jpg,hibiscus,train,commons_flowers,7,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429384.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429385.jpg,hibiscus,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429387.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429388.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429391.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429394.jpg,hibiscus,train,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429395.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429398.jpg,hibiscus,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429399.jpg,hibiscus,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429401.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429402.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429407.jpg,hibiscus,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429415.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429416.jpg,hibiscus,train,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429419.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429420.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429421.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429423.jpg,hibiscus,train,commons_flowers,5,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429424.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429425.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429429.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429430.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429431.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429432.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429435.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429436.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62429438.jpg,hibiscus,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_130211218.jpg,hibiscus,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_697150.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 2.5,unverified_proposal
+commons_flowers/train/hibiscus/commons_3969430.jpg,hibiscus,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_5126646.jpg,hibiscus,train,commons_flowers,4,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_7549029.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_10891276.jpg,hibiscus,val,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_11335450.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_11335457.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_15189762.jpg,hibiscus,train,commons_flowers,2,CC BY 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_18534419.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_18534420.jpg,hibiscus,train,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_19070073.jpg,hibiscus,test,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_20179812.jpg,hibiscus,test,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_20179818.jpg,hibiscus,test,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_22910746.jpg,hibiscus,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_24280442.jpg,hibiscus,val,commons_flowers,1,CC BY 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_24671109.jpg,hibiscus,train,commons_flowers,3,CC BY 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_24671114.jpg,hibiscus,train,commons_flowers,3,CC BY 2.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_27424695.jpg,hibiscus,test,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_36763389.jpg,hibiscus,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_41199436.jpg,hibiscus,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_46532888.jpg,hibiscus,train,commons_flowers,2,CC BY 3.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_51606355.jpg,hibiscus,val,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_51607262.jpg,hibiscus,val,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_51607637.jpg,hibiscus,val,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_69737932.jpg,hibiscus,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_78366402.jpg,hibiscus,train,commons_flowers,13,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_87648025.jpg,hibiscus,val,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_93885729.jpg,hibiscus,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_113455055.jpg,hibiscus,train,commons_flowers,54,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_123147812.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_155186217.jpg,hibiscus,val,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_155211139.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_175453638.jpg,hibiscus,train,commons_flowers,6,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_175453726.jpg,hibiscus,train,commons_flowers,5,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_175453744.jpg,hibiscus,train,commons_flowers,8,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_198540390.jpg,hibiscus,train,commons_flowers,3,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_198540391.jpg,hibiscus,train,commons_flowers,4,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_198540392.jpg,hibiscus,train,commons_flowers,3,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_198540394.jpg,hibiscus,train,commons_flowers,2,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_198540395.jpg,hibiscus,train,commons_flowers,3,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_539309.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_2580182.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_18534405.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_18744350.jpg,hibiscus,train,commons_flowers,8,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_24852914.jpg,hibiscus,train,commons_flowers,14,CC BY 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_26527418.jpg,hibiscus,train,commons_flowers,2,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50387909.jpg,hibiscus,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50387910.jpg,hibiscus,train,commons_flowers,20,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50387911.jpg,hibiscus,train,commons_flowers,10,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50387912.jpg,hibiscus,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50431635.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50431636.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_51607608.jpg,hibiscus,val,commons_flowers,10,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_61212578.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_62313091.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_72758007.jpg,hibiscus,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_72758051.jpg,hibiscus,val,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_139533572.jpg,hibiscus,test,commons_flowers,10,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_139533573.jpg,hibiscus,test,commons_flowers,6,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_139533575.jpg,hibiscus,test,commons_flowers,8,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_155102972.jpg,hibiscus,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_155102974.jpg,hibiscus,train,commons_flowers,6,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_155242798.jpg,hibiscus,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_155242799.jpg,hibiscus,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_163870066.jpg,hibiscus,test,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/test/hibiscus/commons_163870068.jpg,hibiscus,test,commons_flowers,28,CC0,unverified_proposal
+commons_flowers/test/hibiscus/commons_163870072.jpg,hibiscus,test,commons_flowers,8,CC0,unverified_proposal
+commons_flowers/test/hibiscus/commons_163870073.jpg,hibiscus,test,commons_flowers,16,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_175022041.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_175022042.jpg,hibiscus,train,commons_flowers,6,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_175023589.jpg,hibiscus,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_175023590.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_175023596.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_193830916.jpg,hibiscus,train,commons_flowers,2,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_193840761.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_194748378.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_196035442.jpg,hibiscus,train,commons_flowers,1,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_196605628.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_198840688.jpg,hibiscus,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_201203419.jpg,hibiscus,train,commons_flowers,16,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_196209.jpg,hibiscus,train,commons_flowers,7,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_5040818.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6149702.jpg,hibiscus,train,commons_flowers,4,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6159121.jpg,hibiscus,train,commons_flowers,5,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6163805.jpg,hibiscus,train,commons_flowers,6,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6181239.jpg,hibiscus,train,commons_flowers,22,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6181245.jpg,hibiscus,train,commons_flowers,23,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6181263.jpg,hibiscus,train,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_6185230.jpg,hibiscus,train,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_12392389.jpg,hibiscus,train,commons_flowers,33,Public domain,unverified_proposal
+commons_flowers/train/hibiscus/commons_15810182.jpg,hibiscus,train,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_19333263.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_28997082.jpg,hibiscus,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_30724235.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_30725091.jpg,hibiscus,train,commons_flowers,8,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/hibiscus/commons_34237904.jpg,hibiscus,test,commons_flowers,1,CC BY 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_34872674.jpg,hibiscus,train,commons_flowers,17,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_34951630.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_34951631.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_34951632.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_49284191.jpg,hibiscus,val,commons_flowers,3,CC BY 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_50552293.jpg,hibiscus,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_51604141.jpg,hibiscus,val,commons_flowers,5,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_59393950.jpg,hibiscus,train,commons_flowers,5,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_71836396.jpg,hibiscus,train,commons_flowers,5,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/hibiscus/commons_71853371.jpg,hibiscus,train,commons_flowers,10,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/hibiscus/commons_71886757.jpg,hibiscus,train,commons_flowers,1,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/hibiscus/commons_71926142.jpg,hibiscus,train,commons_flowers,2,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/hibiscus/commons_74377343.jpg,hibiscus,train,commons_flowers,2,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_94144546.jpg,hibiscus,train,commons_flowers,14,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_139572824.jpg,hibiscus,val,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_150817269.jpg,hibiscus,train,commons_flowers,16,CC BY 2.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_164712317.jpg,hibiscus,val,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/hibiscus/commons_173271417.jpg,hibiscus,train,commons_flowers,1,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_180441160.jpg,hibiscus,train,commons_flowers,17,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_180441162.jpg,hibiscus,train,commons_flowers,18,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_192547567.jpg,hibiscus,train,commons_flowers,5,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_197058893.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_72004530.jpg,hibiscus,train,commons_flowers,4,CC BY 3.0 us,unverified_proposal
+commons_flowers/test/hibiscus/commons_91747172.jpg,hibiscus,test,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/hibiscus/commons_93097734.jpg,hibiscus,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_162865538.jpg,hibiscus,train,commons_flowers,17,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_162865540.jpg,hibiscus,train,commons_flowers,1,CC BY 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_193673034.jpg,hibiscus,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/hibiscus/commons_201523831.jpg,hibiscus,train,commons_flowers,5,CC BY 4.0,unverified_proposal
+inat_flowering/train/tomato/inat_408095312_750061786.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_403553405_740962337.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_403413858_740691842.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_401971520_737859684.jpg,tomato,val,inat_flowering,17,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_401782864_737488146.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_401594255_737111019.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_400325583_734600250.jpg,tomato,train,inat_flowering,7,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_398483109_730989998.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_398089937_730226409.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_397879246_729802792.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_397815752_729677582.jpg,tomato,val,inat_flowering,15,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_397012291_728114234.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_395780555_725736447.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_395711892_725600832.jpg,tomato,train,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_395307719_724819791.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_395147315_724509955.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_393159232_720604539.jpg,tomato,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_393003691_720292927.jpg,tomato,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_392874026_720046206.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_390913563_716222442.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_388224110_711000380.jpg,tomato,val,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_387657677_709885501.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_387613318_709792343.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_386218946_707131664.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_383459321_701837828.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_382781411_700530664.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_371713412_679164709.jpg,tomato,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_359999425_656450679.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_348529344_635649423.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_342871920_627977296.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_334882255_608241819.jpg,tomato,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_331408549_601198484.jpg,tomato,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_330018398_598337571.jpg,tomato,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_326087902_590592189.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_326087871_590515270.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_324292284_586927092.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_323443566_585249503.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_322828476_584052680.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_320249965_578985147.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_318527177_575681911.jpg,tomato,test,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_317962754_574603445.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_317636453_573986675.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_315036738_569067587.jpg,tomato,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_314221313_567524342.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/test/tomato/inat_314176429_567436009.jpg,tomato,test,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_313968389_567032392.jpg,tomato,train,inat_flowering,11,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_313880947_566860461.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_312973605_565134911.jpg,tomato,val,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_311078952_561515928.jpg,tomato,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_310481584_560366457.jpg,tomato,train,inat_flowering,4,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_309839344_559152898.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_309276379_558048309.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_308636113_556841055.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_308274980_556150050.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_306066919_551908118.jpg,tomato,train,inat_flowering,41,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_305582993_550987155.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_305258026_550371345.jpg,tomato,val,inat_flowering,22,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_304309645_548560327.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_304309632_548559876.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_303796865_547593786.jpg,tomato,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_302065915_544366678.jpg,tomato,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_301552736_543400279.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_301322858_542968972.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_301184065_542715762.jpg,tomato,test,inat_flowering,26,cc0,unverified_proposal
+inat_flowering/val/tomato/inat_301097550_542554376.jpg,tomato,val,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_299698073_539943556.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_298053951_536836458.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_297122790_535075783.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_294547499_530180539.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_293334488_527962158.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_293093280_527504486.jpg,tomato,train,inat_flowering,5,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_290230124_522082608.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/test/tomato/inat_283341134_509116626.jpg,tomato,test,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_277139723_497636794.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_276315419_496243401.jpg,tomato,val,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_270252866_486002118.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_268350878_482354002.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_265697954_477294584.jpg,tomato,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/val/tomato/inat_265647434_477193193.jpg,tomato,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_265311683_476534572.jpg,tomato,train,inat_flowering,26,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_264028742_474422196.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_261858252_470528312.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_261094288_469003690.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_259281297_465400649.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_257348636_461630521.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_256652181_460213028.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_250953096_448921881.jpg,tomato,train,inat_flowering,81,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_250597691_448217562.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_249357358_445732962.jpg,tomato,train,inat_flowering,12,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_248596691_444224656.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_248075537_443176482.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_247888380_442822167.jpg,tomato,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_246711859_440489067.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_245567573_438222827.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_243789184_434755083.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_243196367_433623906.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_238126251_423886290.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_238126247_423886174.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_236509643_420773143.jpg,tomato,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_235795258_419401292.jpg,tomato,test,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_235719538_419250609.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_234864978_417605788.jpg,tomato,train,inat_flowering,21,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_233063659_414151183.jpg,tomato,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_232758492_413559576.jpg,tomato,val,inat_flowering,22,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_232540181_413144191.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/val/tomato/inat_232310528_412706053.jpg,tomato,val,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_231737072_411624047.jpg,tomato,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_231536098_411243533.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_230782157_409806643.jpg,tomato,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/tomato/inat_228462911_405416139.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_224642769_398175326.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_217049489_383928918.jpg,tomato,train,inat_flowering,74,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_213637005_377575119.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_212942468_376307501.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_212846315_376138342.jpg,tomato,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_212470713_380370188.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_203706688_359955117.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_202373037_357404549.jpg,tomato,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_200772353_354285941.jpg,tomato,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/test/tomato/inat_196205454_345369123.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_195420819_343790613.jpg,tomato,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_195420817_343790512.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_193632366_340168455.jpg,tomato,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_192176543_337307984.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_191811030_336586886.jpg,tomato,train,inat_flowering,10,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_190233685_333423086.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_189231095_331431557.jpg,tomato,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_187509800_327932545.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_187114507_358230356.jpg,tomato,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_186722481_326372524.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_186090226_325128308.jpg,tomato,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_183422143_319996406.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_183106062_319387934.jpg,tomato,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_182949092_319118627.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_182641070_318478356.jpg,tomato,train,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/val/tomato/inat_181370012_316050648.jpg,tomato,val,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_180820489_315030871.jpg,tomato,test,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_177614737_308940644.jpg,tomato,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_177614656_308940531.jpg,tomato,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_176425620_306723723.jpg,tomato,train,inat_flowering,33,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_174568605_303285817.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_171061097_296788397.jpg,tomato,test,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_170405440_295553522.jpg,tomato,train,inat_flowering,25,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_164227647_284127232.jpg,tomato,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_156422910_270485360.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_153890864_265848837.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_153546228_265214387.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_150313179_259162915.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_148386621_255521846.jpg,tomato,test,inat_flowering,7,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_146069638_251035367.jpg,tomato,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_145237962_249452112.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_144350632_247731093.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_139542147_238682066.jpg,tomato,test,inat_flowering,47,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_139298689_238229343.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_139239561_238115989.jpg,tomato,train,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_138192996_236151338.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_138183719_236132953.jpg,tomato,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_136184544_232384659.jpg,tomato,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_136015636_232078238.jpg,tomato,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_135767283_231615562.jpg,tomato,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_135426427_230965620.jpg,tomato,test,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_133961661_228260204.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_131592459_223961154.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_130471658_221891841.jpg,tomato,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_125145995_212203725.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_123442509_209117748.jpg,tomato,val,inat_flowering,21,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_115878882_195570064.jpg,tomato,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_107236375_180317786.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_105186533_176430431.jpg,tomato,val,inat_flowering,0,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_101765705_169988692.jpg,tomato,train,inat_flowering,54,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_97307577_161808394.jpg,tomato,test,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/val/tomato/inat_96877750_161008805.jpg,tomato,val,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_95168723_157961497.jpg,tomato,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_93291756_154598127.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_92769689_153655591.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_91873666_152035055.jpg,tomato,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_82845113_136006719.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_80608627_132127050.jpg,tomato,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_77481821_126716941.jpg,tomato,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_68489288_110911691.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_67707444_109462919.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_66048091_106393883.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_61078644_97703484.jpg,tomato,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_59776648_95537189.jpg,tomato,val,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_59064730_94345879.jpg,tomato,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_58964184_94173292.jpg,tomato,val,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/tomato/inat_58497508_93399608.jpg,tomato,test,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_53910682_85758961.jpg,tomato,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/tomato/inat_53328025_84809743.jpg,tomato,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_52351002_83216262.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/test/tomato/inat_47617717_75529057.jpg,tomato,test,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_41385072_65647894.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_37456284_59382509.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/val/tomato/inat_36891429_58391444.jpg,tomato,val,inat_flowering,9,cc-by-sa,unverified_proposal
+inat_flowering/test/tomato/inat_34761496_54748103.jpg,tomato,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/tomato/inat_32595215_51136959.jpg,tomato,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_31480158_49272335.jpg,tomato,val,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_27311975_42481834.jpg,tomato,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/tomato/inat_21926367_33977534.jpg,tomato,val,inat_flowering,13,cc0,unverified_proposal
+inat_flowering/train/tomato/inat_20543771_31713641.jpg,tomato,train,inat_flowering,0,cc0,unverified_proposal
+commons_flowers/train/tomato/commons_1674048.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_1674053.jpg,tomato,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_1674057.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_10518671.jpg,tomato,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_10546750.jpg,tomato,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/test/tomato/commons_17978484.jpg,tomato,test,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_17978485.jpg,tomato,test,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_17978486.jpg,tomato,test,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_17978487.jpg,tomato,test,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_18022432.jpg,tomato,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_20270591.jpg,tomato,val,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_25003354.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_26041993.jpg,tomato,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_33666901.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_33666949.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/test/tomato/commons_34888374.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_34888375.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_44195113.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_50534909.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_50534921.jpg,tomato,train,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_50534930.jpg,tomato,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_50631838.jpg,tomato,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_50631851.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_50783929.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_50803256.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_51138052.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_51138085.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_51236551.jpg,tomato,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_51236565.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_53021481.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_53021520.jpg,tomato,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_63381245.jpg,tomato,train,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_63381255.jpg,tomato,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_73145053.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/tomato/commons_84438649.jpg,tomato,val,commons_flowers,1,CC BY 4.0,unverified_proposal
+commons_flowers/val/tomato/commons_90853547.jpg,tomato,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_107082351.jpg,tomato,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_138245329.jpg,tomato,test,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_138245330.jpg,tomato,test,commons_flowers,5,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_138245332.jpg,tomato,test,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_99255.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_915089.jpg,tomato,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/tomato/commons_1947446.jpg,tomato,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/test/tomato/commons_2409754.jpg,tomato,test,commons_flowers,1,CC BY-SA 2.5,unverified_proposal
+commons_flowers/train/tomato/commons_4414919.jpg,tomato,train,commons_flowers,9,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_11106222.jpg,tomato,train,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_14655941.jpg,tomato,train,commons_flowers,2,Public domain,unverified_proposal
+commons_flowers/val/tomato/commons_15965029.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0 de,unverified_proposal
+commons_flowers/train/tomato/commons_22531944.jpg,tomato,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_22877043.jpg,tomato,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_25891358.jpg,tomato,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_25891361.jpg,tomato,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/tomato/commons_25891365.jpg,tomato,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/val/tomato/commons_42790369.jpg,tomato,val,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_44195114.jpg,tomato,test,commons_flowers,10,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/tomato/commons_51599979.jpg,tomato,val,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/tomato/commons_51706001.jpg,tomato,val,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906333.jpg,tomato,test,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906353.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906363.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906385.jpg,tomato,test,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906395.jpg,tomato,test,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906408.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906424.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_54906433.jpg,tomato,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_61211466.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_61211467.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_69914388.jpg,tomato,train,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_72152068.jpg,tomato,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_74604898.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_76583950.jpg,tomato,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_76583969.jpg,tomato,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_76583985.jpg,tomato,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/tomato/commons_76583997.jpg,tomato,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_84520427.jpg,tomato,train,commons_flowers,13,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_84520428.jpg,tomato,train,commons_flowers,5,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_84520430.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_100556443.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950424.jpg,tomato,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950428.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/tomato/commons_1661589.jpg,tomato,val,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_1673380.jpg,tomato,val,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_2735240.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_2735247.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_3261317.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_3332466.jpg,tomato,train,commons_flowers,2,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/tomato/commons_9957762.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_9957766.jpg,tomato,val,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_11447781.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_15381356.jpg,tomato,train,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_17015511.jpg,tomato,train,commons_flowers,0,Public domain,unverified_proposal
+commons_flowers/val/tomato/commons_17513356.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_20038346.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_20058505.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_21863093.jpg,tomato,test,commons_flowers,6,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_21958747.jpg,tomato,val,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_22623048.jpg,tomato,train,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/tomato/commons_25147862.jpg,tomato,val,commons_flowers,48,CC BY 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_25319081.jpg,tomato,train,commons_flowers,12,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_33118313.jpg,tomato,train,commons_flowers,2,CC BY-SA 2.0 de,unverified_proposal
+commons_flowers/val/tomato/commons_51600631.jpg,tomato,val,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_52064227.jpg,tomato,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_52064228.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_71351357.jpg,tomato,train,commons_flowers,0,CC BY 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_71838000.jpg,tomato,train,commons_flowers,13,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/tomato/commons_71844520.jpg,tomato,train,commons_flowers,5,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/tomato/commons_74267366.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_81367329.jpg,tomato,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_81715949.jpg,tomato,train,commons_flowers,6,CC BY 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_81715952.jpg,tomato,train,commons_flowers,13,CC BY 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_106533241.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_118825453.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950432.jpg,tomato,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950439.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950443.jpg,tomato,train,commons_flowers,15,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950445.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950482.jpg,tomato,train,commons_flowers,6,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950483.jpg,tomato,train,commons_flowers,10,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_127950486.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_151125209.jpg,tomato,train,commons_flowers,0,CC BY 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_484071.jpg,tomato,train,commons_flowers,2,CC BY-SA 2.5,unverified_proposal
+commons_flowers/val/tomato/commons_1133945.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_2352217.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_3660957.jpg,tomato,test,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_14892020.jpg,tomato,train,commons_flowers,18,Public domain,unverified_proposal
+commons_flowers/val/tomato/commons_14970433.jpg,tomato,val,commons_flowers,4,CC BY 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_15479214.jpg,tomato,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_18459679.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_18459683.jpg,tomato,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_18684064.jpg,tomato,train,commons_flowers,7,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/tomato/commons_18684067.jpg,tomato,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_23081911.jpg,tomato,test,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_24919450.jpg,tomato,val,commons_flowers,2,Public domain,unverified_proposal
+commons_flowers/train/tomato/commons_25225874.jpg,tomato,train,commons_flowers,0,CC BY 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_27707531.jpg,tomato,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_35103800.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_35103833.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_35103857.jpg,tomato,val,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_35103897.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_35103906.jpg,tomato,val,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/tomato/commons_41358773.jpg,tomato,test,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/tomato/commons_41748485.jpg,tomato,val,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/tomato/commons_42956288.jpg,tomato,val,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/tomato/commons_51599981.jpg,tomato,val,commons_flowers,2,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_60794794.jpg,tomato,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/tomato/commons_112958204.jpg,tomato,train,commons_flowers,1,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/tomato/commons_119885270.jpg,tomato,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+inat_flowering/train/strawberry/inat_207786520_367796246.jpg,strawberry,train,inat_flowering,5,cc0,unverified_proposal
+inat_flowering/train/strawberry/inat_187591765_328094699.jpg,strawberry,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/strawberry/inat_164231423_284133724.jpg,strawberry,train,inat_flowering,3,cc0,unverified_proposal
+inat_flowering/train/strawberry/inat_162531167_281038606.jpg,strawberry,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/strawberry/inat_81535526_133750907.jpg,strawberry,train,inat_flowering,15,cc-by,unverified_proposal
+inat_flowering/val/strawberry/inat_80100142_131254686.jpg,strawberry,val,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/strawberry/inat_79181570_129667187.jpg,strawberry,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/strawberry/inat_78199147_127947022.jpg,strawberry,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/strawberry/inat_60645705_96986576.jpg,strawberry,train,inat_flowering,1,cc-by-sa,unverified_proposal
+inat_flowering/train/strawberry/inat_50615906_80378346.jpg,strawberry,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/strawberry/inat_49458160_78505256.jpg,strawberry,val,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/test/strawberry/inat_45873971_72757143.jpg,strawberry,test,inat_flowering,11,cc0,unverified_proposal
+inat_flowering/val/strawberry/inat_36035747_56910465.jpg,strawberry,val,inat_flowering,30,cc0,unverified_proposal
+inat_flowering/test/strawberry/inat_6122153_7664616.jpg,strawberry,test,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/strawberry/inat_5538107_6835499.jpg,strawberry,train,inat_flowering,1,cc-by,unverified_proposal
+commons_flowers/train/strawberry/commons_45027.jpg,strawberry,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_525715.jpg,strawberry,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_6661583.jpg,strawberry,train,commons_flowers,11,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/strawberry/commons_7107936.jpg,strawberry,val,commons_flowers,1,CC BY-SA 2.5,unverified_proposal
+commons_flowers/train/strawberry/commons_10211338.jpg,strawberry,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_10211356.jpg,strawberry,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_10315676.jpg,strawberry,train,commons_flowers,8,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_10315700.jpg,strawberry,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_10686572.jpg,strawberry,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/strawberry/commons_14723702.jpg,strawberry,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_19258821.jpg,strawberry,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_26169004.jpg,strawberry,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/strawberry/commons_26169164.jpg,strawberry,train,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/strawberry/commons_39348674.jpg,strawberry,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/strawberry/commons_58257901.jpg,strawberry,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/strawberry/commons_69462886.jpg,strawberry,test,commons_flowers,90,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/strawberry/commons_89874676.jpg,strawberry,train,commons_flowers,1,CC0,unverified_proposal
+commons_flowers/train/strawberry/commons_89874704.jpg,strawberry,train,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/train/strawberry/commons_89874725.jpg,strawberry,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/val/strawberry/commons_93256756.jpg,strawberry,val,commons_flowers,160,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/strawberry/commons_102030460.jpg,strawberry,train,commons_flowers,4,CC BY 4.0,unverified_proposal
+commons_flowers/train/strawberry/commons_103966860.jpg,strawberry,train,commons_flowers,4,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/strawberry/commons_105377964.jpg,strawberry,train,commons_flowers,19,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/strawberry/commons_130804979.jpg,strawberry,test,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/val/strawberry/commons_142351671.jpg,strawberry,val,commons_flowers,73,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/strawberry/commons_162323893.jpg,strawberry,train,commons_flowers,23,CC BY 4.0,unverified_proposal
+commons_flowers/test/strawberry/commons_190518145.jpg,strawberry,test,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/strawberry/commons_190518146.jpg,strawberry,test,commons_flowers,6,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/strawberry/commons_201139583.jpg,strawberry,train,commons_flowers,6,Public domain,unverified_proposal
+inat_flowering/train/brinjal/inat_332032128_602474889.jpg,brinjal,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_329839174_597975830.jpg,brinjal,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_292621757_526610769.jpg,brinjal,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_265298178_476508546.jpg,brinjal,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_226638283_401975425.jpg,brinjal,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/val/brinjal/inat_226501297_401711037.jpg,brinjal,val,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_222079563_393390652.jpg,brinjal,train,inat_flowering,8,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_213386641_377114539.jpg,brinjal,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/test/brinjal/inat_203981936_360480353.jpg,brinjal,test,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_194706936_342326953.jpg,brinjal,train,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_189615897_332218339.jpg,brinjal,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_187045063_327016664.jpg,brinjal,train,inat_flowering,5,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_181196661_315761518.jpg,brinjal,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/val/brinjal/inat_138334714_236416568.jpg,brinjal,val,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/val/brinjal/inat_135527431_231165864.jpg,brinjal,val,inat_flowering,6,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_80085706_131229882.jpg,brinjal,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/brinjal/inat_57315291_91412213.jpg,brinjal,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_38382740_60994844.jpg,brinjal,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/brinjal/inat_25747318_39909091.jpg,brinjal,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/brinjal/inat_2611986_2920585.jpg,brinjal,val,inat_flowering,8,cc-by-sa,unverified_proposal
+commons_flowers/train/brinjal/commons_380768.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_1615040.jpg,brinjal,train,commons_flowers,1,CC BY-SA 2.5,unverified_proposal
+commons_flowers/val/brinjal/commons_1681363.jpg,brinjal,val,commons_flowers,9,CC0,unverified_proposal
+commons_flowers/train/brinjal/commons_2699425.jpg,brinjal,train,commons_flowers,10,Public domain,unverified_proposal
+commons_flowers/train/brinjal/commons_4446234.jpg,brinjal,train,commons_flowers,5,CC BY 3.0,unverified_proposal
+commons_flowers/val/brinjal/commons_4663762.jpg,brinjal,val,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_10660321.jpg,brinjal,train,commons_flowers,6,Public domain,unverified_proposal
+commons_flowers/test/brinjal/commons_11404624.jpg,brinjal,test,commons_flowers,3,Public domain,unverified_proposal
+commons_flowers/train/brinjal/commons_12257784.jpg,brinjal,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/brinjal/commons_15638079.jpg,brinjal,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/val/brinjal/commons_17283276.jpg,brinjal,val,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/val/brinjal/commons_19118154.jpg,brinjal,val,commons_flowers,45,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_20892664.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_25086153.jpg,brinjal,test,commons_flowers,7,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_25239353.jpg,brinjal,train,commons_flowers,8,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_27613209.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_31857707.jpg,brinjal,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863237.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863252.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863253.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863254.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_49825059.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_79895380.jpg,brinjal,train,commons_flowers,6,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_82107272.jpg,brinjal,train,commons_flowers,7,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_89619050.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_89619051.jpg,brinjal,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_107089202.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_118850628.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_118937422.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_118952990.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_119320845.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_130992878.jpg,brinjal,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_133382467.jpg,brinjal,train,commons_flowers,11,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_133382469.jpg,brinjal,train,commons_flowers,9,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_141168579.jpg,brinjal,train,commons_flowers,1,CC BY 4.0,unverified_proposal
+commons_flowers/val/brinjal/commons_148608751.jpg,brinjal,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_148904937.jpg,brinjal,train,commons_flowers,88,CC BY 4.0,unverified_proposal
+commons_flowers/val/brinjal/commons_195547180.jpg,brinjal,val,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_1063312.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_1063317.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_2573795.jpg,brinjal,train,commons_flowers,3,CC BY 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_9129428.jpg,brinjal,train,commons_flowers,7,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_10818498.jpg,brinjal,train,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_16553466.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_16823203.jpg,brinjal,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_20825278.jpg,brinjal,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_20932612.jpg,brinjal,train,commons_flowers,5,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_22069171.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_24834247.jpg,brinjal,train,commons_flowers,1,CC BY 2.5,unverified_proposal
+commons_flowers/train/brinjal/commons_28901861.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_28901862.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_28901863.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_28901864.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_28901866.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_28901867.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_28901868.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_29946871.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_34797466.jpg,brinjal,test,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863396.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863397.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_34863400.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_35451755.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_35451756.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_35451757.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_35451758.jpg,brinjal,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_38662928.jpg,brinjal,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_38662929.jpg,brinjal,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_38662931.jpg,brinjal,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/brinjal/commons_51706013.jpg,brinjal,val,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/brinjal/commons_54384402.jpg,brinjal,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_54384403.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_60041763.jpg,brinjal,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_68373442.jpg,brinjal,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_68375196.jpg,brinjal,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_118156472.jpg,brinjal,train,commons_flowers,5,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/brinjal/commons_180640016.jpg,brinjal,test,commons_flowers,8,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/brinjal/commons_180640019.jpg,brinjal,test,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_5587.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_280611.jpg,brinjal,train,commons_flowers,2,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_6175229.jpg,brinjal,train,commons_flowers,7,CC BY 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_6175242.jpg,brinjal,train,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_6183809.jpg,brinjal,train,commons_flowers,1,CC BY 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_6183833.jpg,brinjal,train,commons_flowers,0,CC BY 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_7180099.jpg,brinjal,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/brinjal/commons_11080579.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_14738521.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_17977074.jpg,brinjal,test,commons_flowers,3,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_17977078.jpg,brinjal,test,commons_flowers,6,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_17977156.jpg,brinjal,test,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_18443257.jpg,brinjal,train,commons_flowers,28,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_19053919.jpg,brinjal,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_19053920.jpg,brinjal,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_19851613.jpg,brinjal,test,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/brinjal/commons_27230191.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_27953131.jpg,brinjal,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/brinjal/commons_35326097.jpg,brinjal,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_38659547.jpg,brinjal,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_54384401.jpg,brinjal,train,commons_flowers,8,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_54384404.jpg,brinjal,train,commons_flowers,10,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_54384405.jpg,brinjal,train,commons_flowers,4,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_54384406.jpg,brinjal,train,commons_flowers,5,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_71837887.jpg,brinjal,train,commons_flowers,4,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/brinjal/commons_71846077.jpg,brinjal,train,commons_flowers,11,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/brinjal/commons_71846087.jpg,brinjal,train,commons_flowers,3,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/brinjal/commons_71846135.jpg,brinjal,train,commons_flowers,8,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/brinjal/commons_91942162.jpg,brinjal,train,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/brinjal/commons_91942878.jpg,brinjal,train,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/brinjal/commons_91943006.jpg,brinjal,train,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/brinjal/commons_92051506.jpg,brinjal,train,commons_flowers,16,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/brinjal/commons_147097601.jpg,brinjal,train,commons_flowers,24,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/brinjal/commons_153870781.jpg,brinjal,test,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+inat_flowering/train/chilli/inat_411148425_756307950.jpg,chilli,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_409103896_752137917.jpg,chilli,train,inat_flowering,12,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_329757396_597807489.jpg,chilli,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_318426079_575494696.jpg,chilli,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_317325447_573389652.jpg,chilli,train,inat_flowering,3,cc-by,unverified_proposal
+inat_flowering/test/chilli/inat_253573176_454060627.jpg,chilli,test,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/val/chilli/inat_248312653_443652363.jpg,chilli,val,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_239425081_426417797.jpg,chilli,train,inat_flowering,2,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_193822494_340538897.jpg,chilli,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_190816527_334596724.jpg,chilli,train,inat_flowering,2,cc-by-sa,unverified_proposal
+inat_flowering/train/chilli/inat_155244379_268322872.jpg,chilli,train,inat_flowering,19,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_143432158_245979460.jpg,chilli,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_142683293_244659236.jpg,chilli,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_139677832_238946952.jpg,chilli,train,inat_flowering,13,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_133256464_226942585.jpg,chilli,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_132304163_225278844.jpg,chilli,train,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_130414190_221727623.jpg,chilli,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_77324594_126448789.jpg,chilli,train,inat_flowering,1,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_74974984_122603172.jpg,chilli,train,inat_flowering,9,cc-by,unverified_proposal
+inat_flowering/val/chilli/inat_71040024_115595099.jpg,chilli,val,inat_flowering,1,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_59190583_94560860.jpg,chilli,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_51670729_82109679.jpg,chilli,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_43461922_68955853.jpg,chilli,train,inat_flowering,4,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_32691051_51292719.jpg,chilli,train,inat_flowering,2,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_26136492_40554897.jpg,chilli,train,inat_flowering,0,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_11632435_16618363.jpg,chilli,train,inat_flowering,14,cc0,unverified_proposal
+inat_flowering/train/chilli/inat_7431520_9659352.jpg,chilli,train,inat_flowering,0,cc-by,unverified_proposal
+inat_flowering/train/chilli/inat_7431506_9659313.jpg,chilli,train,inat_flowering,0,cc-by,unverified_proposal
+commons_flowers/train/chilli/commons_712384.jpg,chilli,train,commons_flowers,9,CC BY-SA 2.5,unverified_proposal
+commons_flowers/train/chilli/commons_1938424.jpg,chilli,train,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/chilli/commons_2213005.jpg,chilli,test,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/chilli/commons_5242566.jpg,chilli,val,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_9429449.jpg,chilli,train,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/chilli/commons_15688100.jpg,chilli,train,commons_flowers,2,Public domain,unverified_proposal
+commons_flowers/test/chilli/commons_15815645.jpg,chilli,test,commons_flowers,1,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/chilli/commons_16085451.jpg,chilli,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/chilli/commons_16085464.jpg,chilli,train,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/val/chilli/commons_18751906.jpg,chilli,val,commons_flowers,0,CC BY-SA 3.0,unverified_proposal
+commons_flowers/test/chilli/commons_19610130.jpg,chilli,test,commons_flowers,4,CC BY-SA 3.0,unverified_proposal
+commons_flowers/train/chilli/commons_38659552.jpg,chilli,train,commons_flowers,10,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_38659690.jpg,chilli,train,commons_flowers,7,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_47190562.jpg,chilli,train,commons_flowers,2,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190563.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190609.jpg,chilli,train,commons_flowers,0,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190610.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190611.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190612.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190613.jpg,chilli,train,commons_flowers,0,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_47190614.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/val/chilli/commons_51603609.jpg,chilli,val,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/chilli/commons_51603611.jpg,chilli,val,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/val/chilli/commons_71260698.jpg,chilli,val,commons_flowers,0,CC BY 3.0,unverified_proposal
+commons_flowers/test/chilli/commons_76579568.jpg,chilli,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/chilli/commons_76579586.jpg,chilli,test,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/test/chilli/commons_76579617.jpg,chilli,test,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_107128678.jpg,chilli,train,commons_flowers,2,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_111252678.jpg,chilli,train,commons_flowers,2,CC BY 4.0,unverified_proposal
+commons_flowers/val/chilli/commons_118355772.jpg,chilli,val,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/val/chilli/commons_118355773.jpg,chilli,val,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_127744805.jpg,chilli,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_127744807.jpg,chilli,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_127744812.jpg,chilli,train,commons_flowers,0,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_127744815.jpg,chilli,train,commons_flowers,1,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_146327284.jpg,chilli,train,commons_flowers,2,CC0,unverified_proposal
+commons_flowers/train/chilli/commons_152270376.jpg,chilli,train,commons_flowers,3,CC BY-SA 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_152562024.jpg,chilli,train,commons_flowers,1,CC BY 4.0,unverified_proposal
+commons_flowers/train/chilli/commons_195068680.jpg,chilli,train,commons_flowers,0,CC0,unverified_proposal
+commons_flowers/train/chilli/commons_195068682.jpg,chilli,train,commons_flowers,3,CC0,unverified_proposal
+commons_flowers/train/chilli/commons_71880762.jpg,chilli,train,commons_flowers,2,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/chilli/commons_71880779.jpg,chilli,train,commons_flowers,0,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/chilli/commons_71880794.jpg,chilli,train,commons_flowers,0,CC BY 3.0 us,unverified_proposal
+commons_flowers/train/chilli/commons_91908264.jpg,chilli,train,commons_flowers,3,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/chilli/commons_91908901.jpg,chilli,train,commons_flowers,0,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/chilli/commons_91908902.jpg,chilli,train,commons_flowers,2,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/chilli/commons_91921160.jpg,chilli,train,commons_flowers,10,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/chilli/commons_91921174.jpg,chilli,train,commons_flowers,4,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/chilli/commons_91942582.jpg,chilli,train,commons_flowers,5,CC BY-SA 2.0,unverified_proposal
+commons_flowers/train/chilli/commons_112258864.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_112258978.jpg,chilli,train,commons_flowers,11,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_112260931.jpg,chilli,train,commons_flowers,3,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_112261332.jpg,chilli,train,commons_flowers,2,Public domain,unverified_proposal
+commons_flowers/train/chilli/commons_124064314.jpg,chilli,train,commons_flowers,1,Public domain,unverified_proposal

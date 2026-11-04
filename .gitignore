@@ -48,3 +48,6 @@ ai-engine/runs/
 .idea/
 .vscode/
 frontend/e2e-screenshots/
+
+# built locally from reviewed CVAT exports (copies of committed images)
+datasets/processed/species_boxes_verified/

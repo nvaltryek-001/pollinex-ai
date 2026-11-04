@@ -6,11 +6,11 @@
 
 Default mode writes datasets/reports/annotation_statistics.{json,md}: per dataset and species the number of images,
 box annotations, image-level labels, boxes per image, relative box sizes, and the count of every class in the CVAT
-schema (flower_centre, petal, anther, stigma, stamen, pistil, health_issue, stage) - reported as 0 where none exist.
+schema (flower_centre, petal, anther, stigma, stamen, pistil, sepal, health_issue, stage) - reported as 0 where none exist.
 
 --coco validates a CVAT COCO 1.0 export against datasets/annotation/cvat_labels.json (unknown labels, boxes outside the
 image, degenerate polygons, missing / 'uncertain' attributes, images without annotations) and with --to-yolo writes
-two YOLO sets next to it - yolo/ (class flower) and yolo_structures/ (anther, stigma, stamen, pistil, petal) - split
+two YOLO sets next to it - yolo/ (class flower) and yolo_structures/ (anther, stigma, stamen, pistil, petal, sepal) - split
 70/15/15 by capture session (first folder of file_name, i.e. one CVAT task) so a session never crosses splits.
 """
 from __future__ import annotations
@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PROC = ROOT / "datasets" / "processed"
 REPORTS = ROOT / "datasets" / "reports"
 SCHEMA = ROOT / "datasets" / "annotation" / "cvat_labels.json"
-STRUCTURES = ["anther", "stigma", "stamen", "pistil", "petal"]
+STRUCTURES = ["anther", "stigma", "stamen", "pistil", "petal", "sepal"]
 SPECIES = ["apple", "peach", "pear", "sunflower", "hibiscus", "tomato", "strawberry", "brinjal", "chilli"]
 
 

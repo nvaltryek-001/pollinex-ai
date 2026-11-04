@@ -17,7 +17,7 @@ import numpy as np
 
 from .regions import colour_classes, crop_flower_mask
 
-STRUCTURE_CLASSES = ("anther", "stigma", "stamen", "pistil", "petal")
+STRUCTURE_CLASSES = ("anther", "stigma", "stamen", "pistil", "petal", "sepal")
 
 
 def load_structure_model():
@@ -93,6 +93,7 @@ def analyze_centre(crop: np.ndarray, prob_crop: np.ndarray | None = None) -> dic
         {"structure": "stigma", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
         {"structure": "stamen", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
         {"structure": "pistil", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
+        {"structure": "sepal", "status": "not_ai_validated", "visible": None, "detail": "no trained model"},
     ]
     return {
         "structures": structures,
