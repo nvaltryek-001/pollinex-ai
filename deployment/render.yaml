@@ -1,8 +1,12 @@
-# Render blueprint (backend + PostgreSQL). Frontend: deploy frontend/ to Vercel with VITE_API_URL set to the Render URL.
+# Render blueprint (backend + PostgreSQL, free plans). Frontend: Vercel (root frontend/, VITE_API_URL = this service's URL).
+# Free web services have no persistent disk: uploaded images and user-added gallery references are lost on restart;
+# all scan results are stored in PostgreSQL. Free PostgreSQL instances expire after 30 days on Render.
 services:
   - type: web
     name: pollinex-api
     runtime: docker
+    plan: free
+    region: singapore
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
     healthCheckPath: /api/v1/health
@@ -14,11 +18,10 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ORIGINS
-        sync: false   # e.g. https://pollinex.vercel.app
-    disk:
-      name: storage
-      mountPath: /srv/pollinex/backend/storage
-      sizeGB: 1
+        sync: false   # e.g. https://pollinex-ai.vercel.app
+      - key: WEB_CONCURRENCY
+        value: "1"
 databases:
   - name: pollinex-db
     plan: free
+    region: singapore

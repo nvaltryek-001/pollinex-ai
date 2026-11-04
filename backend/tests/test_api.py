@@ -263,3 +263,12 @@ def test_detector_switch_is_admin_only_and_safe(client, admin):
     else:
         assert r.status_code == 409  # missing model: previous detector stays active
     assert client.post(f"{API}/admin/models/detector", headers=admin[0], json={"detector": "auto"}).status_code == 200
+
+
+def test_hosting_postgres_urls_use_psycopg3(monkeypatch):
+    from app.config import Settings
+    for url in ("postgres://u:p@h:5432/db", "postgresql://u:p@h:5432/db"):
+        monkeypatch.setenv("DATABASE_URL", url)
+        assert Settings().ensure().database_url == "postgresql+psycopg://u:p@h:5432/db"
+    monkeypatch.setenv("DATABASE_URL", "postgresql+psycopg://u:p@h/db")
+    assert Settings().ensure().database_url == "postgresql+psycopg://u:p@h/db"

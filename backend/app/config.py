@@ -50,6 +50,10 @@ class Settings(BaseModel):
     inference_workers: int = Field(default_factory=lambda: int(_env("INFERENCE_WORKERS", "1")))
 
     def ensure(self) -> "Settings":
+        # hosting providers (Render, Heroku) hand out postgres:// or postgresql:// URLs; the installed driver is psycopg 3
+        for prefix in ("postgres://", "postgresql://"):
+            if self.database_url.startswith(prefix):
+                self.database_url = "postgresql+psycopg://" + self.database_url[len(prefix):]
         if self.jwt_secret.startswith("CHANGE_ME"):
             if self.environment == "production":
                 raise RuntimeError("JWT_SECRET still has the .env.example placeholder value")
