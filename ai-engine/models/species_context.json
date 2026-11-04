@@ -1,0 +1,7 @@
+{
+  "crop_weight": 0.25,
+  "abstain_share": 0.0,
+  "selected_on": "validation",
+  "report": "ai-engine/reports/species_context_rule.json",
+  "generated_at": "2026-11-04T14:57:49+00:00"
+}

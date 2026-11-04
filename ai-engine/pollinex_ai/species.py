@@ -136,6 +136,24 @@ class SpeciesGallery:
 
     def predict_vector(self, q: np.ndarray) -> dict:
         ranked, best_sim = self._scores(q)
+        return self._decide(ranked, best_sim)
+
+    def predict_fused(self, crop_vec: np.ndarray, scene_vec: np.ndarray, crop_weight: float) -> dict:
+        """Blend the k-NN votes of a detection crop with those of the whole photo (centre 80 %).
+
+        crop_weight was selected on validation (ai-engine/training/species_context_rule.py); 1.0 = crop only."""
+        rc, bc = self._scores(crop_vec)
+        rs, bs = self._scores(scene_vec)
+        keys = {k for k, _ in rc} | {k for k, _ in rs}
+        dc, ds = dict(rc), dict(rs)
+        fused = sorted(((k, crop_weight * dc.get(k, 0.0) + (1 - crop_weight) * ds.get(k, 0.0)) for k in keys), key=lambda t: -t[1])
+        out = self._decide(fused, max(bc, bs) if crop_weight < 1 else bc)
+        crop_top = rc[0][0] if rc else None
+        out["context"] = {"crop_weight": crop_weight, "crop_top": UNKNOWN if crop_top == BACKGROUND else crop_top,
+                          "scene_top": UNKNOWN if (rs and rs[0][0] == BACKGROUND) else (rs[0][0] if rs else None)}
+        return out
+
+    def _decide(self, ranked: list[tuple[str, float]], best_sim: float) -> dict:
         if not ranked:
             return {"species": UNKNOWN, "confidence": 0.0, "similarity": 0.0, "candidates": [], "uncertain": True,
                     "reason": "reference gallery is empty"}

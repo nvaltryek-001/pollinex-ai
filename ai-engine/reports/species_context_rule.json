@@ -1,0 +1,727 @@
+{
+  "generated_at": "2026-11-04T14:57:49+00:00",
+  "rule": "1. a: highest validation macro-F1 of the top flower's species in AUTO mode (t = 0).\n  2. t: with a fixed, highest mean validation macro-F1 over the AUTO setting and the CLOSE-UP setting. The close-up setting\n     also contains USDA validation background crops, whose correct answer is \"unknown\", so abstaining is not free.\n  3. Ties go to the value closer to the current behaviour (a = 1, t = 0).\n  4. Deploy (--save) only if the selected rule beats the current rule (a = 1, t = 0) on that validation objective.\nLabels: the 8 enabled gallery species + \"unknown\"; photos of species not enabled in the gallery (strawberry) count as \"unknown\".",
+  "val_items": {
+    "auto_photos": 188,
+    "closeup_items": 328
+  },
+  "test_items": {
+    "auto_photos": 196,
+    "closeup_items": 416
+  },
+  "val_crop_weight_macro_f1": {
+    "1.0": 0.6222384484271085,
+    "0.75": 0.6396391117179648,
+    "0.5": 0.6911652143426387,
+    "0.25": 0.7198929330987619,
+    "0.0": 0.65705445698676
+  },
+  "val_abstain_objective": {
+    "0.0": 0.7143031072386843,
+    "0.4": 0.7097037579096862,
+    "0.45": 0.6997331311478693,
+    "0.5": 0.6784339585572166,
+    "0.55": 0.6566416544186251,
+    "0.6": 0.6163607916601435
+  },
+  "selected": {
+    "crop_weight": 0.25,
+    "abstain_share": 0.0
+  },
+  "val_objective_current": 0.6654758649028576,
+  "val_objective_selected": 0.7143031072386843,
+  "adopted": true,
+  "test_current": {
+    "auto": {
+      "accuracy": 0.7040816326530612,
+      "macro_f1": 0.6095413341783578,
+      "per_class": {
+        "apple": {
+          "precision": 0.4583333333333333,
+          "recall": 0.7586206896551724,
+          "f1": 0.5714285714285715,
+          "support": 29
+        },
+        "brinjal": {
+          "precision": 0.5,
+          "recall": 0.36363636363636365,
+          "f1": 0.4210526315789474,
+          "support": 11
+        },
+        "chilli": {
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333333,
+          "support": 7
+        },
+        "hibiscus": {
+          "precision": 0.7647058823529411,
+          "recall": 0.5652173913043478,
+          "f1": 0.65,
+          "support": 23
+        },
+        "peach": {
+          "precision": 0.6153846153846154,
+          "recall": 0.5,
+          "f1": 0.5517241379310345,
+          "support": 16
+        },
+        "pear": {
+          "precision": 0.35294117647058826,
+          "recall": 0.6666666666666666,
+          "f1": 0.46153846153846156,
+          "support": 9
+        },
+        "sunflower": {
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875,
+          "support": 32
+        },
+        "tomato": {
+          "precision": 0.9444444444444444,
+          "recall": 0.8095238095238095,
+          "f1": 0.8717948717948718,
+          "support": 63
+        },
+        "unknown": {
+          "precision": 0.5,
+          "recall": 0.16666666666666666,
+          "f1": 0.25,
+          "support": 6
+        }
+      },
+      "labels": [
+        "apple",
+        "brinjal",
+        "chilli",
+        "hibiscus",
+        "peach",
+        "pear",
+        "sunflower",
+        "tomato",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          22,
+          0,
+          0,
+          1,
+          1,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          3,
+          4,
+          0,
+          1,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          13,
+          1,
+          2,
+          2,
+          1,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          2,
+          8,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          28,
+          2,
+          0
+        ],
+        [
+          7,
+          0,
+          0,
+          0,
+          2,
+          2,
+          1,
+          51,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    "closeup": {
+      "accuracy": 0.7716346153846154,
+      "macro_f1": 0.6810054162522289,
+      "per_class": {
+        "apple": {
+          "precision": 0.31746031746031744,
+          "recall": 0.6896551724137931,
+          "f1": 0.43478260869565216,
+          "support": 29
+        },
+        "brinjal": {
+          "precision": 0.6666666666666666,
+          "recall": 0.9090909090909091,
+          "f1": 0.7692307692307692,
+          "support": 11
+        },
+        "chilli": {
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333333,
+          "support": 7
+        },
+        "hibiscus": {
+          "precision": 0.7777777777777778,
+          "recall": 0.9130434782608695,
+          "f1": 0.84,
+          "support": 23
+        },
+        "peach": {
+          "precision": 0.38095238095238093,
+          "recall": 0.5,
+          "f1": 0.4324324324324324,
+          "support": 16
+        },
+        "pear": {
+          "precision": 0.1875,
+          "recall": 0.3333333333333333,
+          "f1": 0.24000000000000005,
+          "support": 9
+        },
+        "sunflower": {
+          "precision": 0.7878787878787878,
+          "recall": 0.8125,
+          "f1": 0.8,
+          "support": 32
+        },
+        "tomato": {
+          "precision": 0.8857142857142857,
+          "recall": 0.9841269841269841,
+          "f1": 0.9323308270676691,
+          "support": 63
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 0.7345132743362832,
+          "f1": 0.8469387755102041,
+          "support": 226
+        }
+      },
+      "labels": [
+        "apple",
+        "brinjal",
+        "chilli",
+        "hibiscus",
+        "peach",
+        "pear",
+        "sunflower",
+        "tomato",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          20,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          10,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2,
+          8,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          26,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          62,
+          0
+        ],
+        [
+          34,
+          3,
+          0,
+          0,
+          10,
+          11,
+          1,
+          1,
+          166
+        ]
+      ]
+    }
+  },
+  "test_selected": {
+    "auto": {
+      "accuracy": 0.8061224489795918,
+      "macro_f1": 0.6687675212293208,
+      "per_class": {
+        "apple": {
+          "precision": 0.6363636363636364,
+          "recall": 0.7241379310344828,
+          "f1": 0.6774193548387097,
+          "support": 29
+        },
+        "brinjal": {
+          "precision": 0.6666666666666666,
+          "recall": 0.9090909090909091,
+          "f1": 0.7692307692307692,
+          "support": 11
+        },
+        "chilli": {
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333333,
+          "support": 7
+        },
+        "hibiscus": {
+          "precision": 0.8076923076923077,
+          "recall": 0.9130434782608695,
+          "f1": 0.8571428571428572,
+          "support": 23
+        },
+        "peach": {
+          "precision": 0.9,
+          "recall": 0.5625,
+          "f1": 0.6923076923076923,
+          "support": 16
+        },
+        "pear": {
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1": 0.4,
+          "support": 9
+        },
+        "sunflower": {
+          "precision": 0.8709677419354839,
+          "recall": 0.84375,
+          "f1": 0.8571428571428571,
+          "support": 32
+        },
+        "tomato": {
+          "precision": 0.8857142857142857,
+          "recall": 0.9841269841269841,
+          "f1": 0.9323308270676691,
+          "support": 63
+        },
+        "unknown": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "labels": [
+        "apple",
+        "brinjal",
+        "chilli",
+        "hibiscus",
+        "peach",
+        "pear",
+        "sunflower",
+        "tomato",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          21,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          10,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2,
+          9,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          27,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          62,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "closeup": {
+      "accuracy": 0.7716346153846154,
+      "macro_f1": 0.6810054162522289,
+      "per_class": {
+        "apple": {
+          "precision": 0.31746031746031744,
+          "recall": 0.6896551724137931,
+          "f1": 0.43478260869565216,
+          "support": 29
+        },
+        "brinjal": {
+          "precision": 0.6666666666666666,
+          "recall": 0.9090909090909091,
+          "f1": 0.7692307692307692,
+          "support": 11
+        },
+        "chilli": {
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333333,
+          "support": 7
+        },
+        "hibiscus": {
+          "precision": 0.7777777777777778,
+          "recall": 0.9130434782608695,
+          "f1": 0.84,
+          "support": 23
+        },
+        "peach": {
+          "precision": 0.38095238095238093,
+          "recall": 0.5,
+          "f1": 0.4324324324324324,
+          "support": 16
+        },
+        "pear": {
+          "precision": 0.1875,
+          "recall": 0.3333333333333333,
+          "f1": 0.24000000000000005,
+          "support": 9
+        },
+        "sunflower": {
+          "precision": 0.7878787878787878,
+          "recall": 0.8125,
+          "f1": 0.8,
+          "support": 32
+        },
+        "tomato": {
+          "precision": 0.8857142857142857,
+          "recall": 0.9841269841269841,
+          "f1": 0.9323308270676691,
+          "support": 63
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 0.7345132743362832,
+          "f1": 0.8469387755102041,
+          "support": 226
+        }
+      },
+      "labels": [
+        "apple",
+        "brinjal",
+        "chilli",
+        "hibiscus",
+        "peach",
+        "pear",
+        "sunflower",
+        "tomato",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          20,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          10,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2,
+          8,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          26,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          62,
+          0
+        ],
+        [
+          34,
+          3,
+          0,
+          0,
+          10,
+          11,
+          1,
+          1,
+          166
+        ]
+      ]
+    }
+  },
+  "note": "Top-flower species per photo. Auto setting = full-scene photos through the deployed detector; close-up setting = centre crop of the same photos plus USDA background crops. Strawberry counts as unknown."
+}

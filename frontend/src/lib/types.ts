@@ -27,6 +27,8 @@ export interface SpeciesResult {
   support?: "validated" | "limited_evidence" | "not_supported" | "not_evaluated";
   original_prediction?: string;
   original_confidence?: number | null;
+  /** auto mode: votes of the box crop blended with the whole photo (weight selected on validation) */
+  context?: { crop_weight: number; crop_top: string | null; scene_top: string | null };
 }
 
 export interface StageResult {

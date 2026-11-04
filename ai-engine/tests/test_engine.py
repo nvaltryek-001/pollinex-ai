@@ -310,3 +310,22 @@ def test_dataset_integrity_audit_passes():
     a = mod.audit()
     assert a["problems"] == [] and a["passed"], a["problems"][:5]
     assert a["usda_fruit_flower"]["boxes"] > 0 and a["inat_flowering"]["images"] > 0
+
+
+def test_species_context_rule_is_validation_selected_and_consistent():
+    """The shipped crop/scene blending rule was selected on validation, and crop_weight=1 reproduces crop-only prediction."""
+    import json as _json
+
+    from pollinex_ai.pipeline import GALLERY_PATH, MODELS_DIR, Analyzer
+    from pollinex_ai.species import SpeciesGallery
+
+    ctx = _json.loads((MODELS_DIR / "species_context.json").read_text())
+    assert ctx["selected_on"] == "validation" and 0.0 <= ctx["crop_weight"] <= 1.0
+    g = SpeciesGallery.load(GALLERY_PATH)
+    rng = np.random.default_rng(0)
+    a = rng.integers(0, 255, (96, 96, 3), dtype=np.uint8)
+    b = rng.integers(0, 255, (96, 96, 3), dtype=np.uint8)
+    va, vb = g.embed_fn(a), g.embed_fn(b)
+    assert g.predict_fused(va, vb, 1.0)["species"] == g.predict_vector(va)["species"]
+    assert g.predict_fused(va, vb, 0.0)["species"] == g.predict_vector(vb)["species"]
+    assert Analyzer().model_info()["species_context"]["crop_weight"] == ctx["crop_weight"]

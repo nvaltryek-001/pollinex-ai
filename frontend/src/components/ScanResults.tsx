@@ -95,6 +95,10 @@ export function FlowerDetail({ f, scanId, onUpdated }: { f: Flower; scanId?: num
           {f.species.support === "not_supported" && <Pill tone="bad">not AI-supported</Pill>}
         </div>
         {f.species.reason && <p className="mt-1 text-xs text-muted">{f.species.reason}</p>}
+        {f.species.context && (
+          <p className="mt-1 text-xs text-muted">Votes blended: box crop {pct(f.species.context.crop_weight, 0)} (top: {f.species.context.crop_top ?? "—"}) +
+            whole photo {pct(1 - f.species.context.crop_weight, 0)} (top: {f.species.context.scene_top ?? "—"}). Weight chosen on validation data.</p>
+        )}
         {f.species.candidates && f.species.candidates.length > 0 && (
           <div className="mt-2 space-y-1">{f.species.candidates.map((c) => (
             <div key={c.species} className="grid grid-cols-[90px_1fr_48px] items-center gap-2 text-xs"><span>{c.species}</span><Bar value={c.vote_share} /><span className="text-right font-mono">{pct(c.vote_share, 0)}</span></div>

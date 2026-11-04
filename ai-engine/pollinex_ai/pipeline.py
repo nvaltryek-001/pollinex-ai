@@ -8,6 +8,7 @@ Every field carries its provenance:
 """
 from __future__ import annotations
 
+import json
 import time
 from pathlib import Path
 from typing import Any
@@ -35,11 +36,15 @@ class Analyzer:
             gp = Path(gallery_path) if gallery_path else GALLERY_PATH
             self.gallery = SpeciesGallery.load(gp) if gp.with_suffix(".json").exists() else SpeciesGallery()
         self.structure_model = load_structure_model()  # None until a structure model trained on real annotations exists
+        # crop/scene vote blending selected on validation for the shipped gallery only (species_context_rule.py)
+        ctx = MODELS_DIR / "species_context.json"
+        self.species_context = (json.loads(ctx.read_text()) if gallery is None and gallery_path is None and ctx.exists() else {})
 
     def model_info(self) -> dict:
         return {"detector_backend": self.detector.backend, "detector_version": self.detector.version,
                 "gallery_species": self.gallery.counts(), "gallery_threshold": self.gallery.threshold,
                 "gallery_version": self.gallery.meta.get("gallery_version") or self.gallery.meta.get("embed_version"),
+                "species_context": {k: self.species_context[k] for k in ("crop_weight", "abstain_share") if k in self.species_context} or None,
                 "structure_model": self.structure_model.version if self.structure_model is not None else None}
 
     def _prob_crop(self, res, box):
@@ -78,6 +83,11 @@ class Analyzer:
         else:
             res_for_crop = res
         flowers = []
+        scene_vec = None
+        ctx_w = self.species_context.get("crop_weight", 1.0)
+        if det_method == "trained_model" and not species_hint and ctx_w < 1.0:
+            mx, my = int(0.1 * W), int(0.1 * H)
+            scene_vec = self.gallery.embed_fn(rgb[my:H - my, mx:W - mx])  # same centre-80 % view as close-up mode
         for i, d in enumerate(dets[:max_flowers]):
             # close-up: exactly the centre-80 % crop the gallery was evaluated on; detections: 10 % context padding
             crop = crop_box(rgb, d.box, pad=0.0 if det_method == "closeup_fallback" else 0.1)
@@ -85,7 +95,10 @@ class Analyzer:
             if species_hint:
                 sp = {"species": species_hint, "confidence": 1.0, "method": "user_declared", "candidates": []}
             else:
-                sp = {**self.gallery.predict(crop), "method": "trained_reference_gallery"}
+                if scene_vec is not None:
+                    sp = {**self.gallery.predict_fused(self.gallery.embed_fn(crop), scene_vec, ctx_w), "method": "trained_reference_gallery"}
+                else:
+                    sp = {**self.gallery.predict(crop), "method": "trained_reference_gallery"}
                 status = self.gallery.meta.get("species_status", {})
                 if sp["species"] != UNKNOWN:
                     sp["support"] = status.get(sp["species"], "not_evaluated")
