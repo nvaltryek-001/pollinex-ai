@@ -5,7 +5,7 @@
 <br>
 
 [![CI](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/automated%20tests-86%20passing-2e7d4f)
+![Tests](https://img.shields.io/badge/automated%20tests-97%20passing-2e7d4f)
 ![Platforms](https://img.shields.io/badge/verified%20on-Ubuntu%20%7C%20Windows-1d3a2a)
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776ab?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/react-18-61dafb?logo=react&logoColor=black)

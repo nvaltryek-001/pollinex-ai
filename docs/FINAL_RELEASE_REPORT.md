@@ -38,6 +38,17 @@ Repository: https://github.com/nvaltryek-001/pollinex-ai (branch `main`). **Live
 >   * Render free web service: the Docker image builds the React app, and FastAPI serves it on the same origin.
 >   * Data is not persistent until the created Render PostgreSQL URL is set as `DATABASE_URL`.
 >   * Vercel project creation was refused (HTTP 403) by the connected account.
+> * **Tests:** CI run 41816002898 on `af34e3c` passed all 5 jobs, including the Docker image build with the frontend stage:
+>
+>   | Suite | Result |
+>   |---|---|
+>   | AI engine + simulator | 45 passed |
+>   | Backend | 27 passed |
+>   | Vitest | 11 passed |
+>   | Playwright | 14 passed |
+>   | Windows | same suites; Playwright 12 passed, 2 screenshot tests skipped |
+>
+>   The live smoke test passed against the public demo: health ok with YOLO11 and 8 species, the app served on a deep link, an asset returned 200, and an unauthenticated `/api/v1/scans` returned 401.
 > * **Fixes found while testing:**
 >   * The Datasets page crashed on per-species count objects. A page error boundary now catches render errors.
 >   * Close-up analysis ran GrabCut four times per flower (now about 3 s → 0.5 s per image).
