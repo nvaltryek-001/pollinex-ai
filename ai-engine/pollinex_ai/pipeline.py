@@ -39,6 +39,7 @@ class Analyzer:
     def model_info(self) -> dict:
         return {"detector_backend": self.detector.backend, "detector_version": self.detector.version,
                 "gallery_species": self.gallery.counts(), "gallery_threshold": self.gallery.threshold,
+                "gallery_version": self.gallery.meta.get("gallery_version") or self.gallery.meta.get("embed_version"),
                 "structure_model": self.structure_model.version if self.structure_model is not None else None}
 
     def _prob_crop(self, res, box):

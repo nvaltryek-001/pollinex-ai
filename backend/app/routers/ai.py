@@ -94,8 +94,11 @@ def readiness(body: ReadinessIn, user: User = Depends(get_current_user)):
 def species_list(user: User = Depends(get_current_user)):
     kb = engine.load_kb()
     gallery = engine.get_analyzer().gallery.counts()
+    status = engine.get_analyzer().gallery.meta.get("species_status", {})
     return {"version": kb["version"], "disclaimer": kb["disclaimer"], "evidence_sources": kb["evidence_sources"],
-            "species": [{**s, "reference_images": gallery.get(s["id"], 0)} for s in kb["species"]],
+            "botany_scope": kb.get("botany_scope"), "fruit_recognition": kb.get("fruit_recognition"),
+            "species": [{**s, "reference_images": gallery.get(s["id"], 0),
+                         "ai_support": status.get(s["id"], "not_supported" if status else "not_evaluated")} for s in kb["species"]],
             "gallery_threshold": engine.get_analyzer().gallery.threshold}
 
 

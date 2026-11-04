@@ -14,7 +14,7 @@ jobs:
       - name: Wake + health (models, database)
         run: |
           for i in $(seq 1 20); do curl -fsS -m 60 "$BASE/api/v1/health" -o health.json && break; sleep 15; done
-          cat health.json; python3 -c "import json;d=json.load(open('health.json'));assert d['status']=='ok',d;assert d['model']['detector_backend']=='yolo11-onnx';print('species',sorted(d['model']['gallery_species']))"
+          cat health.json; python3 -c "import json;d=json.load(open('health.json'));assert d['status']=='ok',d;assert d['model']['detector_backend']=='yolo11-onnx';print('species',sorted(d['model']['gallery_species']));print('database backend',d.get('database_backend'))"
       - name: SPA served on the same origin (deep link + asset)
         run: |
           curl -fsS "$BASE/app/scanner" -o index.html; grep -q '<div id="root">' index.html

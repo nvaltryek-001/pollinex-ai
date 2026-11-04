@@ -1,0 +1,399 @@
+{
+  "generated_at": "2026-11-04T11:21:24+00:00",
+  "integrity": {
+    "usda_fruit_flower": {
+      "images": 90,
+      "boxes": 4651,
+      "invalid_label_rows": 0,
+      "cross_split_exact_duplicates": []
+    },
+    "tf_flower_detection_sunflower": {
+      "images": 627,
+      "boxes": 2431,
+      "invalid_label_rows": 0,
+      "cross_split_exact_duplicates": []
+    },
+    "inat_flowering": {
+      "images": 761,
+      "per_split_species": {
+        "test/apple": 17,
+        "test/brinjal": 1,
+        "test/chilli": 1,
+        "test/hibiscus": 7,
+        "test/peach": 10,
+        "test/pear": 5,
+        "test/strawberry": 2,
+        "test/sunflower": 32,
+        "test/tomato": 34,
+        "train/apple": 67,
+        "train/brinjal": 15,
+        "train/chilli": 25,
+        "train/hibiscus": 71,
+        "train/peach": 52,
+        "train/pear": 18,
+        "train/strawberry": 10,
+        "train/sunflower": 142,
+        "train/tomato": 138,
+        "val/apple": 23,
+        "val/brinjal": 4,
+        "val/chilli": 2,
+        "val/hibiscus": 13,
+        "val/peach": 9,
+        "val/pear": 6,
+        "val/strawberry": 3,
+        "val/sunflower": 26,
+        "val/tomato": 28
+      },
+      "unknown_species_folders": [],
+      "cross_split_exact_duplicates": []
+    },
+    "commons_flowers": {
+      "images": 506,
+      "per_split_species": {
+        "test/brinjal": 10,
+        "test/chilli": 6,
+        "test/hibiscus": 16,
+        "test/strawberry": 4,
+        "test/tomato": 29,
+        "train/brinjal": 94,
+        "train/chilli": 41,
+        "train/hibiscus": 133,
+        "train/strawberry": 21,
+        "train/tomato": 92,
+        "val/brinjal": 7,
+        "val/chilli": 7,
+        "val/hibiscus": 16,
+        "val/strawberry": 4,
+        "val/tomato": 26
+      },
+      "unknown_species_folders": [],
+      "cross_split_exact_duplicates": []
+    },
+    "leakage_exclusions_applied_to_test": [
+      "2588234269_c4bfd0d8b9_n"
+    ],
+    "problems": [],
+    "passed": true
+  },
+  "detector": "yolo11-onnx flower_yolo11n",
+  "detection": {
+    "usda_fruit_flower": {
+      "images": 22,
+      "boxes": 929,
+      "precision@0.5": 0.312987012987013,
+      "recall@0.5": 0.7782561894510226,
+      "mAP50": 0.5932617000481302,
+      "mAP50_95": 0.3318448393932862,
+      "deployed_threshold": 0.3,
+      "precision_at_deployed_threshold": 0.6469879518072289,
+      "recall_at_deployed_threshold": 0.5780409041980624,
+      "per_species": {
+        "apple": {
+          "images": 12,
+          "boxes": 503,
+          "precision@0.5": 0.33168724279835393,
+          "recall@0.5": 0.8011928429423459,
+          "mAP50": 0.6016294890706934,
+          "mAP50_95": 0.33074746850885994
+        },
+        "peach": {
+          "images": 6,
+          "boxes": 170,
+          "precision@0.5": 0.26859504132231404,
+          "recall@0.5": 0.7647058823529411,
+          "mAP50": 0.5679850784391465,
+          "mAP50_95": 0.277664755406624
+        },
+        "pear": {
+          "images": 4,
+          "boxes": 256,
+          "precision@0.5": 0.3109656301145663,
+          "recall@0.5": 0.7421875,
+          "mAP50": 0.6086631165650305,
+          "mAP50_95": 0.3789114462634011
+        }
+      },
+      "latency_ms_mean": 257.00739072727237
+    },
+    "tf_flower_detection_sunflower": {
+      "images": 94,
+      "boxes": 405,
+      "precision@0.5": 0.6279461279461279,
+      "recall@0.5": 0.9209876543209876,
+      "mAP50": 0.8706326642679443,
+      "mAP50_95": 0.6939158234444605,
+      "deployed_threshold": 0.3,
+      "precision_at_deployed_threshold": 0.8168674698795181,
+      "recall_at_deployed_threshold": 0.837037037037037,
+      "per_species": {
+        "sunflower": {
+          "images": 94,
+          "boxes": 405,
+          "precision@0.5": 0.6279461279461279,
+          "recall@0.5": 0.9209876543209876,
+          "mAP50": 0.8706326642679443,
+          "mAP50_95": 0.6939158234444605
+        }
+      },
+      "latency_ms_mean": 217.68321897872784
+    }
+  },
+  "classification": {
+    "gallery": {
+      "embedding": "mnv3l-v1",
+      "k": 7,
+      "threshold": 0.3,
+      "enabled_species": [
+        "apple",
+        "brinjal",
+        "chilli",
+        "hibiscus",
+        "peach",
+        "pear",
+        "sunflower",
+        "tomato"
+      ],
+      "references": {
+        "apple": 955,
+        "peach": 543,
+        "pear": 442,
+        "sunflower": 675,
+        "brinjal": 109,
+        "chilli": 66,
+        "hibiscus": 204,
+        "tomato": 230,
+        "__background__": 540
+      }
+    },
+    "labels": [
+      "apple",
+      "brinjal",
+      "chilli",
+      "hibiscus",
+      "peach",
+      "pear",
+      "sunflower",
+      "tomato",
+      "unknown"
+    ],
+    "test_items": 1182,
+    "true_label_counts": {
+      "apple": 403,
+      "peach": 158,
+      "pear": 165,
+      "unknown": 226,
+      "sunflower": 126,
+      "brinjal": 11,
+      "chilli": 7,
+      "hibiscus": 23,
+      "tomato": 63
+    },
+    "accuracy": 0.873942470389171,
+    "macro_f1": 0.8619079813837821,
+    "per_species": {
+      "apple": {
+        "precision": 0.8506787330316742,
+        "recall": 0.9330024813895782,
+        "f1": 0.8899408284023668,
+        "support": 403
+      },
+      "brinjal": {
+        "precision": 0.6666666666666666,
+        "recall": 0.9090909090909091,
+        "f1": 0.7692307692307692,
+        "support": 11
+      },
+      "chilli": {
+        "precision": 1.0,
+        "recall": 0.7142857142857143,
+        "f1": 0.8333333333333333,
+        "support": 7
+      },
+      "hibiscus": {
+        "precision": 0.7777777777777778,
+        "recall": 0.9130434782608695,
+        "f1": 0.84,
+        "support": 23
+      },
+      "peach": {
+        "precision": 0.847953216374269,
+        "recall": 0.9177215189873418,
+        "f1": 0.8814589665653495,
+        "support": 158
+      },
+      "pear": {
+        "precision": 0.8545454545454545,
+        "recall": 0.8545454545454545,
+        "f1": 0.8545454545454545,
+        "support": 165
+      },
+      "sunflower": {
+        "precision": 0.9516129032258065,
+        "recall": 0.9365079365079365,
+        "f1": 0.944,
+        "support": 126
+      },
+      "tomato": {
+        "precision": 0.9253731343283582,
+        "recall": 0.9841269841269841,
+        "f1": 0.9538461538461538,
+        "support": 63
+      },
+      "unknown": {
+        "precision": 0.9337349397590361,
+        "recall": 0.6858407079646017,
+        "f1": 0.7908163265306122,
+        "support": 226
+      }
+    },
+    "confusion_matrix": [
+      [
+        376,
+        0,
+        0,
+        1,
+        8,
+        9,
+        0,
+        0,
+        9
+      ],
+      [
+        0,
+        10,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        21,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        2,
+        145,
+        7,
+        3,
+        0,
+        0
+      ],
+      [
+        19,
+        0,
+        0,
+        0,
+        4,
+        141,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        2,
+        1,
+        0,
+        118,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        62,
+        0
+      ],
+      [
+        45,
+        3,
+        0,
+        0,
+        13,
+        8,
+        1,
+        1,
+        155
+      ]
+    ],
+    "by_source": {
+      "usda_test_flowers": {
+        "n": 694,
+        "accuracy": 0.9236311239193083,
+        "macro_f1": 0.9232616991363728
+      },
+      "usda_test_background": {
+        "n": 220,
+        "accuracy": 0.7045454545454546,
+        "macro_f1": 0.8266666666666667,
+        "unsupported_true_species_predicted_as": {
+          "unknown": {
+            "unknown": 155,
+            "apple": 44,
+            "pear": 8,
+            "peach": 13
+          }
+        }
+      },
+      "sunflower_closeup_test": {
+        "n": 94,
+        "accuracy": 0.9787234042553191,
+        "macro_f1": 0.989247311827957
+      },
+      "inat_test": {
+        "n": 109,
+        "accuracy": 0.7981651376146789,
+        "macro_f1": 0.5911410470620997,
+        "unsupported_true_species_predicted_as": {
+          "strawberry": {
+            "sunflower": 1,
+            "apple": 1
+          }
+        }
+      },
+      "commons_test": {
+        "n": 65,
+        "accuracy": 0.8923076923076924,
+        "macro_f1": 0.7068817204301074,
+        "unsupported_true_species_predicted_as": {
+          "strawberry": {
+            "brinjal": 3,
+            "tomato": 1
+          }
+        }
+      }
+    },
+    "note": "Species not enabled in the gallery (strawberry) are scored as correct only when predicted 'unknown'. 'usda_test_background' items are non-flower crops whose correct answer is 'unknown'."
+  }
+}

@@ -14,9 +14,18 @@ test.describe.serial("scanner, camera and core flows", () => {
     // manual species correction re-runs readiness
     await page.getByLabel("Wrong species?").selectOption("hibiscus");
     await expect(page.getByText(/user corrected/i).first()).toBeVisible({ timeout: 30_000 });
+    // species reference panel follows the (corrected) species and is labelled as general knowledge
+    await expect(page.getByText("About Hibiscus").first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/reference knowledge · not from this image/).first()).toBeVisible();
+    await expect(page.getByText("How this result was produced")).toBeVisible();
 
     await page.goto("/app/history");
-    await expect(page.getByRole("link", { name: /#\d+/ }).first()).toBeVisible();
+    await page.getByRole("link", { name: /#\d+/ }).first().click();
+    await expect(page.getByRole("button", { name: "PDF report" })).toBeVisible({ timeout: 15_000 });
+    const [pdf] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: "PDF report" }).click()]);
+    expect(pdf.suggestedFilename()).toMatch(/^pollinex_scan_\d+\.pdf$/);
+    const [csv] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: /CSV/ }).click()]);
+    expect(csv.suggestedFilename()).toBe("pollinex_scans.csv");
   });
 
   test("camera starts with a (fake) device, live scan analyses sampled frames, capture saves a scan", async ({ page }) => {
@@ -59,13 +68,26 @@ test.describe.serial("scanner, camera and core flows", () => {
     await login(page, email);
     const paths = ["/app", "/app/scanner", "/app/history", "/app/fields", "/app/inventory", "/app/environment", "/app/species",
       "/app/structure", "/app/maturity", "/app/readiness", "/app/health", "/app/simulator", "/app/analytics", "/app/evaluation",
-      "/app/research", "/app/datasets", "/app/reports"];
+      "/app/research", "/app/datasets", "/app/reports", "/app/help"];
     for (const p of paths) {
       await page.goto(p);
       await expect(page.locator("h1").first(), `page heading on ${p}`).toBeVisible({ timeout: 15_000 });
       await page.waitForLoadState("networkidle");
       await expect(page.getByRole("alert"), `error banner on ${p}`).toHaveCount(0);
     }
+  });
+
+  test("species information panel works for all nine species", async ({ page }) => {
+    await login(page, email);
+    await page.goto("/app/species");
+    const names = ["Apple", "Peach", "Pear", "Sunflower", "Hibiscus", "Tomato", "Strawberry", "Brinjal (eggplant)", "Chilli (hot pepper)"];
+    for (const n of names) {
+      const card = page.locator("section").filter({ has: page.getByRole("heading", { name: n, exact: true }) }).first();
+      await card.getByRole("button", { name: "Biology & evidence" }).click();
+      await expect(page.getByText(`About ${n}`).first(), `species panel for ${n}`).toBeVisible({ timeout: 15_000 });
+      await card.getByRole("button", { name: "Less" }).click();
+    }
+    await expect(page.getByText(/not AI-supported/).first()).toBeVisible();
   });
 
   test("dashboard is responsive on small screens", async ({ page }) => {

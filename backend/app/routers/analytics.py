@@ -13,7 +13,7 @@ from ..models import (EnvironmentRecord, FlowerDetection, MaturityPrediction, Po
                       Scan, Simulation, User)
 from ..security import get_current_user
 from ..services.records import log, scan_dict
-from ..services.reports import scans_csv, summary_pdf
+from ..services.reports import scan_pdf, scans_csv, summary_pdf
 
 router = APIRouter(tags=["analytics"])
 REPORTS_DIR = REPO_ROOT / "ai-engine" / "reports"
@@ -190,3 +190,19 @@ def report_scan_json(scan_id: int, user: User = Depends(get_current_user), db: S
         raise HTTPException(404, "scan not found")
     return Response(json.dumps(scan_dict(s, with_flowers=True), default=str, indent=2), media_type="application/json",
                     headers={"Content-Disposition": f'attachment; filename="pollinex_scan_{scan_id}.json"'})
+
+
+@router.get("/reports/scans/{scan_id}.pdf", response_class=Response, summary="PDF report for one scan")
+def report_scan_pdf(scan_id: int, user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    from ..services.engine import load_kb
+    from ..services.storage import resolve_upload
+
+    s = db.get(Scan, scan_id)
+    if not s or s.owner_id != user.id:
+        raise HTTPException(404, "scan not found")
+    path = resolve_upload(s.image.storage_path) if s.image else None
+    pdf = scan_pdf(scan_dict(s, with_flowers=True), user.email, load_kb(), str(path) if path and path.exists() else None)
+    log(db, user, "report.scan_pdf", "scan", scan_id)
+    db.commit()
+    return Response(pdf, media_type="application/pdf",
+                    headers={"Content-Disposition": f'attachment; filename="pollinex_scan_{scan_id}.pdf"'})

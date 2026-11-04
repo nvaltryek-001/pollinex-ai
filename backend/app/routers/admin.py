@@ -138,5 +138,6 @@ def health(db: Session = Depends(get_db)):
     s = get_settings()
     checks["storage"] = "ok" if s.upload_dir.exists() else "missing"
     status_ = "ok" if all(v == "ok" for v in checks.values()) else "degraded"
-    return {"status": status_, "checks": checks, "model": info, "environment": s.environment,
+    dialect = db.get_bind().dialect.name  # e.g. "postgresql" or "sqlite" - never the URL or credentials
+    return {"status": status_, "checks": checks, "model": info, "environment": s.environment, "database_backend": dialect,
             "python": platform.python_version(), "time": datetime.now(timezone.utc).isoformat()}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BookMarked, ImagePlus } from "lucide-react";
 import { CropAnalyzer } from "../components/CropAnalyzer";
+import { SpeciesInfoPanel } from "../components/SpeciesInfo";
 import { Bar, Card, ErrorBanner, Loading, MethodBadge, Notice, PageHeader, Pill } from "../components/ui";
 import { api } from "../lib/api";
 import { useAuth } from "../lib/auth";
@@ -44,9 +45,10 @@ export default function SpeciesPage() {
           )} />
         {msg && <Notice>{msg}</Notice>}
         <Notice>
-          The shipped gallery contains apple, peach and pear references from the USDA orchard dataset. Other crops return
-          <em> unknown</em> until researchers add reference images (button on each card) — or select the species manually in the scanner.
-          Added species are <strong>not evaluated</strong> until a held-out test set exists.
+          The shipped gallery holds references for eight species (apple, peach, pear, sunflower, hibiscus, tomato, brinjal, chilli)
+          from licensed datasets; each card shows whether the species is validated on held-out photos or has limited test evidence.
+          Strawberry has too few references and is <strong>not AI-supported</strong> - select it manually in the scanner.
+          References added here are <strong>not evaluated</strong> until a held-out test set exists. Fruit is not recognised by any model.
         </Notice>
         <ErrorBanner error={kb.error} onRetry={kb.reload} />
         {kb.loading && <Loading />}
@@ -62,6 +64,7 @@ export default function SpeciesPage() {
               <p className="mt-1 text-xs text-muted">Seen in your scans: {stats.data?.[s.id]?.count ?? 0}</p>
               {open === s.id && (
                 <div className="mt-3 space-y-2 text-xs">
+                  <SpeciesInfoPanel speciesId={s.id} compact />
                   <p><strong>Flower:</strong> {s.flower_type}</p>
                   <p><strong>Mechanism:</strong> {s.mechanism_detail}</p>
                   <p><strong>Strategy:</strong> {s.strategy}</p>

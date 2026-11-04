@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AlertTriangle } from "lucide-react";
 import { api, authedImage } from "../lib/api";
-import { label, num, pct, useApi } from "../lib/hooks";
+import { label, num, pct, useApi, when } from "../lib/hooks";
 import { toast } from "../lib/toast";
 import type { Flower, Readiness, Scan, SpeciesKB } from "../lib/types";
 import { DetectionOverlay } from "./DetectionOverlay";
+import { SpeciesInfoPanel } from "./SpeciesInfo";
 import { Bar, Card, MethodBadge, Notice, Pill, readinessTone } from "./ui";
 
 export function ScanResults({ scan: initial, localPreview }: { scan: Scan; localPreview?: string | null }) {
@@ -63,6 +64,7 @@ export function ScanResults({ scan: initial, localPreview }: { scan: Scan; local
             </div>
           </Card>
         )}
+        <ScanProvenance scan={scan} />
       </div>
       <div>{f ? <FlowerDetail f={f} scanId={scan.id} onUpdated={setScan} /> : <Notice>No flowers to analyse. Try close-up mode, a closer photo, or better lighting.</Notice>}</div>
     </div>
@@ -103,6 +105,8 @@ export function FlowerDetail({ f, scanId, onUpdated }: { f: Flower; scanId?: num
         )}
         {scanId != null && onUpdated && <SpeciesCorrection scanId={scanId} index={f.id} current={f.species.species} onUpdated={onUpdated} />}
       </Card>
+
+      <SpeciesInfoPanel speciesId={f.species.species} />
 
       {f.stage && (
         <Card title="Developmental stage" right={<MethodBadge method={f.stage.method} />} subtitle={f.stage.note}>
@@ -181,5 +185,35 @@ function Section({ title, items, tone, small }: { title: string; items: string[]
       <div className="kicker mb-1">{title}</div>
       <ul className={`list-disc space-y-0.5 pl-4 ${small ? "text-[11px]" : "text-xs"} ${tone === "warn" ? "text-pollen" : "text-muted"}`}>{items.map((x, i) => <li key={i}>{x}</li>)}</ul>
     </div>
+  );
+}
+
+/** What produced this result and what it cannot tell you - shown on every scan. */
+export function ScanProvenance({ scan }: { scan: Scan }) {
+  const m = scan.summary.model;
+  const fallback = scan.detection_method !== "trained_model";
+  return (
+    <Card title="How this result was produced" subtitle={`Scanned ${when(scan.created_at)} · source ${scan.source} · mode ${scan.mode}`}>
+      <dl className="grid grid-cols-[130px_1fr] gap-x-3 gap-y-1.5 text-xs">
+        <dt className="text-muted">Flower detector</dt><dd className="font-mono">{m ? `${m.detector_backend} ${m.detector_version}` : "not recorded"}</dd>
+        <dt className="text-muted">Species gallery</dt><dd className="font-mono">{m?.gallery_version ?? "open-set reference gallery"}{m?.gallery_threshold != null && ` · threshold ${m.gallery_threshold}`}</dd>
+        <dt className="text-muted">Stage / centre / health</dt><dd>colour and shape heuristics (not trained models)</dd>
+        <dt className="text-muted">Readiness</dt><dd>rule-based visual estimate from the stage, centre and health findings</dd>
+      </dl>
+      <div className="mt-3 kicker">Limitations</div>
+      <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs text-muted">
+        {fallback && <li className="text-pollen">No flower was detected, so the whole image was analysed as one close-up flower. Boxes are not detections.</li>}
+        <li>Detector test mAP@0.5 is about 0.59 on orchard (USDA) images and 0.87 on sunflower; it misses small, occluded or back-lit flowers.</li>
+        <li>Strawberry has too few reference photos to be recognised automatically; choose it manually.</li>
+        <li>Fruit, disease, pollen viability and fertilisation are <strong>not</strong> detected. Nothing here proves a flower was pollinated.</li>
+        <li>Species information is general reference knowledge about the species, not something read from this photo.</li>
+      </ul>
+      <div className="mt-3 kicker">Recommended next steps</div>
+      <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs text-muted">
+        <li>Correct any wrong species with <em>Wrong species?</em> - readiness is re-estimated with the right species.</li>
+        <li>For uncertain or low-confidence results, re-shoot closer in even daylight, with the flower facing the camera.</li>
+        <li>Confirm readiness in the field (stigma receptivity, anther dehiscence) before pollinating.</li>
+      </ul>
+    </Card>
   );
 }

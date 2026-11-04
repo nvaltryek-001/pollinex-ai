@@ -1,0 +1,23 @@
+name: Evaluate deployed models
+# Reproduces the published test metrics from the shipped artifacts (no training). Trigger: [evaluate] in the commit message.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  evaluate:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[evaluate]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r backend/requirements.txt
+      - run: python scripts/evaluate_deployed_models.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deployed-model-evaluation
+          path: |
+            ai-engine/reports/deployed_model_evaluation.json
+            docs/MODEL_EVALUATION_RESULTS.md

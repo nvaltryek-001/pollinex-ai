@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { Download, Trash2 } from "lucide-react";
+import { Download, FileText, Trash2 } from "lucide-react";
 import { ScanResults } from "../components/ScanResults";
 import { ErrorBanner, Loading, PageHeader } from "../components/ui";
 import { api, download } from "../lib/api";
@@ -14,6 +14,8 @@ export default function ScanDetail() {
     <div>
       <PageHeader kicker="Scan record" title={`Scan #${id}`}
         actions={data && <>
+          <button className="btn-primary" onClick={() => download(`/reports/scans/${id}.pdf`, `pollinex_scan_${id}.pdf`)}><FileText size={16} />PDF report</button>
+          <button className="btn-ghost" onClick={() => download(`/reports/scans.csv`, `pollinex_scans.csv`)}><Download size={16} />CSV (all scans)</button>
           <button className="btn-ghost" onClick={() => download(`/reports/scans/${id}.json`, `pollinex_scan_${id}.json`)}><Download size={16} />JSON</button>
           <button className="btn-ghost text-alert" onClick={async () => { if (confirm("Delete this scan and its analyses?")) { await api.del(`/scans/${id}`); nav("/app/history"); } }}><Trash2 size={16} />Delete</button>
         </>}>

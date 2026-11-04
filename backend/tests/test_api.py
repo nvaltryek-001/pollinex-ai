@@ -8,6 +8,7 @@ API = "/api/v1"
 def test_health_and_openapi(client):
     r = client.get(f"{API}/health")
     assert r.status_code == 200 and r.json()["checks"]["database"] == "ok"
+    assert r.json()["database_backend"] in ("sqlite", "postgresql")
     spec = client.get("/openapi.json").json()
     assert "/api/v1/scans" in spec["paths"] and "/api/v1/simulations/{sim_id}/replay" in spec["paths"]
 
@@ -189,6 +190,10 @@ def test_reports_download(client, user):
     assert csv.status_code == 200 and csv.text.startswith("scan_id,")
     pdf = client.get(f"{API}/reports/summary.pdf", headers=user[0])
     assert pdf.status_code == 200 and pdf.content[:4] == b"%PDF"
+    sid = client.get(f"{API}/scans", headers=user[0]).json()["items"][0]["id"]
+    one = client.get(f"{API}/reports/scans/{sid}.pdf", headers=user[0])
+    assert one.status_code == 200 and one.content[:4] == b"%PDF"
+    assert client.get(f"{API}/reports/scans/999999.pdf", headers=user[0]).status_code == 404
 
 
 def test_admin_user_management(client, admin, user):

@@ -98,7 +98,7 @@ export interface Scan {
     readiness_counts?: Record<string, number>;
     low_confidence_count?: number | null;
     analysed_flowers?: number;
-    model?: { detector_backend: string; detector_version: string };
+    model?: { detector_backend: string; detector_version: string; gallery_version?: string | null; gallery_threshold?: number };
   };
   image_url: string;
   image_width: number;
@@ -138,6 +138,8 @@ export interface SpeciesKB {
   evidence_level: string;
   limitations: string[];
   reference_images: number;
+  ai_support?: "validated" | "limited_evidence" | "not_supported" | "not_evaluated";
+  botany?: Botany;
 }
 
 export interface Simulation {
@@ -204,4 +206,28 @@ export interface Dashboard {
   simulation_history?: { id: number; species_id: string; created_at: string; status: string; mode: string; efficiency: number | null }[];
   provenance: string;
   model_performance?: { source: string; mAP50: number; mAP50_95: number; generated_at: string };
+}
+
+export interface Botany {
+  family: string;
+  flower: string;
+  petals: string;
+  reproductive_structures: string;
+  flowering: string;
+  flowering_period: string;
+  pollination_mechanism: string;
+  pollinators: string[];
+  breeding_system: string;
+  fruit: { name: string; type: string; characteristics: string };
+  agricultural_relevance: string;
+  sources: { id: string; title: string; url: string }[];
+}
+
+export interface SpeciesKBResponse {
+  version: string;
+  disclaimer: string;
+  botany_scope?: string;
+  fruit_recognition?: string;
+  species: SpeciesKB[];
+  gallery_threshold: number;
 }

@@ -9,6 +9,7 @@ import numpy as np
 import pytest
 
 ENGINE = Path(__file__).resolve().parents[1]
+ROOT_DIR = ENGINE.parent
 sys.path.insert(0, str(ENGINE))
 
 from pollinex_ai.detector import MODELS_DIR, instances_from_prob  # noqa: E402
@@ -285,3 +286,27 @@ def test_structure_model_hook_marks_trained_classes_without_inventing():
     assert st["anther"]["status"] == "trained_model" and st["anther"]["visible"] is True
     assert st["stigma"]["status"] == "trained_model" and st["stigma"]["visible"] is False
     assert st["stamen"]["status"] == "not_ai_validated" and st["pistil"]["status"] == "not_ai_validated"
+
+
+def test_botany_knowledge_covers_all_nine_species():
+    from pollinex_ai.knowledge import BOTANY_FIELDS, get_species, load_botany, species_ids
+    bot = load_botany()
+    assert set(bot["species"]) == set(species_ids()) and len(species_ids()) == 9
+    for sid in species_ids():
+        rec = get_species(sid)["botany"]
+        assert all(rec[f] for f in BOTANY_FIELDS)
+        assert {"name", "type", "characteristics"} <= set(rec["fruit"])
+        assert all(s["url"].startswith("https://") for s in rec["sources"])
+    assert "not" in bot["fruit_recognition"].lower()  # no fruit model is claimed
+
+
+def test_dataset_integrity_audit_passes():
+    """Every image decodes, label rows are valid, species folders are known and no exact duplicate crosses splits."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("evaluate_deployed_models", ROOT_DIR / "scripts" / "evaluate_deployed_models.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    a = mod.audit()
+    assert a["problems"] == [] and a["passed"], a["problems"][:5]
+    assert a["usda_fruit_flower"]["boxes"] > 0 and a["inat_flowering"]["images"] > 0
