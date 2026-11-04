@@ -4,6 +4,15 @@
 generates artificial labels for these classes. Everything below is the workflow for creating real ones; the statistics
 script (`datasets/scripts/annotation_stats.py`) reports exactly what exists.
 
+## 0. Choose what to annotate first
+`python datasets/annotation/make_annotation_batch.py --per-species 40` picks real committed images that are most suitable
+for structure annotation and copies them into `datasets/raw/annotation_batch/<species>__<source>/` with a `tasks.csv`
+that keeps licence and attribution for every file. A dry run on 2026-11-04 selected 283 images (40 for most species;
+the iNaturalist-only species have fewer non-test photos).
+* **Box-annotated close-ups first:** the sunflower photos whose largest box covers ≥ 15 % of the frame.
+* **Then image-level close-ups**, largest images first.
+* **Test-split images are never included.** Structure test sets must come from new capture sessions.
+
 ## 1. Tooling
 * CVAT — self-hosted (`git clone https://github.com/cvat-ai/cvat && cd cvat && docker compose up -d`, open
   http://localhost:8080) or app.cvat.ai.
@@ -54,5 +63,9 @@ script (`datasets/scripts/annotation_stats.py`) reports exactly what exists.
 ```bash
 python ai-engine/training/train_yolo11.py --data datasets/raw/custom_tomato/yolo/data.yaml --imgsz 960
 ```
-Structures: the converter writes a separate YOLO set with classes anther/stigma/stamen/pistil/petal; train it the same
-way and export to `ai-engine/models/structures_yolo.onnx`. GPU: `notebooks/train_yolo11_colab.ipynb`.
+Structures: the converter writes a separate YOLO set with classes anther/stigma/stamen/pistil/petal. Train it the same
+way, then copy the exported ONNX to `ai-engine/models/structures_yolo.onnx` with a sidecar `structures_yolo.json`
+(`{"imgsz": 960, "names": ["anther","stigma","stamen","pistil","petal"], "conf_threshold": <chosen on val>}`).
+The pipeline (`pollinex_ai.structure.apply_structure_model`) then sets every class the model covers to status
+`trained_model` with its detections. Classes it does not cover stay `not_ai_validated`. Evaluate it with the Ultralytics
+per-class val/test report written by `train_yolo11.py --report-name structures_evaluation`. GPU: `notebooks/train_yolo11_colab.ipynb`.
