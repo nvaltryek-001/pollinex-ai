@@ -3,6 +3,79 @@
 _Report date: 2026-11-04 (updated after the second YOLO11 run, gallery v2, the Commons dataset and deployment).
 Repository: https://github.com/nvaltryek-001/pollinex-ai (branch `main`). **Live demo: https://pollinex-api.onrender.com**._
 
+## Final status (2026-11-04, completion pass)
+
+This section supersedes the updates below it. Every claim links to a file or to a CI run.
+
+### What was added in this pass
+* **Species knowledge base:** `ai-engine/pollinex_ai/knowledge/species_botany.json` covers all 9 species. Each record has
+  family, flower, petals, visible reproductive structures, flowering, flowering period (with regional notes), pollination
+  mechanism, pollinators, self/cross-pollination, fruit (name, type, characteristics), agricultural relevance and sources.
+  * The loader validates every field and source.
+  * The app shows it as *reference knowledge, not from this image*.
+  * See [`SPECIES_KNOWLEDGE_BASE.md`](SPECIES_KNOWLEDGE_BASE.md).
+* **Fruit:** no fruit dataset or model exists. This is stated in the UI under every species panel, in the per-scan PDF, on the
+  Help page and in the docs. A separate future fruit workflow is documented. Fruit and flower recognition stay separate concepts.
+* **Results page:**
+  * a species information panel that follows the predicted, or user-corrected, species;
+  * a *How this result was produced* card with scan date, source, mode, detector and gallery versions, the method of every
+    module, limitations and recommended next steps;
+  * on the scan detail page, a **PDF report** (`GET /api/v1/reports/scans/{id}.pdf`), a CSV of all scans and JSON.
+* **Help & documentation page** (`/app/help`), which brings the app to 21 pages.
+* **Reproducible evaluation:** `scripts/evaluate_deployed_models.py` runs the shipped models on the repository test splits.
+  * It reproduced the committed numbers exactly; results are in [`MODEL_EVALUATION_RESULTS.md`](MODEL_EVALUATION_RESULTS.md).
+  * Detection results (computed on box-annotated data only):
+
+    | Test set | mAP@0.5 | mAP@0.5:0.95 | Precision @ 0.30 | Recall @ 0.30 | Per species mAP@0.5 |
+    |---|--:|--:|--:|--:|---|
+    | USDA | 0.593 | 0.332 | 0.647 | 0.578 | apple 0.602, peach 0.568, pear 0.609 |
+    | Sunflower | 0.871 | 0.694 | 0.817 | 0.837 | — |
+
+  * Species classification, reported separately: 1,182 test items, accuracy 0.874, macro-F1 0.862, with a confusion matrix and per-species P/R/F1.
+  * **No detection performance is claimed for hibiscus, tomato, strawberry, brinjal or chilli**, because no boxes exist for them.
+* **Dataset integrity audit:** a CI test (`test_dataset_integrity_audit_passes`) checks that all images decode, that label rows are valid, that species folders are known, that no exact duplicate crosses splits, and that the leakage exclusion is applied. It passed.
+* **Audit checklist** for all 21 modules plus data and deployment: [`PROJECT_AUDIT_CHECKLIST.md`](PROJECT_AUDIT_CHECKLIST.md).
+* `/api/v1/health` now reports `database_backend` (the dialect name only, never the URL).
+
+### Tests
+**CI run [41821905369](https://github.com/nvaltryek-001/pollinex-ai/actions/runs/41821905369)** on `5335a16`: all 5 jobs passed.
+
+| Suite | Result |
+|---|---|
+| AI engine + simulator | 47 passed |
+| Backend (SQLite + PostgreSQL 16 migrations, startup) | 27 passed |
+| Vitest | 11 passed |
+| TypeScript check + production build | passed |
+| Playwright E2E (desktop + mobile, fake camera) | 16 passed |
+| Docker images | built |
+| Windows fresh clone | engine 47, backend 27, Vitest 11, Playwright 14 passed |
+| Evaluate deployed models (`[evaluate]`, run 41820896337) | passed |
+
+**Skipped on purpose:** 2 screenshot-capture tests on Windows. They are documentation screenshots, not checks.
+
+**Failure found and fixed:** in the previous run (41820896150), the new mobile E2E step timed out. Playwright reported that its click on the history link was intercepted by the *No pollination actions logged* placeholder, apparently while the page layout was still shifting. The test now opens the scan through the link's `href`. The same flow passed on desktop, including the PDF and CSV downloads.
+
+### Deployment (verified facts only)
+* **Render service `pollinex-api`:** see the live check below for the deployed commit.
+* **Persistent PostgreSQL: not yet connected (owner action).**
+  * `pollinex-db` exists, but its connection string cannot be read with the available tools, and it must not be committed.
+  * Steps: Render → `pollinex-db` → copy the **Internal Database URL** → `pollinex-api` → *Environment* → `DATABASE_URL` → save, then redeploy.
+  * Then check that `/api/v1/health` shows `"database_backend": "postgresql"`, and that an account and a scan survive *Restart service*.
+* **Auto-deploy: not working (owner action).**
+  * The service has `autoDeploy: yes`, but neither `ec1b842` nor `4e29813` triggered a deploy. Deploys were started manually through the API.
+  * Fix: give Render's GitHub app access to the repository, or add a deploy-hook secret. Steps are in [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md).
+* **Vercel: blocked.** The connected account returns HTTP 403 on project creation, and the team has 0 projects. It is optional, because Render serves the UI; import steps are in the deployment guide.
+* **Secrets:** `JWT_SECRET` is set only on Render. No credentials are in the repository.
+
+### Still not done
+* There are no reproductive-structure, stage, health or fruit models, because no annotations exist for them.
+* There are no boxes for 5 species.
+* Strawberry is not AI-supported.
+* Brinjal and chilli rest on limited evidence.
+* The phone camera has not been tested on a real device over HTTPS.
+
+---
+
 > **Update (later the same day).** Sections 1–8 below were written for the first release. These numbers replace the older figures:
 > * **Images:** **1,985**. The 506 new ones come from Wikimedia Commons, and the quality audit (`datasets/reports/dataset_quality_audit.md`) found 0 corrupt files, 0 exact duplicates and 1 leakage pair, which is excluded from evaluation.
 > * **Per species:**

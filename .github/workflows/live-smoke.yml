@@ -24,3 +24,9 @@ jobs:
           curl -fsS "$BASE/openapi.json" -o openapi.json
           python3 -c "import json;d=json.load(open('openapi.json'));print(len(d['paths']),'paths');assert '/api/v1/scans' in d['paths']"
           test "$(curl -s -o /dev/null -w '%{http_code}' $BASE/api/v1/scans)" = "401"
+      - name: Completion-pass features are deployed
+        run: |
+          python3 -c "import json;d=json.load(open('openapi.json'));assert '/api/v1/reports/scans/{scan_id}.pdf' in d['paths'];print('per-scan PDF route present')"
+          test "$(curl -s -o /dev/null -w '%{http_code}' $BASE/api/v1/reports/scans/1.pdf)" = "401"
+          curl -fsS "$BASE/app/help" | grep -q '<div id="root">'
+          python3 -c "import json;d=json.load(open('health.json'));print('database_backend =',d.get('database_backend'),'(persistent)' if d.get('database_backend')=='postgresql' else '(NOT persistent - set DATABASE_URL to the Render PostgreSQL URL)')"

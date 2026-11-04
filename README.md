@@ -5,7 +5,7 @@
 <br>
 
 [![CI](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/nvaltryek-001/pollinex-ai/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/automated%20tests-97%20passing-2e7d4f)
+![Tests](https://img.shields.io/badge/automated%20tests-101%20passing-2e7d4f)
 ![Platforms](https://img.shields.io/badge/verified%20on-Ubuntu%20%7C%20Windows-1d3a2a)
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776ab?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/react-18-61dafb?logo=react&logoColor=black)
@@ -464,14 +464,15 @@ Every push to `main` runs the full stack on clean **Ubuntu and Windows** machine
 
 | Check | Result |
 |---|:-:|
-| AI engine + simulator tests | ✅ 37 |
-| Backend API, auth, roles, DB, uploads, inference | ✅ 24 |
+| AI engine + simulator tests (incl. dataset integrity audit, species knowledge base) | ✅ 47 |
+| Backend API, auth, roles, DB, uploads, inference, per-scan PDF | ✅ 27 |
 | Frontend unit & component tests (Vitest) | ✅ 11 |
-| Playwright end-to-end — desktop + Pixel 7, **simulated camera**, live scan, species correction, every page | ✅ 14 |
+| Playwright end-to-end — desktop + Pixel 7, **simulated camera**, live scan, species correction, species panel for all 9 species, PDF/CSV download, every page | ✅ 16 |
 | TypeScript strict type-check · production build | ✅ |
 | Migrations on **PostgreSQL 16** and SQLite · backend startup | ✅ |
 | Docker images + Docker Compose smoke test | ✅ |
-| **Windows**: `setup_windows.ps1` → `test_windows.ps1 -E2E` → backend health | ✅ |
+| **Windows**: `setup_windows.ps1` → `test_windows.ps1 -E2E` → backend health | ✅ (Playwright 14 passed, 2 screenshot tests skipped by design) |
+| Reproducible model evaluation (`[evaluate]` workflow) | ✅ reproduces the committed metrics |
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\test_windows.ps1 -E2E   # everything, locally
