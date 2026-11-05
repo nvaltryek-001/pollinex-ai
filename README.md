@@ -593,7 +593,7 @@ Full review, gaps and BibTeX: [`research/`](research/).
 
 ## 📄 Licence & citation
 
-Code: **MIT** ([LICENSE](LICENSE)). Trained models and test images derive from the USDA Multi-species Fruit Flower dataset
+Code: **MIT** ([LICENSE](LICENSE)). Trained the models and test images derive from the USDA Multi-species Fruit Flower dataset
 (**CC BY 4.0**) — please cite Dias, Tabb & Medeiros (2018), [doi:10.1109/LRA.2018.2849498](https://doi.org/10.1109/LRA.2018.2849498)
 and [doi:10.15482/USDA.ADC/1423466](https://doi.org/10.15482/USDA.ADC/1423466).
 Contributing: [CONTRIBUTING.md](CONTRIBUTING.md) · Security: [SECURITY.md](SECURITY.md) · Changes: [CHANGELOG.md](CHANGELOG.md)
