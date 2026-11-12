@@ -35,6 +35,13 @@ The demo database is reset on restart; see [Live demo](#-live-demo).</sub>
 
 ---
 
+## 🎬 Demo
+
+<p align="center">
+  <img src="docs/demo/pollinex-demo.gif" width="760" alt="Pollinex walkthrough: landing, scanner results, 3-D simulator, readiness, dashboard, model evaluation, species and analytics" />
+  <br/><sub>Built from real screenshots of the running app · <a href="docs/demo/pollinex-demo.mp4">MP4 version</a></sub>
+</p>
+
 ## 🌼 Why Pollinex?
 
 Pollination decides yield, but the right method differs by crop: tomato needs **vibration**, apple and pear need **compatible
